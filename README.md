@@ -75,4 +75,21 @@ source ~/.bashrc
 
 Nu er det meste forhåbentligt installeret 
 
-# Andre ting?
+# Køring af controller inout program
+Gå til den relevante mappe f.eks.:
+~/Documents/GitHub/Mobile_robotter/ros2_ws
+
+Sikrer dig at der kun er EN mappe, der hedder src. Hvis ikke skal de andre mapper slettes, da de er bygget til den specifikke computer der har lavet filerne!
+
+Kør:
+```
+colcon build --symlink-install
+```
+Denne skal rettes til din mappe sti!
+```
+source /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/setup.bash
+```
+```
+ros2 launch controller_input controller_launch.py
+```
+Hvis der er sat en controller til skulle denne gerne give outputs i terminalen
