@@ -1,9 +1,15 @@
-# Mobile_robotter
-Semesterprojekt i mobile robotter 3. semester
+# Mobile Robotter
+Semesterprojekt i mobile robotter, 3. semester
 
-# Setup af ROS på PC
-DETTE KAN KUN GØRES PÅ UBUNTU 22.04
-Kør disse tung
+## Indholdsfortegnelse
+- [Setup af ROS på PC](#setup-af-ros-på-pc)
+- [Test om ROS virker](#test-om-ros-virker)
+- [Klargøring til TurtleBot3](#klargøring-til-turtlebot3)
+- [Forbindelse til Raspberry Pi](#forbindelse-til-raspberry-pi)
+- [Køring af Controller Input Program](#køring-af-controller-input-program)
+
+## Setup af ROS på PC
+**DETTE KAN KUN GØRES PÅ UBUNTU 22.04**
 ```
 sudo apt install software-properties-common
 sudo add-apt-repository universe
@@ -28,6 +34,7 @@ sudo apt install ros-humble-desktop
 source /opt/ros/humble/setup.bash
 ```
 # Test om ROS virker
+For at kontrollere, om ROS er korrekt installeret, kan du køre følgende kommandoer i separate terminalvinduer:
 På en terminal kør:
 ```
 source /opt/ros/humble/setup.bash
@@ -43,7 +50,7 @@ ros2 run demo_nodes_py listener
 Hvis der modtages bekseder på den anden terminal så er ROS sat op
 
 # Klargøring til Turtlebot3
-Kør disse ting i en terminal:
+Kør følgende kommandoer i en terminal for at forberede TurtleBot3:
 ```
 sudo apt install ros-humble-gazebo-*
 ```
@@ -75,13 +82,53 @@ source ~/.bashrc
 
 Nu er det meste forhåbentligt installeret 
 
-# Køring af controller inout program
+# Forbindelse til Raspberry Pi
+
+For at forbinde din PC til Raspberry Pi og sikre, at de kan kommunikere med ROS 2, følg disse trin:
+
+### 1. Opret forbindelse via SSH
+For at oprette forbindelse til Raspberry Pi fra din PC ved hjælp af SSH, skal du følge disse trin:
+
+1. **Find IP-adressen på Raspberry Pi**:
+   - Log ind på Raspberry Pi og kør følgende kommando i terminalen for at finde dens IP-adresse:
+     ```
+     hostname -I
+     ```
+
+2. **Opret SSH-forbindelse fra din PC**:
+   - Åbn en terminal på din PC og kør følgende kommando for at oprette forbindelse til Raspberry Pi. Erstat `<Raspberry_Pi_IP>` med den faktiske IP-adresse, du fandt tidligere, og `<username>` med brugernavnet på din Raspberry Pi (standard er typisk `pi`):
+     ```
+     ssh <pi>@<Raspberry_Pi_IP>
+     ```
+   - Hvis du bliver bedt om det, skal du indtaste din Raspberry Pi's adgangskode.
+
+3. **Indstil ROS_MASTER_URI på PC'en**:
+   - På din PC skal du åbne en terminal og sætte `ROS_MASTER_URI` til IP-adressen af Raspberry Pi. Erstat `<Raspberry_Pi_IP>` med den faktiske IP-adresse, du fandt tidligere:
+     ```
+     export ROS_MASTER_URI=http://<Raspberry_Pi_IP>:11311
+     ```
+     
+4. **Indstil ROS_DOMAIN_ID**:
+   - Sørg for, at `ROS_DOMAIN_ID` er det samme på både din PC og Raspberry Pi. For at gøre dette, kør følgende kommando i terminalen på din PC:
+     ```
+     export ROS_DOMAIN_ID=30
+     ```
+     Dette skulle gerne være indstillet hvis de forrige trin er fulgt
+
+5. **Kør TurtleBot3 på Raspberry Pi**:
+   - Log ind på Raspberry Pi og kør følgende kommando for at starte TurtleBot3:
+     ```
+     ros2 launch turtlebot3_bringup robot.launch.py
+     ```
+
+# Køring af controller input program
+Gå til PC terminalen
 Gå til den relevante mappe f.eks.:
 ~/Documents/GitHub/Mobile_robotter/ros2_ws
 
-Sikrer dig at der kun er EN mappe, der hedder src. Hvis ikke skal de andre mapper slettes, da de er bygget til den specifikke computer der har lavet filerne!
+Vigtigt: Sørg for, at der kun er én mappe, der hedder src. Hvis ikke, skal de andre mapper slettes, da de er bygget til den specifikke computer, der har lavet filerne.
 
-Kør:
+Byg arbejdsområdet:
 ```
 colcon build --symlink-install
 ```
@@ -92,4 +139,5 @@ source /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/setup.bash
 ```
 ros2 launch controller_input controller_launch.py
 ```
-Hvis der er sat en controller til skulle denne gerne give outputs i terminalen
+Hvis der er sat en controller til skulle denne gerne give outputs i terminalen.
+Desuden skulle robotten også gerne reagere og køre ved inputs

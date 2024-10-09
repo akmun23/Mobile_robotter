@@ -8,20 +8,15 @@
 using namespace std;
 
 // DTMF tone frequencies for digits 0-9
-const int LOW_FREQ[16] = {697, 697, 697, 697, 770, 770, 770, 770, 852, 852, 852, 852, 941, 941, 941, 941};
-const int HIGH_FREQ[16] = {1209, 1336, 1477, 1633, 1209, 1336, 1477, 1633, 1209, 1336, 1477, 1633, 1209, 1336, 1477, 1633};
+const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
+const int HIGH_FREQ[16] = {1336, 1209, 1336, 1477, 1209, 1336, 1477, 1209, 1336, 1477, 1633, 1633, 1633, 1633, 1209, 1477};
 
 // Map characters '0'-'9', 'A'-'D', '*', and '#' to corresponding index values
 int mapCharToIndex(char key) {
-    key = tolower(key);
     if (key >= '0' && key <= '9') {
         return key - '0';
-    } else if (key >= 'a' && key <= 'd') {
+    } else if (key >= 'a' && key <= 'f') {
         return 10 + (key - 'a');
-    } else if (key == 'e') {
-        return 12;
-    } else if (key == 'f') {
-        return 13;
     } else {
         return -1; // Invalid key
     }
@@ -34,7 +29,7 @@ void playTone(double freq1, double freq2){
     float amp = 0.5;
 
     int time = 6000;
-    int sleep = 200000;
+    int sleep = 250000;
 
     for (int i = 0; i < time; i++) {
         samples.push_back(sound::SineWave(i, freq1, amp)+sound::SineWave(i, freq2, amp));
@@ -52,7 +47,7 @@ void playTone(double freq1, double freq2){
 void playSequence(const string &sequence) {
     for (char key : sequence) {
         // Convert the character to the corresponding index
-        int index = mapCharToIndex(toupper(key));
+        int index = mapCharToIndex(tolower(key));
 
         if (index != -1) { // Valid DTMF key
             double freq1 = LOW_FREQ[index];
