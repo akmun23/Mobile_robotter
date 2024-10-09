@@ -7,20 +7,7 @@ int sampleNumber = 1;                         // To seperate the samples in the 
 bool endProgram = false;                      // To end the program after 30 seconds
 bool LetterReceived = false;
 
-int Received1 = 8;
-int MaxRowMag1 = 0;
-int MaxColumnMag1 = 0;
-int Received2 = 8;
-int MaxRowMag2 = 0;
-int MaxColumnMag2 = 0;
-int Received3 = 8;
-int MaxRowMag3 = 0;
-int MaxColumnMag3 = 0;
-char Received4 = 'k';
-int MaxRowMag4 = 0;
-int MaxColumnMag4 = 0;
-
-
+std::vector<int> Received;
 
 
 Audio::Audio() {}
@@ -71,10 +58,22 @@ void Audio::end(){
     // Free allocated resources used for FFT calculation
     free(spectroData);
     printf("\n");
+    printf("Received:");
+    for (int i = 0; i < Received.size(); ++i) {
+        printf(" - %d", Received[i]);
+    }
+    printf("\n");
+    // Received: - 4 - 8 - 6 - 5 - 6 - 10 - 2 - 0 - 6 - 13 - 6 - 5 - 6 - 4 - 2 - 0 - 6 - 4 - 6 - 9 - 6 - 7
 
-    printf("Received: %d%d%d%c\n", Received1, Received2, Received3, Received4);
-    printf("MaxRowMag: %d - %d - %d - %d\n", MaxRowMag1, MaxRowMag2, MaxRowMag3, MaxRowMag4);
-    printf("MaxColumnMag: %d - %d - %d - %d\n", MaxColumnMag1, MaxColumnMag2, MaxColumnMag3, MaxColumnMag4);
+    printf("\r");
+    for (int i = 1; i < Received.size(); i+=2){
+        char c = Received[i-1]*16 + Received[i];
+        printf("%c",c);
+    }
+    fflush(stdout);
+    printf("\n");
+
+
 
 }
 
@@ -277,59 +276,93 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived){
         LetterReceived = true;
 
-        if(maxRow < 3 && maxColumn < 3){
-            printf("\r");
-            printf("Button pressed: %d", maxRow*3 + maxColumn + 1);
-            fflush(stdout);
-
-            if(Received1 == 8){
-                Received1 = maxRow*3 + maxColumn + 1;
-                MaxRowMag1 = rowMags[maxRow];
-                MaxColumnMag1 = columnMags[maxColumn];
-            }else if(Received2 == 8){
-                Received2 = maxRow*3 + maxColumn + 1;
-                MaxRowMag2 = rowMags[maxRow];
-                MaxColumnMag2 = columnMags[maxColumn];
-            }else if(Received3 == 8){
-                Received3 = maxRow*3 + maxColumn + 1;
-                MaxRowMag3 = rowMags[maxRow];
-                MaxColumnMag3 = columnMags[maxColumn];
+        if(maxRow == 0){
+            if(maxColumn == 0){
+                printf("\r");
+                printf("1");
+                fflush(stdout);
+                Received.push_back(1);
+            }else if(maxColumn == 1){
+                printf("\r");
+                printf("2");
+                fflush(stdout);
+                Received.push_back(2);
+            }else if(maxColumn == 2){
+                printf("\r");
+                printf("3");
+                fflush(stdout);
+                Received.push_back(3);
+            }else if(maxColumn == 3){
+                printf("\r");
+                printf("A");
+                fflush(stdout);
+                Received.push_back(10);
+            }
+        }else if(maxRow == 1){
+            if(maxColumn == 0){
+                printf("\r");
+                printf("4");
+                fflush(stdout);
+                Received.push_back(4);
+            }else if(maxColumn == 1){
+                printf("\r");
+                printf("5");
+                fflush(stdout);
+                Received.push_back(5);
+            }else if(maxColumn == 2){
+                printf("\r");
+                printf("6");
+                fflush(stdout);
+                Received.push_back(6);
+            }else if(maxColumn == 3){
+                printf("\r");
+                printf("B");
+                fflush(stdout);
+                Received.push_back(11);
+            }
+        }else if(maxRow == 2){
+            if(maxColumn == 0){
+                printf("\r");
+                printf("7");
+                fflush(stdout);
+                Received.push_back(7);
+            }else if(maxColumn == 1){
+                printf("\r");
+                printf("8");
+                fflush(stdout);
+                Received.push_back(8);
+            }else if(maxColumn == 2){
+                printf("\r");
+                printf("9");
+                fflush(stdout);
+                Received.push_back(9);
+            }else if(maxColumn == 3){
+                printf("\r");
+                printf("C");
+                fflush(stdout);
+                Received.push_back(12);
             }
         }else if(maxRow == 3){
             if(maxColumn == 0){
                 printf("\r");
-                printf("Button pressed: E");
+                printf("E");
                 fflush(stdout);
+                Received.push_back(14);
             }else if(maxColumn == 1){
                 printf("\r");
-                printf("Button pressed: 0");
+                printf("0");
                 fflush(stdout);
+                Received.push_back(0);
             }else if(maxColumn == 2){
                 printf("\r");
-                printf("Button pressed: F");
+                printf("F");
                 fflush(stdout);
-            }else{
-                printf("\r");
-                printf("Button pressed: D");
-                fflush(stdout);
-                Received4 = 'D';
-                MaxRowMag4 = rowMags[maxRow];
-                MaxColumnMag4 = columnMags[maxColumn];
                 return true;
-            }
-        }else{
-            if(maxRow == 0){
+            }else if(maxColumn == 3){
                 printf("\r");
-                printf("Button pressed: A");
+                printf("D");
                 fflush(stdout);
-            }else if(maxRow == 1){
-                printf("\r");
-                printf("Button pressed: B");
-                fflush(stdout);
-            }else if(maxRow == 2){
-                printf("\r");
-                printf("Button pressed: C");
-                fflush(stdout);
+                Received.push_back(13);
             }
         }
     }else if((rowMags[maxRow] < MinMagnitude || columnMags[maxColumn] < MinMagnitude) && LetterReceived){

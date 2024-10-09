@@ -6,8 +6,13 @@ Hvad nåede vi i dag
 		* De bliver samplet med en frekvens på 44100 og med en buffer på 1500
 		* Programmet der sender sekvensen af tal sender med størrelse på 5000 og et delay mellem hver på 200ms
 		* Programmet er sensitiv overfor lyder fra fx stemmer
+
+	- Vi kan lave toner sendt som hex
 		
 	- Robotten kan nu forbinde til internet men problemet er at packages til ros2 ikke kan buildes
+		* Muligvis fikset til sidst
+	
+	- Der er lavet script til FFT analyse til tidssammeligning
 	
 	- Der er startet på et script til analyse af en lydfil med DFT
 	
@@ -16,3 +21,16 @@ Hvad nåede vi i dag
 	- Lider er blevet valgt til at vi selv prøver at lave noget ud fra den data der kommer fra den
 	
 	- Projekt mål er ændret fra at kunne finde rundt i et rum til at skulle kunn finde igennem en labyrint
+	
+	
+	
+	
+Laves til næste gang 
+
+	- Robotten skal virke til næste gang
+	
+	- DFT klar til næste gang
+	
+	- Start på noget GUI til næste gang
+	
+	- DTMF sampling skal kunne modtage beskeder på 2 hex tal og analysere det
