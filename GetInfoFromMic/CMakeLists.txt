@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Include directories
+# Can maybe be deleted
+include_directories(/home/pascal/Dokumenter/GitHub/Mobile_robotter/GetInfoFromMic/fftw-3.3.10/api)
 
 # Add the executable
 add_executable(${PROJECT_NAME} main.cpp
@@ -22,12 +24,14 @@ target_link_libraries(${PROJECT_NAME}
         jack
         pthread
         portaudio
+
 )
 
 # Custom target for installing dependencies
 add_custom_target(install-deps
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/cmake/install_portaudio.cmake
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/cmake/install_fftw.cmake
+
 )
 
 # Custom target for uninstalling dependencies

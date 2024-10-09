@@ -15,10 +15,11 @@
 
 
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
-#define FRAMES_PER_BUFFER 2205.0        // How many audio samples to send to our callback function for each channel
+#define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
+
 #define NUM_CHANNELS 2                  // Number of audio channels to capture
 
-#define RecordTimeMs 10000              // How long to record audio for (ms)
+#define RecordTimeMs 20000              // How long to record audio for (ms)
 
 
 // Define our callback data (data that is passed to every callback function call)
@@ -31,17 +32,20 @@ typedef struct {
 static streamCallbackData* spectroData;
 
 
+
+
 class Audio
 {
 private:
 
     PaError err;
+    PaStream* stream;
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
-    PaStream* stream;
 
 public:
     Audio();
+    Audio(PaError err, PaStream* stream);
 
     /**
     *@brief Method to check for errors in PortAudio functions
@@ -136,7 +140,7 @@ public:
     *@return nothing
     *
     */
-    static void analyseGoertzelOutput(std::vector<double> mags);
+    static bool analyseGoertzelOutput(std::vector<double> mags);
 
 };
 

@@ -1,10 +1,21 @@
 #include "audio.h"
 
+
+
 std::ofstream outputFile("AudioOutput.txt");  // Open/create a file named "test.txt" for writing
 int sampleNumber = 1;                         // To seperate the samples in the file
+bool endProgram = false;                      // To end the program after 30 seconds
+bool LetterReceived = false;
+
+int Received1 = 8;
+int Received2 = 8;
+int Received3 = 8;
+char Received4 = 'k';
+
+
+
 
 Audio::Audio() {}
-
 
 void Audio::checkErr(PaError err) {
     if (err != paNoError) {
@@ -17,7 +28,6 @@ inline float Audio::min(float a, float b) {
      return a < b ? a : b;
  }
 
-
 void Audio::start(){
 
     // Begin capturing audio
@@ -25,7 +35,18 @@ void Audio::start(){
     checkErr(err);
 
     // Wait 30 seconds (PortAudio will continue to capture audio)
-    Pa_Sleep(RecordTimeMs);
+    // Pa_Sleep(RecordTimeMs);
+
+    while (!endProgram) {
+
+    }
+
+    // Close the file
+    // outputFile.close();  // Close the file after writing
+
+}
+
+void Audio::end(){
 
     // Stop capturing audio
     err = Pa_StopStream(stream);
@@ -35,22 +56,15 @@ void Audio::start(){
     err = Pa_CloseStream(stream);
     checkErr(err);
 
-    // Close the file
-    outputFile.close();  // Close the file after writing
-
-}
-
-void Audio::end(){
-
-
     // Terminate PortAudio
     err = Pa_Terminate();
     checkErr(err);
 
     // Free allocated resources used for FFT calculation
-    fftw_free(spectroData->in);
     free(spectroData);
     printf("\n");
+
+    printf("Received: %d%d%d%c\n", Received1, Received2, Received3, Received4);
 
 }
 
@@ -76,10 +90,6 @@ void Audio::getDevices(){
         printf("  maxOutputChannels: %d\n", deviceInfo->maxOutputChannels);
         printf("  defaultSampleRate: %f\n", deviceInfo->defaultSampleRate);
     }
-
-    // Use device 0 (for a programmatic solution for choosing a device,
-    // `numDevices - 1` is typically the 'default' device
-    int device = 10;
 }
 
 
@@ -117,8 +127,6 @@ int Audio::streamCallback(
     sampleNumber++;  // Increment the sample number for the
     outputFile << "\n" << "\n";  // Write a newline character to the file*/
 
-
-
     for (unsigned long i = 0; i < framesPerBuffer; i++) {
         callbackData->in[i] = in[i * NUM_CHANNELS];
     }
@@ -139,15 +147,12 @@ int Audio::streamCallback(
             double v  = 2*omega_I*v1 - v2 + callbackData->in[n];
             v2 = v1;
             v1 = v;
-
-
         }
 
         double y_I = v1 - omega_I*v2;
         double y_Q = omega_Q*v2;
 
         mags[i] = sqrt(y_I*y_I + y_Q*y_Q);
-
     }
 
     /*
@@ -179,13 +184,18 @@ int Audio::streamCallback(
     printf("%f ", mags[7]);
     fflush(stdout);*/
 
+    if(analyseGoertzelOutput(mags)){
+        endProgram = true;
+        return paAbort;
 
+    }else{
+        return paContinue;
+    }
 
-    analyseGoertzelOutput(mags);
-
-
-    return 0;
 }
+
+
+
 
 
 void Audio::Init(){
@@ -201,7 +211,6 @@ void Audio::Init(){
         printf("Could not allocate spectro data\n");
         exit(EXIT_FAILURE);
     }
-
 
     // Define stream capture specifications
     memset(&inputParameters, 0, sizeof(inputParameters));
@@ -225,7 +234,12 @@ void Audio::Init(){
     checkErr(err);
 }
 
-void Audio::analyseGoertzelOutput(std::vector<double> mags){
+
+
+
+
+
+bool Audio::analyseGoertzelOutput(std::vector<double> mags){
     std::vector<double> rowMags = {mags[0], mags[1], mags[2], mags[3]};
     std::vector<double> columnMags = {mags[4], mags[5], mags[6], mags[7]};
 
@@ -244,12 +258,23 @@ void Audio::analyseGoertzelOutput(std::vector<double> mags){
         }
     }
 
-    if(rowMags[maxRow] > 200 && columnMags[maxColumn] > 200){
+    int MinMagnitude = 300;
+
+    if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived){
+        LetterReceived = true;
 
         if(maxRow < 3 && maxColumn < 3){
             printf("\r");
             printf("Button pressed: %d", maxRow*3 + maxColumn + 1);
             fflush(stdout);
+
+            if(Received1 == 8){
+                Received1 = maxRow*3 + maxColumn + 1;
+            }else if(Received2 == 8){
+                Received2 = maxRow*3 + maxColumn + 1;
+            }else if(Received3 == 8){
+                Received3 = maxRow*3 + maxColumn + 1;
+            }
         }else if(maxRow == 3){
             if(maxColumn == 0){
                 printf("\r");
@@ -267,6 +292,8 @@ void Audio::analyseGoertzelOutput(std::vector<double> mags){
                 printf("\r");
                 printf("Button pressed: D");
                 fflush(stdout);
+                Received4 = 'D';
+                return true;
             }
         }else{
             if(maxRow == 0){
@@ -283,11 +310,14 @@ void Audio::analyseGoertzelOutput(std::vector<double> mags){
                 fflush(stdout);
             }
         }
-    }else{
+    }else if((rowMags[maxRow] < MinMagnitude || columnMags[maxColumn] < MinMagnitude) && LetterReceived){
         printf("\r");
         printf("No button pressed");
         fflush(stdout);
+        LetterReceived = false;
     }
+
+    return false;
 
 
 
