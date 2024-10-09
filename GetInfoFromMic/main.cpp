@@ -8,7 +8,7 @@
 int main() {
 
     Audio audio;
-    audio.printData();
+    audio.Init();
     audio.start();
     audio.end();
 

@@ -8,8 +8,6 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Include directories
-# Can maybe be deleted
-include_directories(/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/fftw-3.3.10/api)
 
 # Add the executable
 add_executable(${PROJECT_NAME} main.cpp

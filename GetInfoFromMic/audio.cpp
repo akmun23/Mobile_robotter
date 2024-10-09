@@ -6,14 +6,6 @@ int sampleNumber = 1;                         // To seperate the samples in the 
 Audio::Audio() {}
 
 
-/**
-*@brief Method to check for errors in PortAudio functions
-*
-*@param PaError err
-*
-*@return nothing
-*
-*/
 void Audio::checkErr(PaError err) {
     if (err != paNoError) {
         printf("PortAudio error: %s\n", Pa_GetErrorText(err));
@@ -21,27 +13,10 @@ void Audio::checkErr(PaError err) {
     }
 }
 
-/**
-*@brief Method to return the minimum of two float values
-*
-*@param float a, float b
-*
-*@return float
-*
-*/
 inline float Audio::min(float a, float b) {
      return a < b ? a : b;
  }
 
-
- /**
-*@brief Method to start the audio stream and record audio for a specified amount of time (RecordTimeMs)
-*
-*@param nothing
-*
-*@return nothing
-*
-*/
 
 void Audio::start(){
 
@@ -65,14 +40,6 @@ void Audio::start(){
 
 }
 
-/**
-*@brief Method to end the audio stream and free allocated resources
-*
-*@param nothing
-*
-*@return nothing
-*
-*/
 void Audio::end(){
 
 
@@ -86,14 +53,7 @@ void Audio::end(){
     printf("\n");
 
 }
-/**
-*@brief Get the audio devices accessible to PortAudio and their specifications
-*
-*@param nothing
-*
-*@return nothing
-*
-*/
+
 void Audio::getDevices(){
     int numDevices = Pa_GetDeviceCount();
     printf("Number of devices: %d\n", numDevices);
@@ -125,7 +85,7 @@ void Audio::getDevices(){
 
 
 
-int Audio::streamCallbackTest(
+int Audio::streamCallback(
     const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
     const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
     void* userData
@@ -134,13 +94,11 @@ int Audio::streamCallbackTest(
     // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
     float* in = (float*)inputBuffer;
 
-    // We will not be modifying the output buffer. This line is a no-op.
-    (void)outputBuffer;
-
     // Cast our user data to streamCallbackData* so we can access its struct members
     streamCallbackData* callbackData = (streamCallbackData*)userData;
 
     /*
+    // Write the audio samples to the file
     if (outputFile.is_open()) {  // Check if the file was successfully opened
 
         // Write the sample number to the file
@@ -193,6 +151,7 @@ int Audio::streamCallbackTest(
     }
 
     /*
+    // Print the magnitudes of the tones
     printf("\r");
     printf("Tones: ");
     printf("%d ", tones[0]);
@@ -229,21 +188,19 @@ int Audio::streamCallbackTest(
 }
 
 
-void Audio::printData(){
+void Audio::Init(){
 
     // Initialize PortAudio
     err = Pa_Initialize();
     checkErr(err);
 
-    // Allocate and define the callback data used to calculate/display the spectrogram
+    // Allocate and define the callback data
     spectroData = (streamCallbackData*)malloc(sizeof(streamCallbackData));
     spectroData->in = (double*)malloc(sizeof(double) * FRAMES_PER_BUFFER);
     if (spectroData->in == NULL) {
         printf("Could not allocate spectro data\n");
         exit(EXIT_FAILURE);
     }
-
-    // Get and display the number of audio devices accessible to PortAudio
 
 
     // Define stream capture specifications
@@ -262,7 +219,7 @@ void Audio::printData(){
         SAMPLE_RATE,
         FRAMES_PER_BUFFER,
         paNoFlag,
-        streamCallbackTest,
+        streamCallback,
         spectroData
         );
     checkErr(err);
@@ -296,7 +253,7 @@ void Audio::analyseGoertzelOutput(std::vector<double> mags){
         }else if(maxRow == 3){
             if(maxColumn == 0){
                 printf("\r");
-                printf("Button pressed: *");
+                printf("Button pressed: E");
                 fflush(stdout);
             }else if(maxColumn == 1){
                 printf("\r");
@@ -304,7 +261,7 @@ void Audio::analyseGoertzelOutput(std::vector<double> mags){
                 fflush(stdout);
             }else if(maxColumn == 2){
                 printf("\r");
-                printf("Button pressed: #");
+                printf("Button pressed: F");
                 fflush(stdout);
             }else{
                 printf("\r");

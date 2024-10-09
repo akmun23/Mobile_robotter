@@ -7,7 +7,6 @@
 #include <cmath>
 
 #include <portaudio.h>
-#include <fftw3.h>     // FFTW:      Provides a discrete FFT algorithm to get
 #include <vector>
 
 // For debuq file
@@ -43,16 +42,73 @@ private:
 
 public:
     Audio();
+
+    /**
+    *@brief Method to check for errors in PortAudio functions
+    *
+    *@param PaError err
+    *
+    *@return nothing
+    *
+    */
     static void checkErr(PaError err);
+
+
+    /**
+    *@brief Method to return the minimum of two float values
+    *
+    *@param float a, float b
+    *
+    *@return float
+    *
+    */
     static inline float min(float a, float b);
 
+
+    /**
+    *@brief Method to start the audio stream and record audio for a specified amount of time (RecordTimeMs)
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
     void start();
+
+
+
+    /**
+    *@brief Method to end the audio stream and free allocated resources
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
     void end();
 
+
+
+    /**
+    *@brief Get the audio devices accessible to PortAudio and their specifications
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
     void getDevices();
 
-    // Testing functions
-    static int streamCallbackTest(
+
+    /**
+    *@brief This function is called by PortAudio when audio data is available to be processed
+    *
+    *@param const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags, void* userData
+    *
+    *@return nothing
+    *
+    */
+    static int streamCallback(
         const void* inputBuffer,
         void* outputBuffer,
         unsigned long framesPerBuffer,
@@ -60,7 +116,26 @@ public:
         PaStreamCallbackFlags statusFlags,
         void* userData
         );
-    void printData();
+
+    /**
+    *@brief Method to initialize PortAudio and allocate memory for the input buffer
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void Init();
+
+
+    /**
+    *@brief Method to analyze the output from the Goertzel algorithm and print the results
+    *
+    *@param std::vector<double> mags
+    *
+    *@return nothing
+    *
+    */
     static void analyseGoertzelOutput(std::vector<double> mags);
 
 };
