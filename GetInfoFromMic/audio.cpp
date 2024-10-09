@@ -8,9 +8,17 @@ bool endProgram = false;                      // To end the program after 30 sec
 bool LetterReceived = false;
 
 int Received1 = 8;
+int MaxRowMag1 = 0;
+int MaxColumnMag1 = 0;
 int Received2 = 8;
+int MaxRowMag2 = 0;
+int MaxColumnMag2 = 0;
 int Received3 = 8;
+int MaxRowMag3 = 0;
+int MaxColumnMag3 = 0;
 char Received4 = 'k';
+int MaxRowMag4 = 0;
+int MaxColumnMag4 = 0;
 
 
 
@@ -65,6 +73,8 @@ void Audio::end(){
     printf("\n");
 
     printf("Received: %d%d%d%c\n", Received1, Received2, Received3, Received4);
+    printf("MaxRowMag: %d - %d - %d - %d\n", MaxRowMag1, MaxRowMag2, MaxRowMag3, MaxRowMag4);
+    printf("MaxColumnMag: %d - %d - %d - %d\n", MaxColumnMag1, MaxColumnMag2, MaxColumnMag3, MaxColumnMag4);
 
 }
 
@@ -149,10 +159,14 @@ int Audio::streamCallback(
             v1 = v;
         }
 
-        double y_I = v1 - omega_I*v2;
-        double y_Q = omega_Q*v2;
+
+        double y_I = v1 - omega_I * v2;
+        double y_Q = omega_Q * v2;
 
         mags[i] = sqrt(y_I*y_I + y_Q*y_Q);
+
+        //mags[i] = v1*v1 + v2*v2-v1*v2*(2*omega_I);
+
     }
 
     /*
@@ -258,7 +272,7 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
         }
     }
 
-    int MinMagnitude = 300;
+    int MinMagnitude = 200;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived){
         LetterReceived = true;
@@ -270,10 +284,16 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 
             if(Received1 == 8){
                 Received1 = maxRow*3 + maxColumn + 1;
+                MaxRowMag1 = rowMags[maxRow];
+                MaxColumnMag1 = columnMags[maxColumn];
             }else if(Received2 == 8){
                 Received2 = maxRow*3 + maxColumn + 1;
+                MaxRowMag2 = rowMags[maxRow];
+                MaxColumnMag2 = columnMags[maxColumn];
             }else if(Received3 == 8){
                 Received3 = maxRow*3 + maxColumn + 1;
+                MaxRowMag3 = rowMags[maxRow];
+                MaxColumnMag3 = columnMags[maxColumn];
             }
         }else if(maxRow == 3){
             if(maxColumn == 0){
@@ -293,6 +313,8 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
                 printf("Button pressed: D");
                 fflush(stdout);
                 Received4 = 'D';
+                MaxRowMag4 = rowMags[maxRow];
+                MaxColumnMag4 = columnMags[maxColumn];
                 return true;
             }
         }else{

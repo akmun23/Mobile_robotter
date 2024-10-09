@@ -55,10 +55,17 @@ int main() {
             v1 = v;
         }
 
-        double y_I = v1 - omega_I * v2;
-        double y_Q = omega_Q * v2;
 
-        mags[i] = sqrt(y_I*y_I + y_Q*y_Q);
+
+        // 1. Method
+        //double y_I = v1 - omega_I * v2;
+        //double y_Q = omega_Q * v2;
+
+        //mags[i] = sqrt(y_I*y_I + y_Q*y_Q);
+
+        // 2. Method  --  This method does the same as the but with less computation at the cost of the phase information
+        mags[i] = v1*v1 + v2*v2-v1*v2*(2*omega_I);
+
 
     }
 
@@ -85,9 +92,9 @@ int main() {
     printf("%d ", tones[6]);
     printf("%f ", mags[6]);
     fflush(stdout);
-    printf("\n");*/
+    printf("\n");
 
-
+    */
 
 
     return EXIT_SUCCESS;
