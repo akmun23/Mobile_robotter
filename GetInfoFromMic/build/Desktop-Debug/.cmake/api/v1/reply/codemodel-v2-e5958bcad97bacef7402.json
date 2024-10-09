@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "GetInfoFromMic",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "GetInfoFromMic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GetInfoFromMic-Debug-21c34040f19dd1867282.json",
+					"name" : "GetInfoFromMic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "install-deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-install-deps-Debug-9a64940e85cc83f3c51e.json",
+					"name" : "install-deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall-deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-deps-Debug-155f5c1f0d208f223821.json",
+					"name" : "uninstall-deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug",
+		"source" : "/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
