@@ -1,0 +1,17 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/controller_input/controller_input
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input//launch/controller_launch.py
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/package_run_dependencies/controller_input
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/parent_prefix_path/controller_input
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.sh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.sh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.bash
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.sh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.zsh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/packages/controller_input
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig.cmake
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig-version.cmake
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.xml

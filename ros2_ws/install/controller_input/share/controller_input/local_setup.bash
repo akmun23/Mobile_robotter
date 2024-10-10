@@ -1,0 +1,1 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/ament_cmake_environment_hooks/local_setup.bash
