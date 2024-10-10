@@ -13,11 +13,11 @@ std::complex<double> dft(std::vector<double> in, int k);
 
 
 int main() {
-    /*
+
     Audio audio;
     audio.Init();
     audio.start();
-    audio.end();*/
+    audio.end();
 
 
 
@@ -103,12 +103,12 @@ int main() {
 
     */
 
-
+/*
     // Testing the DFT algorithm from a dtmf signal loaded to a file sample rate 48000
     std::ifstream inFile;
 
 
-    inFile.open("/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/DTMF0.txt");
+    inFile.open("/home/aksel/Documents/GitHub/Mobile_robotter/DTMF0.txt");
 
     if (!inFile) {
         std::cerr << "Unable to open file datafile.txt";
@@ -137,6 +137,7 @@ int main() {
 
 
     return EXIT_SUCCESS;
+*/
 }
 
 

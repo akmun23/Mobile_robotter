@@ -1,0 +1,14 @@
+[0.008s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.052s] [ 50%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/main.cpp.o[0m
+[1.904s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:[m[K In member function ‘[01m[Kvoid ControllerInput::joy_callback(sensor_msgs::msg::Joy_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.904s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:34:32:[m[K [01;31m[Kerror: [m[K‘[01m[KmapAxisToByte[m[K’ was not declared in this scope
+[1.905s]    34 |         uint8_t linear_value = [01;31m[KmapAxisToByte[m[K(msg->axes[1]);  // Linear velocity value
+[1.905s]       |                                [01;31m[K^~~~~~~~~~~~~[m[K
+[1.911s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:[m[K In member function ‘[01m[Kvoid ControllerInput::play_dtmf_if_active()[m[K’:
+[1.911s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:60:17:[m[K [01;31m[Kerror: [m[K‘[01m[KplayDTMFSequence[m[K’ was not declared in this scope
+[1.911s]    60 |                 [01;31m[KplayDTMFSequence[m[K(latest_linear_value_, latest_angular_value_);
+[1.911s]       |                 [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[3.862s] gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:76: CMakeFiles/controller_input.dir/src/main.cpp.o] Error 1
+[3.862s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
+[3.863s] gmake: *** [Makefile:146: all] Error 2
+[3.865s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
