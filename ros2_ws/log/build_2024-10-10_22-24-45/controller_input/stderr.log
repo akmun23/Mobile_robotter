@@ -1,0 +1,11 @@
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:[m[K In member function ‘[01m[Kvoid ControllerInput::joy_callback(sensor_msgs::msg::Joy_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:34:32:[m[K [01;31m[Kerror: [m[K‘[01m[KmapAxisToByte[m[K’ was not declared in this scope
+   34 |         uint8_t linear_value = [01;31m[KmapAxisToByte[m[K(msg->axes[1]);  // Linear velocity value
+      |                                [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:[m[K In member function ‘[01m[Kvoid ControllerInput::play_dtmf_if_active()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:60:17:[m[K [01;31m[Kerror: [m[K‘[01m[KplayDTMFSequence[m[K’ was not declared in this scope
+   60 |                 [01;31m[KplayDTMFSequence[m[K(latest_linear_value_, latest_angular_value_);
+      |                 [01;31m[K^~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:76: CMakeFiles/controller_input.dir/src/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

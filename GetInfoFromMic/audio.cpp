@@ -1,7 +1,5 @@
 #include "audio.h"
 
-
-
 std::ofstream outputFile("AudioOutput.txt");  // Open/create a file named "test.txt" for writing
 int sampleNumber = 1;                         // To seperate the samples in the file
 bool endProgram = false;                      // To end the program after 30 seconds

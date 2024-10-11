@@ -92,8 +92,13 @@ controller_input_EXTERNAL_OBJECTS =
 
 controller_input: CMakeFiles/controller_input.dir/src/main.cpp.o
 controller_input: CMakeFiles/controller_input.dir/build.make
+controller_input: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+controller_input: /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1
+controller_input: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
 controller_input: /opt/ros/humble/lib/libteleop_twist_joy.so
 controller_input: /opt/ros/humble/lib/libcomponent_manager.so
+controller_input: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+controller_input: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 controller_input: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so
 controller_input: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so
 controller_input: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_c.so

@@ -18,11 +18,14 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(teleop_twist_joy REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 
 include_directories(include)
 
 # Add executable
 add_executable(controller_input src/main.cpp)
+
+target_link_libraries(controller_input sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
 
 # Specify the dependencies for the target
 ament_target_dependencies(controller_input

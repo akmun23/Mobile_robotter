@@ -1,0 +1,27 @@
+[0.008s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.042s] [35m[1mConsolidate compiler generated dependencies of target controller_input[0m
+[0.056s] [ 50%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/main.cpp.o[0m
+[6.527s] [100%] [32m[1mLinking CXX executable controller_input[0m
+[6.871s] [100%] Built target controller_input
+[6.880s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[6.909s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input
+[6.915s] -- Install configuration: ""
+[6.915s] -- Execute custom install script
+[6.916s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/controller_input/controller_input
+[6.916s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input//launch/controller_launch.py
+[6.916s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/package_run_dependencies/controller_input
+[6.916s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/parent_prefix_path/controller_input
+[6.916s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.sh
+[6.917s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.dsv
+[6.917s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.sh
+[6.917s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.dsv
+[6.917s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.bash
+[6.917s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.sh
+[6.917s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.zsh
+[6.917s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.dsv
+[6.917s] -- Symlinking: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.dsv
+[6.924s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/packages/controller_input
+[6.925s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig.cmake
+[6.925s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig-version.cmake
+[6.925s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.xml
+[6.926s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input
