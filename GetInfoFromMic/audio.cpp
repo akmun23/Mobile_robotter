@@ -7,7 +7,16 @@ int sampleNumber = 1;                         // To seperate the samples in the 
 bool endProgram = false;                      // To end the program after 30 seconds
 bool LetterReceived = false;
 
+int direction = 0;
+int speed = 0;
 std::vector<int> Received;
+std::vector<int> AllReceived;
+
+// For testing
+std::string drivingDirection = "Stopped";
+int drivingSpeed = 0;
+bool printDetectedTones = false;   // If this is set to true the terminal will display the detected tones as - "Button pressed: tone"
+
 
 
 Audio::Audio() {}
@@ -58,18 +67,19 @@ void Audio::end(){
     // Free allocated resources used for FFT calculation
     free(spectroData);
     printf("\n");
-    printf("Received:");
-    for (int i = 0; i < Received.size(); ++i) {
-        printf(" - %d", Received[i]);
-    }
-    printf("\n");
-    // Received: - 4 - 8 - 6 - 5 - 6 - 10 - 2 - 0 - 6 - 13 - 6 - 5 - 6 - 4 - 2 - 0 - 6 - 4 - 6 - 9 - 6 - 7
 
+    printf("Received:");
+
+    for (int i = 0; i < AllReceived.size(); ++i) {
+        printf(" - %d", AllReceived[i]);
+    }
+    // Received: - 4 - 8 - 6 - 5 - 6 - 10 - 2 - 0 - 6 - 13 - 6 - 5 - 6 - 4 - 2 - 0 - 6 - 4 - 6 - 9 - 6 - 7
+    /*
     printf("\r");
     for (int i = 1; i < Received.size(); i+=2){
         char c = Received[i-1]*16 + Received[i];
         printf("%c",c);
-    }
+    }*/
     fflush(stdout);
     printf("\n");
 
@@ -202,6 +212,9 @@ int Audio::streamCallback(
         return paAbort;
 
     }else{
+        if(Received.size() == 4){
+            reactOnSignal();
+        }
         return paContinue;
     }
 
@@ -271,109 +284,136 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
         }
     }
 
-    int MinMagnitude = 200;
+    if(SaveSignal(rowMags,columnMags,maxRow,maxColumn)){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
+
+bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
+    int MinMagnitude = 250;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived){
         LetterReceived = true;
 
         if(maxRow == 0){
             if(maxColumn == 0){
-                printf("\r");
-                printf("1");
-                fflush(stdout);
+                printDetectedSignal('1');
                 Received.push_back(1);
             }else if(maxColumn == 1){
-                printf("\r");
-                printf("2");
-                fflush(stdout);
+                printDetectedSignal('2');
                 Received.push_back(2);
             }else if(maxColumn == 2){
-                printf("\r");
-                printf("3");
-                fflush(stdout);
+                printDetectedSignal('3');
                 Received.push_back(3);
             }else if(maxColumn == 3){
-                printf("\r");
-                printf("A");
-                fflush(stdout);
+                printDetectedSignal('A');
                 Received.push_back(10);
             }
         }else if(maxRow == 1){
             if(maxColumn == 0){
-                printf("\r");
-                printf("4");
-                fflush(stdout);
+                printDetectedSignal('4');
                 Received.push_back(4);
             }else if(maxColumn == 1){
-                printf("\r");
-                printf("5");
-                fflush(stdout);
+                printDetectedSignal('5');
                 Received.push_back(5);
             }else if(maxColumn == 2){
-                printf("\r");
-                printf("6");
-                fflush(stdout);
+                printDetectedSignal('6');
                 Received.push_back(6);
             }else if(maxColumn == 3){
-                printf("\r");
-                printf("B");
-                fflush(stdout);
+                printDetectedSignal('B');
                 Received.push_back(11);
             }
         }else if(maxRow == 2){
             if(maxColumn == 0){
-                printf("\r");
-                printf("7");
-                fflush(stdout);
+                printDetectedSignal('7');
                 Received.push_back(7);
             }else if(maxColumn == 1){
-                printf("\r");
-                printf("8");
-                fflush(stdout);
+                printDetectedSignal('8');
                 Received.push_back(8);
             }else if(maxColumn == 2){
-                printf("\r");
-                printf("9");
-                fflush(stdout);
+                printDetectedSignal('9');
                 Received.push_back(9);
             }else if(maxColumn == 3){
-                printf("\r");
-                printf("C");
-                fflush(stdout);
+                printDetectedSignal('C');
                 Received.push_back(12);
             }
         }else if(maxRow == 3){
             if(maxColumn == 0){
-                printf("\r");
-                printf("E");
-                fflush(stdout);
+                printDetectedSignal('E');
                 Received.push_back(14);
             }else if(maxColumn == 1){
-                printf("\r");
-                printf("0");
-                fflush(stdout);
+                printDetectedSignal('0');
                 Received.push_back(0);
             }else if(maxColumn == 2){
-                printf("\r");
-                printf("F");
-                fflush(stdout);
+                printDetectedSignal('F');
                 return true;
             }else if(maxColumn == 3){
-                printf("\r");
-                printf("D");
-                fflush(stdout);
+                printDetectedSignal('D');
                 Received.push_back(13);
             }
         }
     }else if((rowMags[maxRow] < MinMagnitude || columnMags[maxColumn] < MinMagnitude) && LetterReceived){
-        printf("\r");
-        printf("No button pressed");
-        fflush(stdout);
+        printDetectedSignal('N');
         LetterReceived = false;
     }
-
     return false;
+}
+
+
+void Audio::reactOnSignal(){
 
 
 
+    if(direction == 0){
+        direction = Received[0]*16+Received[1];
+        AllReceived.push_back(Received[0]);
+        AllReceived.push_back(Received[1]);
+
+        if(direction == 17){
+            drivingDirection = "Driving forward";
+        }
+
+    }
+    drivingSpeed = Received[2]*16+Received[3];
+    AllReceived.push_back(Received[2]);
+    AllReceived.push_back(Received[3]);
+    Received.pop_back();
+    Received.pop_back();
+    if(drivingSpeed == 0){
+        direction = 0;
+        drivingDirection = "Stopped";
+        Received.pop_back();
+        Received.pop_back();
+    }
+
+
+    if(drivingDirection == "Stopped"){
+        printf("\r");
+        printf("The robot has stopped");
+        fflush(stdout);
+    }else{
+        printf("\r");
+        printf("The robot is driving %s at speed %i",drivingDirection.c_str(),drivingSpeed);
+        fflush(stdout);
+    }
+
+}
+
+
+void Audio::printDetectedSignal(char foundTone){
+    if(printDetectedTones){
+        if(foundTone == 'N'){
+            printf("\r");
+            printf("No button pressed");
+            fflush(stdout);
+        }else{
+            printf("\r");
+            printf("%c", foundTone);
+            fflush(stdout);
+        }
+    }
 }

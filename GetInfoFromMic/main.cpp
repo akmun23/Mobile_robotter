@@ -13,11 +13,11 @@ std::complex<double> dft(std::vector<double> in, int k);
 
 
 int main() {
-    /*
+
     Audio audio;
     audio.Init();
     audio.start();
-    audio.end();*/
+    audio.end();
 
 
 
@@ -103,7 +103,7 @@ int main() {
 
     */
 
-
+    /*
     // Testing the DFT algorithm from a dtmf signal loaded to a file sample rate 48000
     std::ifstream inFile;
 
@@ -135,7 +135,7 @@ int main() {
     }
 
 
-
+    */
     return EXIT_SUCCESS;
 }
 

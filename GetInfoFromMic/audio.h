@@ -133,14 +133,29 @@ public:
 
 
     /**
-    *@brief Method to analyze the output from the Goertzel algorithm and print the results
+    *@brief Method to analyze the output from the Goertzel algorithm and calls ReactOnSignal to store the result
     *
     *@param std::vector<double> mags
     *
-    *@return nothing
+    *@return bool
     *
     */
     static bool analyseGoertzelOutput(std::vector<double> mags);
+
+
+    /**
+    *@brief Method to analyze the output from the Goertzel algorithm and print the results
+    *
+    *@param std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn
+    *
+    *@return bool
+    *
+    */
+    static bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
+
+    static void reactOnSignal();
+
+    static void printDetectedSignal(char foundTone);
 
 };
 

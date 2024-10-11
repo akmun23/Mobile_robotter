@@ -11,6 +11,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 
-add_executable(oioioi main.cpp)
+add_executable(oioioi main.cpp
+        sound.h
+)
 
 target_link_libraries(oioioi sfml-system sfml-window sfml-graphics sfml-network sfml-audio)

@@ -5,7 +5,6 @@
 #include<unistd.h>
 #include "sound.h"
 
-using namespace std;
 
 // DTMF tone frequencies for digits 0-9
 const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
@@ -24,7 +23,7 @@ int mapCharToIndex(char key) {
 
 void playTone(double freq1, double freq2){
     sf::SoundBuffer buffer;
-    vector<sf::Int16> samples;
+    std::vector<sf::Int16> samples;
 
     float amp = 0.5;
 
@@ -44,7 +43,7 @@ void playTone(double freq1, double freq2){
     samples.clear();
 }
 
-void playSequence(const string &sequence) {
+void playSequence(const std::string &sequence) {
     for (char key : sequence) {
         // Convert the character to the corresponding index
         int index = mapCharToIndex(tolower(key));
@@ -54,27 +53,76 @@ void playSequence(const string &sequence) {
             double freq2 = HIGH_FREQ[index];
             playTone(freq1, freq2);
         } else {
-            cout << "Invalid key: " << key << endl;
+            std::cout << "Invalid key: " << key << std::endl;
         }
     }
 }
-
+/*
 int main() {
     while (true) {
         // Ask user for input
-        string sequence;
-        cout << "Enter a sequence of numbers (0-9) or 'q' to quit: ";
-        cin >> sequence;
+        std::string sequence;
+        std::cout << "Enter a sequence of numbers (0-9) or 'q' to quit: ";
+        std::cin >> sequence;
 
         // Check if the user wants to exit
         if (sequence == "q" || sequence == "Q") {
-            cout << "Exiting program." << endl;
+            std::cout << "Exiting program." << std::endl;
             break;
         }
 
         // Play the sequence of tones
         playSequence(sequence);
     }
+
+    return 0;
+}*/
+
+
+int main() {
+
+    std::string sequence = "1159";  // First frame to be send having direction and speed
+    playSequence(sequence);         // Send the frame
+
+    usleep(250000);                 // Delay between speed updates
+
+    sequence = "59";                // Frames from now on only have speed
+    playSequence(sequence);
+
+    usleep(250000);
+
+    sequence = "65";                // New speed
+    playSequence(sequence);
+
+    usleep(250000);
+
+    sequence = "34";                // New speed
+    playSequence(sequence);
+
+    usleep(250000);
+
+    sequence = "00";                // Stop command
+    playSequence(sequence);
+
+    usleep(250000);
+
+    sequence = "1132";                // Stop command
+    playSequence(sequence);
+
+    usleep(250000);
+
+    sequence = "44";                // Stop command
+    playSequence(sequence);
+
+    usleep(250000);
+
+    sequence = "00";                // Stop command
+    playSequence(sequence);
+
+    usleep(250000);
+
+    playSequence("f");
+
 
     return 0;
 }
