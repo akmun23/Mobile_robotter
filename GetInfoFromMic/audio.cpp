@@ -5,14 +5,14 @@ int sampleNumber = 1;                         // To seperate the samples in the 
 bool endProgram = false;                      // To end the program after 30 seconds
 bool LetterReceived = false;
 
+bool startOfMessageReceived = false;
 int direction = 0;
-int speed = 0;
+int drivingSpeed = 0;
 std::vector<int> Received;
 std::vector<int> AllReceived;
 
 // For testing
 std::string drivingDirection = "Stopped";
-int drivingSpeed = 0;
 bool printDetectedTones = false;   // If this is set to true the terminal will display the detected tones as - "Button pressed: tone"
 
 
@@ -69,7 +69,11 @@ void Audio::end(){
     printf("Received:");
 
     for (int i = 0; i < AllReceived.size(); ++i) {
-        printf(" - %d", AllReceived[i]);
+        if(AllReceived[i] == 14){
+            printf("\n New message: %i", AllReceived[i]);
+        }else{
+            printf(" %i ", AllReceived[i]);
+        }
     }
     // Received: - 4 - 8 - 6 - 5 - 6 - 10 - 2 - 0 - 6 - 13 - 6 - 5 - 6 - 4 - 2 - 0 - 6 - 4 - 6 - 9 - 6 - 7
     /*
@@ -210,8 +214,26 @@ int Audio::streamCallback(
         return paAbort;
 
     }else{
-        if(Received.size() == 4){
-            reactOnSignal();
+
+        if(Received.size() == 6){
+            if (Received[0] == 14 && Received[5] == 15){
+                reactOnSignal();
+            }else{
+                printf("\n Invalid message\n");
+                fflush(stdout);
+                // Error handling some sort
+                // Maybe just let the error handling be that the spectrum we set do not use the hex number = to * and #
+            }
+
+            AllReceived.push_back(Received[0]);
+            AllReceived.push_back(Received[1]);
+            AllReceived.push_back(Received[2]);
+            AllReceived.push_back(Received[3]);
+            AllReceived.push_back(Received[4]);
+            AllReceived.push_back(Received[5]);
+
+            Received.clear();
+            startOfMessageReceived = false;
         }
         return paContinue;
     }
@@ -292,9 +314,9 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 
 
 bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 250;
+    int MinMagnitude = 200;
 
-    if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived){
+    if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
 
         if(maxRow == 0){
@@ -320,6 +342,7 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
                 Received.push_back(5);
             }else if(maxColumn == 2){
                 printDetectedSignal('6');
+                return true;
                 Received.push_back(6);
             }else if(maxColumn == 3){
                 printDetectedSignal('B');
@@ -342,13 +365,14 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
         }else if(maxRow == 3){
             if(maxColumn == 0){
                 printDetectedSignal('E');
+                startOfMessageReceived = true;
                 Received.push_back(14);
             }else if(maxColumn == 1){
                 printDetectedSignal('0');
                 Received.push_back(0);
             }else if(maxColumn == 2){
                 printDetectedSignal('F');
-                return true;
+                Received.push_back(15);
             }else if(maxColumn == 3){
                 printDetectedSignal('D');
                 Received.push_back(13);
@@ -358,44 +382,23 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
         printDetectedSignal('N');
         LetterReceived = false;
     }
+
     return false;
 }
 
 
 void Audio::reactOnSignal(){
 
+    drivingSpeed = Received[1]*16+Received[2];
+    direction = Received[3]*16+Received[4];
 
 
-    if(direction == 0){
-        direction = Received[0]*16+Received[1];
-        AllReceived.push_back(Received[0]);
-        AllReceived.push_back(Received[1]);
-
-        if(direction == 17){
-            drivingDirection = "Driving forward";
-        }
-
-    }
-    drivingSpeed = Received[2]*16+Received[3];
-    AllReceived.push_back(Received[2]);
-    AllReceived.push_back(Received[3]);
-    Received.pop_back();
-    Received.pop_back();
     if(drivingSpeed == 0){
-        direction = 0;
-        drivingDirection = "Stopped";
-        Received.pop_back();
-        Received.pop_back();
-    }
-
-
-    if(drivingDirection == "Stopped"){
         printf("\r");
         printf("The robot has stopped");
         fflush(stdout);
     }else{
-        printf("\r");
-        printf("The robot is driving %s at speed %i",drivingDirection.c_str(),drivingSpeed);
+        printf("\n The robot is driving in direction %i at speed %i \n",direction,drivingSpeed);
         fflush(stdout);
     }
 
@@ -405,9 +408,9 @@ void Audio::reactOnSignal(){
 void Audio::printDetectedSignal(char foundTone){
     if(printDetectedTones){
         if(foundTone == 'N'){
-            printf("\r");
-            printf("No button pressed");
-            fflush(stdout);
+            //printf("\r");
+            //printf("No button pressed");
+            //fflush(stdout);
         }else{
             printf("\r");
             printf("%c", foundTone);
