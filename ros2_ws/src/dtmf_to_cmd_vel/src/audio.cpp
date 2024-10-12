@@ -225,6 +225,7 @@ int Audio::streamCallback(
             }else{
                 printf("\n Invalid message\n");
                 fflush(stdout);
+                dtmfNode->publishTwistMessage(128, 128);
                 // Error handling some sort
                 // Maybe just let the error handling be that the spectrum we set do not use the hex number = to * and #
             }
@@ -346,7 +347,6 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
                 Received.push_back(5);
             }else if(maxColumn == 2){
                 printDetectedSignal('6');
-                return true;
                 Received.push_back(6);
             }else if(maxColumn == 3){
                 printDetectedSignal('B');
@@ -396,12 +396,12 @@ void Audio::reactOnSignal(){
     drivingSpeed = (Received[1]*16+Received[2]);
     direction = (Received[3]*16+Received[4]);
 
-    if(drivingSpeed == 0){
+    if(drivingSpeed == 128 && direction == 128){
         printf("\r");
         printf("The robot has stopped");
         fflush(stdout);
     }else{
-        printf("\n The robot is driving in direction %i at speed %i \n",direction,drivingSpeed);
+        printf("\n The robot is driving at speed %i in direction %i \n",drivingSpeed, direction);
         fflush(stdout);
     }
     

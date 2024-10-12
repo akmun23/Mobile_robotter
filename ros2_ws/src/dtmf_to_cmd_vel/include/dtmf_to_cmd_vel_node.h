@@ -16,6 +16,8 @@ private:
 public:
     DtmfToCmdVelNode(); // Constructor
     void publishTwistMessage(int speed, int direction);
+    void testLinearOnly(int speed);
+    void testAngularOnly(int direction);
 };
 
 #endif // DTMF_TO_CMD_VEL_NODE_H

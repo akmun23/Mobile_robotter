@@ -1,0 +1,5 @@
+[0.010s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.047s] [35m[1mConsolidate compiler generated dependencies of target controller_input[0m
+[0.062s] [ 50%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/main.cpp.o[0m
+[6.569s] [100%] [32m[1mLinking CXX executable controller_input[0m
+[6.874s] [100%] Built target controller_input
