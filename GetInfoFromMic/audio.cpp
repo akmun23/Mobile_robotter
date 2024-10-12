@@ -11,6 +11,9 @@ int drivingSpeed = 0;
 std::vector<int> Received;
 std::vector<int> AllReceived;
 
+// ROS Variables
+ros::Publisher cmdVelPub;
+
 // For testing
 std::string drivingDirection = "Stopped";
 bool printDetectedTones = false;   // If this is set to true the terminal will display the detected tones as - "Button pressed: tone"
@@ -392,6 +395,9 @@ void Audio::reactOnSignal(){
     drivingSpeed = Received[1]*16+Received[2];
     direction = Received[3]*16+Received[4];
 
+ 	// Convert back to -1.0 to 1.0 
+	float linearSpeed = (static_cast<float>(drivingSpeed) / 255.0) * 2.0 - 1.0;
+	float angularSpeed = (static_cast<float>(direction) / 255.0) * 2.0 - 1.0;
 
     if(drivingSpeed == 0){
         printf("\r");
@@ -401,7 +407,12 @@ void Audio::reactOnSignal(){
         printf("\n The robot is driving in direction %i at speed %i \n",direction,drivingSpeed);
         fflush(stdout);
     }
-
+    
+    // Publish to cmd_vel topic
+    geometry_msgs::Twist twistMsg;
+    twistMsg.linear.x = linearSpeed;
+    twistMsg.angular.z = angularSpeed;
+    cmdVelPub.publish(twistMsg);
 }
 
 

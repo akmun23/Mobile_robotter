@@ -76,75 +76,77 @@ void playDTMFSequence(uint8_t linear_value, uint8_t angular_value) {
 class ControllerInput : public rclcpp::Node
 {
 private:
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_;
-    rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_subscriber_;
-    rclcpp::TimerBase::SharedPtr timer_;
+    // rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr _publisher;
+    rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr _joySubscriber;
+    rclcpp::TimerBase::SharedPtr _timer;
 
     // Member variables to store the latest joystick values
-    uint8_t latest_linear_value_ = 0;
-    uint8_t latest_angular_value_ = 0;
+    uint8_t _latestLinearValue = 0;
+    uint8_t _latestAngularValue = 0;
 
     // Previous values to detect changes
-    uint8_t previous_linear_value_ = 0;
-    uint8_t previous_angular_value_ = 0;
+    uint8_t _previousLinearValue = 0;
+    uint8_t _previousAngularValue = 0;
 
     // Boolean flag to check if the joystick is active
-    bool joystick_active_ = false;
+    bool _joystickActive = false;
 
-    void joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg)
-    {
-        // Map joystick values to the range [0, 255]
-        uint8_t linear_value = mapAxisToByte(msg->axes[1]);  // Linear velocity value
-        uint8_t angular_value = mapAxisToByte(msg->axes[0]); // Angular velocity value
-
-        // Update the active status based on whether any joystick axes are non-zero
-        joystick_active_ = (msg->axes[0] != 0.0f || msg->axes[1] != 0.0f);
-
-        // Save the values to member variables for use in the timer callback
-        latest_linear_value_ = linear_value;
-        latest_angular_value_ = angular_value;
-
-        // Create a Twist message for the robot
-        geometry_msgs::msg::Twist twist_msg;
-        twist_msg.linear.x = (static_cast<float>(linear_value) / 255.0) * 2.0 - 1.0;  // Convert back to -1.0 to 1.0
-        twist_msg.angular.z = (static_cast<float>(angular_value) / 255.0) * 2.0 - 1.0; // Convert back to -1.0 to 1.0
-        publisher_->publish(twist_msg);
-    }
-
-    void play_dtmf_if_active() {
-        // Check if the joystick values have changed, including changing to zero
-        if (latest_linear_value_ != previous_linear_value_ || latest_angular_value_ != previous_angular_value_) {
-            // Debug print to show the mapped values
-            std::cout << "Playing DTMF for Linear Value: " << static_cast<int>(latest_linear_value_)
-                      << ", Angular Value: " << static_cast<int>(latest_angular_value_) << std::endl;
-
-            // Play the DTMF sequence if joystick is active or has changed to zero
-            if (joystick_active_ || latest_linear_value_ != 0 || latest_angular_value_ != 0) {
-                playDTMFSequence(latest_linear_value_, latest_angular_value_);
-            }
-
-            // Update the previous values after playing the sequence
-            previous_linear_value_ = latest_linear_value_;
-            previous_angular_value_ = latest_angular_value_;
-        }
-    }
 
 public:
     ControllerInput()
         : Node("controller_input")
     {
         // Create a publisher for cmd_vel
-        publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
+        // _publisher = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
 
         // Subscribe to the joystick messages
-        joy_subscriber_ = this->create_subscription<sensor_msgs::msg::Joy>(
+        _joySubscriber = this->create_subscription<sensor_msgs::msg::Joy>(
             "joy", 10, std::bind(&ControllerInput::joy_callback, this, std::placeholders::_1));
 
         // Initialize the timer to call the play_dtmf_if_active function every 1 second
-        timer_ = this->create_wall_timer(
+        _timer = this->create_wall_timer(
             std::chrono::seconds(1),
             std::bind(&ControllerInput::play_dtmf_if_active, this)
             );
+    }
+    
+    void joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
+        // Map joystick values to the range [0, 255]
+        uint8_t linear_value = mapAxisToByte(msg->axes[1]);  // Linear velocity value
+        uint8_t angular_value = mapAxisToByte(msg->axes[0]); // Angular velocity value
+
+        // Update the active status based on whether any joystick axes are non-zero
+        _joystickActive = (msg->axes[0] != 0.0f || msg->axes[1] != 0.0f);
+
+        // Save the values to member variables for use in the timer callback
+        _latestLinearValue = linear_value;
+        _latestAngularValue = angular_value;
+
+		/*
+        // Create a Twist message for the robot
+        geometry_msgs::msg::Twist twist_msg;
+        twist_msg.linear.x = (static_cast<float>(linear_value) / 255.0) * 2.0 - 1.0;  // Convert back to -1.0 to 1.0
+        twist_msg.angular.z = (static_cast<float>(angular_value) / 255.0) * 2.0 - 1.0; // Convert back to -1.0 to 1.0
+        _publisher->publish(twist_msg);
+        */
+    }
+
+    void play_dtmf_if_active() {
+        // Check if the joystick values have changed, including changing to zero
+        if (_latestLinearValue != _previousLinearValue || _latestAngularValue != _previousAngularValue) {
+            // Debug print to show the mapped values
+            std::cout << "Playing DTMF for Linear Value: " << static_cast<int>(_latestLinearValue)
+                      << ", Angular Value: " << static_cast<int>(_latestAngularValue) << std::endl;
+
+            // Play the DTMF sequence if joystick is active or has changed to zero
+            if (_joystickActive || _latestLinearValue != 0 || _latestAngularValue != 0) {
+                playDTMFSequence(_latestLinearValue, _latestAngularValue);
+            }
+
+            // Update the previous values after playing the sequence
+            _previousLinearValue = _latestLinearValue;
+            _previousAngularValue = _latestAngularValue;
+        }
     }
 };
 

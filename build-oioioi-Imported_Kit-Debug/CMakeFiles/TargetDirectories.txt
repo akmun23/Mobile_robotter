@@ -1,3 +1,0 @@
-/home/aksel/Documents/GitHub/Mobile_robotter/build-oioioi-Imported_Kit-Debug/CMakeFiles/oioioi.dir
-/home/aksel/Documents/GitHub/Mobile_robotter/build-oioioi-Imported_Kit-Debug/CMakeFiles/edit_cache.dir
-/home/aksel/Documents/GitHub/Mobile_robotter/build-oioioi-Imported_Kit-Debug/CMakeFiles/rebuild_cache.dir
