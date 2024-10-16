@@ -180,7 +180,6 @@ int Audio::streamCallback(
 
     }
 
-    /*
     // Print the magnitudes of the tones
     printf("\r");
     printf("Tones: ");
@@ -207,7 +206,7 @@ int Audio::streamCallback(
     printf("    ");
     printf("%d ", tones[7]);
     printf("%f ", mags[7]);
-    fflush(stdout);*/
+    fflush(stdout);
 
     if(analyseGoertzelOutput(mags)){
         endProgram = true;
