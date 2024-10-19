@@ -39,7 +39,6 @@ class Audio
 private:
 
     PaError err;
-    PaStream* stream;
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
 
@@ -153,9 +152,16 @@ public:
     */
     static bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
 
-    static void reactOnSignal();
 
-    static void printDetectedSignal(char foundTone);
+    /**
+    *@brief Method to update the robots speed and direction according to the new message
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    static void reactOnSignal();
 
 };
 
