@@ -1,6 +1,8 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
+#include <thread>
+#include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <cstring>
@@ -44,8 +46,6 @@ private:
 
 public:
     Audio();
-    Audio(PaError err, PaStream* stream);
-
     /**
     *@brief Method to check for errors in PortAudio functions
     *
@@ -67,6 +67,16 @@ public:
     */
     static inline float min(float a, float b);
 
+    /**
+    *@brief Method to initialize PortAudio and allocate memory for the input buffer
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void Init();
+
 
     /**
     *@brief Method to start the audio stream and record audio for a specified amount of time (RecordTimeMs)
@@ -77,20 +87,6 @@ public:
     *
     */
     void start();
-
-
-
-    /**
-    *@brief Method to end the audio stream and free allocated resources
-    *
-    *@param nothing
-    *
-    *@return nothing
-    *
-    */
-    void end();
-
-
 
     /**
     *@brief Get the audio devices accessible to PortAudio and their specifications
@@ -120,16 +116,8 @@ public:
         void* userData
         );
 
-    /**
-    *@brief Method to initialize PortAudio and allocate memory for the input buffer
-    *
-    *@param nothing
-    *
-    *@return nothing
-    *
-    */
-    void Init();
 
+    static void calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator);
 
     /**
     *@brief Method to analyze the output from the Goertzel algorithm and calls ReactOnSignal to store the result
@@ -162,6 +150,18 @@ public:
     *
     */
     static void reactOnSignal();
+
+    /**
+    *@brief Method to end the audio stream and free allocated resources
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void end();
+
+
 
 };
 
