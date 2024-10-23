@@ -1,7 +1,5 @@
 #include "audio.h"
 
-std::ofstream outputFile("AudioOutput.txt");  // Open/create a file named "test.txt" for writing
-int sampleNumber = 1;                         // To seperate the samples in the file
 bool endProgram = false;                      // To end the program after 30 seconds
 bool LetterReceived = false;
 
@@ -9,15 +7,7 @@ bool startOfMessageReceived = false;
 int direction = 0;
 int drivingSpeed = 0;
 std::vector<int> Received;
-std::vector<int> AllReceived;
-
 DtmfToCmdVelNode* Audio::dtmfNode = nullptr;
-
-// For testing
-std::string drivingDirection = "Stopped";
-bool printDetectedTones = false;   // If this is set to true the terminal will display the detected tones as - "Button pressed: tone"
-
-Audio::Audio() {}
 
 void Audio::checkErr(PaError err) {
     if (err != paNoError) {
@@ -47,10 +37,10 @@ void Audio::Init(){
     // Define stream capture specifications
     memset(&inputParameters, 0, sizeof(inputParameters));
     inputParameters.channelCount = NUM_CHANNELS;
-    inputParameters.device = Pa_GetDefaultInputDevice();
+    inputParameters.device = 0;
     inputParameters.hostApiSpecificStreamInfo = nullptr;
     inputParameters.sampleFormat = paFloat32;
-    inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
+    inputParameters.suggestedLatency = Pa_GetDeviceInfo(0)->defaultLowInputLatency;
 
     // Open the PortAudio stream
     err = Pa_OpenStream(
@@ -259,7 +249,6 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
             }else if(maxColumn == 1){
                 Received.push_back(5);
             }else if(maxColumn == 2){
-                return true;
                 Received.push_back(6);
             }else if(maxColumn == 3){
                 Received.push_back(11);
