@@ -11,7 +11,7 @@ int drivingSpeed = 0;
 std::vector<int> Received;
 
 // ROS Variables
-//ros::Publisher cmdVelPub;
+ros::Publisher cmdVelPub;
 
 
 Audio::Audio() {}
@@ -291,11 +291,11 @@ void Audio::reactOnSignal(){
     }
 
     // Publish to cmd_vel topic
-    /*
+
     geometry_msgs::Twist twistMsg;
     twistMsg.linear.x = linearSpeed;
     twistMsg.angular.z = angularSpeed;
-    cmdVelPub.publish(twistMsg);*/
+    cmdVelPub.publish(twistMsg);
 }
 
 void Audio::end(){
