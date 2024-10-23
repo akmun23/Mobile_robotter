@@ -28,7 +28,43 @@ void Audio::checkErr(PaError err) {
 
 inline float Audio::min(float a, float b) {
      return a < b ? a : b;
- }
+}
+
+void Audio::Init(){
+
+    // Initialize PortAudio
+    err = Pa_Initialize();
+    checkErr(err);
+
+    // Allocate and define the callback data
+    spectroData = (streamCallbackData*)malloc(sizeof(streamCallbackData));
+    spectroData->in = (double*)malloc(sizeof(double) * FRAMES_PER_BUFFER);
+    if (spectroData->in == nullptr) {
+        printf("Could not allocate spectro data\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Define stream capture specifications
+    memset(&inputParameters, 0, sizeof(inputParameters));
+    inputParameters.channelCount = NUM_CHANNELS;
+    inputParameters.device = Pa_GetDefaultInputDevice();
+    inputParameters.hostApiSpecificStreamInfo = nullptr;
+    inputParameters.sampleFormat = paFloat32;
+    inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
+
+    // Open the PortAudio stream
+    err = Pa_OpenStream(
+        &stream,
+        &inputParameters,
+        nullptr,
+        SAMPLE_RATE,
+        FRAMES_PER_BUFFER,
+        paNoFlag,
+        streamCallback,
+        spectroData
+        );
+    checkErr(err);
+}
 
 void Audio::start(){
 
@@ -36,57 +72,9 @@ void Audio::start(){
     err = Pa_StartStream(stream);
     checkErr(err);
 
-    // Wait 30 seconds (PortAudio will continue to capture audio)
-    // Pa_Sleep(RecordTimeMs);
-
     while (!endProgram) {
 
     }
-
-    // Close the file
-    // outputFile.close();  // Close the file after writing
-
-}
-
-void Audio::end(){
-
-    // Stop capturing audio
-    err = Pa_StopStream(stream);
-    checkErr(err);
-
-    // Close the PortAudio stream
-    err = Pa_CloseStream(stream);
-    checkErr(err);
-
-    // Terminate PortAudio
-    err = Pa_Terminate();
-    checkErr(err);
-
-    // Free allocated resources used for FFT calculation
-    free(spectroData);
-    printf("\n");
-
-    printf("Received:");
-
-    for (size_t i = 0; i < AllReceived.size(); ++i) {
-        if(AllReceived[i] == 14){
-            printf("\n New message: %i", AllReceived[i]);
-        }else{
-            printf(" %i ", AllReceived[i]);
-        }
-    }
-    // Received: - 4 - 8 - 6 - 5 - 6 - 10 - 2 - 0 - 6 - 13 - 6 - 5 - 6 - 4 - 2 - 0 - 6 - 4 - 6 - 9 - 6 - 7
-    /*
-    printf("\r");
-    for (int i = 1; i < Received.size(); i+=2){
-        char c = Received[i-1]*16 + Received[i];
-        printf("%c",c);
-    }*/
-    fflush(stdout);
-    printf("\n");
-
-
-
 }
 
 void Audio::getDevices(){
@@ -113,9 +101,6 @@ void Audio::getDevices(){
     }
 }
 
-
-
-
 int Audio::streamCallback(
     const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
     const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
@@ -129,62 +114,28 @@ int Audio::streamCallback(
     // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
     float* in = (float*)inputBuffer;
 
-    // Cast our user data to streamCallbackData* so we can access its struct members
-    streamCallbackData* callbackData = (streamCallbackData*)userData;
-
-    /*
-    // Write the audio samples to the file
-    if (outputFile.is_open()) {  // Check if the file was successfully opened
-
-        // Write the sample number to the file
-        outputFile << "Sample " << sampleNumber << ":\n";
-
-        for (unsigned long i = 0; i < framesPerBuffer; i++) {
-
-            // Write some text into the file
-            outputFile << in[i * NUM_CHANNELS] << "\n";  // Write the audio sample to the file
-
-        }
-    }else {
-        std::cout << "Failed to create the file." << std::endl;  // Display an error message if file creation failed
-    }
-
-    sampleNumber++;  // Increment the sample number for the
-    outputFile << "\n" << "\n";  // Write a newline character to the file*/
-
-    for (unsigned long i = 0; i < framesPerBuffer; i++) {
-        callbackData->in[i] = in[i * NUM_CHANNELS];
-    }
-    double pi = 3.14159265358979323846;
-
     std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
     std::vector<double> mags(tones.size());
 
-    for (size_t i = 0; i < tones.size(); ++i) {
+	std::thread t0(calculateGoertzel, tones[0], in, std::ref(mags), 0);
+    std::thread t1(calculateGoertzel, tones[1], in, std::ref(mags), 1);
+    std::thread t2(calculateGoertzel, tones[2], in, std::ref(mags), 2);
+    std::thread t3(calculateGoertzel, tones[3], in, std::ref(mags), 3);
+    std::thread t4(calculateGoertzel, tones[4], in, std::ref(mags), 4);
+    std::thread t5(calculateGoertzel, tones[5], in, std::ref(mags), 5);
+    std::thread t6(calculateGoertzel, tones[6], in, std::ref(mags), 6);
+    std::thread t7(calculateGoertzel, tones[7], in, std::ref(mags), 7);
 
-        double k0 = FRAMES_PER_BUFFER*tones[i]/SAMPLE_RATE;
+    t0.join();
+    t1.join();
+    t2.join();
+    t3.join();
+    t4.join();
+    t5.join();
+    t6.join();
+    t7.join();
 
-        double omega_I = cos(2*pi*k0/FRAMES_PER_BUFFER);
-        double omega_Q = sin(2*pi*k0/FRAMES_PER_BUFFER);
-        double v1 = 0;
-        double v2 = 0;
-        for (int n = 0; n < FRAMES_PER_BUFFER; ++n) {
-            double v  = 2*omega_I*v1 - v2 + callbackData->in[n];
-            v2 = v1;
-            v1 = v;
-        }
-
-
-        double y_I = v1 - omega_I * v2;
-        double y_Q = omega_Q * v2;
-
-        mags[i] = sqrt(y_I*y_I + y_Q*y_Q);
-
-        //mags[i] = v1*v1 + v2*v2-v1*v2*(2*omega_I);
-
-    }
-
-    /*
+    
     // Print the magnitudes of the tones
     printf("\r");
     printf("Tones: ");
@@ -211,7 +162,7 @@ int Audio::streamCallback(
     printf("    ");
     printf("%d ", tones[7]);
     printf("%f ", mags[7]);
-    fflush(stdout);*/
+    fflush(stdout);
 
     if(analyseGoertzelOutput(mags)){
         endProgram = true;
@@ -226,16 +177,7 @@ int Audio::streamCallback(
                 printf("\n Invalid message\n");
                 fflush(stdout);
                 dtmfNode->publishTwistMessage(128, 128);
-                // Error handling some sort
-                // Maybe just let the error handling be that the spectrum we set do not use the hex number = to * and #
             }
-
-            AllReceived.push_back(Received[0]);
-            AllReceived.push_back(Received[1]);
-            AllReceived.push_back(Received[2]);
-            AllReceived.push_back(Received[3]);
-            AllReceived.push_back(Received[4]);
-            AllReceived.push_back(Received[5]);
 
             Received.clear();
             startOfMessageReceived = false;
@@ -245,50 +187,27 @@ int Audio::streamCallback(
 
 }
 
+void Audio::calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator) {
+    double twoPi = 2*3.14159265358979323846;
 
+    double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
 
-
-
-void Audio::Init(){
-
-    // Initialize PortAudio
-    err = Pa_Initialize();
-    checkErr(err);
-
-    // Allocate and define the callback data
-    spectroData = (streamCallbackData*)malloc(sizeof(streamCallbackData));
-    spectroData->in = (double*)malloc(sizeof(double) * FRAMES_PER_BUFFER);
-    if (spectroData->in == NULL) {
-        printf("Could not allocate spectro data\n");
-        exit(EXIT_FAILURE);
+    double omega_I = cos(twoPi*k0/FRAMES_PER_BUFFER);
+    double omega_Q = sin(twoPi*k0/FRAMES_PER_BUFFER);
+    double v1 = 0;
+    double v2 = 0;
+    for (int n = 0; n < FRAMES_PER_BUFFER; ++n) {
+        double v  = 2*omega_I*v1 - v2 + in[n * NUM_CHANNELS];
+        v2 = v1;
+        v1 = v;
     }
 
-    // Define stream capture specifications
-    memset(&inputParameters, 0, sizeof(inputParameters));
-    inputParameters.channelCount = NUM_CHANNELS;
-    inputParameters.device = Pa_GetDefaultInputDevice();
-    inputParameters.hostApiSpecificStreamInfo = NULL;
-    inputParameters.sampleFormat = paFloat32;
-    inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
 
-    // Open the PortAudio stream
-    err = Pa_OpenStream(
-        &stream,
-        &inputParameters,
-        NULL,
-        SAMPLE_RATE,
-        FRAMES_PER_BUFFER,
-        paNoFlag,
-        streamCallback,
-        spectroData
-        );
-    checkErr(err);
+    double y_I = v1 - omega_I * v2;
+    double y_Q = omega_Q * v2;
+
+    mags[magsIterator] = sqrt(y_I*y_I + y_Q*y_Q);
 }
-
-
-
-
-
 
 bool Audio::analyseGoertzelOutput(std::vector<double> mags){
     std::vector<double> rowMags = {mags[0], mags[1], mags[2], mags[3]};
@@ -319,77 +238,60 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 
 
 bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 200;
+    int MinMagnitude = 2;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
 
         if(maxRow == 0){
             if(maxColumn == 0){
-                printDetectedSignal('1');
                 Received.push_back(1);
             }else if(maxColumn == 1){
-                printDetectedSignal('2');
                 Received.push_back(2);
             }else if(maxColumn == 2){
-                printDetectedSignal('3');
                 Received.push_back(3);
             }else if(maxColumn == 3){
-                printDetectedSignal('A');
                 Received.push_back(10);
             }
         }else if(maxRow == 1){
             if(maxColumn == 0){
-                printDetectedSignal('4');
                 Received.push_back(4);
             }else if(maxColumn == 1){
-                printDetectedSignal('5');
                 Received.push_back(5);
             }else if(maxColumn == 2){
-                printDetectedSignal('6');
+                return true;
                 Received.push_back(6);
             }else if(maxColumn == 3){
-                printDetectedSignal('B');
                 Received.push_back(11);
             }
         }else if(maxRow == 2){
             if(maxColumn == 0){
-                printDetectedSignal('7');
                 Received.push_back(7);
             }else if(maxColumn == 1){
-                printDetectedSignal('8');
                 Received.push_back(8);
             }else if(maxColumn == 2){
-                printDetectedSignal('9');
                 Received.push_back(9);
             }else if(maxColumn == 3){
-                printDetectedSignal('C');
                 Received.push_back(12);
             }
         }else if(maxRow == 3){
             if(maxColumn == 0){
-                printDetectedSignal('E');
                 startOfMessageReceived = true;
                 Received.push_back(14);
             }else if(maxColumn == 1){
-                printDetectedSignal('0');
                 Received.push_back(0);
             }else if(maxColumn == 2){
-                printDetectedSignal('F');
                 Received.push_back(15);
             }else if(maxColumn == 3){
-                printDetectedSignal('D');
                 Received.push_back(13);
             }
         }
     }else if((rowMags[maxRow] < MinMagnitude || columnMags[maxColumn] < MinMagnitude) && LetterReceived){
-        printDetectedSignal('N');
         LetterReceived = false;
     }
 
     return false;
 }
-
 
 void Audio::reactOnSignal(){
 
@@ -412,17 +314,20 @@ void Audio::reactOnSignal(){
     
 }
 
+void Audio::end(){
 
-void Audio::printDetectedSignal(char foundTone){
-    if(printDetectedTones){
-        if(foundTone == 'N'){
-            //printf("\r");
-            //printf("No button pressed");
-            //fflush(stdout);
-        }else{
-            printf("\r");
-            printf("%c", foundTone);
-            fflush(stdout);
-        }
-    }
+    // Stop capturing audio
+    err = Pa_StopStream(stream);
+    checkErr(err);
+
+    // Close the PortAudio stream
+    err = Pa_CloseStream(stream);
+    checkErr(err);
+
+    // Terminate PortAudio
+    err = Pa_Terminate();
+    checkErr(err);
+
+    // Free allocated resources used for FFT calculation
+    free(spectroData);
 }

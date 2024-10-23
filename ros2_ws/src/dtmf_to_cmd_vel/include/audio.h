@@ -47,7 +47,6 @@ private:
     
 public:
     Audio();
-    Audio(PaError err, PaStream* stream);
 
     /**
     *@brief Method to check for errors in PortAudio functions
@@ -132,6 +131,8 @@ public:
     *
     */
     void Init();
+    
+    static void calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator);
 
 
     /**
@@ -156,8 +157,6 @@ public:
     static bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
 
     static void reactOnSignal();
-
-    static void printDetectedSignal(char foundTone);
     
     static void setDtmfNode(DtmfToCmdVelNode* node) {
         dtmfNode = node;

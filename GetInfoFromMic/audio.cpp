@@ -10,9 +10,6 @@ int direction = 0;
 int drivingSpeed = 0;
 std::vector<int> Received;
 
-// ROS Variables
-ros::Publisher cmdVelPub;
-
 
 Audio::Audio() {}
 
@@ -45,7 +42,7 @@ void Audio::Init(){
     memset(&inputParameters, 0, sizeof(inputParameters));
     inputParameters.channelCount = NUM_CHANNELS;
     inputParameters.device = Pa_GetDefaultInputDevice();
-    inputParameters.hostApiSpecificStreamInfo = NULL;
+    inputParameters.hostApiSpecificStreamInfo = nullptr;
     inputParameters.sampleFormat = paFloat32;
     inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
 
@@ -53,7 +50,7 @@ void Audio::Init(){
     err = Pa_OpenStream(
         &stream,
         &inputParameters,
-        NULL,
+        nullptr,
         SAMPLE_RATE,
         FRAMES_PER_BUFFER,
         paNoFlag,
