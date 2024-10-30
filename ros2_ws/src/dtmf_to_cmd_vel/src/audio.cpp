@@ -7,6 +7,12 @@ bool startOfMessageReceived = false;
 int direction = 0;
 int drivingSpeed = 0;
 std::vector<int> Received;
+double clockStart = clock();
+double clockEnd;
+double timeToSendMessage = ((136+250)*5+136)/1000;  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
+
+
+
 DtmfToCmdVelNode* Audio::dtmfNode = nullptr;
 
 void Audio::checkErr(PaError err) {
@@ -159,18 +165,26 @@ int Audio::streamCallback(
         return paAbort;
 
     }else{
+        clockEnd = clock();
 
-        if(Received.size() == 6){
-            if (Received[0] == 14 && Received[5] == 15){
+        if(((clockEnd - clockStart)/CLOCKS_PER_SEC > timeToSendMessage)  && (Received.size() < 6)){
+            printf("\n Message timed out \n");
+            fflush(stdout);
+            Received.clear();
+            startOfMessageReceived = false;
+            clockStart = clock();
+
+        }else if(Received.size() == 6){
+            if((Received[0] == 14 && Received[5] == 15) && ((clockEnd - clockStart)/CLOCKS_PER_SEC < timeToSendMessage)){
                 reactOnSignal();
             }else{
-                printf("\n Invalid message\n");
+                printf("\n Invalid message \n");
                 fflush(stdout);
-                dtmfNode->publishTwistMessage(128, 128);
             }
 
             Received.clear();
             startOfMessageReceived = false;
+            clockStart = clock();
         }
         return paContinue;
     }
@@ -249,6 +263,7 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
             }else if(maxColumn == 1){
                 Received.push_back(5);
             }else if(maxColumn == 2){
+                return true;
                 Received.push_back(6);
             }else if(maxColumn == 3){
                 Received.push_back(11);
@@ -265,6 +280,9 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
             }
         }else if(maxRow == 3){
             if(maxColumn == 0){
+                if(!startOfMessageReceived){
+                    clockStart = clock();
+                }
                 startOfMessageReceived = true;
                 Received.push_back(14);
             }else if(maxColumn == 1){
