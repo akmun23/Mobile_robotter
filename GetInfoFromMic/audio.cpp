@@ -13,9 +13,6 @@ double clockStart = clock();
 double clockEnd;
 double timeToSendMessage = ((136+250)*5+136)/1000;  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
 
-// ROS Variables
-//ros::Publisher cmdVelPub;
-
 
 Audio::Audio() {}
 
@@ -48,7 +45,7 @@ void Audio::Init(){
     memset(&inputParameters, 0, sizeof(inputParameters));
     inputParameters.channelCount = NUM_CHANNELS;
     inputParameters.device = Pa_GetDefaultInputDevice();
-    inputParameters.hostApiSpecificStreamInfo = NULL;
+    inputParameters.hostApiSpecificStreamInfo = nullptr;
     inputParameters.sampleFormat = paFloat32;
     inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
 
@@ -56,7 +53,7 @@ void Audio::Init(){
     err = Pa_OpenStream(
         &stream,
         &inputParameters,
-        NULL,
+        nullptr,
         SAMPLE_RATE,
         FRAMES_PER_BUFFER,
         paNoFlag,
