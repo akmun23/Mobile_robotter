@@ -9,9 +9,12 @@ bool startOfMessageReceived = false;
 int direction = 0;
 int drivingSpeed = 0;
 std::vector<int> Received;
+double clockStart = clock();
+double clockEnd;
+double timeToSendMessage = ((136+250)*5+136)/1000;  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
 
 // ROS Variables
-ros::Publisher cmdVelPub;
+//ros::Publisher cmdVelPub;
 
 
 Audio::Audio() {}
@@ -147,6 +150,10 @@ int Audio::streamCallback(
     printf("%f seconds --- 697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f",((float)end - start)/CLOCKS_PER_SEC, mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
     fflush(stdout);
     */
+    printf("\r");
+    printf("CLOCKS PER SEC %ld ------- ", CLOCKS_PER_SEC);
+    printf("697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f", mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
+    fflush(stdout);
 
 
     if(analyseGoertzelOutput(mags)){
@@ -154,16 +161,26 @@ int Audio::streamCallback(
         return paAbort;
 
     }else{
+        clockEnd = clock();
 
-        if(Received.size() == 6){
-            if (Received[0] == 14 && Received[5] == 15){
-                reactOnSignal();
-            }else{
-                printf("\n Invalid message\n");
-                fflush(stdout);
-            }
+        if(((clockEnd - clockStart)/CLOCKS_PER_SEC > timeToSendMessage)  && (Received.size() < 6)){
+            printf("\n Message timed out \n");
+            fflush(stdout);
             Received.clear();
             startOfMessageReceived = false;
+            clockStart = clock();
+
+        }else if(Received.size() == 6){
+            if((Received[0] == 14 && Received[5] == 15) && ((clockEnd - clockStart)/CLOCKS_PER_SEC < timeToSendMessage)){
+                reactOnSignal();
+            }else{
+                printf("\n Invalid message \n");
+                fflush(stdout);
+            }
+
+            Received.clear();
+            startOfMessageReceived = false;
+            clockStart = clock();
         }
         return paContinue;
     }
@@ -255,6 +272,9 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
             }
         }else if(maxRow == 3){
             if(maxColumn == 0){
+                if(!startOfMessageReceived){
+                    clockStart = clock();
+                }
                 startOfMessageReceived = true;
                 Received.push_back(14);
             }else if(maxColumn == 1){
@@ -291,11 +311,12 @@ void Audio::reactOnSignal(){
     }
 
     // Publish to cmd_vel topic
-
+    /*
     geometry_msgs::Twist twistMsg;
     twistMsg.linear.x = linearSpeed;
     twistMsg.angular.z = angularSpeed;
     cmdVelPub.publish(twistMsg);
+    */
 }
 
 void Audio::end(){
