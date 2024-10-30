@@ -43,10 +43,10 @@ void Audio::Init(){
     // Define stream capture specifications
     memset(&inputParameters, 0, sizeof(inputParameters));
     inputParameters.channelCount = NUM_CHANNELS;
-    inputParameters.device = 0;
+    inputParameters.device = Pa_GetDefaultInputDevice();
     inputParameters.hostApiSpecificStreamInfo = nullptr;
     inputParameters.sampleFormat = paFloat32;
-    inputParameters.suggestedLatency = Pa_GetDeviceInfo(0)->defaultLowInputLatency;
+    inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
 
     // Open the PortAudio stream
     err = Pa_OpenStream(
