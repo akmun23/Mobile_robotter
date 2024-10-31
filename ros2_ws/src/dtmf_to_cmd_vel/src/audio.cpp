@@ -167,7 +167,7 @@ int Audio::streamCallback(
     }else{
         clockEnd = clock();
 
-        if(((clockEnd - clockStart)/CLOCKS_PER_SEC > timeToSendMessage)  && (Received.size() < 6)){
+        if(((clockEnd - clockStart)/CLOCKS_PER_SEC > timeToSendMessage)  && (Received.size() < 6) && (Received.size() > 0)){
             printf("\n Message timed out \n");
             fflush(stdout);
             Received.clear();
