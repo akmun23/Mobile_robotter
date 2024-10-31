@@ -173,6 +173,7 @@ int Audio::streamCallback(
             Received.clear();
             startOfMessageReceived = false;
             clockStart = clock();
+	    dtmfNode->publishTwistMessage(128, 128);
 
         }else if(Received.size() == 6){
             if((Received[0] == 14 && Received[5] == 15) && ((clockEnd - clockStart)/CLOCKS_PER_SEC < timeToSendMessage)){
@@ -180,6 +181,7 @@ int Audio::streamCallback(
             }else{
                 printf("\n Invalid message \n");
                 fflush(stdout);
+		dtmfNode->publishTwistMessage(128, 128);
             }
 
             Received.clear();
