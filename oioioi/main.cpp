@@ -5,10 +5,30 @@
 #include<unistd.h>
 #include "sound.h"
 
-
+std::vector<double> AmplitudeFading;
+int SamplesPerFrame = 6000;
 // DTMF tone frequencies for digits 0-9
 const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
 const int HIGH_FREQ[16] = {1336, 1209, 1336, 1477, 1209, 1336, 1477, 1209, 1336, 1477, 1633, 1633, 1633, 1633, 1209, 1477};
+
+
+void makeAmplitudeFading(){
+
+    double Start = 0;
+    double fadeInEnd = SamplesPerFrame/6;
+    double fadeOutBegin = SamplesPerFrame/6*5;
+    double End = SamplesPerFrame;
+
+    for (int i = Start; i < fadeInEnd; i++) {
+        AmplitudeFading.push_back(i/fadeInEnd);
+    }
+    for (int i = fadeInEnd; i < fadeOutBegin; i++) {
+        AmplitudeFading.push_back(1.0);
+    }
+    for (int i = fadeOutBegin; i < End; i++) {
+        AmplitudeFading.push_back((End-i)/(End-fadeOutBegin));
+    }
+}
 
 // Map characters '0'-'9', 'A'-'D', '*', and '#' to corresponding index values
 int mapCharToIndex(char key) {
@@ -27,11 +47,11 @@ void playTone(double freq1, double freq2){
 
     float amp = 0.5;
 
-    int time = 6000;
+    int time = SamplesPerFrame;
     int sleep = 250000;
 
     for (int i = 0; i < time; i++) {
-        samples.push_back(sound::SineWave(i, freq1, amp)+sound::SineWave(i, freq2, amp));
+        samples.push_back(sound::SineWave(i, freq1, amp*AmplitudeFading[i])+sound::SineWave(i, freq2, amp*AmplitudeFading[i]));
     }
 
     buffer.loadFromSamples(&samples[0], samples.size(), 1, 44100);
@@ -81,6 +101,8 @@ int main() {
 
 int main() {
 
+    makeAmplitudeFading();
+
     std::string sequence = "1159";  // First frame to be send having direction and speed
     playSequence(sequence);         // Send the frame
 
@@ -119,9 +141,9 @@ int main() {
     sequence = "00";                // Stop command
     playSequence(sequence);
 
-    usleep(250000);
-
-    playSequence("f");
+    for (int i = 0; i < AmplitudeFading.size(); ++i) {
+        std::cout << AmplitudeFading[i] << std::endl;
+    };
 
 
     return 0;

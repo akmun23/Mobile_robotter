@@ -160,7 +160,7 @@ int Audio::streamCallback(
     }else{
         clockEnd = clock();
 
-        if(((clockEnd - clockStart)/CLOCKS_PER_SEC > timeToSendMessage)  && (Received.size() < 6)){
+        if(((clockEnd - clockStart)/CLOCKS_PER_SEC > timeToSendMessage)  && (Received.size() < 6) && (Received.size() > 0)){
             printf("\n Message timed out \n");
             fflush(stdout);
             Received.clear();
@@ -231,7 +231,7 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 }
 
 bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 200;
+    int MinMagnitude = 30;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
