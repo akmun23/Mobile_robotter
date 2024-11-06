@@ -252,7 +252,6 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
             }else if(maxColumn == 1){
                 Received.push_back(5);
             }else if(maxColumn == 2){
-                return true;
                 Received.push_back(6);
             }else if(maxColumn == 3){
                 Received.push_back(11);

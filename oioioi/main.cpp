@@ -32,6 +32,14 @@ void makeAmplitudeFading(){
 
 // Map characters '0'-'9', 'A'-'D', '*', and '#' to corresponding index values
 int mapCharToIndex(char key) {
+
+    if(key == '*'){
+        key = 'e';
+    }
+    if(key == '#'){
+        key = 'f';
+    }
+
     if (key >= '0' && key <= '9') {
         return key - '0';
     } else if (key >= 'a' && key <= 'f') {
@@ -48,7 +56,7 @@ void playTone(double freq1, double freq2){
     float amp = 0.5;
 
     int time = SamplesPerFrame;
-    int sleep = 250000;
+    int sleep = 150000;
 
     for (int i = 0; i < time; i++) {
         samples.push_back(sound::SineWave(i, freq1, amp*AmplitudeFading[i])+sound::SineWave(i, freq2, amp*AmplitudeFading[i]));
@@ -103,48 +111,30 @@ int main() {
 
     makeAmplitudeFading();
 
-    std::string sequence = "1159";  // First frame to be send having direction and speed
+    std::string sequence = "*1010#";  // First frame to be send having direction and speed
+
+    sequence += "*1010#";
+
+    sequence += "*1020#";
+
+    sequence += "*2020#";
+
+    sequence += "*2030#";
+
+    sequence += "*3030#";
+
     playSequence(sequence);         // Send the frame
-
-    usleep(250000);                 // Delay between speed updates
-
-    sequence = "59";                // Frames from now on only have speed
-    playSequence(sequence);
-
-    usleep(250000);
-
-    sequence = "65";                // New speed
-    playSequence(sequence);
-
-    usleep(250000);
-
-    sequence = "34";                // New speed
-    playSequence(sequence);
-
-    usleep(250000);
-
-    sequence = "00";                // Stop command
-    playSequence(sequence);
-
-    usleep(250000);
-
-    sequence = "1132";                // Stop command
-    playSequence(sequence);
-
-    usleep(250000);
-
-    sequence = "44";                // Stop command
-    playSequence(sequence);
-
-    usleep(250000);
-
-    sequence = "00";                // Stop command
-    playSequence(sequence);
-
-    for (int i = 0; i < AmplitudeFading.size(); ++i) {
-        std::cout << AmplitudeFading[i] << std::endl;
-    };
 
 
     return 0;
 }
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
