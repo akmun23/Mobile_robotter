@@ -11,9 +11,9 @@ double clockStart = clock();
 double clockEnd;
 double timeToSendMessage = ((136+250)*5+136)/1000;  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
 
-
-
 DtmfToCmdVelNode* Audio::dtmfNode = nullptr;
+
+Audio::Audio() {}
 
 void Audio::checkErr(PaError err) {
     if (err != paNoError) {
@@ -242,7 +242,7 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 
 
 bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 2;
+    int MinMagnitude = 0.3;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;

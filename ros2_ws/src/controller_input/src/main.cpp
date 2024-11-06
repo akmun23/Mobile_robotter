@@ -32,7 +32,7 @@ void playTone(double freq1, double freq2){
     float amp = 0.5;
 
     int time = 6000;
-    int sleep = 250000;
+    int sleep = 150000;
 
     for (int i = 0; i < time; i++) {
         samples.push_back(sound::SineWave(i, freq1, amp)+sound::SineWave(i, freq2, amp));
@@ -93,8 +93,7 @@ private:
 
 
 public:
-    ControllerInput()
-        : Node("controller_input")
+    ControllerInput() : Node("controller_input")
     {
         // Create a publisher for cmd_vel
         // _publisher = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);

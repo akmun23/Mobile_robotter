@@ -1,0 +1,1 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/ament_cmake_environment_hooks/local_setup.sh
