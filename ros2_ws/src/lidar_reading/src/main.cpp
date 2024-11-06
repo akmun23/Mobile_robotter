@@ -2,7 +2,6 @@
 #include "lidarData.h"
 
 #include <iostream>
-#include <conio.h>
 #include <math.h>
 #include <QApplication>
 #include <QSurfaceFormat>
