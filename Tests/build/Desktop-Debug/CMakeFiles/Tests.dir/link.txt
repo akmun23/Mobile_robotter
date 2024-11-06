@@ -1,0 +1,1 @@
+/usr/bin/x86_64-linux-gnu-g++ -DQT_QML_DEBUG -g CMakeFiles/Tests.dir/main.cpp.o CMakeFiles/Tests.dir/audio.cpp.o CMakeFiles/Tests.dir/dft.cpp.o -o Tests  -lrt -lasound -ljack -lpthread -lportaudio 
