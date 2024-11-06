@@ -1,0 +1,4 @@
+source;share/lidar_data/local_setup.bash
+source;share/lidar_data/local_setup.dsv
+source;share/lidar_data/local_setup.sh
+source;share/lidar_data/local_setup.zsh

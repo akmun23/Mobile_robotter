@@ -1,0 +1,3 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/audio.cpp.o[0m
+[ 50%] [32m[1mLinking CXX executable dtmf_to_cmd_vel[0m
+[100%] Built target dtmf_to_cmd_vel

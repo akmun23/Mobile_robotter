@@ -1,0 +1,4 @@
+source;share/dtmf_to_cmd_vel/local_setup.bash
+source;share/dtmf_to_cmd_vel/local_setup.dsv
+source;share/dtmf_to_cmd_vel/local_setup.sh
+source;share/dtmf_to_cmd_vel/local_setup.zsh
