@@ -5,8 +5,14 @@
 #include<unistd.h>
 #include "sound.h"
 
+#include <time.h>
+
 std::vector<double> AmplitudeFading;
+int Delay = 1500/2;
 int SamplesPerFrame = 6000;
+int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
+int AudioPlayRate = 44100;
+
 // DTMF tone frequencies for digits 0-9
 const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
 const int HIGH_FREQ[16] = {1336, 1209, 1336, 1477, 1209, 1336, 1477, 1209, 1336, 1477, 1633, 1633, 1633, 1633, 1209, 1477};
@@ -14,19 +20,26 @@ const int HIGH_FREQ[16] = {1336, 1209, 1336, 1477, 1209, 1336, 1477, 1209, 1336,
 
 void makeAmplitudeFading(){
 
-    double Start = 0;
-    double fadeInEnd = SamplesPerFrame/6;
-    double fadeOutBegin = SamplesPerFrame/6*5;
-    double End = SamplesPerFrame;
+    double AudioStart = 0;
+    double fadeInEnd = AudioSamplesPerFrame/6;
+    double fadeOutBegin = AudioSamplesPerFrame/6*5;
+    double fadeOutEnd = AudioSamplesPerFrame;
+    double End = AudioSamplesPerFrame+Delay;
 
-    for (int i = Start; i < fadeInEnd; i++) {
+    for (int i = 0; i < Delay; i++) {
+        AmplitudeFading.push_back(0);
+    }
+    for (int i = AudioStart; i < fadeInEnd; i++) {
         AmplitudeFading.push_back(i/fadeInEnd);
     }
     for (int i = fadeInEnd; i < fadeOutBegin; i++) {
         AmplitudeFading.push_back(1.0);
     }
-    for (int i = fadeOutBegin; i < End; i++) {
-        AmplitudeFading.push_back((End-i)/(End-fadeOutBegin));
+    for (int i = fadeOutBegin; i < fadeOutEnd; i++) {
+        AmplitudeFading.push_back((fadeOutEnd-i)/(fadeOutEnd-fadeOutBegin));
+    }
+    for (int i = fadeOutEnd; i < End; i++) {
+        AmplitudeFading.push_back(0);
     }
 }
 
@@ -56,13 +69,14 @@ void playTone(double freq1, double freq2){
     float amp = 0.5;
 
     int time = SamplesPerFrame;
-    int sleep = 150000;
+    int sleep = (1000/(AudioPlayRate/SamplesPerFrame))*1000;    // AudioPlayRate/SamplesPerFrame = 7.35 which is times it is sent per sec
+                                                                // This 1000 divided by this gives the time in ms it is sent then times 1000 to get mikrosec
 
     for (int i = 0; i < time; i++) {
         samples.push_back(sound::SineWave(i, freq1, amp*AmplitudeFading[i])+sound::SineWave(i, freq2, amp*AmplitudeFading[i]));
     }
 
-    buffer.loadFromSamples(&samples[0], samples.size(), 1, 44100);
+    buffer.loadFromSamples(&samples[0], samples.size(), 1, AudioPlayRate);
 
     sf::Sound sound;
     sound.setBuffer(buffer);
@@ -110,9 +124,10 @@ int main() {
 int main() {
 
     makeAmplitudeFading();
-
+    double clockStart;
+    double clockEnd;
     std::string sequence = "*1010#";  // First frame to be send having direction and speed
-
+    /*
     sequence += "*1010#";
 
     sequence += "*1020#";
@@ -122,9 +137,11 @@ int main() {
     sequence += "*2030#";
 
     sequence += "*3030#";
-
+    */
+    clockStart = clock();
     playSequence(sequence);         // Send the frame
-
+    clockEnd = clock();
+    std::cout << "Time: " << (long double)(clockEnd-clockStart)/CLOCKS_PER_SEC << std::endl;
 
     return 0;
 }

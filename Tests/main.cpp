@@ -6,7 +6,7 @@
 
 int main() {
 
-
+    /*
 
     std::string filename = "/home/emil/workspace/fourier/DTMF9R.txt"; // Replace with your actual file path
     double samplingRate = 48000; // Example sampling rate in Hz
@@ -28,7 +28,7 @@ int main() {
         std::cout << "Dominant Frequency: " << dominantFrequency[0] << " Hz" << std::endl;
         std::cout << "Second Dominant Frequency: " << dominantFrequency[1] << " Hz" << std::endl;
         std::cout << std::endl;
-    }
+    }*/
 
 
 

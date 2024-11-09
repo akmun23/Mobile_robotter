@@ -21,9 +21,6 @@
 
 #define NUM_CHANNELS 2                  // Number of audio channels to capture
 
-#define RecordTimeMs 20000              // How long to record audio for (ms)
-
-
 // Define our callback data (data that is passed to every callback function call)
 typedef struct {
     double* in;         // Input buffer, will contain our audio sample
@@ -79,7 +76,7 @@ public:
 
 
     /**
-    *@brief Method to start the audio stream and record audio for a specified amount of time (RecordTimeMs)
+    *@brief Method to start the audio stream and record audio
     *
     *@param nothing
     *
