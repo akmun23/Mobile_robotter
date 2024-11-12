@@ -1,5 +1,0 @@
-/home/aksel/Documents/GitHub/Mobile_robotter/build-GetInfoFromMic-Imported_Kit-Debug/CMakeFiles/GetInfoFromMic.dir
-/home/aksel/Documents/GitHub/Mobile_robotter/build-GetInfoFromMic-Imported_Kit-Debug/CMakeFiles/install-deps.dir
-/home/aksel/Documents/GitHub/Mobile_robotter/build-GetInfoFromMic-Imported_Kit-Debug/CMakeFiles/uninstall-deps.dir
-/home/aksel/Documents/GitHub/Mobile_robotter/build-GetInfoFromMic-Imported_Kit-Debug/CMakeFiles/edit_cache.dir
-/home/aksel/Documents/GitHub/Mobile_robotter/build-GetInfoFromMic-Imported_Kit-Debug/CMakeFiles/rebuild_cache.dir
