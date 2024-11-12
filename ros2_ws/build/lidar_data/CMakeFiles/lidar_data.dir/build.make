@@ -92,7 +92,6 @@ lidar_data_EXTERNAL_OBJECTS =
 
 lidar_data: CMakeFiles/lidar_data.dir/src/main.cpp.o
 lidar_data: CMakeFiles/lidar_data.dir/build.make
-lidar_data: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 lidar_data: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so
 lidar_data: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so
 lidar_data: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
@@ -105,6 +104,8 @@ lidar_data: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspection_c.
 lidar_data: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so
 lidar_data: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so
 lidar_data: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_py.so
+lidar_data: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.2.4
+lidar_data: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.2.4
 lidar_data: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so
 lidar_data: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so
 lidar_data: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
@@ -181,7 +182,6 @@ lidar_data: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_c.so
 lidar_data: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so
 lidar_data: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
 lidar_data: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
-lidar_data: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 lidar_data: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
 lidar_data: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 lidar_data: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
@@ -190,6 +190,11 @@ lidar_data: /opt/ros/humble/lib/librosidl_typesupport_c.so
 lidar_data: /opt/ros/humble/lib/librcpputils.so
 lidar_data: /opt/ros/humble/lib/librosidl_runtime_c.so
 lidar_data: /opt/ros/humble/lib/librcutils.so
+lidar_data: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+lidar_data: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.2.4
+lidar_data: /usr/lib/x86_64-linux-gnu/libGLX.so
+lidar_data: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+lidar_data: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.2.4
 lidar_data: CMakeFiles/lidar_data.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable lidar_data"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lidar_data.dir/link.txt --verbose=$(VERBOSE)

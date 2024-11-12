@@ -623,11 +623,85 @@ CMakeFiles/lidar_data.dir/src/main.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
- /home/aksel/matplotlib-cpp/matplotlibcpp.h \
- /usr/include/python3.10/Python.h /usr/include/python3.10/patchlevel.h \
- /usr/include/python3.10/pyconfig.h \
- /usr/include/x86_64-linux-gnu/python3.10/pyconfig.h \
- /usr/include/python3.10/pymacconfig.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/QSqlDatabase \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/qsqldatabase.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/qtsqlglobal.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h \
+ /usr/include/c++/11/cstddef \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qconfig.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcore-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsystemdetection.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qprocessordetection.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompilerdetection.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtypeinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerfwd.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsysinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qlogging.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasicatomic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic_cxx11.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qgenericatomic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobalstatic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qnumeric.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/qtsql-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qrefcount.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qpair.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringliteral.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qutf8stringview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringtokenizer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/QSqlQuery \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/qsqlquery.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/qsqldatabase.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearraylist.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringlist.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringmatcher.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompare.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopeguard.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetacontainer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtaggedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmath.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbindingstorage.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringconverter.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -636,110 +710,9 @@ CMakeFiles/lidar_data.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /usr/include/python3.10/pyport.h /usr/include/inttypes.h \
- /usr/include/c++/11/math.h /usr/include/x86_64-linux-gnu/sys/time.h \
- /usr/include/x86_64-linux-gnu/sys/stat.h \
- /usr/include/x86_64-linux-gnu/bits/stat.h \
- /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
- /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
- /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
- /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
- /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
- /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
- /usr/include/asm-generic/posix_types.h \
- /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
- /usr/include/python3.10/exports.h /usr/include/python3.10/pymacro.h \
- /usr/include/python3.10/pymath.h /usr/include/python3.10/pymem.h \
- /usr/include/python3.10/cpython/pymem.h /usr/include/python3.10/object.h \
- /usr/include/python3.10/cpython/object.h \
- /usr/include/python3.10/objimpl.h \
- /usr/include/python3.10/cpython/objimpl.h \
- /usr/include/python3.10/typeslots.h /usr/include/python3.10/pyhash.h \
- /usr/include/python3.10/cpython/pydebug.h \
- /usr/include/python3.10/bytearrayobject.h \
- /usr/include/python3.10/cpython/bytearrayobject.h \
- /usr/include/python3.10/bytesobject.h \
- /usr/include/python3.10/cpython/bytesobject.h \
- /usr/include/python3.10/unicodeobject.h \
- /usr/include/python3.10/cpython/unicodeobject.h \
- /usr/include/python3.10/longobject.h \
- /usr/include/python3.10/longintrepr.h \
- /usr/include/python3.10/boolobject.h \
- /usr/include/python3.10/floatobject.h \
- /usr/include/python3.10/complexobject.h \
- /usr/include/python3.10/rangeobject.h \
- /usr/include/python3.10/memoryobject.h \
- /usr/include/python3.10/tupleobject.h \
- /usr/include/python3.10/cpython/tupleobject.h \
- /usr/include/python3.10/listobject.h \
- /usr/include/python3.10/cpython/listobject.h \
- /usr/include/python3.10/dictobject.h \
- /usr/include/python3.10/cpython/dictobject.h \
- /usr/include/python3.10/cpython/odictobject.h \
- /usr/include/python3.10/enumobject.h /usr/include/python3.10/setobject.h \
- /usr/include/python3.10/methodobject.h \
- /usr/include/python3.10/cpython/methodobject.h \
- /usr/include/python3.10/moduleobject.h \
- /usr/include/python3.10/funcobject.h \
- /usr/include/python3.10/classobject.h \
- /usr/include/python3.10/fileobject.h \
- /usr/include/python3.10/cpython/fileobject.h \
- /usr/include/python3.10/pycapsule.h /usr/include/python3.10/code.h \
- /usr/include/python3.10/cpython/code.h /usr/include/python3.10/pyframe.h \
- /usr/include/python3.10/traceback.h \
- /usr/include/python3.10/cpython/traceback.h \
- /usr/include/python3.10/sliceobject.h \
- /usr/include/python3.10/cellobject.h \
- /usr/include/python3.10/iterobject.h \
- /usr/include/python3.10/cpython/initconfig.h \
- /usr/include/python3.10/genobject.h /usr/include/python3.10/pystate.h \
- /usr/include/python3.10/cpython/pystate.h \
- /usr/include/python3.10/abstract.h \
- /usr/include/python3.10/cpython/abstract.h \
- /usr/include/python3.10/descrobject.h \
- /usr/include/python3.10/genericaliasobject.h \
- /usr/include/python3.10/warnings.h \
- /usr/include/python3.10/weakrefobject.h \
- /usr/include/python3.10/structseq.h \
- /usr/include/python3.10/namespaceobject.h \
- /usr/include/python3.10/cpython/picklebufobject.h \
- /usr/include/python3.10/cpython/pytime.h \
- /usr/include/python3.10/codecs.h /usr/include/python3.10/pyerrors.h \
- /usr/include/python3.10/cpython/pyerrors.h \
- /usr/include/python3.10/pythread.h /usr/include/python3.10/context.h \
- /usr/include/python3.10/modsupport.h /usr/include/python3.10/compile.h \
- /usr/include/python3.10/cpython/compile.h \
- /usr/include/python3.10/pythonrun.h \
- /usr/include/python3.10/cpython/pythonrun.h \
- /usr/include/python3.10/pylifecycle.h \
- /usr/include/python3.10/cpython/pylifecycle.h \
- /usr/include/python3.10/ceval.h /usr/include/python3.10/cpython/ceval.h \
- /usr/include/python3.10/sysmodule.h \
- /usr/include/python3.10/cpython/sysmodule.h \
- /usr/include/python3.10/osmodule.h /usr/include/python3.10/intrcheck.h \
- /usr/include/python3.10/import.h \
- /usr/include/python3.10/cpython/import.h \
- /usr/include/python3.10/bltinmodule.h /usr/include/python3.10/eval.h \
- /usr/include/python3.10/cpython/pyctype.h \
- /usr/include/python3.10/pystrtod.h /usr/include/python3.10/pystrcmp.h \
- /usr/include/python3.10/fileutils.h \
- /usr/include/python3.10/cpython/fileutils.h \
- /usr/include/python3.10/cpython/pyfpe.h \
- /usr/include/python3.10/tracemalloc.h \
- /usr/include/python3.10/numpy/arrayobject.h \
- /usr/include/python3.10/numpy/ndarrayobject.h \
- /usr/include/python3.10/numpy/ndarraytypes.h \
- /usr/include/python3.10/numpy/npy_common.h \
- /usr/include/python3.10/numpy/numpyconfig.h \
- /usr/include/python3.10/numpy/_numpyconfig.h \
- /usr/include/python3.10/numpy/npy_endian.h \
- /usr/include/python3.10/numpy/npy_cpu.h \
- /usr/include/python3.10/numpy/utils.h \
- /usr/include/python3.10/numpy/_neighborhood_iterator_imp.h \
- /usr/include/python3.10/numpy/__multiarray_api.h \
- /usr/include/python3.10/numpy/npy_interrupt.h /usr/include/setjmp.h
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/QSqlError \
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/qsqlerror.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h

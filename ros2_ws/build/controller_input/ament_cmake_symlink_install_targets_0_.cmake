@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/controller_input" "TARGETS" "controller_input" "DESTINATION" "lib/controller_input")

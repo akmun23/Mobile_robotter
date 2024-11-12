@@ -1,1 +1,1 @@
-/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dtmf_to_cmd_vel
+rclcpp;geometry_msgs;sensor_msgs;teleop_twist_joy;portaudio;ament_lint_auto;ament_lint_common
