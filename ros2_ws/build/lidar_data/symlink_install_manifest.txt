@@ -1,0 +1,16 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/lidar_data/lidar_data
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/package_run_dependencies/lidar_data
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/parent_prefix_path/lidar_data
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.sh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.sh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.bash
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.sh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.zsh
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.dsv
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/packages/lidar_data
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig.cmake
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig-version.cmake
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.xml

@@ -1,0 +1,28 @@
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/main.cpp:2[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/lidarData.h:7:10:[m[K [01;31m[Kfatal error: [m[Kconio.h: No such file or directory
+    7 | #include [01;31m[K<conio.h>[m[K
+      |          [01;31m[K^~~~~~~~~[m[K
+compilation terminated.
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/lidarData.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/lidarData.h:7:10:[m[K [01;31m[Kfatal error: [m[Kconio.h: No such file or directory
+    7 | #include [01;31m[K<conio.h>[m[K
+      |          [01;31m[K^~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/lidar_reading.dir/build.make:76: CMakeFiles/lidar_reading.dir/src/main.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/lidar_reading.dir/build.make:146: CMakeFiles/lidar_reading.dir/src/lidarData.cpp.o] Error 1
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/functions.cpp:[m[K In function ‘[01m[Kint getScrnWidth()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/functions.cpp:4:18:[m[K [01;31m[Kerror: [m[K‘[01m[KqApp[m[K’ was not declared in this scope
+    4 |     QSize size = [01;31m[KqApp[m[K->screens()[0]->size();
+      |                  [01;31m[K^~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/functions.cpp:[m[K In function ‘[01m[Kint getScrnHeight()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/functions.cpp:9:18:[m[K [01;31m[Kerror: [m[K‘[01m[KqApp[m[K’ was not declared in this scope
+    9 |     QSize size = [01;31m[KqApp[m[K->screens()[0]->size();
+      |                  [01;31m[K^~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/functions.cpp:[m[K In function ‘[01m[KQSize getScrnSize()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_reading/src/functions.cpp:14:18:[m[K [01;31m[Kerror: [m[K‘[01m[KqApp[m[K’ was not declared in this scope
+   14 |     QSize size = [01;31m[KqApp[m[K->screens()[0]->size();
+      |                  [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/lidar_reading.dir/build.make:132: CMakeFiles/lidar_reading.dir/src/functions.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_reading.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

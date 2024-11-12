@@ -20,7 +20,6 @@ target_link_libraries(${PROJECT_NAME}
         jack
         pthread
         portaudio
-
 )
 
 # Custom target for installing dependencies

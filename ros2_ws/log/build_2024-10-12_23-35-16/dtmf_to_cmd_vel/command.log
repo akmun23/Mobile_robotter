@@ -1,0 +1,2 @@
+Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16

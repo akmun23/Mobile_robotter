@@ -1,0 +1,31 @@
+[0.009s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+[0.047s] [35m[1mConsolidate compiler generated dependencies of target dtmf_to_cmd_vel[0m
+[0.067s] [ 50%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/audio.cpp.o[0m
+[0.067s] [ 50%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/dtmf_to_cmd_vel_node.cpp.o[0m
+[2.943s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:2[m[K:
+[2.943s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:36:28:[m[K [01;35m[Kwarning: [m[K‘[01m[KspectroData[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[2.943s]    36 | static streamCallbackData* [01;35m[KspectroData[m[K;
+[2.943s]       |                            [01;35m[K^~~~~~~~~~~[m[K
+[3.771s] [ 75%] [32m[1mLinking CXX executable dtmf_to_cmd_vel[0m
+[3.969s] [100%] Built target dtmf_to_cmd_vel
+[3.982s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+[4.013s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel
+[4.021s] -- Install configuration: ""
+[4.021s] -- Execute custom install script
+[4.021s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/dtmf_to_cmd_vel/dtmf_to_cmd_vel
+[4.022s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/package_run_dependencies/dtmf_to_cmd_vel
+[4.022s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/parent_prefix_path/dtmf_to_cmd_vel
+[4.022s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/ament_prefix_path.sh
+[4.022s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/ament_prefix_path.dsv
+[4.022s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/path.sh
+[4.022s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/path.dsv
+[4.023s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.bash
+[4.023s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.sh
+[4.023s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.zsh
+[4.023s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.dsv
+[4.023s] -- Symlinking: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.dsv
+[4.032s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/packages/dtmf_to_cmd_vel
+[4.033s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/cmake/dtmf_to_cmd_velConfig.cmake
+[4.033s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/cmake/dtmf_to_cmd_velConfig-version.cmake
+[4.033s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.xml
+[4.036s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel
