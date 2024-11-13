@@ -12,7 +12,7 @@ std::vector<double> AmplitudeFading;
 int Delay = 750;
 int SamplesPerFrame = Delay*8;
 int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
-int AudioPlayRate = 40000;
+int AudioPlayRate = 44100;
 
 // DTMF tone frequencies for digits 0-9
 const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
@@ -143,7 +143,7 @@ int main() {
     double sum = 0;
     double min = 0;
     double max = 0;
-    /*
+
 
     for (int i = 0; i < 2000; ++i) {
         start = std::chrono::high_resolution_clock::now();
@@ -178,8 +178,8 @@ int main() {
     Data.clear();
 
     usleep(1*1000*1000*10);    // Sleep for 10
-    */
-    for (int i = 1; i < 3; ++i) {
+
+    for (int i = 1; i < 200; ++i) {
         start = std::chrono::high_resolution_clock::now();
         playSequence(sequenceMessage);         // Send the frame
         end = std::chrono::high_resolution_clock::now();
