@@ -28,7 +28,8 @@ include_directories(
 include_directories(include)
 
 # Add executable
-add_executable(lidar_data src/main.cpp)
+add_executable(lidar_data src/main.cpp
+                          src/lidarnode.cpp include/lidarnode.h)
 
 
 target_link_libraries(${PROJECT_NAME}

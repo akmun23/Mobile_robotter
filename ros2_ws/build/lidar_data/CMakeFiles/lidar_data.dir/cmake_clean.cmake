@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o"
+  "CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o.d"
   "CMakeFiles/lidar_data.dir/src/main.cpp.o"
   "CMakeFiles/lidar_data.dir/src/main.cpp.o.d"
   "lidar_data"

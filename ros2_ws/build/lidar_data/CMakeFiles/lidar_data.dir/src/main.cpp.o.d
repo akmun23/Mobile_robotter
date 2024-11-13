@@ -742,4 +742,5 @@ CMakeFiles/lidar_data.dir/src/main.cpp.o: \
  /usr/include/python3.10/numpy/utils.h \
  /usr/include/python3.10/numpy/_neighborhood_iterator_imp.h \
  /usr/include/python3.10/numpy/__multiarray_api.h \
- /usr/include/python3.10/numpy/npy_interrupt.h /usr/include/setjmp.h
+ /usr/include/python3.10/numpy/npy_interrupt.h /usr/include/setjmp.h \
+ /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h

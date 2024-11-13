@@ -1,0 +1,21 @@
+Test af sampling algoritmer:
+	- DFT
+	- FFT
+	- Goertzel
+	- Optimized Goertzel
+
+Hvad testes der for?
+	- Hastighed
+	- Distortion
+	- Afstand
+	- Måske computerkraft
+	- Sampling buffer
+	
+
+Test af genereret lydsignal
+	- Fade-in Fade-out
+	- Pause mellem lydsignaler
+	
+Test af lidar
+	- Modtagelse af data
+	- Mapping af data

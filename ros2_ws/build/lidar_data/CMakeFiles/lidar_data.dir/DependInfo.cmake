@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp" "CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o" "gcc" "CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o.d"
   "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/main.cpp" "CMakeFiles/lidar_data.dir/src/main.cpp.o" "gcc" "CMakeFiles/lidar_data.dir/src/main.cpp.o.d"
   )
 

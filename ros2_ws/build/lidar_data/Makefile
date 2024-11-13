@@ -210,6 +210,30 @@ lidar_data/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/build
 .PHONY : lidar_data/fast
 
+src/lidarnode.o: src/lidarnode.cpp.o
+.PHONY : src/lidarnode.o
+
+# target to build an object file
+src/lidarnode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o
+.PHONY : src/lidarnode.cpp.o
+
+src/lidarnode.i: src/lidarnode.cpp.i
+.PHONY : src/lidarnode.i
+
+# target to preprocess a source file
+src/lidarnode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/src/lidarnode.cpp.i
+.PHONY : src/lidarnode.cpp.i
+
+src/lidarnode.s: src/lidarnode.cpp.s
+.PHONY : src/lidarnode.s
+
+# target to generate assembly for a file
+src/lidarnode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/src/lidarnode.cpp.s
+.PHONY : src/lidarnode.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -250,6 +274,9 @@ help:
 	@echo "... lidar_data_uninstall"
 	@echo "... uninstall"
 	@echo "... lidar_data"
+	@echo "... src/lidarnode.o"
+	@echo "... src/lidarnode.i"
+	@echo "... src/lidarnode.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
