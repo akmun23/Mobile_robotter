@@ -11,11 +11,12 @@ int drivingSpeed = 0;
 std::vector<int> Received;
 double clockStartMessage = clock();
 double clockEndMessage;
-double timeToSendMessage = ((136+250)*5+136)/1000;  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
+// double timeToSendMessage = ((136+250)*5+136)/1000;  // BUFFER 6000  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
+double timeToSendMessage = (6*136.1)/1000;
 double clockStartTone = clock();
 double clockEndTone = clock();
-double SamplesPerFrame = 6000; // 4000 samples per frame comes from controller program making the tones
-double timeToReadTone = 0.102;  // 102 ms is the time from the start of fade in to end of fade out
+double SamplesPerFrame = 4000; // 4000 samples per frame comes from controller program making the tones
+double timeToReadTone = 0.0907;  // 102 ms is the time from the start of fade in to end of fade out
 
 
 
@@ -203,7 +204,7 @@ void Audio::calculateGoertzel(int tone, float* in, std::vector<double>& mags, in
     double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
 
     double omega_I = cos(2*pi*k0/FRAMES_PER_BUFFER);
-    double omega_Q = sin(2*pi*k0/FRAMES_PER_BUFFER);
+    //double omega_Q = sin(2*pi*k0/FRAMES_PER_BUFFER);
     double v1 = 0;
     double v2 = 0;
     for (int n = 0; n < FRAMES_PER_BUFFER; ++n) {
@@ -212,11 +213,14 @@ void Audio::calculateGoertzel(int tone, float* in, std::vector<double>& mags, in
         v1 = v;
     }
 
-
-    double y_I = v1 - omega_I * v2;
-    double y_Q = omega_Q * v2;
+    /*
+    double y_I = omega_I * v1 - v2;
+    double y_Q = omega_Q * v1;
 
     mags[magsIterator] = sqrt(y_I*y_I + y_Q*y_Q);
+    */
+
+    mags[magsIterator] = v1*v1 + v2*v2 - omega_I*v1*v2;
 }
 
 bool Audio::analyseGoertzelOutput(std::vector<double> mags){
@@ -244,12 +248,11 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 }
 
 bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 30;
+    int MinMagnitude = 3000;
     clockEndTone = clock();
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
-        clockStartTone = clock();
         if(maxRow == 0){
             if(maxColumn == 0){
                 Received.push_back(1);

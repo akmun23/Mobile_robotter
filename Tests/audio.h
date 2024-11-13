@@ -17,9 +17,9 @@
 
 
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
-#define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
+#define FRAMES_PER_BUFFER 1000.0        // How many audio samples to send to our callback function for each channel
 
-#define NUM_CHANNELS 2                  // Number of audio channels to capture
+#define NUM_CHANNELS 1                  // Number of audio channels to capture
 
 // Define our callback data (data that is passed to every callback function call)
 typedef struct {
