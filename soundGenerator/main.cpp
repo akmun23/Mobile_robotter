@@ -4,11 +4,12 @@
 #include <vector>
 #include<unistd.h>
 #include "sound.h"
+#include <chrono>
 
 #include <time.h>
 
 std::vector<double> AmplitudeFading;
-int Delay = 1000;
+int Delay = 750;
 int SamplesPerFrame = Delay*6;
 int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
 int AudioPlayRate = 44100;
@@ -117,11 +118,12 @@ int main() {
 
     sequence += "*3030#";
     */
-    std::cout << CLOCKS_PER_SEC << std::endl;
-    clockStart = clock();
+    auto start = std::chrono::high_resolution_clock::now();
     playSequence(sequence);         // Send the frame
-    clockEnd = clock();
-    std::cout << "Time: " << (long double)(clockEnd-clockStart)/CLOCKS_PER_SEC << std::endl;
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << "Elapsed time: " << elapsed.count() << " seconds" << std::endl;
+
 
     return 0;
 }
