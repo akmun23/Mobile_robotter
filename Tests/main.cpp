@@ -37,7 +37,6 @@ int main() {
 
 
 
-
     // Setup of audio
     Audio audio;
     audio.Init();
