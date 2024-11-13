@@ -23,7 +23,8 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
 include_directories(include)
 
 # Add executable
-add_executable(lidar_data src/main.cpp)
+add_executable(lidar_data src/main.cpp
+                          src/lidarnode.cpp include/lidarnode.h)
 
 # Specify the dependencies for the target
 ament_target_dependencies(lidar_data

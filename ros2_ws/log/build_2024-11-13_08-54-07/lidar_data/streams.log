@@ -1,0 +1,25 @@
+[0.016s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[0.065s] [ 33%] [32mBuilding CXX object CMakeFiles/lidar_data.dir/src/main.cpp.o[0m
+[2.500s] [ 66%] [32m[1mLinking CXX executable lidar_data[0m
+[2.885s] [100%] Built target lidar_data
+[2.898s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[2.929s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data
+[2.935s] -- Install configuration: ""
+[2.935s] -- Execute custom install script
+[2.935s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/lidar_data/lidar_data
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/package_run_dependencies/lidar_data
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/parent_prefix_path/lidar_data
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.sh
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.dsv
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.sh
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.dsv
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.bash
+[2.936s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.sh
+[2.937s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.zsh
+[2.937s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.dsv
+[2.937s] -- Symlinking: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.dsv
+[2.945s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/packages/lidar_data
+[2.945s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig.cmake
+[2.945s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig-version.cmake
+[2.945s] -- Up-to-date symlink: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.xml
+[2.947s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data

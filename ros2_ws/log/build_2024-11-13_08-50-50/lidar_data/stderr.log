@@ -1,0 +1,51 @@
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:11:28:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+   11 | class MappingNode : public [01;31m[Krclcpp[m[K::Node {
+      |                            [01;31m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:11:36:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[KNode[m[K’
+   11 | class MappingNode : public rclcpp::[01;31m[KNode[m[K {
+      |                                    [01;31m[K^~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:12:1:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kprivate[m[K’
+   12 | [01;31m[Kprivate[m[K:
+      | [01;31m[K^~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:12:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before ‘[01m[Kprivate[m[K’
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:11:41:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   11 | class MappingNode : public rclcpp::Node [01;36m[K{[m[K
+      |                                         [01;36m[K^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:17:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ does not name a type
+   17 |     [01;31m[Krclcpp[m[K::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr _lidar_subscription;
+      |     [01;31m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:18:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ does not name a type
+   18 |     [01;31m[Krclcpp[m[K::Subscription<nav_msgs::msg::Odometry>::SharedPtr _odom_subscription;
+      |     [01;31m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:20:1:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kpublic[m[K’
+   20 | [01;31m[Kpublic[m[K:
+      | [01;31m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:28:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+   28 | [01;31m[K}[m[K;
+      | [01;31m[K^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:3:26:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MappingNode[m[K’
+    3 | MappingNode::MappingNode([01;31m[K)[m[K : Node("mapping_node") {
+      |                          [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:11:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MappingNode[m[K’
+   11 | class [01;36m[KMappingNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:18:80:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MappingNode[m[K’
+   18 | void MappingNode::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg[01;31m[K)[m[K {
+      |                                                                                [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:11:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MappingNode[m[K’
+   11 | class [01;36m[KMappingNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:70:76:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MappingNode[m[K’
+   70 | void MappingNode::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg[01;31m[K)[m[K {
+      |                                                                            [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:11:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MappingNode[m[K’
+   11 | class [01;36m[KMappingNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/lidar_data.dir/build.make:90: CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_data.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

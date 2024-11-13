@@ -140,18 +140,33 @@ int Audio::streamCallback(
     t6.join();
     t7.join();
 
-    /*
-    int end = clock();
-
+    // Print the magnitudes of the tones
     printf("\r");
-    printf("%f seconds --- 697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f",((float)end - start)/CLOCKS_PER_SEC, mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
+    printf("Tones: ");
+    printf("%d ", tones[0]);
+    printf("%f ", mags[0]);
+    printf("    ");
+    printf("%d ", tones[1]);
+    printf("%f ", mags[1]);
+    printf("    ");
+    printf("%d ", tones[2]);
+    printf("%f ", mags[2]);
+    printf("    ");
+    printf("%d ", tones[3]);
+    printf("%f ", mags[3]);
+    printf("    ");
+    printf("%d ", tones[4]);
+    printf("%f ", mags[4]);
+    printf("    ");
+    printf("%d ", tones[5]);
+    printf("%f ", mags[5]);
+    printf("    ");
+    printf("%d ", tones[6]);
+    printf("%f ", mags[6]);
+    printf("    ");
+    printf("%d ", tones[7]);
+    printf("%f ", mags[7]);
     fflush(stdout);
-    */
-    printf("\r");
-    printf("CLOCKS PER SEC %ld ------- ", CLOCKS_PER_SEC);
-    printf("697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f", mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
-    fflush(stdout);
-
 
     if(analyseGoertzelOutput(mags)){
         endProgram = true;

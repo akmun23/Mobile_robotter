@@ -1,0 +1,4 @@
+[35m[1mConsolidate compiler generated dependencies of target lidar_reading[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/lidar_reading.dir/src/lidarData.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/lidar_reading.dir/src/functions.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/lidar_reading.dir/src/main.cpp.o[0m

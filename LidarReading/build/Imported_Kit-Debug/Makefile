@@ -174,8 +174,58 @@ LidarReading/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LidarReading.dir/build.make CMakeFiles/LidarReading.dir/build
 .PHONY : LidarReading/fast
 
-functions.o: functions.cpp.o
-.PHONY : functions.o
+#=============================================================================
+# Target rules for targets named lidar_data_uninstall
+
+# Build rule for target.
+lidar_data_uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lidar_data_uninstall
+.PHONY : lidar_data_uninstall
+
+# fast build rule for target.
+lidar_data_uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data_uninstall.dir/build.make CMakeFiles/lidar_data_uninstall.dir/build
+.PHONY : lidar_data_uninstall/fast
+
+#=============================================================================
+# Target rules for targets named lidar_data
+
+# Build rule for target.
+lidar_data: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lidar_data
+.PHONY : lidar_data
+
+# fast build rule for target.
+lidar_data/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/build
+.PHONY : lidar_data/fast
+
+src/lidarnode.o: src/lidarnode.cpp.o
+.PHONY : src/lidarnode.o
+
+# target to build an object file
+src/lidarnode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o
+.PHONY : src/lidarnode.cpp.o
+
+src/lidarnode.i: src/lidarnode.cpp.i
+.PHONY : src/lidarnode.i
+
+# target to preprocess a source file
+src/lidarnode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/src/lidarnode.cpp.i
+.PHONY : src/lidarnode.cpp.i
+
+src/lidarnode.s: src/lidarnode.cpp.s
+.PHONY : src/lidarnode.s
+
+# target to generate assembly for a file
+src/lidarnode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_data.dir/build.make CMakeFiles/lidar_data.dir/src/lidarnode.cpp.s
+.PHONY : src/lidarnode.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
 functions.cpp.o:
