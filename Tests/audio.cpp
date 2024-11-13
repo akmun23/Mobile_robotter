@@ -12,11 +12,14 @@ std::vector<int> Received;
 double clockStartMessage = clock();
 double clockEndMessage;
 // double timeToSendMessage = ((136+250)*5+136)/1000;  // BUFFER 6000  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
-double timeToSendMessage = (6*136.1)/1000;
+double timeToSendMessage = (6*120.7)/1000;
 double clockStartTone = clock();
 double clockEndTone = clock();
 double SamplesPerFrame = 4000; // 4000 samples per frame comes from controller program making the tones
 double timeToReadTone = 0.0907;  // 102 ms is the time from the start of fade in to end of fade out
+
+double testClock1 = clock();
+double testClock2 = clock();
 
 
 
@@ -248,9 +251,9 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 }
 
 bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 3000;
+    int MinMagnitude = 5000;
     clockEndTone = clock();
-
+    testClock1 = clock();
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
         if(maxRow == 0){
@@ -287,6 +290,7 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
             if(maxColumn == 0){
                 if(!startOfMessageReceived){
                     clockStartMessage = clock();
+                    clockStartTone = clock()-0.00226*CLOCKS_PER_SEC;
                 }
                 startOfMessageReceived = true;
                 Received.push_back(14);
@@ -301,7 +305,7 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
     }/*else if((rowMags[maxRow] < MinMagnitude || columnMags[maxColumn] < MinMagnitude) && LetterReceived){
         LetterReceived = false;
     }*/
-    else if(LetterReceived && ((clockEndTone - clockStartTone)/(double)CLOCKS_PER_SEC > timeToReadTone)){
+    else if(LetterReceived && ((clockEndTone - clockStartTone+(testClock1-testClock2))/(double)CLOCKS_PER_SEC > timeToReadTone)){
         LetterReceived = false;
         std::cout << std::endl;
         std::cout << "Time passed:   " <<(clockEndTone - clockStartTone)/(double)CLOCKS_PER_SEC << "           ";
@@ -309,8 +313,8 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
         std::cout << "Letter received: " << Received[Received.size()-1] << std::endl;
         std::cout << std::endl;
         clockStartTone = clock();
-
     }
+    testClock2 = clock();
 
     return false;
 }

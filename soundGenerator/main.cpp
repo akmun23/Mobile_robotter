@@ -8,8 +8,8 @@
 #include <time.h>
 
 std::vector<double> AmplitudeFading;
-int Delay = 1500/2;
-int SamplesPerFrame = 6000;
+int Delay = 500;
+int SamplesPerFrame = Delay*6;
 int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
 int AudioPlayRate = 44100;
 
@@ -41,6 +41,7 @@ void makeAmplitudeFading(){
     for (int i = fadeOutEnd; i < End; i++) {
         AmplitudeFading.push_back(0);
     }
+
 }
 
 // Map characters '0'-'9', 'A'-'D', '*', and '#' to corresponding index values
@@ -138,6 +139,7 @@ int main() {
 
     sequence += "*3030#";
     */
+
     clockStart = clock();
     playSequence(sequence);         // Send the frame
     clockEnd = clock();
