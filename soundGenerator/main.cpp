@@ -8,8 +8,8 @@
 #include <time.h>
 
 std::vector<double> AmplitudeFading;
-int Delay = 1500/2;
-int SamplesPerFrame = 6000;
+int Delay = 1000/2;
+int SamplesPerFrame = 4000;
 int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
 int AudioPlayRate = 44100;
 
