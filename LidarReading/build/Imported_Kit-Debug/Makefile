@@ -356,18 +356,6 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-<<<<<<< HEAD:ros2_ws/build/lidar_data/Makefile
-	@echo "... test"
-	@echo "... lidar_data_uninstall"
-	@echo "... uninstall"
-	@echo "... lidar_data"
-	@echo "... src/lidarnode.o"
-	@echo "... src/lidarnode.i"
-	@echo "... src/lidarnode.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-=======
 	@echo "... LidarReading"
 	@echo "... functions.o"
 	@echo "... functions.i"
@@ -384,7 +372,6 @@ help:
 	@echo "... windowClass.o"
 	@echo "... windowClass.i"
 	@echo "... windowClass.s"
->>>>>>> sendDataToCmdVel:LidarReading/build/Imported_Kit-Debug/Makefile
 .PHONY : help
 
 
