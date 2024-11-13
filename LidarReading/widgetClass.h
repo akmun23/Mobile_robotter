@@ -2,7 +2,6 @@
 #define WIDGETCLASS_H
 
 #include <QWidget>
-
 #include "helperClass.h"
 
 class Helper;

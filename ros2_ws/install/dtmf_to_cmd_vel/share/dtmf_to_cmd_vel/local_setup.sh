@@ -1,1 +1,0 @@
-/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/ament_cmake_environment_hooks/local_setup.sh

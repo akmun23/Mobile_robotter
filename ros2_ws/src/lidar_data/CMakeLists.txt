@@ -18,22 +18,12 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(nav_msgs REQUIRED)
-find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
-
-include_directories(
-    /home/aksel/matplotlib-cpp
-    ${Python3_INCLUDE_DIRS}
-)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
 
 include_directories(include)
 
 # Add executable
 add_executable(lidar_data src/main.cpp)
-
-
-target_link_libraries(${PROJECT_NAME}
-    ${Python3_LIBRARIES}
-)
 
 # Specify the dependencies for the target
 ament_target_dependencies(lidar_data
@@ -44,15 +34,20 @@ ament_target_dependencies(lidar_data
   nav_msgs
 )
 
-# Install the executable
+# Link Qt6 libraries
+target_link_libraries(lidar_data Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql)
+
+# Install the executable to the appropriate directory
 install(TARGETS
   lidar_data
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# Install the launch files
 install(DIRECTORY launch
         DESTINATION share/${PROJECT_NAME}/
 )
 
+# Call ament package function to finalize the setup
 ament_package()
 
