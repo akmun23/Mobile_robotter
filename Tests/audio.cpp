@@ -12,7 +12,7 @@ std::vector<int> Received;
 double clockStartMessage = clock();
 double clockEndMessage;
 // double timeToSendMessage = ((136+250)*5+136)/1000;  // BUFFER 6000  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
-double timeToSendMessage = (6*136.1)/1000;
+double timeToSendMessage = (6*90.07)/1000;
 double clockStartTone = clock();
 double clockEndTone = clock();
 double SamplesPerFrame = 4000; // 4000 samples per frame comes from controller program making the tones
@@ -198,7 +198,7 @@ int Audio::streamCallback(
 
 }
 
-void Audio::calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator) {
+void Audio::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator) {
     double pi = 3.14159265358979323846;
 
     double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
