@@ -12,11 +12,11 @@ std::vector<int> Received;
 double clockStartMessage = clock();
 double clockEndMessage;
 // double timeToSendMessage = ((136+250)*5+136)/1000;  // BUFFER 6000  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
-double timeToSendMessage = (6*90.07)/1000;
+double timeToSendMessage = 1.02;  // 763 ms is the time from the start of the message to the end of the message it is rounded up to
 double clockStartTone = clock();
 double clockEndTone = clock();
-double SamplesPerFrame = 4000; // 4000 samples per frame comes from controller program making the tones
-double timeToReadTone = 0.0907;  // 102 ms is the time from the start of fade in to end of fade out
+double SamplesPerFrame = 6000; // 4000 samples per frame comes from controller program making the tones
+double timeToReadTone = 0.168;  // 102 ms is the time from the start of fade in to end of fade out
 
 
 

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/D
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/oioioi.dir/all
+all: CMakeFiles/soundGenerator.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/oioioi.dir/clean
+clean: CMakeFiles/soundGenerator.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/oioioi.dir
+# Target rules for target CMakeFiles/soundGenerator.dir
 
 # All Build rule for target.
-CMakeFiles/oioioi.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oioioi.dir/build.make CMakeFiles/oioioi.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oioioi.dir/build.make CMakeFiles/oioioi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/Desktop-Debug/CMakeFiles --progress-num=1,2 "Built target oioioi"
-.PHONY : CMakeFiles/oioioi.dir/all
+CMakeFiles/soundGenerator.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/soundGenerator.dir/build.make CMakeFiles/soundGenerator.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/soundGenerator.dir/build.make CMakeFiles/soundGenerator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/Desktop-Debug/CMakeFiles --progress-num=1,2 "Built target soundGenerator"
+.PHONY : CMakeFiles/soundGenerator.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/oioioi.dir/rule: cmake_check_build_system
+CMakeFiles/soundGenerator.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/Desktop-Debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/oioioi.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/soundGenerator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/Desktop-Debug/CMakeFiles 0
-.PHONY : CMakeFiles/oioioi.dir/rule
+.PHONY : CMakeFiles/soundGenerator.dir/rule
 
 # Convenience name for target.
-oioioi: CMakeFiles/oioioi.dir/rule
-.PHONY : oioioi
+soundGenerator: CMakeFiles/soundGenerator.dir/rule
+.PHONY : soundGenerator
 
 # clean rule for target.
-CMakeFiles/oioioi.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/oioioi.dir/build.make CMakeFiles/oioioi.dir/clean
-.PHONY : CMakeFiles/oioioi.dir/clean
+CMakeFiles/soundGenerator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/soundGenerator.dir/build.make CMakeFiles/soundGenerator.dir/clean
+.PHONY : CMakeFiles/soundGenerator.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

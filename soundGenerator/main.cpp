@@ -10,9 +10,9 @@
 
 std::vector<double> AmplitudeFading;
 int Delay = 750;
-int SamplesPerFrame = Delay*6;
+int SamplesPerFrame = Delay*8;
 int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
-int AudioPlayRate = 44100;
+int AudioPlayRate = 40000;
 
 // DTMF tone frequencies for digits 0-9
 const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
@@ -27,9 +27,6 @@ void makeAmplitudeFading(){
     double fadeOutEnd = AudioSamplesPerFrame;
     double End = AudioSamplesPerFrame+Delay;
 
-    for (int i = 0; i < Delay; i++) {
-        AmplitudeFading.push_back(0);
-    }
     for (int i = AudioStart; i < fadeInEnd; i++) {
         AmplitudeFading.push_back(i/fadeInEnd);
     }
@@ -104,9 +101,9 @@ void playSequence(const std::string &sequence) {
 int main() {
 
     makeAmplitudeFading();
-    double clockStart;
-    double clockEnd;
-    std::string sequence = "*1010#";  // First frame to be send having direction and speed
+    std::string sequenceTone = "*";  // First frame to be send having direction and speed
+    std::string sequenceMessage = "*1010#";  // First frame to be send having direction and speed
+
     /*
     sequence += "*1010#";
 
@@ -118,11 +115,96 @@ int main() {
 
     sequence += "*3030#";
     */
+
+
+    sf::SoundBuffer buffer;
+    std::vector<sf::Int16> samples;
+
+
+    for (int i = 0; i < 44100*2; i++) {
+        samples.push_back(sound::SineWave(i, 200, 0.5));
+
+    }
+
+    buffer.loadFromSamples(&samples[0], samples.size(), 1, AudioPlayRate);
+
+    sf::Sound sound;
+    sound.setBuffer(buffer);
+    sound.play();
+    usleep(1*1000*1000*2);    // Sleep for 5
+    samples.clear();
+
+
+
+    std::vector<double> Data;
     auto start = std::chrono::high_resolution_clock::now();
-    playSequence(sequence);         // Send the frame
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
-    std::cout << "Elapsed time: " << elapsed.count() << " seconds" << std::endl;
+    double sum = 0;
+    double min = 0;
+    double max = 0;
+    /*
+
+    for (int i = 0; i < 2000; ++i) {
+        start = std::chrono::high_resolution_clock::now();
+        playSequence(sequenceTone);         // Send the frame
+        end = std::chrono::high_resolution_clock::now();
+        elapsed = end - start;
+        Data.push_back(elapsed.count());
+    }
+    sum = 0;
+    min = Data[1];
+    max = Data[1];
+
+    for (int i = 1; i < Data.size(); ++i) {
+        sum += Data[i];
+
+        if(Data[i] < min){
+            min = Data[i];
+        }
+        if(Data[i] > max){
+            max = Data[i];
+        }
+
+    }
+    std::cout << "--------------------------------------------------------------"<< std::endl;
+    std::cout << "Average time for tone and message with audio buffer size 5250"<< std::endl;
+    std::cout << "Average time Tone: " << sum/(Data.size()-1) << " seconds" << std::endl;
+    std::cout << "Min time Tone: " << min << " seconds" << std::endl;
+    std::cout << "Max time Tone: " << max << " seconds" << std::endl;
+    std::cout << "First Tone time: " << Data[0] << " seconds" << std::endl;
+    std::cout << std::endl;
+
+    Data.clear();
+
+    usleep(1*1000*1000*10);    // Sleep for 10
+    */
+    for (int i = 1; i < 3; ++i) {
+        start = std::chrono::high_resolution_clock::now();
+        playSequence(sequenceMessage);         // Send the frame
+        end = std::chrono::high_resolution_clock::now();
+        elapsed = end - start;
+        Data.push_back(elapsed.count());
+    }
+
+    sum = 0;
+    min = Data[1];
+    max = Data[1];
+    for (int i = 1; i < Data.size(); ++i) {
+        sum += Data[i];
+
+        if(Data[i] < min){
+            min = Data[i];
+        }
+        if(Data[i] > max){
+            max = Data[i];
+        }
+    }
+    std::cout << "Average time Message: " << sum/(Data.size()-1) << " seconds" << std::endl;
+    std::cout << "Min time Message: " << min << " seconds" << std::endl;
+    std::cout << "Max time Message: " << max << " seconds" << std::endl;
+    std::cout << "First Message time: " << Data[0] << " seconds" << std::endl;
+
 
 
     return 0;
