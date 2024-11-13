@@ -1,7 +1,0 @@
-/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug/CMakeFiles/GetInfoFromMic.dir
-/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug/CMakeFiles/install-deps.dir
-/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug/CMakeFiles/uninstall-deps.dir
-/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug/CMakeFiles/package.dir
-/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug/CMakeFiles/package_source.dir
-/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/pascal/Dokumenter/3.Semester/SemesterProjekt/Test/GetInfoFromMic/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir

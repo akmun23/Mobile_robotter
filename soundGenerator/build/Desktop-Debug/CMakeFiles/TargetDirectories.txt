@@ -1,3 +1,0 @@
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/Desktop-Debug/CMakeFiles/oioioi.dir
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/oioioi/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
