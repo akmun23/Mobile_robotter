@@ -1,4 +1,6 @@
-# Install script for directory: /home/emil/workspace/ros_test/fourier
+Tests/build/Desktop-Debug/cmake_install.cmake
+# Install script for directory: /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests
+main:DFT/fourier/build/Desktop_Qt_6_8_0-Debug/cmake_install.cmake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -66,5 +68,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<<< HEAD:Tests/build/Desktop-Debug/cmake_install.cmake
+file(WRITE "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/${CMAKE_INSTALL_MANIFEST}"
+========
 file(WRITE "/home/emil/workspace/ros_test/fourier/build/Desktop_Qt_6_8_0-Debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>>> main:DFT/fourier/build/Desktop_Qt_6_8_0-Debug/cmake_install.cmake
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

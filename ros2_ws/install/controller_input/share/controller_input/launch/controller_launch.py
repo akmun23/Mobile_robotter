@@ -1,1 +1,0 @@
-/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/launch/controller_launch.py

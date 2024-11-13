@@ -1,7 +1,0 @@
-[ 25%] [32m[1mLinking CXX executable dtmf_to_cmd_vel[0m
-/usr/bin/ld: CMakeFiles/dtmf_to_cmd_vel.dir/src/dtmf_to_cmd_vel_node.cpp.o: in function `std::_MakeUniq<Audio>::__single_object std::make_unique<Audio>()':
-dtmf_to_cmd_vel_node.cpp:(.text._ZSt11make_uniqueI5AudioJEENSt9_MakeUniqIT_E15__single_objectEDpOT0_[_ZSt11make_uniqueI5AudioJEENSt9_MakeUniqIT_E15__single_objectEDpOT0_]+0x26): undefined reference to `Audio::Audio()'
-collect2: error: ld returned 1 exit status
-gmake[2]: *** [CMakeFiles/dtmf_to_cmd_vel.dir/build.make:224: dtmf_to_cmd_vel] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/dtmf_to_cmd_vel.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

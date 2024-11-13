@@ -1,4 +1,5 @@
 #include "functions.h"
+#include <qapplication.h>
 
 int getScrnWidth(){
     QSize size = qApp->screens()[0]->size();

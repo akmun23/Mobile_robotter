@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_MobileRobotterMapping_FILE /home/madshyrup/Documents/Semester projekt (3. Semester)/MobileRobotterMapping/build/Desktop_Qt_6_8_0-Debug/MobileRobotterMapping)
-set(__QT_DEPLOY_TARGET_MobileRobotterMapping_TYPE EXECUTABLE)
