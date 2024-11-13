@@ -114,7 +114,7 @@ public:
         );
 
 
-    static void calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator);
+    static void calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator);
 
     /**
     *@brief Method to analyze the output from the Goertzel algorithm and calls ReactOnSignal to store the result

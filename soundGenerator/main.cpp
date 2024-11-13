@@ -8,8 +8,8 @@
 #include <time.h>
 
 std::vector<double> AmplitudeFading;
-int Delay = 1500/2;
-int SamplesPerFrame = 6000;
+int Delay = 1000;
+int SamplesPerFrame = Delay*6;
 int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
 int AudioPlayRate = 44100;
 
@@ -22,7 +22,7 @@ void makeAmplitudeFading(){
 
     double AudioStart = 0;
     double fadeInEnd = AudioSamplesPerFrame/6;
-    double fadeOutBegin = AudioSamplesPerFrame/6*5;
+    double fadeOutBegin = AudioSamplesPerFrame-fadeInEnd;
     double fadeOutEnd = AudioSamplesPerFrame;
     double End = AudioSamplesPerFrame+Delay;
 
@@ -99,27 +99,6 @@ void playSequence(const std::string &sequence) {
         }
     }
 }
-/*
-int main() {
-    while (true) {
-        // Ask user for input
-        std::string sequence;
-        std::cout << "Enter a sequence of numbers (0-9) or 'q' to quit: ";
-        std::cin >> sequence;
-
-        // Check if the user wants to exit
-        if (sequence == "q" || sequence == "Q") {
-            std::cout << "Exiting program." << std::endl;
-            break;
-        }
-
-        // Play the sequence of tones
-        playSequence(sequence);
-    }
-
-    return 0;
-}*/
-
 
 int main() {
 
@@ -138,6 +117,7 @@ int main() {
 
     sequence += "*3030#";
     */
+    std::cout << CLOCKS_PER_SEC << std::endl;
     clockStart = clock();
     playSequence(sequence);         // Send the frame
     clockEnd = clock();
@@ -145,13 +125,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
