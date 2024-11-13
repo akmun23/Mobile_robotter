@@ -182,4 +182,103 @@ CMakeFiles/Tests.dir/main.cpp.o: \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h /usr/include/c++/13/complex \
- /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc
+ /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
+ /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/sound.h \
+ /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
+ /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
+ /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
+ /usr/include/SFML/System/Time.hpp /usr/include/SFML/System/Err.hpp \
+ /usr/include/SFML/System/FileInputStream.hpp \
+ /usr/include/SFML/System/InputStream.hpp \
+ /usr/include/SFML/System/NonCopyable.hpp \
+ /usr/include/SFML/System/Lock.hpp \
+ /usr/include/SFML/System/MemoryInputStream.hpp \
+ /usr/include/SFML/System/Mutex.hpp /usr/include/SFML/System/Sleep.hpp \
+ /usr/include/SFML/System/String.hpp /usr/include/SFML/System/Utf.hpp \
+ /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h /usr/include/SFML/System/Utf.inl \
+ /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/include/SFML/System/String.inl /usr/include/SFML/System/Thread.hpp \
+ /usr/include/SFML/System/Thread.inl \
+ /usr/include/SFML/System/ThreadLocal.hpp \
+ /usr/include/SFML/System/ThreadLocalPtr.hpp \
+ /usr/include/SFML/System/ThreadLocalPtr.inl \
+ /usr/include/SFML/System/Vector2.hpp \
+ /usr/include/SFML/System/Vector2.inl \
+ /usr/include/SFML/System/Vector3.hpp \
+ /usr/include/SFML/System/Vector3.inl \
+ /usr/include/SFML/Window/Clipboard.hpp \
+ /usr/include/SFML/Window/Export.hpp /usr/include/SFML/Window/Context.hpp \
+ /usr/include/SFML/Window/GlResource.hpp \
+ /usr/include/SFML/Window/ContextSettings.hpp \
+ /usr/include/SFML/Window/Cursor.hpp /usr/include/SFML/Window/Event.hpp \
+ /usr/include/SFML/Window/Joystick.hpp \
+ /usr/include/SFML/Window/Keyboard.hpp /usr/include/SFML/Window/Mouse.hpp \
+ /usr/include/SFML/Window/Sensor.hpp /usr/include/SFML/Window/Touch.hpp \
+ /usr/include/SFML/Window/VideoMode.hpp \
+ /usr/include/SFML/Window/Window.hpp \
+ /usr/include/SFML/Window/WindowBase.hpp \
+ /usr/include/SFML/Window/Vulkan.hpp \
+ /usr/include/SFML/Window/WindowHandle.hpp /usr/include/c++/13/cstddef \
+ /usr/include/SFML/Window/WindowStyle.hpp \
+ /usr/include/SFML/Graphics/BlendMode.hpp \
+ /usr/include/SFML/Graphics/Export.hpp \
+ /usr/include/SFML/Graphics/CircleShape.hpp \
+ /usr/include/SFML/Graphics/Shape.hpp \
+ /usr/include/SFML/Graphics/Drawable.hpp \
+ /usr/include/SFML/Graphics/RenderStates.hpp \
+ /usr/include/SFML/Graphics/Transform.hpp \
+ /usr/include/SFML/Graphics/Rect.hpp /usr/include/SFML/Graphics/Rect.inl \
+ /usr/include/SFML/Graphics/Transformable.hpp \
+ /usr/include/SFML/Graphics/VertexArray.hpp \
+ /usr/include/SFML/Graphics/Vertex.hpp \
+ /usr/include/SFML/Graphics/Color.hpp \
+ /usr/include/SFML/Graphics/PrimitiveType.hpp \
+ /usr/include/SFML/Graphics/ConvexShape.hpp \
+ /usr/include/SFML/Graphics/Font.hpp /usr/include/SFML/Graphics/Glyph.hpp \
+ /usr/include/SFML/Graphics/Texture.hpp \
+ /usr/include/SFML/Graphics/Image.hpp /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_tree.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/c++/13/bits/erase_if.h \
+ /usr/include/SFML/Graphics/RectangleShape.hpp \
+ /usr/include/SFML/Graphics/RenderTarget.hpp \
+ /usr/include/SFML/Graphics/View.hpp \
+ /usr/include/SFML/Graphics/RenderTexture.hpp \
+ /usr/include/SFML/Graphics/RenderWindow.hpp \
+ /usr/include/SFML/Graphics/Shader.hpp \
+ /usr/include/SFML/Graphics/Glsl.hpp /usr/include/SFML/Graphics/Glsl.inl \
+ /usr/include/SFML/Graphics/Sprite.hpp \
+ /usr/include/SFML/Graphics/Text.hpp \
+ /usr/include/SFML/Graphics/VertexBuffer.hpp /usr/include/SFML/Audio.hpp \
+ /usr/include/SFML/Audio/InputSoundFile.hpp \
+ /usr/include/SFML/Audio/Export.hpp /usr/include/SFML/Audio/Listener.hpp \
+ /usr/include/SFML/Audio/Music.hpp \
+ /usr/include/SFML/Audio/SoundStream.hpp \
+ /usr/include/SFML/Audio/SoundSource.hpp \
+ /usr/include/SFML/Audio/AlResource.hpp \
+ /usr/include/SFML/Audio/OutputSoundFile.hpp \
+ /usr/include/SFML/Audio/Sound.hpp \
+ /usr/include/SFML/Audio/SoundBuffer.hpp /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
+ /usr/include/SFML/Audio/SoundRecorder.hpp \
+ /usr/include/SFML/Audio/SoundFileFactory.hpp \
+ /usr/include/SFML/Audio/SoundFileFactory.inl \
+ /usr/include/SFML/Audio/SoundFileReader.hpp \
+ /usr/include/SFML/Audio/SoundFileWriter.hpp /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/c++/13/chrono \
+ /usr/include/c++/13/math.h

@@ -9,14 +9,15 @@ bool startOfMessageReceived = false;
 int direction = 0;
 int drivingSpeed = 0;
 std::vector<int> Received;
-double clockStartMessage = clock();
-double clockEndMessage;
+auto clockStartMessage = std::chrono::high_resolution_clock::now();
 // double timeToSendMessage = ((136+250)*5+136)/1000;  // BUFFER 6000  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
-double timeToSendMessage = 1.02;  // 763 ms is the time from the start of the message to the end of the message it is rounded up to
-double clockStartTone = clock();
-double clockEndTone = clock();
+double timeToSendMessage = 0.87;  // 763 ms is the time from the start of the message to the end of the message it is rounded up to
+auto clockStartTone = std::chrono::high_resolution_clock::now();
+auto clockEndTone = std::chrono::high_resolution_clock::now();
+std::chrono::duration<double> elapsedTime;
 double SamplesPerFrame = 6000; // 4000 samples per frame comes from controller program making the tones
-double timeToReadTone = 0.168;  // 102 ms is the time from the start of fade in to end of fade out
+double timeToReadTone = 0.144;  // 102 ms is the time from the start of fade in to end of fade out
+
 
 
 
@@ -32,6 +33,14 @@ void Audio::checkErr(PaError err) {
 inline float Audio::min(float a, float b) {
     return a < b ? a : b;
 }
+
+double Audio::TimePassed(std::chrono::high_resolution_clock::time_point start){
+    elapsedTime = std::chrono::high_resolution_clock::now() - start;
+
+    return elapsedTime.count();
+
+}
+
 
 void Audio::Init(){
 
@@ -163,9 +172,8 @@ int Audio::streamCallback(
         return paAbort;
 
     }else{
-        clockEndMessage = clock();
 
-        if(((clockEndMessage - clockStartMessage)/CLOCKS_PER_SEC > timeToSendMessage)  && (Received.size() < 6) && (Received.size() > 0)){
+        if((TimePassed(clockStartMessage) > timeToSendMessage)  && (Received.size() < 6) && (Received.size() > 0)){
             printf("\n Message timed out \n");
             fflush(stdout);
             for (int i = 0; i < Received.size(); ++i) {
@@ -175,10 +183,10 @@ int Audio::streamCallback(
             std::cout <<"----------------------------------------------" << std::endl;
             Received.clear();
             startOfMessageReceived = false;
-            clockStartMessage = clock();
+            clockStartMessage = std::chrono::high_resolution_clock::now();
 
         }else if(Received.size() == 6){
-            if((Received[0] == 14 && Received[5] == 15) && ((clockEndMessage - clockStartMessage)/CLOCKS_PER_SEC < timeToSendMessage)){
+            if((Received[0] == 14 && Received[5] == 15) && (TimePassed(clockStartMessage) < timeToSendMessage)){
                 reactOnSignal();
             }else{
                 printf("\n Invalid message \n");
@@ -191,7 +199,7 @@ int Audio::streamCallback(
             std::cout <<"----------------------------------------------" << std::endl;
             Received.clear();
             startOfMessageReceived = false;
-            clockStartMessage = clock();
+            clockStartMessage = std::chrono::high_resolution_clock::now();
         }
         return paContinue;
     }
@@ -248,7 +256,7 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 }
 
 bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 18000;
+    int MinMagnitude = 200;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
@@ -285,8 +293,8 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
         }else if(maxRow == 3){
             if(maxColumn == 0){
                 if(!startOfMessageReceived){
-                    clockStartMessage = clock();
-                    clockStartTone = clock();
+                    clockStartMessage = std::chrono::high_resolution_clock::now();
+                    clockStartTone = std::chrono::high_resolution_clock::now();
                 }
                 startOfMessageReceived = true;
                 Received.push_back(14);
@@ -301,14 +309,17 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
     }/*else if((rowMags[maxRow] < MinMagnitude || columnMags[maxColumn] < MinMagnitude) && LetterReceived){
         LetterReceived = false;
     }*/
-    else if(LetterReceived && ((clock() - clockStartTone)/(double)CLOCKS_PER_SEC > timeToReadTone)){
+    else if(LetterReceived && ((TimePassed(clockStartTone)+0.026) > timeToReadTone)){
         LetterReceived = false;
+
+        /*
         std::cout << std::endl;
-        std::cout << "Time passed:   " <<(clockEndTone - clockStartTone)/(double)CLOCKS_PER_SEC << "           ";
+        std::cout << "Time passed:   " << TimePassed(clockStartTone) << "           ";
         std::cout << "Time to read:  " << timeToReadTone << "        ";
         std::cout << "Letter received: " << Received[Received.size()-1] << std::endl;
         std::cout << std::endl;
-        clockStartTone = clock();
+        */
+        clockStartTone = std::chrono::high_resolution_clock::now();
 
     }
 
