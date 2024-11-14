@@ -1,56 +1,168 @@
-#pragma once
+#ifndef AUDIO_H
+#define AUDIO_H
 
-//#define _CRT_SECURE_NO_DEPRECATE
-
-#include <vector>
-#include <utility>
-#include <string>
-#include <stdexcept>
-#include <iostream>
+#include <thread>
+#include <time.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <cstring>
+#include <cmath>
 
-class Audio {
+#include <portaudio.h>
+#include <vector>
+
+// For debuq file
+#include <iostream>  // Include the input/output stream library
+#include <fstream>   // Include the file stream library
+
+
+#define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
+#define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
+
+#define NUM_CHANNELS 2                  // Number of audio channels to capture
+
+#define RecordTimeMs 20000              // How long to record audio for (ms)
+
+
+// Define our callback data (data that is passed to every callback function call)
+typedef struct {
+    double* in;         // Input buffer, will contain our audio sample
+} streamCallbackData;
+
+// Callback data, persisted between calls. Allows us to access the data it
+// contains from within the callback function.
+static streamCallbackData* spectroData;
+
+
+
+
+class Audio
+{
+private:
+
+    PaError err;
+    double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
+    PaStreamParameters inputParameters;
+
 public:
-    // Constructors
-    Audio(std::string str);
-    Audio() {};
+    Audio();
+    /**
+    *@brief Method to check for errors in PortAudio functions
+    *
+    *@param PaError err
+    *
+    *@return nothing
+    *
+    */
+    static void checkErr(PaError err);
 
-    // Read / Write files
-    void load_wav(std::string str);
-    void write_wav(std::string str);
 
-    // Get functions
-    // Subchunk2Size = NumSamples * NumChannels * BitsPerSample / 8 <==> NumSamples = Subchunk2Size / (NumChannels*(BitsPerSample / 8))
-    unsigned get_size() { return data.size(); }
-    unsigned get_sample_rate() { return SampleRate; }
-    unsigned get_n_channels() { return NumChannels; }
+    /**
+    *@brief Method to return the minimum of two float values
+    *
+    *@param float a, float b
+    *
+    *@return float
+    *
+    */
+    static inline float min(float a, float b);
 
-    // Set Functions
-    void set_sample_rate(int n) { SampleRate = n; }
-    void set_n_channels(int n) { if (n != 1 && n != 2)throw std::invalid_argument("n can only be 1 (MONO) or 2 (STEREO)!"); NumChannels = n; }
+    /**
+    *@brief Method to initialize PortAudio and allocate memory for the input buffer
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void Init();
 
-    // Overloaded Operators
-    std::pair<short, short> &operator[](unsigned i) { return data[i]; }
-protected:
-    char type[5];
-    char format[5];
-    char Subchunk1ID[5];
-    char Subchunk2ID[5];
 
-    int ChunkSize;
-    int Subchunk1Size;
-    int SampleRate;
-    int ByteRate;
-    int Subchunk2Size;
+    /**
+    *@brief Method to start the audio stream and record audio for a specified amount of time (RecordTimeMs)
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void start();
 
-    short AudioFormat;
-    short NumChannels;
-    short BlockAlign;
-    short BitsPerSample;
+    /**
+    *@brief Get the audio devices accessible to PortAudio and their specifications
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void getDevices();
 
-    // utility
-    unsigned NumSamples;
 
-    std::vector<std::pair<short, short> > data;
+    /**
+    *@brief This function is called by PortAudio when audio data is available to be processed
+    *
+    *@param const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags, void* userData
+    *
+    *@return nothing
+    *
+    */
+    static int streamCallback(
+        const void* inputBuffer,
+        void* outputBuffer,
+        unsigned long framesPerBuffer,
+        const PaStreamCallbackTimeInfo* timeInfo,
+        PaStreamCallbackFlags statusFlags,
+        void* userData
+        );
+
+
+    static void calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator);
+
+    /**
+    *@brief Method to analyze the output from the Goertzel algorithm and calls ReactOnSignal to store the result
+    *
+    *@param std::vector<double> mags
+    *
+    *@return bool
+    *
+    */
+    static bool analyseGoertzelOutput(std::vector<double> mags);
+
+
+    /**
+    *@brief Method to analyze the output from the Goertzel algorithm and print the results
+    *
+    *@param std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn
+    *
+    *@return bool
+    *
+    */
+    static bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
+
+
+    /**
+    *@brief Method to update the robots speed and direction according to the new message
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    static void reactOnSignal();
+
+    /**
+    *@brief Method to end the audio stream and free allocated resources
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void end();
+
+
+
 };
+
+#endif // AUDIO_H
