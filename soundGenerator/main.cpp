@@ -9,8 +9,8 @@
 #include <time.h>
 
 std::vector<double> AmplitudeFading;
-int Delay = 750;
-int SamplesPerFrame = Delay*8;
+int Delay = 1000;
+int SamplesPerFrame = Delay*6;
 int AudioSamplesPerFrame = SamplesPerFrame-Delay*2;
 int AudioPlayRate = 44100;
 
@@ -145,7 +145,7 @@ int main() {
     double max = 0;
 
 
-    for (int i = 0; i < 2000; ++i) {
+    for (int i = 0; i < 20; ++i) {
         start = std::chrono::high_resolution_clock::now();
         playSequence(sequenceTone);         // Send the frame
         end = std::chrono::high_resolution_clock::now();
@@ -179,7 +179,7 @@ int main() {
 
     usleep(1*1000*1000*10);    // Sleep for 10
 
-    for (int i = 1; i < 200; ++i) {
+    for (int i = 1; i < 5; ++i) {
         start = std::chrono::high_resolution_clock::now();
         playSequence(sequenceMessage);         // Send the frame
         end = std::chrono::high_resolution_clock::now();

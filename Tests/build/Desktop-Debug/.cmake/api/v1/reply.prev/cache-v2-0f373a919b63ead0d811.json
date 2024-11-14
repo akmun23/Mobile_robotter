@@ -1234,6 +1234,18 @@
 			"value" : "/usr/lib/qt5/bin/qmake"
 		},
 		{
+			"name" : "SFML_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SFML."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/SFML"
+		},
+		{
 			"name" : "Tests_BINARY_DIR",
 			"properties" : 
 			[

@@ -158,6 +158,8 @@ public:
     */
     void end();
 
+    static double TimePassed(std::chrono::high_resolution_clock::time_point start);
+
 
 
 };

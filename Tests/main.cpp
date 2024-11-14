@@ -1,8 +1,17 @@
 #include "audio.h"
 #include "dft.h"
+#include "sound.h"
 
 //#include <ros/ros.h>
 //#include <geometry_msgs/Twist.h>
+
+void RunListeningProgram() {
+    Audio audio;
+    audio.Init();
+    audio.start();
+    audio.end();
+}
+
 
 int main() {
 
@@ -35,17 +44,19 @@ int main() {
 
 
 
+    std::thread thread1(RunSoundProgram);
+    std::thread thread2(RunListeningProgram);
 
 
+    /*
     // Setup of audio
     Audio audio;
     audio.Init();
     audio.start();
-    audio.end();
+    audio.end();*/
 
-
-
-
+    thread1.join();
+    thread2.join();
 
 
 

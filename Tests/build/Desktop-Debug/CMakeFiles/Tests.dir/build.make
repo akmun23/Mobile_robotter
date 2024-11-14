@@ -124,6 +124,11 @@ Tests: CMakeFiles/Tests.dir/main.cpp.o
 Tests: CMakeFiles/Tests.dir/audio.cpp.o
 Tests: CMakeFiles/Tests.dir/dft.cpp.o
 Tests: CMakeFiles/Tests.dir/build.make
+Tests: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
+Tests: /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.6.1
+Tests: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.6.1
+Tests: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
+Tests: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 Tests: CMakeFiles/Tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tests.dir/link.txt --verbose=$(VERBOSE)
