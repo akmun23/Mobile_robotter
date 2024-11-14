@@ -3,8 +3,6 @@
 #include <iostream>
 #include <cmath>
 
-
-
 unsigned int bitReverse(unsigned int x, int log2n) {
     int n = 0;
     for (int i = 0; i < log2n; i++) {

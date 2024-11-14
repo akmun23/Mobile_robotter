@@ -2,11 +2,37 @@
 #include "DFT.h"
 #include <iostream>
 #include <chrono>
+#include <vector>
+#include <complex>
+#include <algorithm>
+#include <cmath>
+
+// Define DTMF row and column frequencies
+const std::vector<int> DTMFRowFrequencies = { 697, 770, 852, 941 };
+const std::vector<int> DTMFColumnFrequencies = { 1209, 1336, 1477, 1633 };
+const int frequencyTolerance = 10; // Allowable tolerance in Hz
+
+// Function to check if a frequency is approximately a DTMF row or column frequency
+bool isApproximateDTMFRowOrColumnFrequency(int freq) {
+    for (int dtmfFreq : DTMFRowFrequencies) {
+        if (std::abs(freq - dtmfFreq) <= frequencyTolerance) {
+            std::cout << "Frequency " << freq << " Hz is within tolerance of DTMF row frequency " << dtmfFreq << " Hz\n";
+            return true;
+        }
+    }
+    for (int dtmfFreq : DTMFColumnFrequencies) {
+        if (std::abs(freq - dtmfFreq) <= frequencyTolerance) {
+            std::cout << "Frequency " << freq << " Hz is within tolerance of DTMF column frequency " << dtmfFreq << " Hz\n";
+            return true;
+        }
+    }
+    return false;
+}
 
 int main() {
     int sampleRate = 48000;
-    std::string filename = "C:\\Users\\jona3\\OneDrive\\Dokumenter\\GitHub\\Mobile_robotter\\GetInfoFromMic\\DTMF9R.txt";
-    int bufferSize = 1500;
+    std::string filename = "C:\\Users\\Jonathan\\Desktop\\C++ Projekter\\SoftwareExamen\\Mobile_robotter\\GetInfoFromMic\\DTMF9R.txt";
+    int bufferSize = 3000;
 
     // Read DTMF data from file
     auto data = readDTMFData(filename, sampleRate);
@@ -15,8 +41,8 @@ int main() {
         return 3;
     }
 
-    // Process the data in chunks of size 3000
-    int numChunks = (data.size() + bufferSize - 1) / bufferSize; // Round up to cover remaining samples if any
+    // Process the data in chunks
+    int numChunks = (data.size() + bufferSize - 1) / bufferSize;
     for (int chunk = 0; chunk < numChunks; ++chunk) {
         int startIndex = chunk * bufferSize;
         int endIndex = std::min(startIndex + bufferSize, static_cast<int>(data.size()));
@@ -28,7 +54,7 @@ int main() {
         int n = chunkData.size();
         int log2n = std::ceil(std::log2(n));
         int paddedSize = 1 << log2n;
-        chunkData.resize(paddedSize, { 0.0, 0.0 }); // Zero pad if necessary
+        chunkData.resize(paddedSize, { 0.0, 0.0 });
 
         std::vector<std::complex<double>> fftResult(paddedSize);
 
@@ -43,64 +69,56 @@ int main() {
         std::chrono::duration<double> durationFFT = endFFT - startFFT;
         std::cout << "Time taken for FFT computation (chunk " << chunk + 1 << "): " << durationFFT.count() << " seconds." << std::endl;
 
-        // Start timer for frequency analysis
-        auto startFreqAnalysis = std::chrono::high_resolution_clock::now();
-
         // Find dominant frequencies in the chunk
         auto dominantFrequencies = findDominantFrequencies(fftResult, sampleRate);
 
-        // End timer for frequency analysis
-        auto endFreqAnalysis = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> durationFreqAnalysis = endFreqAnalysis - startFreqAnalysis;
-        std::cout << "Time taken for frequency analysis (chunk " << chunk + 1 << "): " << durationFreqAnalysis.count() << " seconds." << std::endl;
-
-        // Display the most dominant frequencies for the chunk
-        std::cout << "Dominant Frequencies (Hz)\tMagnitude (Chunk " << chunk + 1 << ")\n";
-        for (int i = 0; i < std::min(2, static_cast<int>(dominantFrequencies.size())); ++i) {
-            std::cout << dominantFrequencies[i].first << "\t" << dominantFrequencies[i].second << std::endl;
+        // Store dominant frequencies in a vector
+        std::vector<int> detectedFrequencies;
+        for (const auto& freqPair : dominantFrequencies) {
+            detectedFrequencies.push_back(freqPair.first);
         }
 
-        // Now process the DFT of the chunk
+        if (detectedFrequencies.size() >= 2) {
+            // Sort frequencies to get the smallest and largest
+            std::sort(detectedFrequencies.begin(), detectedFrequencies.end());
+            int rowFrequency = detectedFrequencies.front();
+            int columnFrequency = detectedFrequencies.back();
+
+            // Check if the frequencies match DTMF tones
+            if (isApproximateDTMFRowOrColumnFrequency(rowFrequency) && isApproximateDTMFRowOrColumnFrequency(columnFrequency)) {
+                std::cout << "DTMF tone detected in chunk " << chunk + 1 << "!\n";
+                std::cout << "Row Frequency: " << rowFrequency << " Hz\n";
+                std::cout << "Column Frequency: " << columnFrequency << " Hz\n";
+            }
+            else {
+                std::cout << "No DTMF tone detected in chunk " << chunk + 1 << ".\n";
+            }
+        }
+
+        // Prepare for DFT computation
         std::vector<std::complex<double>> dftResult(paddedSize);
 
         // Start timer for DFT computation
         auto startDFT = std::chrono::high_resolution_clock::now();
 
-        // Assuming chunkData is of type std::vector<std::complex<double>>
+        // Perform DFT on the real part of chunkData
         std::vector<double> realChunkData(chunkData.size());
         std::transform(chunkData.begin(), chunkData.end(), realChunkData.begin(), [](const std::complex<double>& c) {
             return c.real();
             });
-
         computeDFT(realChunkData, dftResult);
-
-
 
         // End timer for DFT computation
         auto endDFT = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> durationDFT = endDFT - startDFT;
         std::cout << "Time taken for DFT computation (chunk " << chunk + 1 << "): " << durationDFT.count() << " seconds." << std::endl;
 
-        // Start timer for frequency analysis of DFT
-        auto startDFTFreqAnalysis = std::chrono::high_resolution_clock::now();
-
         // Find dominant frequencies from DFT result
         auto DFTdominantFrequencies = findDominantFrequency(dftResult, sampleRate);
-
-        // End timer for frequency analysis of DFT
-        auto endDFTFreqAnalysis = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> DFTdurationFreqAnalysis = endDFTFreqAnalysis - startDFTFreqAnalysis;
-        std::cout << "Time taken for DFT frequency analysis (chunk " << chunk + 1 << "): " << DFTdurationFreqAnalysis.count() << " seconds." << std::endl;
-
-        // Display the most dominant frequencies from DFT
         std::cout << "Dominant Frequencies (Hz)\tMagnitude (DFT chunk " << chunk + 1 << ")\n";
         for (int i = 0; i < std::min(2, static_cast<int>(DFTdominantFrequencies.size())); ++i) {
             int frequency = DFTdominantFrequencies[i];
-
-            // Find the corresponding index in the DFT result
             int index = frequency * paddedSize / sampleRate;
-
-            // Ensure the index is within bounds before accessing the result
             if (index >= 0 && index < dftResult.size()) {
                 std::cout << frequency << "\t" << std::abs(dftResult[index]) << std::endl;
             }
@@ -109,4 +127,3 @@ int main() {
 
     return 0;
 }
-
