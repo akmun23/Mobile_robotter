@@ -16,6 +16,9 @@ add_executable(${PROJECT_NAME} main.cpp
     audio.h audio.cpp
     dft.h dft.cpp
     sound.h
+    AlgorithmCompareTest.h
+    fft.h fft.cpp
+    ProgramRunner.h
 )
 
 target_link_libraries(${PROJECT_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
