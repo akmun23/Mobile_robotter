@@ -1,4 +1,5 @@
 #include "dft.h"
+
 // Function to compute the DFT
 void computeDFT(const std::vector<double>& input, std::vector<std::complex<double>>& output) {
     int N = input.size();
@@ -6,8 +7,8 @@ void computeDFT(const std::vector<double>& input, std::vector<std::complex<doubl
     for (int k = 0; k < N; ++k) {
         std::complex<double> sum = 0.0;
         for (int n = 0; n < N; ++n) {
-            double angle = 2 * M_PI * k * n / N;
-            sum += input[n] * std::exp(-std::complex<double>(0, angle));
+            double angle = 2 * PI_M * k * n / N;
+            sum += input[n] * std::exp(-std::complex<double>(0.0, angle));
         }
         output[k] = sum;
     }
@@ -21,17 +22,17 @@ std::vector<double> findDominantFrequency(const std::vector<std::complex<double>
     std::vector<double> magnitudes;
 
     // Define the frequency bounds for DTMF tones
-    std::vector<std::pair<double, double>> dtmfBounds = {
-        {687, 707}, {760, 780}, {842, 862}, {931, 951},
-        {1199, 1219}, {1326, 1346}, {1467, 1487}, {1623, 1643}
+    std::vector<double> dtmfBounds = {
+        697, 770, 852, 941, 951, 1209, 1336, 1477, 1633
     };
 
     for (int i = 0; i < N / 2; ++i) {
         double frequency = i * samplingRate / N;
         bool withinBounds = false;
 
-        for (auto& bounds : dtmfBounds) {
-            if (frequency >= bounds.first && frequency <= bounds.second) {
+        // Iterate through dtmfBounds and check the frequency
+        for (size_t j = 0; j < dtmfBounds.size(); ++j) {
+            if (j < dtmfBounds.size() - 1 && frequency >= dtmfBounds[j] && frequency < dtmfBounds[j + 1]) {
                 withinBounds = true;
                 break;
             }
@@ -39,15 +40,17 @@ std::vector<double> findDominantFrequency(const std::vector<std::complex<double>
 
         if (withinBounds) {
             magnitudes.push_back(std::abs(dft[i]));
-        } else {
+        }
+        else {
             magnitudes.push_back(0); // Set magnitude to zero if frequency is out of range
         }
     }
 
+
     // Sort magnitudes and get top two frequencies
     std::vector<std::pair<double, int>> magIndexPairs;
     for (int i = 0; i < magnitudes.size(); ++i) {
-        magIndexPairs.push_back({magnitudes[i], i});
+        magIndexPairs.push_back({ magnitudes[i], i });
     }
     std::sort(magIndexPairs.rbegin(), magIndexPairs.rend());
 
@@ -60,17 +63,14 @@ std::vector<double> findDominantFrequency(const std::vector<std::complex<double>
 // Function to read DTMF data from file
 std::vector<double> readDTMFData(const std::string& filename) {
     std::vector<double> signal;
-    std::ifstream inFile;
-
-
-    inFile.open(filename);
+    std::ifstream inFile(filename);
 
     if (!inFile) {
-        std::cerr << "Unable to open file datafile.txt";
+        std::cerr << "Unable to open file " << filename << std::endl;
         exit(1);   // call system to stop
     }
-    double x;
 
+    double x;
     while (inFile >> x) {
         signal.push_back(x);
     }
