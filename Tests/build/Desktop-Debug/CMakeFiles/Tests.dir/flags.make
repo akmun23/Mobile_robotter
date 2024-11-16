@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGS = -DQT_QML_DEBUG -g -std=gnu++11 -fdiagnostics-color=always
+CXX_FLAGS = -DQT_QML_DEBUG -g -std=gnu++14 -fdiagnostics-color=always
 

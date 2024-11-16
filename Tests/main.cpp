@@ -12,8 +12,12 @@ int main(){
      * 2 - Jons program to compare DFT, FFT and goertzel
      *
      * 3 - Program to record and listen for DTMF tones used when recording files for testing
+     *
+     * 4 - Program to record and save audio to a file
+     *
+     * 5 - Program to just play audio
     */
-    RunProgram(1);
+    RunProgram(2);
 
     return 0;
 }

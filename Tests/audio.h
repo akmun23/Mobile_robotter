@@ -31,9 +31,7 @@ typedef struct {
 static streamCallbackData* spectroData;
 
 
-
-
-class Audio
+class Goertzel
 {
 private:
 
@@ -41,8 +39,9 @@ private:
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
 
+
 public:
-    Audio();
+    Goertzel();
     /**
     *@brief Method to check for errors in PortAudio functions
     *
@@ -117,7 +116,7 @@ public:
     static void calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator);
 
     /**
-    *@brief Method to analyze the output from the Goertzel algorithm and calls ReactOnSignal to store the result
+    *@brief Method to analyze the output from the GoertzelTesting algorithm and calls ReactOnSignal to store the result
     *
     *@param std::vector<double> mags
     *
@@ -128,7 +127,7 @@ public:
 
 
     /**
-    *@brief Method to analyze the output from the Goertzel algorithm and print the results
+    *@brief Method to analyze the output from the GoertzelTesting algorithm and print the results
     *
     *@param std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn
     *
@@ -159,6 +158,25 @@ public:
     void end();
 
     static double TimePassed(std::chrono::high_resolution_clock::time_point start);
+
+
+    void InitForStoringInFile();
+
+
+    void startTimedRecording(int RecordingTime);
+
+
+    static int streamCallbackForStoringInFile(
+        const void* inputBuffer,
+        void* outputBuffer,
+        unsigned long framesPerBuffer,
+        const PaStreamCallbackTimeInfo* timeInfo,
+        PaStreamCallbackFlags statusFlags,
+        void* userData
+        );
+
+
+
 
 
 

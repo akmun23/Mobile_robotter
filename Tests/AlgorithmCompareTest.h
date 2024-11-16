@@ -2,14 +2,15 @@
 #define ALGORITHMCOMPARETEST_H
 #include "fft.h"
 #include "dft.h"
+#include "goertzel.h"
 #include <iostream>
 #include <chrono>
 
 int RunCompareTest() {
-    int sampleRate = 48000;
-    std::string filename = "C:\\Users\\jona3\\OneDrive\\Dokumenter\\GitHub\\Mobile_robotter\\GetInfoFromMic\\DTMF9R.txt";
+    int sampleRate = 44100;
+    std::string filename = "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt";
     int bufferSize = 1500;
-
+    /*
     // Read DTMF data from file
     auto data = readDTMFData(filename, sampleRate);
     if (data.empty()) {
@@ -108,6 +109,14 @@ int RunCompareTest() {
             }
         }
     }
+    */
+
+
+
+    // Goertzel algorithm
+
+    GoertzelTesting GoertzelProcessor;
+    GoertzelProcessor.processFile(filename, sampleRate, bufferSize);
 
     return 0;
 }

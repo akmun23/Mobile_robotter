@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Tests.dir/dft.cpp.o.d"
   "CMakeFiles/Tests.dir/fft.cpp.o"
   "CMakeFiles/Tests.dir/fft.cpp.o.d"
+  "CMakeFiles/Tests.dir/goertzel.cpp.o"
+  "CMakeFiles/Tests.dir/goertzel.cpp.o.d"
   "CMakeFiles/Tests.dir/main.cpp.o"
   "CMakeFiles/Tests.dir/main.cpp.o.d"
   "Tests"

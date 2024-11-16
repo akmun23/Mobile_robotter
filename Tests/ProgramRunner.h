@@ -11,19 +11,35 @@
 
 
 void RunListeningProgram() {
-    Audio audio;
+    Goertzel audio;
     audio.Init();
     audio.start();
     audio.end();
 }
 
-void RecordingProgram() {
+void ListeningAndAudioProgram() {
     std::thread thread1(RunSoundProgram);
     std::thread thread2(RunListeningProgram);
 
     thread1.join();
     thread2.join();
 }
+
+void FileStoringProgram() {
+    Goertzel audio;
+    audio.InitForStoringInFile();
+    audio.startTimedRecording(5);
+    audio.end();
+}
+
+void StoreRecordingInFile() {
+    std::thread thread1(RunSoundProgram);
+    std::thread thread2(FileStoringProgram);
+
+    thread1.join();
+    thread2.join();
+}
+
 
 int RunProgram(int ProgramChoice) {
 
@@ -33,7 +49,13 @@ int RunProgram(int ProgramChoice) {
     }else if (ProgramChoice == 2){
         RunCompareTest();
     }else if (ProgramChoice == 3){
-        RecordingProgram();
+        ListeningAndAudioProgram();
+    }else if (ProgramChoice == 4){
+        StoreRecordingInFile();
+    }else if (ProgramChoice == 5){
+        RunSoundProgram();
+    }else{
+        std::cout << "Invalid Program Choice" << std::endl;
     }
 
 

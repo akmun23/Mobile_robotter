@@ -1,4 +1,5 @@
 #include "audio.h"
+#include <unistd.h>
 
 bool endProgram = false;
 bool LetterReceived = false;
@@ -21,20 +22,20 @@ double timeToReadTone = 0.144;  // 102 ms is the time from the start of fade in 
 
 
 
-Audio::Audio() {}
+Goertzel::Goertzel() {}
 
-void Audio::checkErr(PaError err) {
+void Goertzel::checkErr(PaError err) {
     if (err != paNoError) {
         printf("PortAudio error: %s\n", Pa_GetErrorText(err));
         exit(EXIT_FAILURE);
     }
 }
 
-inline float Audio::min(float a, float b) {
+inline float Goertzel::min(float a, float b) {
     return a < b ? a : b;
 }
 
-double Audio::TimePassed(std::chrono::high_resolution_clock::time_point start){
+double Goertzel::TimePassed(std::chrono::high_resolution_clock::time_point start){
     elapsedTime = std::chrono::high_resolution_clock::now() - start;
 
     return elapsedTime.count();
@@ -42,7 +43,7 @@ double Audio::TimePassed(std::chrono::high_resolution_clock::time_point start){
 }
 
 
-void Audio::Init(){
+void Goertzel::Init(){
 
     // Initialize PortAudio
     err = Pa_Initialize();
@@ -78,7 +79,7 @@ void Audio::Init(){
     checkErr(err);
 }
 
-void Audio::start(){
+void Goertzel::start(){
 
     // Begin capturing audio
     err = Pa_StartStream(stream);
@@ -89,7 +90,7 @@ void Audio::start(){
     }
 }
 
-void Audio::getDevices(){
+void Goertzel::getDevices(){
     int numDevices = Pa_GetDeviceCount();
     printf("Number of devices: %d\n", numDevices);
 
@@ -113,7 +114,7 @@ void Audio::getDevices(){
     }
 }
 
-int Audio::streamCallback(
+int Goertzel::streamCallback(
     const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
     const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
     void* userData
@@ -206,7 +207,7 @@ int Audio::streamCallback(
 
 }
 
-void Audio::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator) {
+void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator) {
     double pi = 3.14159265358979323846;
 
     double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
@@ -231,7 +232,7 @@ void Audio::calculateGoertzel(int tone, const float* in, std::vector<double>& ma
     mags[magsIterator] = v1*v1 + v2*v2 - omega_I*v1*v2;
 }
 
-bool Audio::analyseGoertzelOutput(std::vector<double> mags){
+bool Goertzel::analyseGoertzelOutput(std::vector<double> mags){
     std::vector<double> rowMags = {mags[0], mags[1], mags[2], mags[3]};
     std::vector<double> columnMags = {mags[4], mags[5], mags[6], mags[7]};
 
@@ -255,7 +256,7 @@ bool Audio::analyseGoertzelOutput(std::vector<double> mags){
 
 }
 
-bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
+bool Goertzel::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
     int MinMagnitude = 200;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
@@ -326,7 +327,7 @@ bool Audio::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMa
     return false;
 }
 
-void Audio::reactOnSignal(){
+void Goertzel::reactOnSignal(){
 
     drivingSpeed = Received[1]*16+Received[2];
     direction = Received[3]*16+Received[4];
@@ -353,7 +354,7 @@ void Audio::reactOnSignal(){
     */
 }
 
-void Audio::end(){
+void Goertzel::end(){
 
     // Stop capturing audio
     err = Pa_StopStream(stream);
@@ -369,5 +370,83 @@ void Audio::end(){
 
     // Free allocated resources used for FFT calculation
     free(spectroData);
+
+}
+
+
+
+
+
+
+
+void Goertzel::InitForStoringInFile(){
+    // Initialize PortAudio
+    err = Pa_Initialize();
+    checkErr(err);
+
+    // Allocate and define the callback data
+    spectroData = (streamCallbackData*)malloc(sizeof(streamCallbackData));
+    spectroData->in = (double*)malloc(sizeof(double) * FRAMES_PER_BUFFER);
+    if (spectroData->in == NULL) {
+        printf("Could not allocate spectro data\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Define stream capture specifications
+    memset(&inputParameters, 0, sizeof(inputParameters));
+    inputParameters.channelCount = NUM_CHANNELS;
+    inputParameters.device = Pa_GetDefaultInputDevice();
+    inputParameters.hostApiSpecificStreamInfo = nullptr;
+    inputParameters.sampleFormat = paFloat32;
+    inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
+
+    // Open the PortAudio stream
+    err = Pa_OpenStream(
+        &stream,
+        &inputParameters,
+        nullptr,
+        SAMPLE_RATE,
+        FRAMES_PER_BUFFER,
+        paNoFlag,
+        streamCallbackForStoringInFile,
+        spectroData
+        );
+    checkErr(err);
+
+}
+
+
+void Goertzel::startTimedRecording(int RecordingTime){
+
+    // Begin capturing audio
+    err = Pa_StartStream(stream);
+    checkErr(err);
+
+    usleep(RecordingTime*1000000);
+}
+
+
+
+
+int Goertzel::streamCallbackForStoringInFile(
+    const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+    const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+    void* userData
+    ) {
+
+    // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
+    float* in = (float*)inputBuffer;
+
+    std::ofstream outputFile;
+
+    outputFile.open("Recording.txt", std::ios_base::app); // The file is opened in append mode meaning that the data will be added to the end of the file
+
+    for (int i = 0; i < framesPerBuffer; ++i) {
+        outputFile << in[i] << std::endl;
+    }
+
+
+
+    return paContinue;
 
 }

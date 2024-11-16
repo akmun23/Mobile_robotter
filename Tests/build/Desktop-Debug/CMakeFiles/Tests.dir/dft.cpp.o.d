@@ -26,7 +26,7 @@ CMakeFiles/Tests.dir/dft.cpp.o: \
  /usr/include/c++/13/debug/assertions.h \
  /usr/include/c++/13/bits/stl_iterator.h \
  /usr/include/c++/13/bits/ptr_traits.h /usr/include/c++/13/debug/debug.h \
- /usr/include/c++/13/bits/predefined_ops.h \
+ /usr/include/c++/13/bits/predefined_ops.h /usr/include/c++/13/bit \
  /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/initializer_list /usr/include/c++/13/bits/stl_heap.h \
