@@ -12,13 +12,13 @@ GoertzelTesting::GoertzelTesting() {}
 
 double pi = 3.14159265358979323846;
 
-int MinMagnitude = 200;
+int MinMagnitude = 600;
 bool LetterReceivedCompareProgram = false;
 bool startOfMessageReceivedCompareProgram = false;
 std::vector<char> ReceivedCompareProgram;
 std::chrono::high_resolution_clock::time_point clockStartMessageCompareProgram;
 std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram;
-double timeToReadToneCompareProgram = 0.000234*4;  // timeToReadToneCompareProgram is the time it takes to load and calculate the tone
+double timeToReadToneCompareProgram = 0.00026*4;  // timeToReadToneCompareProgram is the time it takes to load and calculate the tone
 double timeToSendMessageCompareProgram = timeToReadToneCompareProgram*7;
 
 std::chrono::duration<double> elapsedTimeCompareProgram;
@@ -35,14 +35,8 @@ double TimePassed(std::chrono::high_resolution_clock::time_point start){
 std::vector<double> GoertzelTesting::readDTMFDataChunk(std::ifstream& inFile, int bufferSize) {
     std::vector<double> signal;
     double value;
-    std::ofstream outputFile;
-
-    outputFile.open("RecordingFromCompareProgramTest.txt", std::ios_base::app); // The file is opened in append mode meaning that the data will be added to the end of the file
-
     for (int i = 0; i < bufferSize && inFile >> value; ++i) {
         signal.push_back(value);
-
-        outputFile << value << std::endl;
     }
     return signal;
 }
@@ -172,7 +166,10 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
 // Function to process the file and detect DTMF tones in chunks
 void GoertzelTesting::processFile(const std::string& filename, int sampleRate, int bufferSize) {
 
-    int Iteration = 1;
+    int Iteration = 50;
+    double maxDuration = 0;
+    double sum = 0;
+    int tonecounter = 0;
     for (int i = 0; i < Iteration; ++i) {
 
     std::ifstream inFile(filename);
@@ -181,25 +178,21 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
         return;
     }
 
-    double maxDuration = 0;
-    double sum = 0;
-    int tonecounter = 0;
     std::vector<double> data;
     while (true) {
-        std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+        //std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
         data = readDTMFDataChunk(inFile, bufferSize);
-        if (data.empty()) break;
+        if (data.size() < 1500){
+            break;
+        }
+
         analyzeDataWithGoertzel(data, sampleRate);
-
-
-
         if((TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)  && (ReceivedCompareProgram.size() < 6) && (ReceivedCompareProgram.size() > 0)){
 
             if(i == Iteration-1){
-                printf("\n Message timed out \n");
-                fflush(stdout);
-                for (int i = 0; i < ReceivedCompareProgram.size(); ++i) {
-                    std::cout << ReceivedCompareProgram[i] << " ";
+                std::cout << ("\n Message timed out \n") << std::endl;
+                for (int ii = 0; ii < ReceivedCompareProgram.size(); ++ii) {
+                    std::cout << ReceivedCompareProgram[ii] << " ";
                 }
                 std::cout << std::endl;
                 std::cout <<"----------------------------------------------" << std::endl;
@@ -211,44 +204,39 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
         }else if(ReceivedCompareProgram.size() == 6){
             if((ReceivedCompareProgram[0] == '*' && ReceivedCompareProgram[5] == '#') && (TimePassed(clockStartMessageCompareProgram) < timeToSendMessageCompareProgram)){
                 if(i == Iteration-1){
-                    printf("\n Message correct format \n");
-                    fflush(stdout);
-                    for (int i = 0; i < ReceivedCompareProgram.size(); ++i) {
-                        std::cout << ReceivedCompareProgram[i] << " ";
-                    }
-                    std::cout << std::endl;
-                    std::cout <<"----------------------------------------------" << std::endl;
+                    std::cout << ("\n Message correct format \n") << std::endl;
                 }
             }else{
                 if(i == Iteration-1){
-                    printf("\n Invalid message \n");
-                    fflush(stdout);
-                    for (int i = 0; i < ReceivedCompareProgram.size(); ++i) {
-                        std::cout << ReceivedCompareProgram[i] << " ";
-                    }
-                    std::cout << std::endl;
-                    std::cout <<"----------------------------------------------" << std::endl;
+                    std::cout << ("\n Invalid message \n") << std::endl;
                 }
+            }
+            if(i == Iteration-1){
+                for (int ii = 0; ii < ReceivedCompareProgram.size(); ++ii) {
+                    std::cout << ReceivedCompareProgram[ii] << " ";
+                }
+                std::cout << std::endl;
+                std::cout <<"----------------------------------------------" << std::endl;
             }
             ReceivedCompareProgram.clear();
             startOfMessageReceivedCompareProgram = false;
             clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
         }
 
-        std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> elapsed = end - start;
+        //std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+        //std::chrono::duration<double> elapsed = end - start;
         //std::cout << "Time taken for processing chunk: " << elapsed.count() << " seconds." << std::endl;
-        if (elapsed.count() > maxDuration) {
-            maxDuration = elapsed.count();
-        }
-        sum += elapsed.count();
-        tonecounter++;
-        timeToReadToneCompareProgram = (sum/tonecounter)*4;
-        timeToSendMessageCompareProgram = timeToReadToneCompareProgram*7;
+        //if (elapsed.count() > maxDuration) {
+        //    maxDuration = elapsed.count();
+        //}
+        //sum += elapsed.count();
+        //tonecounter++;
+        //timeToReadToneCompareProgram = (sum/tonecounter)*4;
+        //timeToSendMessageCompareProgram = timeToReadToneCompareProgram*7;
     }
 
-    std::cout << "Average time taken for processing chunks: " << sum / tonecounter << " seconds." << std::endl;
-    std::cout << "Maximum time taken for processing a chunk: " << maxDuration << " seconds." << std::endl;
+    //std::cout << "Average time taken for processing chunks: " << sum / tonecounter << " seconds." << std::endl;
+    //std::cout << "Maximum time taken for processing a chunk: " << maxDuration << " seconds." << std::endl;
 
     inFile.close();
     }
