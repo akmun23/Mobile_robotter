@@ -54,6 +54,8 @@ void makeAmplitudeFading(){
     for (int i = fadeOutEnd; i < End; i++) {
         AmplitudeFading.push_back(0);
     }
+
+    std::cout << "AmplitudeFading size: " << AmplitudeFading.size() << std::endl;
 }
 
 // Map characters '0'-'9', 'A'-'D', '*', and '#' to corresponding index values

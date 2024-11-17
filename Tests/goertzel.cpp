@@ -155,7 +155,7 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
         }
         return true;
     }
-    else if(LetterReceivedCompareProgram && ((TimePassed(clockStartToneCompareProgram)) > timeToReadToneCompareProgram)){
+    else if(LetterReceivedCompareProgram && ((TimePassed(clockStartToneCompareProgram)+timeToReadToneCompareProgram/4) > timeToReadToneCompareProgram)){
         LetterReceivedCompareProgram = false;
         clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
     }
@@ -166,7 +166,7 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
 // Function to process the file and detect DTMF tones in chunks
 void GoertzelTesting::processFile(const std::string& filename, int sampleRate, int bufferSize) {
 
-    int Iteration = 20;
+    int Iteration = 3;
     for (int i = 0; i < Iteration; ++i) {
 
     std::ifstream inFile(filename);
@@ -178,10 +178,10 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
     double maxDuration = 0;
     double sum = 0;
     int tonecounter = 0;
-
+    std::vector<double> data;
     while (true) {
         std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-        auto data = readDTMFDataChunk(inFile, bufferSize);
+        data = readDTMFDataChunk(inFile, bufferSize);
         if (data.empty()) break;
         analyzeDataWithGoertzel(data, sampleRate);
 
