@@ -10,7 +10,7 @@
 GoertzelTesting::GoertzelTesting() {}
 
 
-int pi = 3.14159265358979323846;
+double pi = 3.14159265358979323846;
 
 int MinMagnitude = 200;
 bool LetterReceivedCompareProgram = false;
@@ -35,8 +35,14 @@ double TimePassed(std::chrono::high_resolution_clock::time_point start){
 std::vector<double> GoertzelTesting::readDTMFDataChunk(std::ifstream& inFile, int bufferSize) {
     std::vector<double> signal;
     double value;
+    std::ofstream outputFile;
+
+    outputFile.open("RecordingFromCompareProgramTest.txt", std::ios_base::app); // The file is opened in append mode meaning that the data will be added to the end of the file
+
     for (int i = 0; i < bufferSize && inFile >> value; ++i) {
         signal.push_back(value);
+
+        outputFile << value << std::endl;
     }
     return signal;
 }
@@ -166,7 +172,7 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
 // Function to process the file and detect DTMF tones in chunks
 void GoertzelTesting::processFile(const std::string& filename, int sampleRate, int bufferSize) {
 
-    int Iteration = 3;
+    int Iteration = 1;
     for (int i = 0; i < Iteration; ++i) {
 
     std::ifstream inFile(filename);
@@ -186,7 +192,6 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
         analyzeDataWithGoertzel(data, sampleRate);
 
 
-        ////////////////////////////////////////////////
 
         if((TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)  && (ReceivedCompareProgram.size() < 6) && (ReceivedCompareProgram.size() > 0)){
 
@@ -230,15 +235,6 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
             clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
         }
 
-
-        ////////////////////////////////////////////////
-
-        /*
-        if(startOfMessageReceivedCompareProgram && (TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)){
-            startOfMessageReceivedCompareProgram = false;
-            std::cout << std::endl;
-        }*/
-
         std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
         //std::cout << "Time taken for processing chunk: " << elapsed.count() << " seconds." << std::endl;
@@ -248,6 +244,7 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
         sum += elapsed.count();
         tonecounter++;
         timeToReadToneCompareProgram = (sum/tonecounter)*4;
+        timeToSendMessageCompareProgram = timeToReadToneCompareProgram*7;
     }
 
     std::cout << "Average time taken for processing chunks: " << sum / tonecounter << " seconds." << std::endl;
