@@ -146,7 +146,7 @@ void RunSoundProgram() {
     sf::Sound sound;
     sound.setBuffer(buffer);
     sound.play();
-    usleep(1*1000*1000*2);    // Sleep for 5
+    usleep(1*1000*1000*2);    // Sleep for 2 seconds
     samples.clear();
 
 

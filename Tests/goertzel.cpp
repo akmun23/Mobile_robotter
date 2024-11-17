@@ -12,13 +12,14 @@ GoertzelTesting::GoertzelTesting() {}
 
 int pi = 3.14159265358979323846;
 
-int MinMagnitude = 500;
+int MinMagnitude = 200;
 bool LetterReceivedCompareProgram = false;
 bool startOfMessageReceivedCompareProgram = false;
+std::vector<char> ReceivedCompareProgram;
 std::chrono::high_resolution_clock::time_point clockStartMessageCompareProgram;
 std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram;
-double timeToReadToneCompareProgram = 0.00023*4;  // 220.412 us is the time it takes to load and calculate the tone
-double timeToSendMessageCompareProgram = timeToReadToneCompareProgram*6;
+double timeToReadToneCompareProgram = 0.000234*4;  // timeToReadToneCompareProgram is the time it takes to load and calculate the tone
+double timeToSendMessageCompareProgram = timeToReadToneCompareProgram*7;
 
 std::chrono::duration<double> elapsedTimeCompareProgram;
 
@@ -108,33 +109,33 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
         LetterReceivedCompareProgram = true;
         if(maxRow == 0){
             if(maxColumn == 0){
-                std::cout << "1";
+                ReceivedCompareProgram.push_back('1');
             }else if(maxColumn == 1){
-                std::cout << "2";
+                ReceivedCompareProgram.push_back('2');
             }else if(maxColumn == 2){
-                std::cout << "3";
+                ReceivedCompareProgram.push_back('3');
             }else if(maxColumn == 3){
-                std::cout << "A";
+                ReceivedCompareProgram.push_back('A');
             }
         }else if(maxRow == 1){
             if(maxColumn == 0){
-                std::cout << "4";
+                ReceivedCompareProgram.push_back('4');
             }else if(maxColumn == 1){
-                std::cout << "5";
+                ReceivedCompareProgram.push_back('5');
             }else if(maxColumn == 2){
-                std::cout << "6";
+                ReceivedCompareProgram.push_back('6');
             }else if(maxColumn == 3){
-                std::cout << "B";
+                ReceivedCompareProgram.push_back('B');
             }
         }else if(maxRow == 2){
             if(maxColumn == 0){
-                std::cout << "7";
+                ReceivedCompareProgram.push_back('7');
             }else if(maxColumn == 1){
-                std::cout << "8";
+                ReceivedCompareProgram.push_back('8');
             }else if(maxColumn == 2){
-                std::cout << "9";
+                ReceivedCompareProgram.push_back('9');
             }else if(maxColumn == 3){
-                std::cout << "C";
+                ReceivedCompareProgram.push_back('C');
             }
         }else if(maxRow == 3){
             if(maxColumn == 0){
@@ -143,18 +144,18 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
                     clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
                 }
                 startOfMessageReceivedCompareProgram = true;
-                std::cout << "*";
+                ReceivedCompareProgram.push_back('*');
             }else if(maxColumn == 1){
-                std::cout << "0";
+                ReceivedCompareProgram.push_back('0');
             }else if(maxColumn == 2){
-                std::cout << "#";
+                ReceivedCompareProgram.push_back('#');
             }else if(maxColumn == 3){
-                std::cout << "D";
+                ReceivedCompareProgram.push_back('D');
             }
         }
         return true;
     }
-    else if(LetterReceivedCompareProgram && ((TimePassed(clockStartToneCompareProgram)+0.026) > timeToReadToneCompareProgram)){
+    else if(LetterReceivedCompareProgram && ((TimePassed(clockStartToneCompareProgram)) > timeToReadToneCompareProgram)){
         LetterReceivedCompareProgram = false;
         clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
     }
@@ -164,28 +165,94 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
 
 // Function to process the file and detect DTMF tones in chunks
 void GoertzelTesting::processFile(const std::string& filename, int sampleRate, int bufferSize) {
+
+    int Iteration = 20;
+    for (int i = 0; i < Iteration; ++i) {
+
     std::ifstream inFile(filename);
     if (!inFile) {
         std::cerr << "Unable to open file " << filename << std::endl;
         return;
     }
 
+    double maxDuration = 0;
+    double sum = 0;
     int tonecounter = 0;
+
     while (true) {
-        //std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+        std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
         auto data = readDTMFDataChunk(inFile, bufferSize);
         if (data.empty()) break;
         analyzeDataWithGoertzel(data, sampleRate);
 
+
+        ////////////////////////////////////////////////
+
+        if((TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)  && (ReceivedCompareProgram.size() < 6) && (ReceivedCompareProgram.size() > 0)){
+
+            if(i == Iteration-1){
+                printf("\n Message timed out \n");
+                fflush(stdout);
+                for (int i = 0; i < ReceivedCompareProgram.size(); ++i) {
+                    std::cout << ReceivedCompareProgram[i] << " ";
+                }
+                std::cout << std::endl;
+                std::cout <<"----------------------------------------------" << std::endl;
+            }
+            ReceivedCompareProgram.clear();
+            startOfMessageReceivedCompareProgram = false;
+            clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
+
+        }else if(ReceivedCompareProgram.size() == 6){
+            if((ReceivedCompareProgram[0] == '*' && ReceivedCompareProgram[5] == '#') && (TimePassed(clockStartMessageCompareProgram) < timeToSendMessageCompareProgram)){
+                if(i == Iteration-1){
+                    printf("\n Message correct format \n");
+                    fflush(stdout);
+                    for (int i = 0; i < ReceivedCompareProgram.size(); ++i) {
+                        std::cout << ReceivedCompareProgram[i] << " ";
+                    }
+                    std::cout << std::endl;
+                    std::cout <<"----------------------------------------------" << std::endl;
+                }
+            }else{
+                if(i == Iteration-1){
+                    printf("\n Invalid message \n");
+                    fflush(stdout);
+                    for (int i = 0; i < ReceivedCompareProgram.size(); ++i) {
+                        std::cout << ReceivedCompareProgram[i] << " ";
+                    }
+                    std::cout << std::endl;
+                    std::cout <<"----------------------------------------------" << std::endl;
+                }
+            }
+            ReceivedCompareProgram.clear();
+            startOfMessageReceivedCompareProgram = false;
+            clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
+        }
+
+
+        ////////////////////////////////////////////////
+
+        /*
         if(startOfMessageReceivedCompareProgram && (TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)){
             startOfMessageReceivedCompareProgram = false;
             std::cout << std::endl;
-        }
+        }*/
 
-        //std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
-        //std::chrono::duration<double> elapsed = end - start;
+        std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed = end - start;
         //std::cout << "Time taken for processing chunk: " << elapsed.count() << " seconds." << std::endl;
+        if (elapsed.count() > maxDuration) {
+            maxDuration = elapsed.count();
+        }
+        sum += elapsed.count();
+        tonecounter++;
+        timeToReadToneCompareProgram = (sum/tonecounter)*4;
     }
 
+    std::cout << "Average time taken for processing chunks: " << sum / tonecounter << " seconds." << std::endl;
+    std::cout << "Maximum time taken for processing a chunk: " << maxDuration << " seconds." << std::endl;
+
     inFile.close();
+    }
 }
