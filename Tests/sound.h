@@ -162,11 +162,13 @@ void RunSoundProgram() {
     double max = 0;
 
 
-    for(int i = 0; i < 1; i++){
+    for(int i = 0; i < 10; i++){
         playSequence("*15C2#");
         playSequence("*17bc#");
         playSequence("*91ad#");
         playSequence("*7462#");
+        playSequence("*1379#");
+
     }
 
 

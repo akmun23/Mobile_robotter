@@ -19,7 +19,6 @@ auto clockEndTone = std::chrono::high_resolution_clock::now();
 bool LetterReceived = false;
 bool startOfMessageReceived = false;
 std::vector<int> Received;
-int MinMagnitude = 200;
 
 // Variables for robot control
 int direction = 0;
@@ -162,14 +161,14 @@ int Goertzel::streamCallback(
 
     // Threads
 
-    std::thread t0(calculateGoertzel, tones[0], &in, &mags, 0,&omega_I_697, &k0_697);
-    std::thread t1(calculateGoertzel, tones[1], &in, &mags, 1,&omega_I_770, &k0_770);
-    std::thread t2(calculateGoertzel, tones[2], &in, &mags, 2,&omega_I_852, &k0_852);
-    std::thread t3(calculateGoertzel, tones[3], &in, &mags, 3,&omega_I_941, &k0_941);
-    std::thread t4(calculateGoertzel, tones[4], &in, &mags, 4,&omega_I_1209, &k0_1209);
-    std::thread t5(calculateGoertzel, tones[5], &in, &mags, 5,&omega_I_1336, &k0_1336);
-    std::thread t6(calculateGoertzel, tones[6], &in, &mags, 6,&omega_I_1477, &k0_1477);
-    std::thread t7(calculateGoertzel, tones[7], &in, &mags, 7,&omega_I_1633, &k0_1633);
+    std::thread t0(calculateGoertzel, tones[0], in, std::ref(mags), 0);
+    std::thread t1(calculateGoertzel, tones[1], in, std::ref(mags), 1);
+    std::thread t2(calculateGoertzel, tones[2], in, std::ref(mags), 2);
+    std::thread t3(calculateGoertzel, tones[3], in, std::ref(mags), 3);
+    std::thread t4(calculateGoertzel, tones[4], in, std::ref(mags), 4);
+    std::thread t5(calculateGoertzel, tones[5], in, std::ref(mags), 5);
+    std::thread t6(calculateGoertzel, tones[6], in, std::ref(mags), 6);
+    std::thread t7(calculateGoertzel, tones[7], in, std::ref(mags), 7);
 
     t0.join();
     t1.join();
@@ -230,14 +229,12 @@ int Goertzel::streamCallback(
     }
 
 }
+void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator) {
 
-void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int& magsIterator, double& omega_I, double& k0) {
+    double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
 
-    /*  The old way of calculating omega_I and k0 for each tone instead of having it as constants
-        double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
+    double omega_I = cos(2*M_PI*k0/FRAMES_PER_BUFFER);
 
-        double omega_I = cos(2*pi*k0/FRAMES_PER_BUFFER);
-    */
 
     //double omega_Q = sin(2*pi*k0/FRAMES_PER_BUFFER); Only needed for normal goertzel
     double v1 = 0;
@@ -283,6 +280,7 @@ bool Goertzel::analyseGoertzelOutput(std::vector<double> &mags){
 }
 
 bool Goertzel::SaveSignal(std::vector<double>& rowMags, std::vector<double>& columnMags, int& maxRow, int& maxColumn){
+    int MinMagnitude = 200;
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
