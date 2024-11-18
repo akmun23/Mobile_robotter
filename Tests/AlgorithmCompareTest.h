@@ -116,7 +116,7 @@ int RunCompareTest() {
     // Goertzel algorithm
 
     GoertzelTesting GoertzelProcessor;
-    GoertzelProcessor.processFile(filename, sampleRate, bufferSize);
+    GoertzelProcessor.processFileTest(filename, sampleRate, bufferSize);
 
     return 0;
 }

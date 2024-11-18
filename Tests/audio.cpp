@@ -1,24 +1,51 @@
 #include "audio.h"
 #include <unistd.h>
 
-bool endProgram = false;
-bool LetterReceived = false;
-
+// Variables for the listening function
 PaStream* stream;
+bool endProgram = false;
 
-bool startOfMessageReceived = false;
-int direction = 0;
-int drivingSpeed = 0;
-std::vector<int> Received;
-auto clockStartMessage = std::chrono::high_resolution_clock::now();
-// double timeToSendMessage = ((136+250)*5+136)/1000;  // BUFFER 6000  // 136 = transmission time of message (ms), 250 = time between messages (ms), 5 messages have a delay the last message delay doesn't matter
+// Variables for time invervals
 double timeToSendMessage = 0.87;  // 763 ms is the time from the start of the message to the end of the message it is rounded up to
+double SamplesPerFrame = 6000; //  SamplesPerFrame is the amount of frames in a tone this i specified in the sound program
+double timeToReadTone = 0.144;  // timeToReadTone is the time from the start of the tone to the end of the tone in ms
+
+// Variables for Clocks
+auto clockStartMessage = std::chrono::high_resolution_clock::now();
 auto clockStartTone = std::chrono::high_resolution_clock::now();
 auto clockEndTone = std::chrono::high_resolution_clock::now();
-std::chrono::duration<double> elapsedTime;
-double SamplesPerFrame = 6000; // 4000 samples per frame comes from controller program making the tones
-double timeToReadTone = 0.144;  // 102 ms is the time from the start of fade in to end of fade out
 
+// Variables for tone detection
+bool LetterReceived = false;
+bool startOfMessageReceived = false;
+std::vector<int> Received;
+int MinMagnitude = 200;
+
+// Variables for robot control
+int direction = 0;
+int drivingSpeed = 0;
+
+// Constants for goertzel algorithm
+// Calculated before the program starts to save time
+double k0_697 = FRAMES_PER_BUFFER * 697 / SAMPLE_RATE;
+double k0_770 = FRAMES_PER_BUFFER * 770 / SAMPLE_RATE;
+double k0_852 = FRAMES_PER_BUFFER * 852 / SAMPLE_RATE;
+double k0_941 = FRAMES_PER_BUFFER * 941 / SAMPLE_RATE;
+double k0_1209 = FRAMES_PER_BUFFER * 1209 / SAMPLE_RATE;
+double k0_1336 = FRAMES_PER_BUFFER * 1336 / SAMPLE_RATE;
+double k0_1477 = FRAMES_PER_BUFFER * 1477 / SAMPLE_RATE;
+double k0_1633 = FRAMES_PER_BUFFER * 1633 / SAMPLE_RATE;
+
+double omega_I_697 = cos(2 * M_PI * k0_697 / FRAMES_PER_BUFFER);
+double omega_I_770 = cos(2 * M_PI * k0_770 / FRAMES_PER_BUFFER);
+double omega_I_852 = cos(2 * M_PI * k0_852 / FRAMES_PER_BUFFER);
+double omega_I_941 = cos(2 * M_PI * k0_941 / FRAMES_PER_BUFFER);
+double omega_I_1209 = cos(2 * M_PI * k0_1209 / FRAMES_PER_BUFFER);
+double omega_I_1336 = cos(2 * M_PI * k0_1336 / FRAMES_PER_BUFFER);
+double omega_I_1477 = cos(2 * M_PI * k0_1477 / FRAMES_PER_BUFFER);
+double omega_I_1633 = cos(2 * M_PI * k0_1633 / FRAMES_PER_BUFFER);
+std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
+std::vector<double> mags(tones.size());
 
 
 
@@ -36,6 +63,7 @@ inline float Goertzel::min(float a, float b) {
 }
 
 double Goertzel::TimePassed(std::chrono::high_resolution_clock::time_point start){
+    std::chrono::duration<double> elapsedTime;
     elapsedTime = std::chrono::high_resolution_clock::now() - start;
 
     return elapsedTime.count();
@@ -123,10 +151,6 @@ int Goertzel::streamCallback(
     // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
     float* in = (float*)inputBuffer;
 
-
-    std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
-    std::vector<double> mags(tones.size());
-
     //int start = clock();
     // Uden threads //
     /*
@@ -138,14 +162,14 @@ int Goertzel::streamCallback(
 
     // Threads
 
-    std::thread t0(calculateGoertzel, tones[0], in, std::ref(mags), 0);
-    std::thread t1(calculateGoertzel, tones[1], in, std::ref(mags), 1);
-    std::thread t2(calculateGoertzel, tones[2], in, std::ref(mags), 2);
-    std::thread t3(calculateGoertzel, tones[3], in, std::ref(mags), 3);
-    std::thread t4(calculateGoertzel, tones[4], in, std::ref(mags), 4);
-    std::thread t5(calculateGoertzel, tones[5], in, std::ref(mags), 5);
-    std::thread t6(calculateGoertzel, tones[6], in, std::ref(mags), 6);
-    std::thread t7(calculateGoertzel, tones[7], in, std::ref(mags), 7);
+    std::thread t0(calculateGoertzel, tones[0], &in, &mags, 0,&omega_I_697, &k0_697);
+    std::thread t1(calculateGoertzel, tones[1], &in, &mags, 1,&omega_I_770, &k0_770);
+    std::thread t2(calculateGoertzel, tones[2], &in, &mags, 2,&omega_I_852, &k0_852);
+    std::thread t3(calculateGoertzel, tones[3], &in, &mags, 3,&omega_I_941, &k0_941);
+    std::thread t4(calculateGoertzel, tones[4], &in, &mags, 4,&omega_I_1209, &k0_1209);
+    std::thread t5(calculateGoertzel, tones[5], &in, &mags, 5,&omega_I_1336, &k0_1336);
+    std::thread t6(calculateGoertzel, tones[6], &in, &mags, 6,&omega_I_1477, &k0_1477);
+    std::thread t7(calculateGoertzel, tones[7], &in, &mags, 7,&omega_I_1633, &k0_1633);
 
     t0.join();
     t1.join();
@@ -207,13 +231,15 @@ int Goertzel::streamCallback(
 
 }
 
-void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator) {
-    double pi = 3.14159265358979323846;
+void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int& magsIterator, double& omega_I, double& k0) {
 
-    double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
+    /*  The old way of calculating omega_I and k0 for each tone instead of having it as constants
+        double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
 
-    double omega_I = cos(2*pi*k0/FRAMES_PER_BUFFER);
-    //double omega_Q = sin(2*pi*k0/FRAMES_PER_BUFFER);
+        double omega_I = cos(2*pi*k0/FRAMES_PER_BUFFER);
+    */
+
+    //double omega_Q = sin(2*pi*k0/FRAMES_PER_BUFFER); Only needed for normal goertzel
     double v1 = 0;
     double v2 = 0;
     for (int n = 0; n < FRAMES_PER_BUFFER; ++n) {
@@ -222,17 +248,17 @@ void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>&
         v1 = v;
     }
 
-    /*
+    /* Normal goertzel
     double y_I = omega_I * v1 - v2;
     double y_Q = omega_Q * v1;
 
     mags[magsIterator] = sqrt(y_I*y_I + y_Q*y_Q);
     */
-
+    // Optimized goertzel
     mags[magsIterator] = v1*v1 + v2*v2 - omega_I*v1*v2;
 }
 
-bool Goertzel::analyseGoertzelOutput(std::vector<double> mags){
+bool Goertzel::analyseGoertzelOutput(std::vector<double> &mags){
     std::vector<double> rowMags = {mags[0], mags[1], mags[2], mags[3]};
     std::vector<double> columnMags = {mags[4], mags[5], mags[6], mags[7]};
 
@@ -256,8 +282,7 @@ bool Goertzel::analyseGoertzelOutput(std::vector<double> mags){
 
 }
 
-bool Goertzel::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    int MinMagnitude = 200;
+bool Goertzel::SaveSignal(std::vector<double>& rowMags, std::vector<double>& columnMags, int& maxRow, int& maxColumn){
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
         LetterReceived = true;
@@ -332,10 +357,6 @@ void Goertzel::reactOnSignal(){
     drivingSpeed = Received[1]*16+Received[2];
     direction = Received[3]*16+Received[4];
 
-    // Convert back to -1.0 to 1.0
-    float linearSpeed = (static_cast<float>(drivingSpeed) / 255.0) * 2.0 - 1.0;
-    float angularSpeed = (static_cast<float>(direction) / 255.0) * 2.0 - 1.0;
-
     if(drivingSpeed == 0){
         printf("\r");
         printf("The robot has stopped");
@@ -344,14 +365,6 @@ void Goertzel::reactOnSignal(){
         printf("\n The robot is driving in direction %i at speed %i \n",direction,drivingSpeed);
         fflush(stdout);
     }
-
-    // Publish to cmd_vel topic
-    /*
-    geometry_msgs::Twist twistMsg;
-    twistMsg.linear.x = linearSpeed;
-    twistMsg.angular.z = angularSpeed;
-    cmdVelPub.publish(twistMsg);
-    */
 }
 
 void Goertzel::end(){
@@ -378,6 +391,24 @@ void Goertzel::end(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////// NOT PART OF NORMAL PROGRAM //////////////////////////////////////
+// This is the functions to make the listening program store the data in a file instead of analyzing it
 
 void Goertzel::InitForStoringInFile(){
     // Initialize PortAudio

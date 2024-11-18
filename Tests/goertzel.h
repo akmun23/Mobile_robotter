@@ -20,6 +20,8 @@ public:
 
     // Public methods
     void processFile(const std::string& filename, int sampleRate, int bufferSize);
+    void processFileTest(const std::string& filename, int sampleRate, int bufferSize);
+
 
 private:
     // Method to read DTMF data from file in chunks

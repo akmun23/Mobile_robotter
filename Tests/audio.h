@@ -19,7 +19,7 @@
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
 #define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
 
-#define NUM_CHANNELS 1                  // Number of audio channels to capture
+#define NUM_CHANNELS 1                  // Number of audio channels to capture (1 = mono, 2 = stereo)
 
 // Define our callback data (data that is passed to every callback function call)
 typedef struct {
@@ -34,6 +34,7 @@ static streamCallbackData* spectroData;
 class Goertzel
 {
 private:
+
 
     PaError err;
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
@@ -113,7 +114,7 @@ public:
         );
 
 
-    static void calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator);
+    static void calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int &magsIterator, double &omega_I, double &k0);
 
     /**
     *@brief Method to analyze the output from the GoertzelTesting algorithm and calls ReactOnSignal to store the result
@@ -123,7 +124,7 @@ public:
     *@return bool
     *
     */
-    static bool analyseGoertzelOutput(std::vector<double> mags);
+    static bool analyseGoertzelOutput(std::vector<double>& mags);
 
 
     /**
@@ -134,7 +135,7 @@ public:
     *@return bool
     *
     */
-    static bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
+    static bool SaveSignal(std::vector<double> &rowMags, std::vector<double> &columnMags, int &maxRow, int &maxColumn);
 
 
     /**
@@ -157,15 +158,43 @@ public:
     */
     void end();
 
+    /**
+     * @brief Function to get the time passed since start
+     *
+     * @param std::chrono::high_resolution_clock::time_point start
+     *
+     * @return double
+     */
     static double TimePassed(std::chrono::high_resolution_clock::time_point start);
 
 
+    /**
+     * @brief Same function as Init() but for storing the audio in a file
+     *
+     * @param nothing
+     *
+     * @return nothing
+     */
     void InitForStoringInFile();
 
 
+    /**
+     * @brief Same as start() but only runs for a specified time
+     *
+     * @param int RecordingTime
+     *
+     * @return nothing
+     */
     void startTimedRecording(int RecordingTime);
 
 
+    /**
+     * @brief Instead of reacting to the signal, store the audio in a file
+     *
+     * @param const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags, void* userData
+     *
+     * @return nothing
+     */
     static int streamCallbackForStoringInFile(
         const void* inputBuffer,
         void* outputBuffer,
