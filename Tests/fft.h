@@ -1,5 +1,4 @@
-#ifndef FFT_H
-#define FFT_H
+#pragma once
 
 #include <complex>
 #include <vector>
@@ -8,44 +7,54 @@
 #include <iterator>
 #include <algorithm>
 #include <iostream>
+#include <chrono>
 
+// Define the value of pi
 const double PI = 3.1415926536;
 
-// Function to perform bit reversal
-unsigned int bitReverse(unsigned int x, int log2n);
+// FFTProcessing class declaration
+class FFTProcessing {
+public:
+    // Constructor to initialize the class with required parameters
+    FFTProcessing(int minMagnitude, const std::vector<int>& dtmfRowFrequencies, const std::vector<int>& dtmfColumnFrequencies, int frequencyTolerance);
 
-// FFT computation function
-template<class Iter_T>
-void fft(Iter_T a, Iter_T b, int log2n) {
-    typedef typename std::iterator_traits<Iter_T>::value_type complex_type;
-    const complex_type J(0, 1);
-    int n = 1 << log2n;
+    // Function to process the file and detect DTMF tones
+    void processFile(const std::string& filename, int sampleRate, int bufferSize);
 
-    for (unsigned int i = 0; i < n; ++i) {
-        b[bitReverse(i, log2n)] = a[i];
-    }
+private:
+    int minMagnitude; // Minimum magnitude to consider a frequency as detected
+    const std::vector<int>& dtmfRowFrequencies; // List of DTMF row frequencies
+    const std::vector<int>& dtmfColumnFrequencies; // List of DTMF column frequencies
+    int frequencyTolerance; // Allowed frequency tolerance for detection
+    std::vector<char> receivedSignal; // Vector to store detected DTMF tones
+    std::chrono::high_resolution_clock::time_point clockStartMessage; // Timer for message start
+    std::chrono::high_resolution_clock::time_point clockStartTone; // Timer for tone start
+    double timeToReadTone; // Time taken to read and calculate a tone
+    double timeToSendMessage; // Time taken to send a message
+    bool letterReceived; // Flag to indicate if a letter is received
+    bool startOfMessageReceived; // Flag to indicate the start of a message
 
-    for (int s = 1; s <= log2n; ++s) {
-        int m = 1 << s;
-        int m2 = m >> 1;
-        complex_type w(1, 0);
-        complex_type wm = exp(-J * (PI / m2));  // Use PI here
-        for (int j = 0; j < m2; ++j) {
-            for (int k = j; k < n; k += m) {
-                complex_type t = w * b[k + m2];
-                complex_type u = b[k];
-                b[k] = u + t;
-                b[k + m2] = u - t;
-            }
-            w *= wm;
-        }
-    }
-}
+    // Helper function to reverse bits
+    unsigned int bitReverse(unsigned int x, int log2n);
 
-// Function to read DTMF data from file
-std::vector<std::complex<double>> readDTMFData(const std::string& filename, int& sampleRate);
+    // Function to read DTMF data from file in chunks
+    std::vector<std::complex<double>> readDTMFDataChunk(std::ifstream& inFile, int bufferSize);
 
-// Function to find the dominant frequencies in the result of an FFT
-std::vector<std::pair<int, double>> findDominantFrequencies(const std::vector<std::complex<double>>& fftResult, int sampleRate);
+    // Function to perform FFT
+    std::vector<std::complex<double>> fft(const std::vector<std::complex<double>>& input, int log2n);
 
-#endif
+    // Function to find dominant frequencies in the FFT result
+    std::vector<std::pair<int, double>> findDominantFrequencies(const std::vector<std::complex<double>>& fftResult, int sampleRate);
+
+    // Function to check if a frequency is approximately a DTMF row or column frequency
+    bool isApproximateDTMFRowOrColumnFrequency(int freq);
+
+    // Function to save the detected DTMF signal and manage message state
+    bool saveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
+
+    // Function to calculate the elapsed time
+    double timePassed(std::chrono::high_resolution_clock::time_point start);
+
+    // Function to display the received DTMF signal
+    void displayReceivedSignal();
+};
