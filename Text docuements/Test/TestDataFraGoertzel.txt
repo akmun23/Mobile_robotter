@@ -1,0 +1,71 @@
+MAGNITUDE 700 (1 sequence calculated)
+----------------------------------------------
+Correct Messages: 39
+Incorrect Messages: 13
+Incorrect Format Messages: 8
+Total Messages: 60
+Correct format percentage: 86%
+Correct Messages percentage: 65%
+----------------------------------------------
+
+MAGNITUDE 1000 (4 sequence calculated)
+----------------------------------------------
+Correct Messages: 171
+Incorrect Messages: 51
+Incorrect Format Messages: 29
+Total Messages: 251
+Correct format percentage: 88%
+Correct Messages percentage: 68%
+----------------------------------------------
+
+MAGNITUDE 2000 (2 sequence calculated)
+----------------------------------------------
+Correct Messages: 83
+Incorrect Messages: 23
+Incorrect Format Messages: 16
+Total Messages: 122
+Correct format percentage: 86%
+Correct Messages percentage: 68%
+----------------------------------------------
+
+
+MAGNITUDE 5000 (1 sequence calculated)
+----------------------------------------------
+Correct Messages: 43
+Incorrect Messages: 16
+Incorrect Format Messages: 2
+Total Messages: 61
+Correct format percentage: 96%
+Correct Messages percentage: 70%
+----------------------------------------------
+
+MAGNITUDE 5000 (to many sequence calculated)
+----------------------------------------------
+Correct Messages: 7522
+Incorrect Messages: 2798
+Incorrect Format Messages: 362
+Total Messages: 10682
+Correct format percentage: 96%
+Correct Messages percentage: 70%
+----------------------------------------------
+
+
+MAGNITUDE 10000 (4 sequence calculated) 
+----------------------------------------------
+Correct Messages: 139
+Incorrect Messages: 65
+Incorrect Format Messages: 25
+Total Messages: 229
+Correct format percentage: 89%
+Correct Messages percentage: 60%
+----------------------------------------------
+
+MAGNITUDE 6000 (1 sequence calculated)
+----------------------------------------------
+Correct Messages: 43
+Incorrect Messages: 16
+Incorrect Format Messages: 2
+Total Messages: 61
+Correct format percentage: 96%
+Correct Messages percentage: 70%
+----------------------------------------------

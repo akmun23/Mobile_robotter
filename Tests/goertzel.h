@@ -29,5 +29,7 @@ private:
 
     // Method to use Goertzel algorithm on the data
     void analyzeDataWithGoertzel(const std::vector<double>& data, int sampleRate);
+
+    void checkOutputFile(std::string filename, double calculationTime);
 };
 #endif // GOERTZEL_H
