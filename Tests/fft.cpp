@@ -200,6 +200,7 @@ void FFTProcessing::processFile(const std::string& filename, int sampleRate, int
         // Find dominant frequencies in the FFT result
         auto dominantFrequencies = findDominantFrequencies(fftResult, sampleRate);
 
+
         // End timer for chunk processing and calculate duration
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> duration = end - start;
@@ -240,13 +241,16 @@ void FFTProcessing::processFile(const std::string& filename, int sampleRate, int
             std::cout << "DTMF tone detected in chunk " << numChunks << "!\n";
         }
         else {
+
             std::cout << "No DTMF tone detected in chunk " << numChunks << ".\n";
+
         }
 
         // Display the received signal if a complete DTMF message is detected
         if (receivedSignal.size() == 6 && receivedSignal.front() == '*' && receivedSignal.back() == '#') {
             displayReceivedSignal();
         }
+
     }
 
     // Calculate and display the average and maximum duration for processing chunks
