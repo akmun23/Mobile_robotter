@@ -6,11 +6,15 @@
 #include <iostream>
 #include <chrono>
 
+std::chrono::duration<double>  Maxtime{0};
+std::chrono::duration<double> average{0};
+
 int RunCompareTest() {
     int sampleRate = 44100;
-    std::string filename = "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt";
+    std::string filename = "/home/jonathan/Documents/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt";
     int bufferSize = 1500;
-    /*
+
+
     // Read DTMF data from file
     auto data = readDTMFData(filename, sampleRate);
     if (data.empty()) {
@@ -36,7 +40,7 @@ int RunCompareTest() {
         std::vector<std::complex<double>> fftResult(paddedSize);
 
         // Start timer for FFT computation
-        auto startFFT = std::chrono::high_resolution_clock::now();
+       /* auto startFFT = std::chrono::high_resolution_clock::now();
 
         // Perform FFT on the chunk
         fft(chunkData.begin(), fftResult.begin(), log2n);
@@ -61,7 +65,7 @@ int RunCompareTest() {
         std::cout << "Dominant Frequencies (Hz)\tMagnitude (Chunk " << chunk + 1 << ")\n";
         for (int i = 0; i < std::min(2, static_cast<int>(dominantFrequencies.size())); ++i) {
             std::cout << dominantFrequencies[i].first << "\t" << dominantFrequencies[i].second << std::endl;
-        }
+        }*/
 
         // Now process the DFT of the chunk
         std::vector<std::complex<double>> dftResult(paddedSize);
@@ -82,6 +86,7 @@ int RunCompareTest() {
         // End timer for DFT computation
         auto endDFT = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> durationDFT = endDFT - startDFT;
+        Maxtime += durationDFT;
         std::cout << "Time taken for DFT computation (chunk " << chunk + 1 << "): " << durationDFT.count() << " seconds." << std::endl;
 
         // Start timer for frequency analysis of DFT
@@ -90,15 +95,33 @@ int RunCompareTest() {
         // Find dominant frequencies from DFT result
         auto DFTdominantFrequencies = findDominantFrequency(dftResult, sampleRate);
 
+        //Process DTMF Tones #NEW
+        auto detectedTonesSets = trueDTMF(DFTdominantFrequencies);
+
+
         // End timer for frequency analysis of DFT
         auto endDFTFreqAnalysis = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> DFTdurationFreqAnalysis = endDFTFreqAnalysis - startDFTFreqAnalysis;
         std::cout << "Time taken for DFT frequency analysis (chunk " << chunk + 1 << "): " << DFTdurationFreqAnalysis.count() << " seconds." << std::endl;
 
-        // Display the most dominant frequencies from DFT
+
+        for (size_t i = 0; i < detectedTonesSets.size(); ++i) {
+            std::cout << "Detected DTMF tone set " << i + 1 << ": ";
+            std::string toneSet;
+            // Ensure detectedTonesSets[i] is a string and directly print each character
+            toneSet = detectedTonesSets[i]; // Ensure we are working with a string
+            for (size_t j = 0; j < toneSet.length(); ++j) {  // Iterate over each character in the string
+                std::cout << toneSet[j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+
+       /* // Display the most dominant frequencies from DFT
         std::cout << "Dominant Frequencies (Hz)\tMagnitude (DFT chunk " << chunk + 1 << ")\n";
         for (int i = 0; i < std::min(2, static_cast<int>(DFTdominantFrequencies.size())); ++i) {
             int frequency = DFTdominantFrequencies[i];
+            auto  detectedTones = trueDTMF(DFTdominantFrequencies);
 
             // Find the corresponding index in the DFT result
             int index = frequency * paddedSize / sampleRate;
@@ -106,10 +129,16 @@ int RunCompareTest() {
             // Ensure the index is within bounds before accessing the result
             if (index >= 0 && index < dftResult.size()) {
                 std::cout << frequency << "\t" << std::abs(dftResult[index]) << std::endl;
+                std::cout << "Detected DTMF tones: ";
+                   for (char tone : detectedTones) {
+                       std::cout << tone << " ";
+                   }
+                   std::cout << std::endl;
             }
-        }
+        }*/
     }
-    */
+    average = Maxtime/numChunks;
+    std::cout << "The average time for Chunk processing is " << average.count() << std::endl;
 
 
 

@@ -19,6 +19,12 @@ void computeDFT(const std::vector<double>& input, std::vector<std::complex<doubl
 std::vector<double> findDominantFrequency(const std::vector<std::complex<double>>& dft, double samplingRate);
 
 // Function to read DTMF data from file
-std::vector<double> readDTMFData(const std::string& filename);
+std::vector<double> readDTMFData(const std::string& filename, int sampleRate);
+
+//Function to get Correct DTMF Char
+char getDTMFCharacter(int rowFreq, int colFreq);
+
+//Function to get DTMF Message
+std::vector<std::string> trueDTMF(const std::vector<double>& dominantFrequencies);
 
 #endif
