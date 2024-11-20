@@ -67,6 +67,17 @@ bool GUI::spaceFree(int x_, int y_){
     return true;
 }
 
+int GUI::squareOccupy(int x_, int y_){
+    for(int i = 0; i < wallFrags.size(); i++){
+        if(wallFrags[i].contains(x_, y_)){
+            return i;
+        }
+        else{
+            continue;
+        }
+    }
+}
+
 void GUI::lidarReading(float angle, float len){
     float x_com, y_com;
 
@@ -98,6 +109,10 @@ void GUI::lidarReading(float angle, float len){
             wallFrags.push_back(Wall(Point(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i), emptySize, Wall::typeEmpty));
         }
         else{
+
+            wallFrags[squareOccupy(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i)].setType(Wall::typeEmpty);
+            wallFrags[squareOccupy(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i)].setSize(emptySize);
+
             //get rect that is in that place, and change size and type
             //cout << "space wasnt free" << endl;
         }
@@ -108,13 +123,15 @@ void GUI::movementRobot(float angle, float intensity){
 
     int x_com, y_com;
 
-    angle = angle*(180/M_PI);
+    robot.x = robot.x + 1;
+
+    /*angle = angle*(180/M_PI);
 
     x_com = intensity * cos(angle);
     y_com = intensity * sin(angle);
 
     robot.x = robot.x + x_com;
-    robot.y = robot.y + y_com;
+    robot.y = robot.y + y_com;*/
 
     XPutBackEvent(display, &event);
 }
@@ -163,23 +180,17 @@ void GUI::paintRobot(){
 }
 
 void GUI::update(bool& update){
-    int move = 0;
+    int update_counter = 0;
 
     while(1){
 
-        if(update){
-            //XClearWindow(display, window);
-            XSync(display, False);
-            update = false;
-        }
-
         lidarReading(rand()%360, 200); //Make a timer function
-        //movementRobot(1, 10);
+        movementRobot(1, 10);
 
-        /*if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+        if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
             cout << "entered rescale" << endl;
             rescale();
-        }*/
+        }
 
         paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
         paintRobot();
@@ -192,8 +203,13 @@ void GUI::update(bool& update){
         }
 
         if(update){
-            //XClearWindow(display, window);
             XSync(display, False);
+
+            if(update_counter <= 100){
+                XClearWindow(display, window);
+                update_counter = 0;
+            }
+
             update = false;
         }
 
