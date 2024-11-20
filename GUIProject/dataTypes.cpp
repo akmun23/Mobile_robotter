@@ -61,6 +61,10 @@ void Wall::setType(squareType type_){
     type = type_;
 }
 
+void Wall::setSize(Size size_){
+    size = size_;
+}
+
 Wall::squareType Wall::getType(){
     return type;
 }

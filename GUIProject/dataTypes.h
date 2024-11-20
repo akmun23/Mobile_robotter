@@ -58,6 +58,7 @@ public:
     Wall(Point p, Size size_, squareType type_);
 
     void setType(squareType type_);
+    void setSize(Size size_);
 
     squareType getType();
 
@@ -65,8 +66,6 @@ public:
     int getY();
 
     bool contains(int x_, int y_);
-
-
     bool contains(int x_, int y_, int tolerance);
 };
 
