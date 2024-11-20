@@ -176,13 +176,13 @@ void GUI::update(bool& update){
     while(1){
 
         if(update){
-            XClearWindow(display, window);
+            //XClearWindow(display, window);
             XSync(display, False);
             update = false;
         }
 
         lidarReading(rand()%360, 200); //Make a timer function
-        movementRobot(1, 10);
+        //movementRobot(1, 10);
 
         if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
             cout << "entered rescale" << endl;
