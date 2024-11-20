@@ -1,0 +1,55 @@
+[0.012s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel -DCMAKE_INSTALL_PREFIX=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel
+[0.063s] -- The CXX compiler identification is GNU 11.4.0
+[0.069s] -- Detecting CXX compiler ABI info
+[0.136s] -- Detecting CXX compiler ABI info - done
+[0.141s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.142s] -- Detecting CXX compile features
+[0.142s] -- Detecting CXX compile features - done
+[0.148s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.255s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.354s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.402s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.408s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.417s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.429s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.445s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.491s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.495s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.580s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.609s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.652s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.662s] -- Looking for C++ include pthread.h
+[0.731s] -- Looking for C++ include pthread.h - found
+[0.731s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.803s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.804s] -- Found Threads: TRUE  
+[0.848s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.859s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.873s] -- Found teleop_twist_joy: 2.4.7 (/opt/ros/humble/share/teleop_twist_joy/cmake)
+[0.876s] -- Found rclcpp_components: 16.0.10 (/opt/ros/humble/share/rclcpp_components/cmake)
+[0.904s] -- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
+[0.958s] -- Configuring done
+[0.966s] -- Generating done
+[0.968s] -- Build files have been written to: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel
+[0.976s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel -DCMAKE_INSTALL_PREFIX=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel
+[0.978s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+[1.022s] [ 75%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/main.cpp.o[0m
+[1.022s] [ 75%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/audio.cpp.o[0m
+[1.022s] [ 75%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/dtmf_to_cmd_vel_node.cpp.o[0m
+[2.984s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In static member function ‘[01m[Kstatic int Audio::streamCallback(const void*, void*, long unsigned int, const PaStreamCallbackTimeInfo*, PaStreamCallbackFlags, void*)[m[K’:
+[2.984s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:101:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KframesPerBuffer[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.984s]   101 |     const void* inputBuffer, void* outputBuffer, [01;35m[Kunsigned long framesPerBuffer[m[K,
+[2.984s]       |                                                  [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[2.984s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:103:11:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KuserData[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.984s]   103 |     [01;35m[Kvoid* userData[m[K
+[2.984s]       |     [01;35m[K~~~~~~^~~~~~~~[m[K
+[3.328s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/main.cpp:2[m[K:
+[3.328s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:37:28:[m[K [01;35m[Kwarning: [m[K‘[01m[KspectroData[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[3.328s]    37 | static streamCallbackData* [01;35m[KspectroData[m[K;
+[3.328s]       |                            [01;35m[K^~~~~~~~~~~[m[K
+[3.590s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:2[m[K:
+[3.590s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:37:28:[m[K [01;35m[Kwarning: [m[K‘[01m[KspectroData[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[3.590s]    37 | static streamCallbackData* [01;35m[KspectroData[m[K;
+[3.590s]       |                            [01;35m[K^~~~~~~~~~~[m[K
+[4.345s] [100%] [32m[1mLinking CXX executable dtmf_to_cmd_vel[0m
+[4.514s] [100%] Built target dtmf_to_cmd_vel

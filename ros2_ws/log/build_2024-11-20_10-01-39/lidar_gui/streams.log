@@ -1,0 +1,226 @@
+[0.015s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[0.060s] [ 25%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o[0m
+[0.060s] [ 75%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[0.060s] [ 75%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o[0m
+[0.263s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+[0.263s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[0.263s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:9:10:[m[K [01;31m[Kfatal error: [m[KdataTypes.h: No such file or directory
+[0.263s]     9 | #include [01;31m[K"dataTypes.h"[m[K
+[0.264s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[0.264s] compilation terminated.
+[0.264s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+[0.264s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[0.264s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:9:10:[m[K [01;31m[Kfatal error: [m[KdataTypes.h: No such file or directory
+[0.264s]     9 | #include [01;31m[K"dataTypes.h"[m[K
+[0.264s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[0.264s] compilation terminated.
+[0.267s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:76: CMakeFiles/lidar_gui.dir/src/main.cpp.o] Error 1
+[0.267s] gmake[2]: *** Waiting for unfinished jobs....
+[0.267s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:90: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o] Error 1
+[0.302s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:5:1:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ does not name a type
+[0.302s]     5 | [01;31m[KGUI[m[K::GUI(){
+[0.302s]       | [01;31m[K^~~[m[K
+[0.302s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:56:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.302s]    56 | bool [01;31m[KGUI[m[K::spaceFree(int x_, int y_){
+[0.302s]       |      [01;31m[K^~~[m[K
+[0.303s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kbool spaceFree(int, int)[m[K’:
+[0.303s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:57:24:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.303s]    57 |     for(int i = 0; i < [01;31m[KwallFrags[m[K.size(); i++){
+[0.303s]       |                        [01;31m[K^~~~~~~~~[m[K
+[0.303s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[0.303s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:70:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.304s]    70 | void [01;31m[KGUI[m[K::lidarReading(float angle, float len){
+[0.304s]       |      [01;31m[K^~~[m[K
+[0.305s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kvoid lidarReading(float, float)[m[K’:
+[0.305s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:78:24:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.305s]    78 |     for(int i = 0; i < [01;31m[KwallFrags[m[K.size(); i++){
+[0.305s]       |                        [01;31m[K^~~~~~~~~[m[K
+[0.306s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:85:34:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot[m[K’ was not declared in this scope; did you mean ‘[01m[KRobot[m[K’?
+[0.306s]    85 |         if(wallFrags[i].contains([01;31m[Krobot[m[K.x + x_com, robot.y + y_com) && (wallFrags[i].getType() != Wall::typeWall)){ //Does a square exist on the recorded coords?
+[0.306s]       |                                  [01;31m[K^~~~~[m[K
+[0.306s]       |                                  [32m[KRobot[m[K
+[0.308s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:97:79:[m[K [01;31m[Kerror: [m[K‘[01m[KwallSize[m[K’ was not declared in this scope
+[0.308s]    97 |             wallFrags.push_back(Wall(Point(robot.x + x_com, robot.y + y_com), [01;31m[KwallSize[m[K, Wall::typeWall)); //
+[0.308s]       |                                                                               [01;31m[K^~~~~~~~[m[K
+[0.309s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:105:22:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot[m[K’ was not declared in this scope; did you mean ‘[01m[KRobot[m[K’?
+[0.309s]   105 |         if(spaceFree([01;31m[Krobot[m[K.x + (x_com/len)*i, robot.y + (y_com/len)*i)){
+[0.309s]       |                      [01;31m[K^~~~~[m[K
+[0.309s]       |                      [32m[KRobot[m[K
+[0.310s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:106:13:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.310s]   106 |             [01;31m[KwallFrags[m[K.push_back(Wall(Point(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i), emptySize, Wall::typeEmpty));
+[0.310s]       |             [01;31m[K^~~~~~~~~[m[K
+[0.311s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:106:95:[m[K [01;31m[Kerror: [m[K‘[01m[KemptySize[m[K’ was not declared in this scope
+[0.311s]   106 |             wallFrags.push_back(Wall(Point(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i), [01;31m[KemptySize[m[K, Wall::typeEmpty));
+[0.311s]       |                                                                                               [01;31m[K^~~~~~~~~[m[K
+[0.311s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[0.311s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:115:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.311s]   115 | void [01;31m[KGUI[m[K::movementRobot(float angle, float intensity){
+[0.311s]       |      [01;31m[K^~~[m[K
+[0.312s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kvoid movementRobot(float, float)[m[K’:
+[0.312s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:124:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot[m[K’ was not declared in this scope; did you mean ‘[01m[KRobot[m[K’?
+[0.312s]   124 |     [01;31m[Krobot[m[K.x = robot.x + x_com;
+[0.312s]       |     [01;31m[K^~~~~[m[K
+[0.312s]       |     [32m[KRobot[m[K
+[0.313s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:127:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.313s]   127 |     XPutBackEvent([01;31m[Kdisplay[m[K, &event);
+[0.313s]       |                   [01;31m[K^~~~~~~[m[K
+[0.314s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:127:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kevent[m[K’ was not declared in this scope
+[0.314s]   127 |     XPutBackEvent(display, &[01;31m[Kevent[m[K);
+[0.314s]       |                             [01;31m[K^~~~~[m[K
+[0.315s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:127:5:[m[K [01;31m[Kerror: [m[K‘[01m[KXPutBackEvent[m[K’ was not declared in this scope
+[0.315s]   127 |     [01;31m[KXPutBackEvent[m[K(display, &event);
+[0.315s]       |     [01;31m[K^~~~~~~~~~~~~[m[K
+[0.316s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[0.316s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:130:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.316s]   130 | void [01;31m[KGUI[m[K::rescale(){
+[0.316s]       |      [01;31m[K^~~[m[K
+[0.316s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kvoid rescale()[m[K’:
+[0.316s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:132:8:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot[m[K’ was not declared in this scope; did you mean ‘[01m[KRobot[m[K’?
+[0.316s]   132 |     if([01;31m[Krobot[m[K.x < (XDisplayWidth(display, screen) * 0.1)){
+[0.316s]       |        [01;31m[K^~~~~[m[K
+[0.316s]       |        [32m[KRobot[m[K
+[0.317s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:132:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.317s]   132 |     if(robot.x < (XDisplayWidth([01;31m[Kdisplay[m[K, screen) * 0.1)){
+[0.317s]       |                                 [01;31m[K^~~~~~~[m[K
+[0.318s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:132:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kscreen[m[K’ was not declared in this scope
+[0.318s]   132 |     if(robot.x < (XDisplayWidth(display, [01;31m[Kscreen[m[K) * 0.1)){
+[0.319s]       |                                          [01;31m[K^~~~~~[m[K
+[0.320s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:132:19:[m[K [01;31m[Kerror: [m[K‘[01m[KXDisplayWidth[m[K’ was not declared in this scope
+[0.320s]   132 |     if(robot.x < ([01;31m[KXDisplayWidth[m[K(display, screen) * 0.1)){
+[0.320s]       |                   [01;31m[K^~~~~~~~~~~~~[m[K
+[0.321s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:133:28:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.321s]   133 |         for(int i = 0; i < [01;31m[KwallFrags[m[K.size(); i++){
+[0.321s]       |                            [01;31m[K^~~~~~~~~[m[K
+[0.322s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:140:28:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.322s]   140 |         for(int i = 0; i < [01;31m[KwallFrags[m[K.size(); i++){
+[0.322s]       |                            [01;31m[K^~~~~~~~~[m[K
+[0.323s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:146:24:[m[K [01;31m[Kerror: [m[K‘[01m[KXDisplayHeight[m[K’ was not declared in this scope
+[0.323s]   146 |     else if(robot.y < ([01;31m[KXDisplayHeight[m[K(display, screen) * 0.1)){
+[0.324s]       |                        [01;31m[K^~~~~~~~~~~~~~[m[K
+[0.325s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:147:28:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.325s]   147 |         for(int i = 0; i < [01;31m[KwallFrags[m[K.size(); i++){
+[0.325s]       |                            [01;31m[K^~~~~~~~~[m[K
+[0.326s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:154:28:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.326s]   154 |         for(int i = 0; i < [01;31m[KwallFrags[m[K.size(); i++){
+[0.326s]       |                            [01;31m[K^~~~~~~~~[m[K
+[0.326s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[0.326s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:162:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.326s]   162 | void [01;31m[KGUI[m[K::paintMap(){
+[0.326s]       |      [01;31m[K^~~[m[K
+[0.327s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kvoid paintMap()[m[K’:
+[0.327s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:164:24:[m[K [01;31m[Kerror: [m[K‘[01m[KwallFrags[m[K’ was not declared in this scope
+[0.327s]   164 |     for(int i = 0; i < [01;31m[KwallFrags[m[K.size(); i++){
+[0.327s]       |                        [01;31m[K^~~~~~~~~[m[K
+[0.328s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.328s]   165 |         XFillRectangle([01;31m[Kdisplay[m[K, window, (wallFrags[i].getType() == Wall::typeWall ? gcWall : gcEmpty), wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
+[0.328s]       |                        [01;31m[K^~~~~~~[m[K
+[0.329s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow[m[K’ was not declared in this scope
+[0.329s]   165 |         XFillRectangle(display, [01;31m[Kwindow[m[K, (wallFrags[i].getType() == Wall::typeWall ? gcWall : gcEmpty), wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
+[0.329s]       |                                 [01;31m[K^~~~~~[m[K
+[0.330s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:85:[m[K [01;31m[Kerror: [m[K‘[01m[KgcWall[m[K’ was not declared in this scope; did you mean ‘[01m[KWall[m[K’?
+[0.330s]   165 |         XFillRectangle(display, window, (wallFrags[i].getType() == Wall::typeWall ? [01;31m[KgcWall[m[K : gcEmpty), wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
+[0.330s]       |                                                                                     [01;31m[K^~~~~~[m[K
+[0.330s]       |                                                                                     [32m[KWall[m[K
+[0.331s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:94:[m[K [01;31m[Kerror: [m[K‘[01m[KgcEmpty[m[K’ was not declared in this scope
+[0.331s]   165 |         XFillRectangle(display, window, (wallFrags[i].getType() == Wall::typeWall ? gcWall : [01;31m[KgcEmpty[m[K), wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
+[0.331s]       |                                                                                              [01;31m[K^~~~~~~[m[K
+[0.332s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:9:[m[K [01;31m[Kerror: [m[K‘[01m[KXFillRectangle[m[K’ was not declared in this scope
+[0.333s]   165 |         [01;31m[KXFillRectangle[m[K(display, window, (wallFrags[i].getType() == Wall::typeWall ? gcWall : gcEmpty), wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
+[0.333s]       |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[0.333s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[0.333s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:169:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.333s]   169 | void [01;31m[KGUI[m[K::paintRobot(){
+[0.333s]       |      [01;31m[K^~~[m[K
+[0.334s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kvoid paintRobot()[m[K’:
+[0.334s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:170:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.334s]   170 |     XFillRectangle([01;31m[Kdisplay[m[K, window, gcRobot, robot.x - robot.size.width/2, robot.y - robot.size.height/2, robotSize.width, robotSize.height);
+[0.334s]       |                    [01;31m[K^~~~~~~[m[K
+[0.334s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:170:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow[m[K’ was not declared in this scope
+[0.335s]   170 |     XFillRectangle(display, [01;31m[Kwindow[m[K, gcRobot, robot.x - robot.size.width/2, robot.y - robot.size.height/2, robotSize.width, robotSize.height);
+[0.335s]       |                             [01;31m[K^~~~~~[m[K
+[0.336s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:170:37:[m[K [01;31m[Kerror: [m[K‘[01m[KgcRobot[m[K’ was not declared in this scope; did you mean ‘[01m[KRobot[m[K’?
+[0.336s]   170 |     XFillRectangle(display, window, [01;31m[KgcRobot[m[K, robot.x - robot.size.width/2, robot.y - robot.size.height/2, robotSize.width, robotSize.height);
+[0.336s]       |                                     [01;31m[K^~~~~~~[m[K
+[0.336s]       |                                     [32m[KRobot[m[K
+[0.336s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:170:46:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot[m[K’ was not declared in this scope; did you mean ‘[01m[KRobot[m[K’?
+[0.336s]   170 |     XFillRectangle(display, window, gcRobot, [01;31m[Krobot[m[K.x - robot.size.width/2, robot.y - robot.size.height/2, robotSize.width, robotSize.height);
+[0.337s]       |                                              [01;31m[K^~~~~[m[K
+[0.337s]       |                                              [32m[KRobot[m[K
+[0.338s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:170:107:[m[K [01;31m[Kerror: [m[K‘[01m[KrobotSize[m[K’ was not declared in this scope
+[0.338s]   170 |     XFillRectangle(display, window, gcRobot, robot.x - robot.size.width/2, robot.y - robot.size.height/2, [01;31m[KrobotSize[m[K.width, robotSize.height);
+[0.338s]       |                                                                                                           [01;31m[K^~~~~~~~~[m[K
+[0.339s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:170:5:[m[K [01;31m[Kerror: [m[K‘[01m[KXFillRectangle[m[K’ was not declared in this scope
+[0.339s]   170 |     [01;31m[KXFillRectangle[m[K(display, window, gcRobot, robot.x - robot.size.width/2, robot.y - robot.size.height/2, robotSize.width, robotSize.height);
+[0.339s]       |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[0.339s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[0.339s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:173:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.339s]   173 | void [01;31m[KGUI[m[K::update(bool& update, float angle, float len){
+[0.339s]       |      [01;31m[K^~~[m[K
+[0.340s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kvoid update(bool&, float, float)[m[K’:
+[0.340s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:180:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.340s]   180 |             XSync([01;31m[Kdisplay[m[K, False);
+[0.340s]       |                   [01;31m[K^~~~~~~[m[K
+[0.341s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:180:28:[m[K [01;31m[Kerror: [m[K‘[01m[KFalse[m[K’ was not declared in this scope
+[0.341s]   180 |             XSync(display, [01;31m[KFalse[m[K);
+[0.341s]       |                            [01;31m[K^~~~~[m[K
+[0.342s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:180:13:[m[K [01;31m[Kerror: [m[K‘[01m[KXSync[m[K’ was not declared in this scope
+[0.342s]   180 |             [01;31m[KXSync[m[K(display, False);
+[0.342s]       |             [01;31m[K^~~~~[m[K
+[0.343s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:187:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot[m[K’ was not declared in this scope; did you mean ‘[01m[KRobot[m[K’?
+[0.343s]   187 |         if(([01;31m[Krobot[m[K.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+[0.343s]       |             [01;31m[K^~~~~[m[K
+[0.343s]       |             [32m[KRobot[m[K
+[0.344s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:187:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.344s]   187 |         if((robot.x < (XDisplayWidth([01;31m[Kdisplay[m[K, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+[0.344s]       |                                      [01;31m[K^~~~~~~[m[K
+[0.345s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:187:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kscreen[m[K’ was not declared in this scope
+[0.345s]   187 |         if((robot.x < (XDisplayWidth(display, [01;31m[Kscreen[m[K) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+[0.345s]       |                                               [01;31m[K^~~~~~[m[K
+[0.346s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:187:24:[m[K [01;31m[Kerror: [m[K‘[01m[KXDisplayWidth[m[K’ was not declared in this scope
+[0.346s]   187 |         if((robot.x < ([01;31m[KXDisplayWidth[m[K(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+[0.346s]       |                        [01;31m[K^~~~~~~~~~~~~[m[K
+[0.347s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:187:132:[m[K [01;31m[Kerror: [m[K‘[01m[KXDisplayHeight[m[K’ was not declared in this scope
+[0.348s]   187 |         if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < ([01;31m[KXDisplayHeight[m[K(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+[0.348s]       |                                                                                                                                    [01;31m[K^~~~~~~~~~~~~~[m[K
+[0.349s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:195:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.349s]   195 |         if(XPending([01;31m[Kdisplay[m[K) > 0){
+[0.349s]       |                     [01;31m[K^~~~~~~[m[K
+[0.350s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:195:12:[m[K [01;31m[Kerror: [m[K‘[01m[KXPending[m[K’ was not declared in this scope
+[0.350s]   195 |         if([01;31m[KXPending[m[K(display) > 0){
+[0.350s]       |            [01;31m[K^~~~~~~~[m[K
+[0.351s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:196:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kevent[m[K’ was not declared in this scope
+[0.351s]   196 |             XNextEvent(display, &[01;31m[Kevent[m[K);
+[0.351s]       |                                  [01;31m[K^~~~~[m[K
+[0.352s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:196:13:[m[K [01;31m[Kerror: [m[K‘[01m[KXNextEvent[m[K’ was not declared in this scope
+[0.352s]   196 |             [01;31m[KXNextEvent[m[K(display, &event);
+[0.352s]       |             [01;31m[K^~~~~~~~~~[m[K
+[0.353s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:197:30:[m[K [01;31m[Kerror: [m[K‘[01m[KExpose[m[K’ was not declared in this scope
+[0.353s]   197 |             if(event.type == [01;31m[KExpose[m[K){
+[0.353s]       |                              [01;31m[K^~~~~~[m[K
+[0.353s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:174:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmove[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[0.353s]   174 |     int [01;35m[Kmove[m[K = 0;
+[0.353s]       |         [01;35m[K^~~~[m[K
+[0.353s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[0.353s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:205:6:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ has not been declared
+[0.353s]   205 | void [01;31m[KGUI[m[K::show(){
+[0.353s]       |      [01;31m[K^~~[m[K
+[0.354s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In function ‘[01m[Kvoid show()[m[K’:
+[0.354s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:206:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplay[m[K’ was not declared in this scope
+[0.354s]   206 |     XMapWindow([01;31m[Kdisplay[m[K, window);
+[0.354s]       |                [01;31m[K^~~~~~~[m[K
+[0.355s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:206:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kwindow[m[K’ was not declared in this scope
+[0.355s]   206 |     XMapWindow(display, [01;31m[Kwindow[m[K);
+[0.355s]       |                         [01;31m[K^~~~~~[m[K
+[0.356s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:206:5:[m[K [01;31m[Kerror: [m[K‘[01m[KXMapWindow[m[K’ was not declared in this scope
+[0.356s]   206 |     [01;31m[KXMapWindow[m[K(display, window);
+[0.356s]       |     [01;31m[K^~~~~~~~~~[m[K
+[0.357s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:207:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kevent[m[K’ was not declared in this scope
+[0.357s]   207 |     XNextEvent(display, &[01;31m[Kevent[m[K);
+[0.357s]       |                          [01;31m[K^~~~~[m[K
+[0.358s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:207:5:[m[K [01;31m[Kerror: [m[K‘[01m[KXNextEvent[m[K’ was not declared in this scope
+[0.358s]   207 |     [01;31m[KXNextEvent[m[K(display, &event);
+[0.359s]       |     [01;31m[K^~~~~~~~~~[m[K
+[0.410s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:104: CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o] Error 1
+[0.410s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+[0.410s] gmake: *** [Makefile:146: all] Error 2
+[0.413s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16

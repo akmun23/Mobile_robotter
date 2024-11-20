@@ -1,0 +1,38 @@
+[0.035s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[0.076s] [35m[1mConsolidate compiler generated dependencies of target lidar_data[0m
+[0.098s] [ 66%] [32mBuilding CXX object CMakeFiles/lidar_data.dir/src/main.cpp.o[0m
+[0.098s] [ 66%] [32mBuilding CXX object CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o[0m
+[2.867s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In constructor ‘[01m[KMappingNode::MappingNode()[m[K’:
+[2.867s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:3:49:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ktf2_ros::Buffer::Buffer()[m[K’
+[2.867s]     3 | MappingNode::MappingNode() : Node("mapping_node"[01;31m[K)[m[K
+[2.867s]       |                                                 [01;31m[K^[m[K
+[2.867s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:8[m[K,
+[2.867s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[2.867s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/buffer.h:73:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktf2_ros::Buffer::Buffer(rclcpp::Clock::SharedPtr, tf2::Duration, rclcpp::Node::SharedPtr)[m[K’
+[2.868s]    73 |   TF2_ROS_PUBLIC [01;36m[KBuffer[m[K(
+[2.868s]       |                  [01;36m[K^~~~~~[m[K
+[2.868s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/buffer.h:73:18:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[2.879s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::scanCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.879s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:63:22:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::vector<float>[m[K’ to ‘[01m[Kstd::vector<double, std::allocator<double> >&[m[K’
+[2.879s]    63 |     sendMapDataToGUI([01;31m[Kmap_x_points[m[K, map_y_points, _robot_x, _robot_y, _robot_yaw);
+[2.879s]       |                      [01;31m[K^~~~~~~~~~~~[m[K
+[2.879s]       |                      [01;31m[K|[m[K
+[2.879s]       |                      [01;31m[Kstd::vector<float>[m[K
+[2.879s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[2.879s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:48:48:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid MappingNode::sendMapDataToGUI(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, double, double, double)[m[K’
+[2.879s]    48 |     void sendMapDataToGUI([01;36m[Kstd::vector<double>& x_points[m[K, std::vector<double>& y_points,
+[2.879s]       |                           [01;36m[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[2.882s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::sendMapDataToGUI(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, double, double, double)[m[K’:
+[2.882s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:108:43:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.882s]   108 |                                    [01;35m[Kdouble robot_x[m[K, double robot_y, double robot_yaw) {
+[2.883s]       |                                    [01;35m[K~~~~~~~^~~~~~~[m[K
+[2.883s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:108:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.883s]   108 |                                    double robot_x, [01;35m[Kdouble robot_y[m[K, double robot_yaw) {
+[2.883s]       |                                                    [01;35m[K~~~~~~~^~~~~~~[m[K
+[2.883s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:108:75:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.883s]   108 |                                    double robot_x, double robot_y, [01;35m[Kdouble robot_yaw[m[K) {
+[2.883s]       |                                                                    [01;35m[K~~~~~~~^~~~~~~~~[m[K
+[5.335s] gmake[2]: *** [CMakeFiles/lidar_data.dir/build.make:90: CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o] Error 1
+[5.335s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_data.dir/all] Error 2
+[5.336s] gmake: *** [Makefile:146: all] Error 2
+[5.339s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16

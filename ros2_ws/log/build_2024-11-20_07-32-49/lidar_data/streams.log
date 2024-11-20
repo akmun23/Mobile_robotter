@@ -1,0 +1,37 @@
+[0.034s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[0.075s] [35m[1mConsolidate compiler generated dependencies of target lidar_data[0m
+[0.097s] [ 33%] [32mBuilding CXX object CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o[0m
+[2.808s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::sendMapDataToGUI(const std::vector<double, std::allocator<double> >&, const std::vector<double, std::allocator<double> >&, double, double, double)[m[K’:
+[2.808s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:78:43:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.808s]    78 |                                    [01;35m[Kdouble robot_x[m[K, double robot_y, double robot_yaw) {
+[2.808s]       |                                    [01;35m[K~~~~~~~^~~~~~~[m[K
+[2.808s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:78:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.808s]    78 |                                    double robot_x, [01;35m[Kdouble robot_y[m[K, double robot_yaw) {
+[2.808s]       |                                                    [01;35m[K~~~~~~~^~~~~~~[m[K
+[2.808s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:78:75:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.808s]    78 |                                    double robot_x, double robot_y, [01;35m[Kdouble robot_yaw[m[K) {
+[2.808s]       |                                                                    [01;35m[K~~~~~~~^~~~~~~~~[m[K
+[9.126s] [ 66%] [32m[1mLinking CXX executable lidar_data[0m
+[9.715s] [100%] Built target lidar_data
+[9.726s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[9.760s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data
+[9.767s] -- Install configuration: ""
+[9.768s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/lidar_data/lidar_data
+[9.773s] -- Set runtime path of "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/lidar_data/lidar_data" to ""
+[9.773s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data//launch
+[9.773s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/package_run_dependencies/lidar_data
+[9.773s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/parent_prefix_path/lidar_data
+[9.773s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.sh
+[9.773s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.dsv
+[9.773s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.sh
+[9.773s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.dsv
+[9.773s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.bash
+[9.774s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.sh
+[9.774s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.zsh
+[9.774s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.dsv
+[9.774s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.dsv
+[9.774s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/packages/lidar_data
+[9.774s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig.cmake
+[9.774s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig-version.cmake
+[9.774s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.xml
+[9.776s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data

@@ -24,8 +24,8 @@ private:
     struct{
         float x = (getScrnWidth()/2);
         float y = (getScrnHeight()/2);
-        float center_x = x + 2.5;
-        float center_y = y + 2.5;
+        float center_x = x + 25;
+        float center_y = y + 25;
     }robot;
 
     QBrush background;

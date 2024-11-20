@@ -1,0 +1,33 @@
+[0.034s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[0.067s] [35m[1mConsolidate compiler generated dependencies of target lidar_gui[0m
+[0.083s] [ 75%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o[0m
+[0.083s] [ 75%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o[0m
+[0.083s] [ 75%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[0.147s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[0.148s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:10:10:[m[K [01;31m[Kfatal error: [m[KdataTypes.h: No such file or directory
+[0.148s]    10 | #include [01;31m[K"dataTypes.h"[m[K
+[0.148s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[0.148s] compilation terminated.
+[0.149s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:104: CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o] Error 1
+[0.149s] gmake[2]: *** Waiting for unfinished jobs....
+[1.981s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[1.981s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:17:5:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ does not name a type
+[1.981s]    17 |     [01;31m[KGUI[m[K gui;
+[1.981s]       |     [01;31m[K^~~[m[K
+[1.985s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[1.985s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:17:5:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI[m[K’ does not name a type
+[1.985s]    17 |     [01;31m[KGUI[m[K gui;
+[1.985s]       |     [01;31m[K^~~[m[K
+[1.994s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In constructor ‘[01m[KMappingNode::MappingNode()[m[K’:
+[1.994s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kgui[m[K’ was not declared in this scope
+[1.994s]    14 |     [01;31m[Kgui[m[K.show();
+[1.994s]       |     [01;31m[K^~~[m[K
+[2.000s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::scanCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.000s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:34:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kgui[m[K’ was not declared in this scope
+[2.001s]    34 |             [01;31m[Kgui[m[K.update(update, distance, angle);
+[2.001s]       |             [01;31m[K^~~[m[K
+[2.360s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:76: CMakeFiles/lidar_gui.dir/src/main.cpp.o] Error 1
+[4.471s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:90: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o] Error 1
+[4.471s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+[4.472s] gmake: *** [Makefile:146: all] Error 2
+[4.474s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
