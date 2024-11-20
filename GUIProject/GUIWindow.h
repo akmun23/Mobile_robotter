@@ -17,13 +17,13 @@ private:
     XEvent event;
     int screen;
 
-    //Values
+    //Structure
     Size emptySize;
     Size wallSize;
     Size robotSize;
     std::vector<Wall> wallFrags;
 
-    //Colors
+    //Graphics - "Colors"
     GC gcWall;
     GC gcEmpty;
     GC gcRobot;
