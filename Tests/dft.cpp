@@ -436,7 +436,7 @@ void checkOutputFile(std::string filename, double calculationTime){
     checkedOutputFile << "Total Messages: " << (messageCounter-1) << std::endl;
     checkedOutputFile << "Correct format percentage: " << ((correct+incorrectMessage)*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
-    checkedOutputFile << "Average time taken to calculate Entire sequence: " << calculationTime  << "s."<< std::endl;
+    checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime  << " s."<< std::endl;
     checkedOutputFile << "Average time taken to calculate Buffer: " << (TimeSumCalculationDFT/countDFT)*1000 << " ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 

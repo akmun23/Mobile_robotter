@@ -468,7 +468,7 @@ int Goertzel::streamCallbackForStoringInFile(
 
     std::ofstream outputFile;
 
-    outputFile.open("RecordingShortVersion.txt", std::ios_base::app); // The file is opened in append mode meaning that the data will be added to the end of the file
+    outputFile.open("Recording.txt", std::ios_base::app); // The file is opened in append mode meaning that the data will be added to the end of the file
 
     for (int i = 0; i < framesPerBuffer; ++i) {
         outputFile << in[i] << std::endl;

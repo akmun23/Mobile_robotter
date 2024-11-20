@@ -12,7 +12,7 @@ GoertzelTesting::GoertzelTesting() {}
 
 double pi = 3.14159265358979323846;
 
-int MinMagnitude = 4000;
+int MinMagnitude = 5000;
 bool LetterReceivedCompareProgram = false;
 bool startOfMessageReceivedCompareProgram = false;
 std::vector<char> ReceivedCompareProgram;
@@ -387,8 +387,8 @@ void GoertzelTesting::checkOutputFile(std::string filename, double calculationTi
     checkedOutputFile << "Total Messages: " << (messageCounter-1) << std::endl;
     checkedOutputFile << "Correct format percentage: " << ((correct+incorrectMessage)*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
-    checkedOutputFile << "Average time taken to calculate Entire sequence: " << calculationTime*1000  << "ms."<< std::endl;
-    checkedOutputFile << "Average time taken to calculate Buffer: " << (timeSumToneCalculation/toneCounter)*1000  << "ms." << std::endl;
+    checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime*1000  << " ms."<< std::endl;
+    checkedOutputFile << "Average time taken to calculate Buffer: " << (timeSumToneCalculation/toneCounter)*1000  << " ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 
     fileToBeChecked.close();
@@ -477,7 +477,7 @@ void GoertzelTesting::processFileTest(const std::string& filename, int sampleRat
     outputFileGoertzel.close();
 
     std::chrono::duration<double> CalculationTime;
-    for (int i = 0; i < timeAtMaxCorrect.size(); ++i) {
+    for (int i = 0; i < 1; ++i) {
 
         std::cout << std::endl;
         std::cout <<"----------------------------------------------" << std::endl;
@@ -493,7 +493,7 @@ void GoertzelTesting::processFileTest(const std::string& filename, int sampleRat
         std::cout << std::endl;
     }
     double elapsedTime = CalculationTime.count();
-    checkOutputFile("Goertzel_Test_Output.txt", elapsedTime/timeAtMaxCorrect.size());
+    checkOutputFile("Goertzel_Test_Output.txt", elapsedTime);
 
 }
 
