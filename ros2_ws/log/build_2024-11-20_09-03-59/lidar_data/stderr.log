@@ -1,0 +1,76 @@
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In constructor ‘[01m[KMappingNode::MappingNode()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_tf_broadcaster[m[K’ was not declared in this scope
+   26 |     [01;31m[K_tf_broadcaster[m[K = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
+      |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:26:40:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2_ros[m[K’ was not declared in this scope
+   26 |     _tf_broadcaster = std::make_unique<[01;31m[Ktf2_ros[m[K::TransformBroadcaster>(*this);
+      |                                        [01;31m[K^~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:26:28:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+   26 |     _tf_broadcaster = std::[01;31m[Kmake_unique<tf2_ros::TransformBroadcaster>[m[K(*this);
+      |                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:26:70:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_unique<<expression error> >(MappingNode&)[m[K’
+   26 |     _tf_broadcaster = [01;31m[Kstd::make_unique<tf2_ros::TransformBroadcaster>(*this)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:4[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)[m[K’
+  961 |     [01;36m[Kmake_unique[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:26:70:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   26 |     _tf_broadcaster = [01;31m[Kstd::make_unique<tf2_ros::TransformBroadcaster>(*this)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:4[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)[m[K’
+  967 |     [01;36m[Kmake_unique[m[K(size_t __num)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:26:70:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   26 |     _tf_broadcaster = [01;31m[Kstd::make_unique<tf2_ros::TransformBroadcaster>(*this)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:4[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)[m[K’ (deleted)
+  973 |     [01;36m[Kmake_unique[m[K(_Args&&...) = delete;
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:26:70:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   26 |     _tf_broadcaster = [01;31m[Kstd::make_unique<tf2_ros::TransformBroadcaster>(*this)[m[K;
+      |                       [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::odomCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:85:25:[m[K [01;31m[Kerror: [m[K‘[01m[KTransformStamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs::msg[m[K’
+   85 |     geometry_msgs::msg::[01;31m[KTransformStamped[m[K t;
+      |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:86:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kt[m[K’ was not declared in this scope; did you mean ‘[01m[Ktm[m[K’?
+   86 |     [01;31m[Kt[m[K.header.stamp = this->get_clock()->now();
+      |     [01;31m[K^[m[K
+      |     [32m[Ktm[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:96:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2[m[K’ has not been declared
+   96 |     [01;31m[Ktf2[m[K::Quaternion q;
+      |     [01;31m[K^~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:97:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kq[m[K’ was not declared in this scope
+   97 |     [01;31m[Kq[m[K.setRPY(0.0, 0.0, -_initial_yaw);
+      |     [01;31m[K^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:104:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_tf_broadcaster[m[K’ was not declared in this scope
+  104 |     [01;31m[K_tf_broadcaster[m[K->sendTransform(t);
+      |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::sendMapDataToGUI(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, double, double, double)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:108:43:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  108 |                                    [01;35m[Kdouble robot_x[m[K, double robot_y, double robot_yaw) {
+      |                                    [01;35m[K~~~~~~~^~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:108:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  108 |                                    double robot_x, [01;35m[Kdouble robot_y[m[K, double robot_yaw) {
+      |                                                    [01;35m[K~~~~~~~^~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:108:75:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  108 |                                    double robot_x, double robot_y, [01;35m[Kdouble robot_yaw[m[K) {
+      |                                                                    [01;35m[K~~~~~~~^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/lidar_data.dir/build.make:90: CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_data.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

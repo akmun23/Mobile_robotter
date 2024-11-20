@@ -1,0 +1,12 @@
+# ninja log v5
+3	35	1732088835130384067	LidarReading_autogen/timestamp	3a428c7282c0d8b5
+3	35	1732088835130384067	LidarReading_autogen/mocs_compilation.cpp	3a428c7282c0d8b5
+3	35	1732088835130384067	/home/aksel/Documents/GitHub/Mobile_robotter/LidarReading/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/LidarReading_autogen/timestamp	3a428c7282c0d8b5
+3	35	1732088835130384067	/home/aksel/Documents/GitHub/Mobile_robotter/LidarReading/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/LidarReading_autogen/mocs_compilation.cpp	3a428c7282c0d8b5
+1235	8361	1731947797051157832	CMakeFiles/LidarReading.dir/LidarReading_autogen/mocs_compilation.cpp.o	7a1593d4582cfb8b
+724	2012	1731505282907592940	CMakeFiles/LidarReading.dir/functions.cpp.o	97d77a68bc03441
+37	3754	1732088838847396348	CMakeFiles/LidarReading.dir/helperClass.cpp.o	48082070a5c5153c
+1237	8162	1731947796851156675	CMakeFiles/LidarReading.dir/windowClass.cpp.o	cd99e47068550ee5
+1237	8310	1731947796999157531	CMakeFiles/LidarReading.dir/widgetClass.cpp.o	aa087af9e30f0f6f
+3754	4106	1732088839197397504	LidarReading	9835cccdbd4e457f
+1236	8382	1731947797072157953	CMakeFiles/LidarReading.dir/main.cpp.o	8c9d730a6741578f

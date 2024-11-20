@@ -1,0 +1,10 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/uninstall.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/lidar_data_uninstall.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/lidar_data.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/test.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/edit_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/rebuild_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/list_install_components.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/install.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/install/local.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data/CMakeFiles/install/strip.dir

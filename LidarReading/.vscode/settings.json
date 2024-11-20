@@ -1,0 +1,14 @@
+{
+    "cmake.configureSettings": {
+      "CMAKE_PREFIX_PATH": "/home/aksel/Qt/6.6.1/gcc_64"
+    },
+    "cmake.generator": "Ninja",
+    "files.associations": {
+      "array": "cpp",
+      "bitset": "cpp",
+      "string_view": "cpp",
+      "initializer_list": "cpp",
+      "utility": "cpp",
+      "iterator": "cpp"
+    }
+  }

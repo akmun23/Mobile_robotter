@@ -1,0 +1,53 @@
+[0.013s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[0.055s] [ 66%] [32mBuilding CXX object CMakeFiles/lidar_data.dir/src/main.cpp.o[0m
+[0.055s] [ 66%] [32mBuilding CXX object CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o[0m
+[1.968s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:1[m[K:
+[1.968s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:9:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kmatplotlibcpp[m[K’ is not a namespace-name
+[1.968s]     9 | namespace plt = [01;31m[Kmatplotlibcpp[m[K;
+[1.969s]       |                 [01;31m[K^~~~~~~~~~~~~[m[K
+[2.025s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/main.cpp:5[m[K:
+[2.025s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:9:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kmatplotlibcpp[m[K’ is not a namespace-name
+[2.025s]     9 | namespace plt = [01;31m[Kmatplotlibcpp[m[K;
+[2.025s]       |                 [01;31m[K^~~~~~~~~~~~~[m[K
+[2.037s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In constructor ‘[01m[KMappingNode::MappingNode()[m[K’:
+[2.038s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.038s]    14 |     [01;31m[Kplt[m[K::figure_size(800, 800);
+[2.038s]       |     [01;31m[K^~~[m[K
+[2.038s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:15:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.038s]    15 |     [01;31m[Kplt[m[K::title("Robot Mapping Visualization");
+[2.038s]       |     [01;31m[K^~~[m[K
+[2.040s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::scanCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.040s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:59:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.040s]    59 |     [01;31m[Kplt[m[K::clf();
+[2.041s]       |     [01;31m[K^~~[m[K
+[2.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:60:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.041s]    60 |     [01;31m[Kplt[m[K::scatter(map_x_points, map_y_points, 1, {{"color", "gray"}});
+[2.041s]       |     [01;31m[K^~~[m[K
+[2.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:61:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.041s]    61 |     [01;31m[Kplt[m[K::scatter(x_points, y_points, 1, {{"color", "blue"}});
+[2.041s]       |     [01;31m[K^~~[m[K
+[2.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:64:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.041s]    64 |     [01;31m[Kplt[m[K::plot({_robot_x}, {_robot_y}, "ro");
+[2.041s]       |     [01;31m[K^~~[m[K
+[2.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:65:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.041s]    65 |     [01;31m[Kplt[m[K::xlim(-10, 10);  // Set to a fixed global map view
+[2.041s]       |     [01;31m[K^~~[m[K
+[2.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:66:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.041s]    66 |     [01;31m[Kplt[m[K::ylim(-10, 10);
+[2.041s]       |     [01;31m[K^~~[m[K
+[2.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/lidarnode.cpp:67:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kplt[m[K’ has not been declared
+[2.041s]    67 |     [01;31m[Kplt[m[K::pause(0.01);
+[2.041s]       |     [01;31m[K^~~[m[K
+[2.383s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/main.cpp:12:7:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kclass MappingNode[m[K’
+[2.383s]    12 | class [01;31m[KMappingNode[m[K : public rclcpp::Node {
+[2.383s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[2.383s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/src/main.cpp:5[m[K:
+[2.383s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data/include/lidarnode.h:11:7:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kclass MappingNode[m[K’
+[2.383s]    11 | class [01;36m[KMappingNode[m[K : public rclcpp::Node {
+[2.383s]       |       [01;36m[K^~~~~~~~~~~[m[K
+[2.827s] gmake[2]: *** [CMakeFiles/lidar_data.dir/build.make:76: CMakeFiles/lidar_data.dir/src/main.cpp.o] Error 1
+[2.828s] gmake[2]: *** Waiting for unfinished jobs....
+[4.621s] gmake[2]: *** [CMakeFiles/lidar_data.dir/build.make:90: CMakeFiles/lidar_data.dir/src/lidarnode.cpp.o] Error 1
+[4.622s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_data.dir/all] Error 2
+[4.622s] gmake: *** [Makefile:146: all] Error 2
+[4.624s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
