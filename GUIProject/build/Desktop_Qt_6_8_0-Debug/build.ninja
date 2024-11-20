@@ -61,6 +61,12 @@ build CMakeFiles/GUIProject.dir/GUIWindow.cpp.o: CXX_COMPILER__GUIProject_unscan
   OBJECT_DIR = CMakeFiles/GUIProject.dir
   OBJECT_FILE_DIR = CMakeFiles/GUIProject.dir
 
+build CMakeFiles/GUIProject.dir/dataTypes.cpp.o: CXX_COMPILER__GUIProject_unscanned_Debug /home/madshyrup/GUIProject/dataTypes.cpp || cmake_object_order_depends_target_GUIProject
+  DEP_FILE = CMakeFiles/GUIProject.dir/dataTypes.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/GUIProject.dir
+  OBJECT_FILE_DIR = CMakeFiles/GUIProject.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target GUIProject
@@ -69,7 +75,7 @@ build CMakeFiles/GUIProject.dir/GUIWindow.cpp.o: CXX_COMPILER__GUIProject_unscan
 #############################################
 # Link the executable GUIProject
 
-build GUIProject: CXX_EXECUTABLE_LINKER__GUIProject_Debug CMakeFiles/GUIProject.dir/main.cpp.o CMakeFiles/GUIProject.dir/GUIWindow.cpp.o | /usr/lib/x86_64-linux-gnu/libX11.so
+build GUIProject: CXX_EXECUTABLE_LINKER__GUIProject_Debug CMakeFiles/GUIProject.dir/main.cpp.o CMakeFiles/GUIProject.dir/GUIWindow.cpp.o CMakeFiles/GUIProject.dir/dataTypes.cpp.o | /usr/lib/x86_64-linux-gnu/libX11.so
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libX11.so
   OBJECT_DIR = CMakeFiles/GUIProject.dir

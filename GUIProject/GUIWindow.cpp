@@ -77,19 +77,11 @@ void GUI::lidarReading(float angle, float len){
 
     for(int i = 0; i < wallFrags.size(); i++){
 
-        if(i == wallFrags.size() - 1){
-            cout << i << endl;
-        }
-
         //Generate wall
         if(wallFrags[i].contains(robot.x + x_com, robot.y + y_com) && (wallFrags[i].getType() != Wall::typeWall)){ //Does a square exist on the recorded coords?
 
-            cout << "Found wall" << endl;
-
             //if a wall has been recorded, its type should be changed
             wallFrags[i].setType(Wall::typeWall);
-
-            cout << "i when exited: " << i << endl;
 
             break;
         }
@@ -184,10 +176,10 @@ void GUI::update(bool& update){
         lidarReading(rand()%360, 200); //Make a timer function
         //movementRobot(1, 10);
 
-        if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+        /*if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
             cout << "entered rescale" << endl;
             rescale();
-        }
+        }*/
 
         paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
         paintRobot();
@@ -197,6 +189,12 @@ void GUI::update(bool& update){
             if(event.type == Expose){
                 update = true;
             }
+        }
+
+        if(update){
+            //XClearWindow(display, window);
+            XSync(display, False);
+            update = false;
         }
 
     }

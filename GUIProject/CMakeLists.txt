@@ -9,7 +9,7 @@ find_package(X11 REQUIRED)
 
 add_executable(GUIProject main.cpp
     GUIWindow.h GUIWindow.cpp
-    dataTypes.h
+    dataTypes.h dataTypes.cpp
 )
 
 target_link_libraries(GUIProject X11::X11)
