@@ -1,6 +1,6 @@
+#include "GUIWindow.h"
 #include <iostream>
-#include <cmath>
-#include "dataTypes.h"
+#include <cmath> 
 
 GUI::GUI(){
 
@@ -32,9 +32,6 @@ GUI::GUI(){
     Colormap colorMap = DefaultColormap(display, screen);
     XColor color_Wall, color_Empty, color_Robot;
 
-    //XParseColor(display, colorMap, "gray50", &color_Wall);
-    //XAllocColor(display, colorMap, &color_Wall);
-
     XParseColor(display, colorMap, "snow4", &color_Empty);
     XAllocColor(display, colorMap, &color_Empty);
 
@@ -58,12 +55,7 @@ bool GUI::spaceFree(int x_, int y_){
         if(wallFrags[i].contains(x_, y_)){
             return false;
         }
-        else{
-            continue;
-        }
     }
-
-    //cout << "spacefree returned true;" << endl;
     return true;
 }
 
@@ -77,19 +69,11 @@ void GUI::lidarReading(float angle, float len){
 
     for(int i = 0; i < wallFrags.size(); i++){
 
-        if(i == wallFrags.size() - 1){
-            cout << i << endl;
-        }
 
         //Generate wall
         if(wallFrags[i].contains(robot.x + x_com, robot.y + y_com) && (wallFrags[i].getType() != Wall::typeWall)){ //Does a square exist on the recorded coords?
-
-            cout << "Found wall" << endl;
-
             //if a wall has been recorded, its type should be changed
             wallFrags[i].setType(Wall::typeWall);
-
-            cout << "i when exited: " << i << endl;
 
             break;
         }
@@ -104,10 +88,6 @@ void GUI::lidarReading(float angle, float len){
     for(int i = 1; i < len * 0.93; i++){
         if(spaceFree(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i)){
             wallFrags.push_back(Wall(Point(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i), emptySize, Wall::typeEmpty));
-        }
-        else{
-            //get rect that is in that place, and change size and type
-            //cout << "space wasnt free" << endl;
         }
     }
 }
@@ -173,32 +153,28 @@ void GUI::paintRobot(){
 void GUI::update(bool& update, float angle, float len){
     int move = 0;
 
-    while(1){
+    if(update){
+        //XClearWindow(display, window);
+        XSync(display, False);
+        update = false;
+    }
 
-        if(update){
-            //XClearWindow(display, window);
-            XSync(display, False);
-            update = false;
+    lidarReading(angle, len); //Make a timer function
+    //movementRobot(1, 10);
+
+    if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+        cout << "entered rescale" << endl;
+        rescale();
+    }
+
+    paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
+    paintRobot();
+
+    if(XPending(display) > 0){
+        XNextEvent(display, &event);
+        if(event.type == Expose){
+            update = true;
         }
-
-        lidarReading(angle, len); //Make a timer function
-        //movementRobot(1, 10);
-
-        if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
-            cout << "entered rescale" << endl;
-            rescale();
-        }
-
-        paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
-        paintRobot();
-
-        if(XPending(display) > 0){
-            XNextEvent(display, &event);
-            if(event.type == Expose){
-                update = true;
-            }
-        }
-
     }
 }
 

@@ -14,29 +14,23 @@ MappingNode::MappingNode() : Node("mapping_node")
     gui.show();
 }
 
-MappingNode::~MappingNode() {
-
-}
+MappingNode::~MappingNode() {}
 
 // Callback for LiDAR data
 void MappingNode::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
     float angle = msg->angle_min;
-
     for (size_t i = 0; i < msg->ranges.size(); ++i) {
         float distance = msg->ranges[i];
-
         if (distance >= msg->range_min && distance <= msg->range_max) {
             // Calculate the point in the "base_link" frame
             _distance.push_back(distance);
             _angle.push_back(angle);
 
             // Send the transformed points to the GUI
-            gui.update(update, distance, angle);
+            gui.update(update, angle, distance*100);
         }
         angle += msg->angle_increment;
     }
-
-
 }
 
 // Callback for Odometry data

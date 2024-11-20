@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o"
   "CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o.d"
+  "CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o"
+  "CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o.d"
   "CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o"
   "CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o.d"
   "CMakeFiles/lidar_gui.dir/src/main.cpp.o"

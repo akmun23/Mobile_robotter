@@ -1,0 +1,25 @@
+[35m[1mConsolidate compiler generated dependencies of target lidar_gui[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[ 80%] [32m[1mLinking CXX executable lidar_gui[0m
+[100%] Built target lidar_gui
+-- Install configuration: ""
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/lidar_gui/lidar_gui
+-- Set runtime path of "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/lidar_gui/lidar_gui" to ""
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui//launch
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/package_run_dependencies/lidar_gui
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/parent_prefix_path/lidar_gui
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/ament_prefix_path.sh
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/ament_prefix_path.dsv
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/path.sh
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/path.dsv
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.bash
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.sh
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.zsh
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.dsv
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.dsv
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/packages/lidar_gui
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/cmake/lidar_guiConfig.cmake
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/cmake/lidar_guiConfig-version.cmake
+-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.xml

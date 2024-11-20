@@ -4,7 +4,6 @@
 #include <X11/Xlib.h>
 #include <vector>
 #include <unistd.h>
-#include <math.h>
 #include <cmath>
 #include "dataTypes.h"
 
@@ -38,7 +37,7 @@ public:
     void rescale();
     void paintMap();
     void paintRobot();
-    void update(bool& update);
+    void update(bool& update, float angle, float len);
     void show();
 };
 

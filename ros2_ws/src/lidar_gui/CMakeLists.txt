@@ -23,14 +23,11 @@ find_package(X11 REQUIRED)
 include_directories(include)
 
 # Add executable
-add_executable(lidar_gui src/main.cpp
-               src/lidarnode.cpp include/lidarnode.h
-               src/dataTypes.h
-               src/GUIWindow.cpp include/GUIWindow.h)
-
-
-target_link_libraries(${PROJECT_NAME}
-    ${Python3_LIBRARIES}
+add_executable(lidar_gui 
+  src/main.cpp
+  src/lidarnode.cpp include/lidarnode.h
+  src/dataTypes.cpp include/dataTypes.h
+  src/GUIWindow.cpp include/GUIWindow.h
 )
 
 # Specify the dependencies for the target

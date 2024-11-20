@@ -623,4 +623,8 @@ CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
+ /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h \
+ /usr/include/X11/Xlib.h /usr/include/X11/X.h \
+ /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
+ /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h

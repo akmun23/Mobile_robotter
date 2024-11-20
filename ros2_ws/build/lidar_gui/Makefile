@@ -234,6 +234,30 @@ src/GUIWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_gui.dir/build.make CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.s
 .PHONY : src/GUIWindow.cpp.s
 
+src/dataTypes.o: src/dataTypes.cpp.o
+.PHONY : src/dataTypes.o
+
+# target to build an object file
+src/dataTypes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_gui.dir/build.make CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o
+.PHONY : src/dataTypes.cpp.o
+
+src/dataTypes.i: src/dataTypes.cpp.i
+.PHONY : src/dataTypes.i
+
+# target to preprocess a source file
+src/dataTypes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_gui.dir/build.make CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.i
+.PHONY : src/dataTypes.cpp.i
+
+src/dataTypes.s: src/dataTypes.cpp.s
+.PHONY : src/dataTypes.s
+
+# target to generate assembly for a file
+src/dataTypes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_gui.dir/build.make CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.s
+.PHONY : src/dataTypes.cpp.s
+
 src/lidarnode.o: src/lidarnode.cpp.o
 .PHONY : src/lidarnode.o
 
@@ -301,6 +325,9 @@ help:
 	@echo "... src/GUIWindow.o"
 	@echo "... src/GUIWindow.i"
 	@echo "... src/GUIWindow.s"
+	@echo "... src/dataTypes.o"
+	@echo "... src/dataTypes.i"
+	@echo "... src/dataTypes.s"
 	@echo "... src/lidarnode.o"
 	@echo "... src/lidarnode.i"
 	@echo "... src/lidarnode.s"

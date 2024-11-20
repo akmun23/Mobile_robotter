@@ -19,11 +19,11 @@ private:
     GUI gui;
 
     // Variables to store initial position and orientation
-    double _initial_x;
-    double _initial_y;
-    double _initial_yaw;
+    double _initial_x = 0.0;
+    double _initial_y = 0.0;
+    double _initial_yaw = 0.0;
     bool initial_pose_set = false;
-    bool update;
+    bool update = false;
 
 public:
     MappingNode();

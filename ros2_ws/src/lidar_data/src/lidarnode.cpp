@@ -83,7 +83,7 @@ void MappingNode::sendMapDataToGUI(std::vector<double>& distance, std::vector<do
         int status = query.value(0).toInt();
         if (status == 0) {
             // Insert LiDAR data into the database
-            for (size_t i = 0; i < x_points.size(); ++i) {
+            for (size_t i = 0; i < distance.size(); ++i) {
                 // Prepare SQL statement to insert data
                 query.prepare("INSERT INTO lidar_data (angle, distance) VALUES (:angle, :distance)");
                 query.bindValue(":angle", angle[i]);
