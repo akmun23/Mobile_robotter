@@ -38,13 +38,12 @@ private:
     unsigned int bitReverse(unsigned int x, int log2n);
 
     // Function to read DTMF data from file in chunks
-    std::vector<std::complex<double>> readDTMFDataChunk(std::ifstream& inFile, int bufferSize);
-
+    std::vector<double> readDTMFDataFFT(const std::string& filename, int sampleRate);
     // Function to perform FFT
     std::vector<std::complex<double>> fft(const std::vector<std::complex<double>>& input, int log2n);
 
     // Function to find dominant frequencies in the FFT result
-    std::vector<std::pair<int, double>> findDominantFrequencies(const std::vector<std::complex<double>>& fftResult, int sampleRate);
+    std::vector<double> findDominantFrequencies(const std::vector<std::complex<double>>& fftResult, int sampleRate);
 
     // Function to check if a frequency is approximately a DTMF row or column frequency
     bool isApproximateDTMFRowOrColumnFrequency(int freq);
@@ -57,4 +56,18 @@ private:
 
     // Function to display the received DTMF signal
     void displayReceivedSignal();
+
+
+
+    //Function to get Correct DTMF Char
+    char getDTMFCharacter(double rowFreq, double colFreq);
+
+    double TimePassedFFT(std::chrono::high_resolution_clock::time_point start);
+
+    //Function to get DTMF Message
+    std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
+
+    void checkOutputFile(std::string filename, double calculationTime);
+
+
 };

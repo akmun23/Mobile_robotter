@@ -1,0 +1,330 @@
+----------------------------------------------
+New sequence of messages
+----------------------------------------------
+
+Message 1
+Message Correct Format but incorrect message
+*1552#
+----------------------------------------------
+
+Message 2
+Message Incorrect Format
+174BC#
+----------------------------------------------
+
+Message 3
+Message Incorrect Format
+*711AD
+----------------------------------------------
+
+Message 4
+Message Incorrect Format
+*74652
+----------------------------------------------
+
+Message 5
+Message Correct Format and correct message
+*15C2#
+----------------------------------------------
+
+Message 6
+Message Incorrect Format
+17BC#*
+----------------------------------------------
+
+Message 7
+Message Incorrect Format
+91AD##
+----------------------------------------------
+
+Message 8
+Message Incorrect Format
+74662#
+----------------------------------------------
+
+Message 9
+Message Incorrect Format
+*115C2
+----------------------------------------------
+
+Message 10
+Message Incorrect Format
+*117BC
+----------------------------------------------
+
+Message 11
+Message Incorrect Format
+**91AA
+----------------------------------------------
+
+Message 12
+Message Correct Format and correct message
+*7462#
+----------------------------------------------
+
+Message 13
+Message Incorrect Format
+11379#
+----------------------------------------------
+
+Message 14
+Message Correct Format but incorrect message
+***1
+----------------------------------------------
+
+Message 15
+Message Correct Format and correct message
+*17BC#
+----------------------------------------------
+
+Message 16
+Message Correct Format and correct message
+*91AD#
+----------------------------------------------
+
+Message 17
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 18
+Message Correct Format but incorrect message
+*1137#
+----------------------------------------------
+
+Message 19
+Message Incorrect Format
+115CC2
+----------------------------------------------
+
+Message 20
+Message Incorrect Format
+*017BC
+----------------------------------------------
+
+Message 21
+Message Incorrect Format
+**91AA
+----------------------------------------------
+
+Message 22
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 23
+Message Incorrect Format
+*11377
+----------------------------------------------
+
+Message 24
+Message Incorrect Format
+*15C22
+----------------------------------------------
+
+Message 25
+Message Incorrect Format
+*117BC
+----------------------------------------------
+
+Message 26
+Message Incorrect Format
+*991AA
+----------------------------------------------
+
+Message 27
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 28
+Message Incorrect Format
+*11379
+----------------------------------------------
+
+Message 29
+Message Incorrect Format
+*115C2
+----------------------------------------------
+
+Message 30
+Message Incorrect Format
+*117BC
+----------------------------------------------
+
+Message 31
+Message Incorrect Format
+*991AA
+----------------------------------------------
+
+Message 32
+Message Incorrect Format
+*77466
+----------------------------------------------
+
+Message 33
+Message Incorrect Format
+*13799
+----------------------------------------------
+
+Message 34
+Message Incorrect Format
+*115CC
+----------------------------------------------
+
+Message 35
+Message Incorrect Format
+*117BC
+----------------------------------------------
+
+Message 36
+Message Incorrect Format
+*91AAD
+----------------------------------------------
+
+Message 37
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 38
+Message Incorrect Format
+*13779
+----------------------------------------------
+
+Message 39
+Message Incorrect Format
+*15CC2
+----------------------------------------------
+
+Message 40
+Message Incorrect Format
+*117BC
+----------------------------------------------
+
+Message 41
+Message Incorrect Format
+*991AA
+----------------------------------------------
+
+Message 42
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 43
+Message Incorrect Format
+*13779
+----------------------------------------------
+
+Message 44
+Message Incorrect Format
+*15C22
+----------------------------------------------
+
+Message 45
+Message Incorrect Format
+*117BC
+----------------------------------------------
+
+Message 46
+Message Incorrect Format
+*91AAD
+----------------------------------------------
+
+Message 47
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 48
+Message Incorrect Format
+*11379
+----------------------------------------------
+
+Message 49
+Message Incorrect Format
+*115CC
+----------------------------------------------
+
+Message 50
+Message Correct Format and correct message
+*17BC#
+----------------------------------------------
+
+Message 51
+Message Incorrect Format
+*91AAD
+----------------------------------------------
+
+Message 52
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 53
+Message Incorrect Format
+*11377
+----------------------------------------------
+
+Message 54
+Message Incorrect Format
+**15CC
+----------------------------------------------
+
+Message 55
+Message Incorrect Format
+*17BBC
+----------------------------------------------
+
+Message 56
+Message Incorrect Format
+*991AD
+----------------------------------------------
+
+Message 57
+Message Incorrect Format
+*77462
+----------------------------------------------
+
+Message 58
+Message Incorrect Format
+*13779
+----------------------------------------------
+
+Message 59
+Message Incorrect Format
+*115C2
+----------------------------------------------
+
+Message 60
+Message Incorrect Format
+*117BC
+----------------------------------------------
+
+Message 61
+Message Incorrect Format
+*991AD
+----------------------------------------------
+
+Message 62
+Message Incorrect Format
+*74622
+----------------------------------------------
+
+Message 63
+Message Incorrect Format
+*11377
+----------------------------------------------
+
+
+----------------------------------------------
+Correct Messages: 5
+Incorrect Messages: 3
+Incorrect Format Messages: 55
+Total Messages: 63
+Correct format percentage: 12%
+Correct Messages percentage: 7%
+Average time taken to calculate Entire sequence: 984.25ms.
+Average time taken to calculate Buffer: 0.539862 ms.
+----------------------------------------------

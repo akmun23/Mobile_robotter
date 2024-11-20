@@ -12,7 +12,7 @@ GoertzelTesting::GoertzelTesting() {}
 
 double pi = 3.14159265358979323846;
 
-int MinMagnitude = 5000;
+int MinMagnitude = 4000;
 bool LetterReceivedCompareProgram = false;
 bool startOfMessageReceivedCompareProgram = false;
 std::vector<char> ReceivedCompareProgram;
@@ -26,6 +26,7 @@ std::chrono::duration<double> elapsedTimeCompareProgram;
 std::chrono::high_resolution_clock::time_point startToneCalculation;
 std::chrono::high_resolution_clock::time_point endToneCalculation;
 std::chrono::duration<double> elapsedToneCalculation;
+double timeSumToneCalculation = 0;
 int toneCounter = 0;
 
 
@@ -207,6 +208,7 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
             analyzeDataWithGoertzel(data, sampleRate);
             endToneCalculation = std::chrono::high_resolution_clock::now();;
             elapsedToneCalculation = endToneCalculation - startToneCalculation;
+            timeSumToneCalculation += elapsedToneCalculation.count();
             toneCounter++;
             if((TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)  && (ReceivedCompareProgram.size() < 6) && (ReceivedCompareProgram.size() > 0)){
 
@@ -386,7 +388,7 @@ void GoertzelTesting::checkOutputFile(std::string filename, double calculationTi
     checkedOutputFile << "Correct format percentage: " << ((correct+incorrectMessage)*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Average time taken to calculate Entire sequence: " << calculationTime*1000  << "ms."<< std::endl;
-    checkedOutputFile << "Average time taken to calculate tone: " << (elapsedToneCalculation.count()/toneCounter)*1000  << "ms." << std::endl;
+    checkedOutputFile << "Average time taken to calculate Buffer: " << (timeSumToneCalculation/toneCounter)*1000  << "ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 
     fileToBeChecked.close();
