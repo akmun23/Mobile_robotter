@@ -1,6 +1,5 @@
 #ifndef LIDARNODE_H
 #define LIDARNODE_H
-
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "nav_msgs/msg/odometry.hpp"
