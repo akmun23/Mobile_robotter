@@ -100,12 +100,12 @@ std::vector<double> findDominantFrequency(const std::vector<std::complex<double>
     for (int i = 0; i < magnitudes.size(); ++i) {
 
         if(i* samplingRate / N < 1000){
-            if(magnitudes[i] > maxRowMagnitude && magnitudes[i] > 10){
+            if(magnitudes[i] > maxRowMagnitude && magnitudes[i] > 3){
                 maxRowMagnitude = magnitudes[i];
                 maxRowIndex = i;
             }
         }else if(i * samplingRate / N > 1150){
-            if(magnitudes[i] > maxColMagnitude){
+            if(magnitudes[i] > maxColMagnitude && magnitudes[i] > 3){
                 maxColMagnitude = magnitudes[i];
                 maxColIndex = i;
             }
@@ -238,7 +238,7 @@ std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::strin
 }
 
 
-void runDFT(std::string filename, int sampleRate, int bufferSize){
+std::vector<double> runDFT(std::string filename, int sampleRate, int bufferSize){
     TimeForEntireSequenceStartDFT = std::chrono::high_resolution_clock::now();
     std::string MessageDetected = "";
     // Read DTMF data from file
@@ -248,7 +248,7 @@ void runDFT(std::string filename, int sampleRate, int bufferSize){
     std::vector<double> data = readDTMFDataDFT(filename, sampleRate);
     if (data.empty()) {
         std::cerr << "Error: No data read from file!" << std::endl;
-        return;
+        return {};
     }
     std::ofstream outputFileDFT;
     outputFileDFT.open("DFT_Test_Output.txt", std::ios_base::trunc); // The file is opened in append mode meaning that the data will be added to the end of the file
@@ -340,10 +340,10 @@ void runDFT(std::string filename, int sampleRate, int bufferSize){
 
     outputFileDFT.close();
     double calculationTime = TimePassedDFT(TimeForEntireSequenceStartDFT);
-    checkOutputFile("DFT_Test_Output.txt", calculationTime);
+    return checkOutputFile("DFT_Test_Output.txt", calculationTime);
 }
 
-void checkOutputFile(std::string filename, double calculationTime){
+std::vector<double> checkOutputFile(std::string filename, double calculationTime){
 
 
     std::ofstream checkedOutputFile;
@@ -355,7 +355,7 @@ void checkOutputFile(std::string filename, double calculationTime){
     fileToBeChecked.open(filename);
     if (!fileToBeChecked) {
         std::cerr << "Unable to open file " << filename << std::endl;
-        return;
+        return {};
     }
     std::string line;
 
@@ -436,10 +436,20 @@ void checkOutputFile(std::string filename, double calculationTime){
     checkedOutputFile << "Total Messages: " << (messageCounter-1) << std::endl;
     checkedOutputFile << "Correct format percentage: " << ((correct+incorrectMessage)*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
-    checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime  << " s."<< std::endl;
+    checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime * 1000  << " ms."<< std::endl;
     checkedOutputFile << "Average time taken to calculate Buffer: " << (TimeSumCalculationDFT/countDFT)*1000 << " ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 
     fileToBeChecked.close();
     checkedOutputFile.close();
+
+    std::vector<double> outputData;
+    outputData.push_back(correct);
+    outputData.push_back(incorrectMessage);
+    outputData.push_back(incorrectFormat);
+    outputData.push_back(messageCounter-1);
+    outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
+    outputData.push_back((correct)*100/(messageCounter-1));
+    outputData.push_back((TimeSumCalculationDFT/countDFT)*1000);
+    return outputData;
 }

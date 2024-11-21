@@ -19,7 +19,7 @@ public:
     FFTProcessing(int minMagnitude, const std::vector<int>& dtmfRowFrequencies, const std::vector<int>& dtmfColumnFrequencies, int frequencyTolerance);
 
     // Function to process the file and detect DTMF tones
-    void processFile(const std::string& filename, int sampleRate, int bufferSize);
+    std::vector<double> processFile(const std::string& filename, int sampleRate, int bufferSize);
 
 private:
     int minMagnitude; // Minimum magnitude to consider a frequency as detected
@@ -45,9 +45,6 @@ private:
     // Function to find dominant frequencies in the FFT result
     std::vector<double> findDominantFrequencies(const std::vector<std::complex<double>>& fftResult, int sampleRate);
 
-    // Function to check if a frequency is approximately a DTMF row or column frequency
-    bool isApproximateDTMFRowOrColumnFrequency(int freq);
-
     // Function to save the detected DTMF signal and manage message state
     bool saveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
 
@@ -67,7 +64,7 @@ private:
     //Function to get DTMF Message
     std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
 
-    void checkOutputFile(std::string filename, double calculationTime);
+    std::vector<double> checkOutputFile(std::string filename, double calculationTime);
 
 
 };

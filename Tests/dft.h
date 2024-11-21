@@ -29,12 +29,12 @@ double TimePassedDFT(std::chrono::high_resolution_clock::time_point start);
 //Function to get DTMF Message
 std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
 
-void runDFT(std::string filename, int sampleRate, int bufferSize);
+std::vector<double> runDFT(std::string filename, int sampleRate, int bufferSize);
 
 //Function to get DTMF Message
 std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
 
-void checkOutputFile(std::string filename, double calculationTime);
+std::vector<double> checkOutputFile(std::string filename, double calculationTime);
 
 
 #endif

@@ -20,7 +20,7 @@ public:
 
     // Public methods
     void processFile(const std::string& filename, int sampleRate, int bufferSize);
-    void processFileTest(const std::string& filename, int sampleRate, int bufferSize);
+    std::vector<double> processFileTest(const std::string& filename, int sampleRate, int bufferSize);
 
 
 private:
@@ -30,6 +30,6 @@ private:
     // Method to use Goertzel algorithm on the data
     void analyzeDataWithGoertzel(const std::vector<double>& data, int sampleRate);
 
-    void checkOutputFile(std::string filename, double calculationTime);
+    std::vector<double> checkOutputFile(std::string filename, double calculationTime);
 };
 #endif // GOERTZEL_H

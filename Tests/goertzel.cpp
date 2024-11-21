@@ -12,7 +12,7 @@ GoertzelTesting::GoertzelTesting() {}
 
 double pi = 3.14159265358979323846;
 
-int MinMagnitude = 5000;
+int MinMagnitude = 500;
 bool LetterReceivedCompareProgram = false;
 bool startOfMessageReceivedCompareProgram = false;
 std::vector<char> ReceivedCompareProgram;
@@ -294,7 +294,7 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
 }
 
 
-void GoertzelTesting::checkOutputFile(std::string filename, double calculationTime){
+std::vector<double> GoertzelTesting::checkOutputFile(std::string filename, double calculationTime){
 
 
     std::ofstream checkedOutputFile;
@@ -306,7 +306,7 @@ void GoertzelTesting::checkOutputFile(std::string filename, double calculationTi
     fileToBeChecked.open(filename);
     if (!fileToBeChecked) {
         std::cerr << "Unable to open file " << filename << std::endl;
-        return;
+        return {};
     }
     std::string line;
 
@@ -393,13 +393,23 @@ void GoertzelTesting::checkOutputFile(std::string filename, double calculationTi
 
     fileToBeChecked.close();
     checkedOutputFile.close();
+
+    std::vector<double> outputData;
+    outputData.push_back(correct);
+    outputData.push_back(incorrectMessage);
+    outputData.push_back(incorrectFormat);
+    outputData.push_back(messageCounter-1);
+    outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
+    outputData.push_back((correct)*100/(messageCounter-1));
+    outputData.push_back((timeSumToneCalculation/toneCounter)*1000);
+    return outputData;
 }
 
 
 
 
 
-void GoertzelTesting::processFileTest(const std::string& filename, int sampleRate, int bufferSize) {
+std::vector<double> GoertzelTesting::processFileTest(const std::string& filename, int sampleRate, int bufferSize) {
 
     int maxCorrect = 0;
     std::vector<double> timeAtMaxCorrect;
@@ -410,7 +420,7 @@ void GoertzelTesting::processFileTest(const std::string& filename, int sampleRat
         std::ifstream inFile(filename);
         if (!inFile) {
             std::cerr << "Unable to open file " << filename << std::endl;
-            return;
+            return {};
         }
 
         std::vector<double> data;
@@ -493,7 +503,8 @@ void GoertzelTesting::processFileTest(const std::string& filename, int sampleRat
         std::cout << std::endl;
     }
     double elapsedTime = CalculationTime.count();
-    checkOutputFile("Goertzel_Test_Output.txt", elapsedTime);
+    return checkOutputFile("Goertzel_Test_Output.txt", elapsedTime);
+
 
 }
 

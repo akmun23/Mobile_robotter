@@ -127,12 +127,12 @@ std::vector<double> FFTProcessing::findDominantFrequencies(const std::vector<std
     for (int i = 0; i < magnitudes.size(); ++i) {
 
         if(i* sampleRate / N < 1000){
-            if(magnitudes[i] > maxRowMagnitude && magnitudes[i] > 10){
+            if(magnitudes[i] > maxRowMagnitude && magnitudes[i] > 3){
                 maxRowMagnitude = magnitudes[i];
                 maxRowIndex = i;
             }
         }else if(i * sampleRate / N > 1150){
-            if(magnitudes[i] > maxColMagnitude){
+            if(magnitudes[i] > maxColMagnitude && magnitudes[i] > 3){
                 maxColMagnitude = magnitudes[i];
                 maxColIndex = i;
             }
@@ -146,20 +146,6 @@ std::vector<double> FFTProcessing::findDominantFrequencies(const std::vector<std
 
 }
 
-// Function to check if a frequency is approximately a DTMF row or column frequency
-bool FFTProcessing::isApproximateDTMFRowOrColumnFrequency(int freq) {
-    for (int dtmfFreq : dtmfRowFrequencies) {
-        if (std::abs(freq - dtmfFreq) <= frequencyTolerance) {
-            return true;
-        }
-    }
-    for (int dtmfFreq : dtmfColumnFrequencies) {
-        if (std::abs(freq - dtmfFreq) <= frequencyTolerance) {
-            return true;
-        }
-    }
-    return false;
-}
 
 // Function to calculate elapsed time
 double FFTProcessing::timePassed(std::chrono::high_resolution_clock::time_point start) {
@@ -224,7 +210,7 @@ void FFTProcessing::displayReceivedSignal() {
     clockStartMessage = std::chrono::high_resolution_clock::now();
 }
 
-void FFTProcessing::processFile(const std::string& filename, int sampleRate, int bufferSize) {
+std::vector<double> FFTProcessing::processFile(const std::string& filename, int sampleRate, int bufferSize) {
     TimeForEntireSequenceStartFFT = std::chrono::high_resolution_clock::now();
     std::string MessageDetected = "";
     // Read DTMF data from file
@@ -234,7 +220,7 @@ void FFTProcessing::processFile(const std::string& filename, int sampleRate, int
     std::vector<double> data = readDTMFDataFFT(filename, sampleRate);
     if (data.empty()) {
         std::cerr << "Error: No data read from file!" << std::endl;
-        return;
+        return {};
     }
     std::ofstream outputFileFFT;
     outputFileFFT.open("FFT_Test_Output.txt", std::ios_base::trunc); // The file is opened in append mode meaning that the data will be added to the end of the file
@@ -314,7 +300,7 @@ void FFTProcessing::processFile(const std::string& filename, int sampleRate, int
 
     outputFileFFT.close();
     double calculationTime = TimePassedFFT(TimeForEntireSequenceStartFFT);
-    checkOutputFile("FFT_Test_Output.txt", calculationTime);
+    return checkOutputFile("FFT_Test_Output.txt", calculationTime);
 }
 
 
@@ -422,7 +408,7 @@ std::pair<int, std::string> FFTProcessing::ToneAndMessageHandling(char detectedT
 
 
 
-void FFTProcessing::checkOutputFile(std::string filename, double calculationTime){
+std::vector<double> FFTProcessing::checkOutputFile(std::string filename, double calculationTime){
 
 
     std::ofstream checkedOutputFile;
@@ -434,7 +420,7 @@ void FFTProcessing::checkOutputFile(std::string filename, double calculationTime
     fileToBeChecked.open(filename);
     if (!fileToBeChecked) {
         std::cerr << "Unable to open file " << filename << std::endl;
-        return;
+        return {};
     }
     std::string line;
 
@@ -521,5 +507,15 @@ void FFTProcessing::checkOutputFile(std::string filename, double calculationTime
 
     fileToBeChecked.close();
     checkedOutputFile.close();
+
+    std::vector<double> outputData;
+    outputData.push_back(correct);
+    outputData.push_back(incorrectMessage);
+    outputData.push_back(incorrectFormat);
+    outputData.push_back(messageCounter-1);
+    outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
+    outputData.push_back((correct)*100/(messageCounter-1));
+    outputData.push_back((TimeSumCalculationFFT/countFFT)*1000);
+    return outputData;
 }
 
