@@ -3,12 +3,22 @@
 #include <cmath>
 
 GUI::GUI(){
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");       // Set the correct hostname
+    db.setDatabaseName("lidar_db");    // Set your database name
+    db.setUserName("aksel");           // Set the MySQL username
+    db.setPassword("hua28rdc");        // Set the MySQL password
+
+    if (!db.open()) {
+        qDebug() << "Database error:" << db.lastError().text();
+        return;
+    }
 
     //Setting variables
-    emptySize = Size(1,1);
-    wallSize = Size(8,8);
+    emptySize = Size(4, 4);
+    wallSize = Size(8, 8);
 
-    robotSize = Size(10,10);
+    robotSize = Size(20,20);
 
     //Create display
     display = XOpenDisplay(NULL);
@@ -32,21 +42,14 @@ GUI::GUI(){
     Colormap colorMap = DefaultColormap(display, screen);
     XColor color_Wall, color_Empty, color_Robot;
 
-    //XParseColor(display, colorMap, "gray50", &color_Wall);
-    //XAllocColor(display, colorMap, &color_Wall);
-
-    XParseColor(display, colorMap, "snow4", &color_Empty);
-    XAllocColor(display, colorMap, &color_Empty);
-
     XParseColor(display, colorMap, "firebrick3", &color_Robot);
     XAllocColor(display, colorMap, &color_Robot);
 
     XSetForeground(display, gcWall, BlackPixel(display, screen)); //Wall graphics
-    XSetForeground(display, gcEmpty, color_Empty.pixel); //Empty graphics
     XSetForeground(display, gcRobot, color_Robot.pixel); //Robot graphics
 
     //Robot initialization
-    robot = Robot(Point(XDisplayWidth(display, screen)/2, XDisplayHeight(display, screen)/2), Size(10,10));
+    robot = Robot(Point(XDisplayWidth(display, screen)/2, XDisplayHeight(display, screen)/2), robotSize);
 
     wallFrags.push_back(Wall(Point(0,0), emptySize));
 }
@@ -63,7 +66,6 @@ bool GUI::spaceFree(int x_, int y_){
         }
     }
 
-    //cout << "spacefree returned true;" << endl;
     return true;
 }
 
@@ -81,8 +83,6 @@ int GUI::squareOccupy(int x_, int y_){
 void GUI::lidarReading(float angle, float len){
     float x_com, y_com;
 
-    angle = angle*(180/M_PI);
-
     x_com = len*cos(angle);
     y_com = len*sin(angle);
 
@@ -93,6 +93,7 @@ void GUI::lidarReading(float angle, float len){
 
             //if a wall has been recorded, its type should be changed
             wallFrags[i].setType(Wall::typeWall);
+            wallFrags[squareOccupy(robot.x + x_com, robot.y + y_com)].setSize(wallSize);
 
             break;
         }
@@ -101,39 +102,17 @@ void GUI::lidarReading(float angle, float len){
             break;
         }
     }
-
-    //if there is anything between the robot and wall, it should be changed to empty space
-    //if there isnt anything between the robot and wall, an empty space should be made
-    for(int i = 1; i < len * 0.93; i++){
-        if(spaceFree(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i)){
-            wallFrags.push_back(Wall(Point(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i), emptySize, Wall::typeEmpty));
-        }
-        else{
-
-            wallFrags[squareOccupy(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i)].setType(Wall::typeEmpty);
-            wallFrags[squareOccupy(robot.x + (x_com/len)*i, robot.y + (y_com/len)*i)].setSize(emptySize);
-
-            //get rect that is in that place, and change size and type
-            //cout << "space wasnt free" << endl;
-        }
-    }
 }
 
 void GUI::movementRobot(float angle, float intensity){
 
     int x_com, y_com;
 
-    robot.x = robot.x + 1;
-
-    /*angle = angle*(180/M_PI);
-
     x_com = intensity * cos(angle);
     y_com = intensity * sin(angle);
 
     robot.x = robot.x + x_com;
-    robot.y = robot.y + y_com;*/
-
-    XPutBackEvent(display, &event);
+    robot.y = robot.y + y_com;
 }
 
 void GUI::rescale(){
@@ -176,21 +155,50 @@ void GUI::paintMap(){
 }
 
 void GUI::paintRobot(){
-    XFillRectangle(display, window, gcRobot, robot.x - robot.size.width/2, robot.y - robot.size.height/2, robotSize.width, robotSize.height);
+
+
+    for(int i = 0; i < 4; i++){
+        if(i < 3){
+            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[i+1].x, robot.pointsXAxis[i+1].y);
+        }
+        else{
+            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[0].x, robot.pointsXAxis[0].y);
+        }
+    }
+
+    robot.rotatePoint(0.01); //Angle in radians
+
+    XPutBackEvent(display, &event);
 }
 
 void GUI::update(bool& update){
     int update_counter = 0;
+    QSqlQuery query;
+    std::vector<double> angle;
+    std::vector<double> distance;
 
     while(1){
+        update_counter++;
+        angle.clear();
+        distance.clear();
+        // This should only be true if the size of the query is above 0
+        if (query.exec("SELECT status FROM lidar_data WHERE id = 1") && query.next()) {
+            int status = query.value(0).toInt();
+            if (status == 1) {
+                if(update){
+                    XSync(display, False);
 
+        update_counter++;
         lidarReading(rand()%360, 200); //Make a timer function
-        movementRobot(1, 10);
 
-        if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
+        XSendEvent(display, window, False, ExposureMask, &event);
+
+        //movementRobot(1, 1);
+
+        /*if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
             cout << "entered rescale" << endl;
             rescale();
-        }
+        }*/
 
         paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
         paintRobot();
@@ -204,11 +212,12 @@ void GUI::update(bool& update){
 
         if(update){
             XSync(display, False);
+            XClearWindow(display, window);
 
-            if(update_counter <= 100){
+            /*if(update_counter >= 100){
                 XClearWindow(display, window);
                 update_counter = 0;
-            }
+            }*/
 
             update = false;
         }

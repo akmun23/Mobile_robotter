@@ -1,6 +1,8 @@
 #ifndef DATATYPES_H
 #define DATATYPES_H
 
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
 #include <vector>
 #include <cmath>
 
@@ -8,9 +10,13 @@ using namespace std;
 
 //Point
 struct Point{
-    int x, y;
+    float x, y;
+
+    Point(){}
 
     Point(int x_, int y_);
+
+    Point(float x_, float y_);
 };
 
 //Size
@@ -25,13 +31,16 @@ struct Size{
 //Robot
 struct Robot{
     float x, y, orient;
-    Size size;
+    Size size, xAxis;
+    Point pointsXAxis[4];
 
     Robot(){}
 
     Robot(int x_, int y_, Size size_);
 
     Robot(Point p, Size size_);
+
+    void rotatePoint(double angle);
 };
 
 //Wall
@@ -68,6 +77,5 @@ public:
     bool contains(int x_, int y_);
     bool contains(int x_, int y_, int tolerance);
 };
-
 
 #endif // DATATYPES_H

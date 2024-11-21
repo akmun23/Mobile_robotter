@@ -1,53 +1,18 @@
 #include "dataTypes.h"
 
-Point::Point(int x_, int y_){
-    x = x_;
-    y = y_;
-}
+Point::Point(int x_, int y_) : x(x_), y(y_) {}
 
-Size::Size(int width_, int height_){
-    width = width_;
-    height = height_;
-}
+Size::Size(int width_, int height_) : width(width_), height(height_) {}
 
-Robot::Robot(int x_, int y_, Size size_){
-    x = x_;
-    y = y_;
-    size = size_;
-}
+Robot::Robot(int x_, int y_, Size size_) : x(x_), y(y_), start_x(x_), start_y(y_), size(size_) {}
 
-Robot::Robot(Point p, Size size_){
-    x = p.x;
-    y = p.y;
-    size = size_;
-}
+Robot::Robot(Point p, Size size_) : x(p.x), y(p.y), start_x(p.x), start_y(p.y), size(size_) {}
 
-Wall::Wall(int x_, int y_, Size size_){
-    x = x_;
-    y = y_;
-    size = size_;
-    center_x = size.width/2;
-    center_y = size.height/2;
-    type = Wall::typeBackground;
-}
+Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
 
-Wall::Wall(Point p, Size size_){
-    x = p.x;
-    y = p.y;
-    size = size_;
-    center_x = size.width/2;
-    center_y = size.height/2;
-    type = Wall::typeBackground;
-}
+Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
 
-Wall::Wall(Point p, Size size_, squareType type_){
-    x = p.x;
-    y = p.y;
-    size = size_;
-    center_x = size.width/2;
-    center_y = size.height/2;
-    type = type_;
-}
+Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(type_) {}
 
 int Wall::getX(){
     return x;
@@ -61,7 +26,11 @@ void Wall::setType(squareType type_){
     type = type_;
 }
 
-Wall::squareType Wall::getType(){
+void Wall::setSize(Size size_){
+    size = size_;
+}
+
+Wall::squareType Wall::getType() const{
     return type;
 }
 

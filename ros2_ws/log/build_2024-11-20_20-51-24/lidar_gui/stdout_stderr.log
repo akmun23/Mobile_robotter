@@ -1,0 +1,9 @@
+[ 20%] [32m[1mLinking CXX executable lidar_gui[0m
+/usr/bin/ld: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o: in function `MappingNode::MappingNode()':
+lidarnode.cpp:(.text+0x79c): undefined reference to `GUI::~GUI()'
+/usr/bin/ld: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o: in function `MappingNode::~MappingNode()':
+lidarnode.cpp:(.text+0x85e): undefined reference to `GUI::~GUI()'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:243: lidar_gui] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

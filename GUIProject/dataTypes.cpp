@@ -1,6 +1,12 @@
 #include "dataTypes.h"
+#include <iostream>
 
 Point::Point(int x_, int y_){
+    x = x_;
+    y = y_;
+}
+
+Point::Point(float x_, float y_){
     x = x_;
     y = y_;
 }
@@ -19,7 +25,35 @@ Robot::Robot(int x_, int y_, Size size_){
 Robot::Robot(Point p, Size size_){
     x = p.x;
     y = p.y;
+
     size = size_;
+    xAxis.width = size.width;
+    xAxis.height = size.height * 1.5;
+
+    pointsXAxis[0].x = x - size.width/2;
+    pointsXAxis[0].y = y - size.height/2;
+    pointsXAxis[1].x = x - size.width/2;
+    pointsXAxis[1].y = y + size.height/2;
+    pointsXAxis[2].x = x + size.width/2;
+    pointsXAxis[2].y = y + size.height/2;
+    pointsXAxis[3].x = x + size.width/2;
+    pointsXAxis[3].y = y - size.height/2;
+}
+
+// Function to rotate a point around the center of the robot.
+void Robot::rotatePoint(double angle){
+
+    for(int i = 0; i < 4; i++){
+
+        float temp_x = pointsXAxis[i].x - x;
+        float temp_y = pointsXAxis[i].y - y;
+
+        pointsXAxis[i].x = temp_x * cos(angle) - temp_y * sin(angle);
+        pointsXAxis[i].y = temp_x * sin(angle) + temp_y * cos(angle);
+
+        pointsXAxis[i].x += x;
+        pointsXAxis[i].y += y;
+    }
 }
 
 Wall::Wall(int x_, int y_, Size size_){

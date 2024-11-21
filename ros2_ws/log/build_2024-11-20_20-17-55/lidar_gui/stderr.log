@@ -1,0 +1,56 @@
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:[m[K In constructor ‘[01m[KWall::Wall(int, int, Size)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:11:70:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::width[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   11 | Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x([01;35m[Ksize.width[m[K / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                                 [01;35m[K~~~~~^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:11:96:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::height[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   11 | Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x(size.width / 2), center_y([01;35m[Ksize.height[m[K / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                                                           [01;35m[K~~~~~^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:[m[K In constructor ‘[01m[KWall::Wall(Point, Size)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:13:65:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::width[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   13 | Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x([01;35m[Ksize.width[m[K / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                            [01;35m[K~~~~~^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:13:91:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::height[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   13 | Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x(size.width / 2), center_y([01;35m[Ksize.height[m[K / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                                                      [01;35m[K~~~~~^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:[m[K In constructor ‘[01m[KWall::Wall(Point, Size, Wall::squareType)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:15:83:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::width[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   15 | Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x([01;35m[Ksize.width[m[K / 2), center_y(size.height / 2), size(size_), type(type_) {}
+      |                                                                              [01;35m[K~~~~~^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:15:109:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::height[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   15 | Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x(size.width / 2), center_y([01;35m[Ksize.height[m[K / 2), size(size_), type(type_) {}
+      |                                                                                                        [01;35m[K~~~~~^~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:[m[K In constructor ‘[01m[KGUI::GUI()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:8:[m[K [01;35m[Kwarning: [m[K‘[01m[KGUI::gc[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   46 |     GC [01;35m[Kgc[m[K = nullptr;
+      |        [01;35m[K^~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:41:12:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KPixmap GUI::pixmap[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   41 |     Pixmap [01;35m[Kpixmap[m[K = 0; // Off-screen buffer
+      |            [01;35m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    6 | [01;35m[KGUI[m[K::GUI() : display(nullptr), window(0), screen(0), gc(nullptr), pixmap(0), gcWall(nullptr), gcEmpty(nullptr), gcRobot(nullptr), _latest_angle(0.0), _latest_distance(0.0), _robot_x(0.0), _robot_y(0.0), _robot_yaw(0.0), robot(0, 0, Size(0, 0)) {
+      | [01;35m[K^~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:41:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KGUI::pixmap[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   41 |     Pixmap [01;35m[Kpixmap[m[K = 0; // Off-screen buffer
+      |            [01;35m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:28:8:[m[K [01;35m[Kwarning: [m[K  ‘[01m[K_XGC* GUI::gcWall[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   28 |     GC [01;35m[KgcWall[m[K = nullptr;
+      |        [01;35m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    6 | [01;35m[KGUI[m[K::GUI() : display(nullptr), window(0), screen(0), gc(nullptr), pixmap(0), gcWall(nullptr), gcEmpty(nullptr), gcRobot(nullptr), _latest_angle(0.0), _latest_distance(0.0), _robot_x(0.0), _robot_y(0.0), _robot_yaw(0.0), robot(0, 0, Size(0, 0)) {
+      | [01;35m[K^~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:45:43:[m[K [01;35m[Kwarning: [m[K‘[01m[KGUI::_robot_yaw[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   45 |     float _robot_x = 0.0, _robot_y = 0.0, [01;35m[K_robot_yaw[m[K = 0.0;
+      |                                           [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:11:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KRobot GUI::robot[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   33 |     Robot [01;35m[Krobot[m[K;
+      |           [01;35m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    6 | [01;35m[KGUI[m[K::GUI() : display(nullptr), window(0), screen(0), gc(nullptr), pixmap(0), gcWall(nullptr), gcEmpty(nullptr), gcRobot(nullptr), _latest_angle(0.0), _latest_distance(0.0), _robot_x(0.0), _robot_y(0.0), _robot_yaw(0.0), robot(0, 0, Size(0, 0)) {
+      | [01;35m[K^~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::scanCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:35:11:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kprevious_distance[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+   35 |     float [01;35m[Kprevious_distance[m[K = msg->ranges[0];
+      |           [01;35m[K^~~~~~~~~~~~~~~~~[m[K

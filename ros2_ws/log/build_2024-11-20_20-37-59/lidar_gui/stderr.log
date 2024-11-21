@@ -1,0 +1,110 @@
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:[m[K In constructor ‘[01m[KWall::Wall(int, int, Size)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:11:70:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::width[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   11 | Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x([01;35m[Ksize.width[m[K / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                                 [01;35m[K~~~~~^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:11:96:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::height[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   11 | Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x(size.width / 2), center_y([01;35m[Ksize.height[m[K / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                                                           [01;35m[K~~~~~^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:[m[K In constructor ‘[01m[KWall::Wall(Point, Size)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:13:65:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::width[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   13 | Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x([01;35m[Ksize.width[m[K / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                            [01;35m[K~~~~~^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:13:91:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::height[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   13 | Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x(size.width / 2), center_y([01;35m[Ksize.height[m[K / 2), size(size_), type(Wall::typeBackground) {}
+      |                                                                                      [01;35m[K~~~~~^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:[m[K In constructor ‘[01m[KWall::Wall(Point, Size, Wall::squareType)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:15:83:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::width[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   15 | Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x([01;35m[Ksize.width[m[K / 2), center_y(size.height / 2), size(size_), type(type_) {}
+      |                                                                              [01;35m[K~~~~~^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:15:109:[m[K [01;35m[Kwarning: [m[K‘[01m[K*this.Wall::size.Size::height[m[K’ is used uninitialized [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized-Wuninitialized]8;;[m[K]
+   15 | Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x(size.width / 2), center_y([01;35m[Ksize.height[m[K / 2), size(size_), type(type_) {}
+      |                                                                                                        [01;35m[K~~~~~^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::scanCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:29:23:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KGUI::update(float&, float&, double&, double&, double&)[m[K’
+   29 |             [01;31m[Kgui.update(_latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw)[m[K;
+      |             [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid GUI::update(bool&, float, float, float, float, float)[m[K’
+   46 |     void [01;36m[Kupdate[m[K(bool& needs_update, float angle, float len, float robot_x, float robot_y, float robot_yaw); // Updated parameter name
+      |          [01;36m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:10:[m[K [01;36m[Knote: [m[K  candidate expects 6 arguments, 5 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:22:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knoise_threshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   22 |     float [01;35m[Knoise_threshold[m[K = 0.1;
+      |           [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::odomCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:63:15:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KGUI::update(float&, float&, double&, double&, double&)[m[K’
+   63 |     [01;31m[Kgui.update(_latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw)[m[K;
+      |     [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid GUI::update(bool&, float, float, float, float, float)[m[K’
+   46 |     void [01;36m[Kupdate[m[K(bool& needs_update, float angle, float len, float robot_x, float robot_y, float robot_yaw); // Updated parameter name
+      |          [01;36m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:10:[m[K [01;36m[Knote: [m[K  candidate expects 6 arguments, 5 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K At global scope:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:66:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid MappingNode::updateGUI()[m[K’
+   66 | void [01;31m[KMappingNode[m[K::updateGUI() {
+      |      [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:66:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid MappingNode::updateGUI()[m[K’
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:11:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass MappingNode[m[K’ defined here
+   11 | class [01;36m[KMappingNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:19:15:[m[K [01;31m[Kerror: [m[K‘[01m[KGUI MappingNode::gui[m[K’ is private within this context
+   19 |         node->[01;31m[Kgui[m[K.update(node->_latest_angle, node->_latest_distance, node->_robot_x, node->_robot_y, node->_robot_yaw);
+      |               [01;31m[K^~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:18:9:[m[K [01;36m[Knote: [m[Kdeclared private here
+   18 |     GUI [01;36m[Kgui[m[K;
+      |         [01;36m[K^~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:19:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kfloat MappingNode::_latest_angle[m[K’ is private within this context
+   19 |         node->gui.update(node->[01;31m[K_latest_angle[m[K, node->_latest_distance, node->_robot_x, node->_robot_y, node->_robot_yaw);
+      |                                [01;31m[K^~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:25:12:[m[K [01;36m[Knote: [m[Kdeclared private here
+   25 |      float [01;36m[K_latest_angle[m[K = 0.0;
+      |            [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:19:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kfloat MappingNode::_latest_distance[m[K’ is private within this context
+   19 |         node->gui.update(node->_latest_angle, node->[01;31m[K_latest_distance[m[K, node->_robot_x, node->_robot_y, node->_robot_yaw);
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:26:11:[m[K [01;36m[Knote: [m[Kdeclared private here
+   26 |     float [01;36m[K_latest_distance[m[K = 0.0;
+      |           [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:19:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kdouble MappingNode::_robot_x[m[K’ is private within this context
+   19 |         node->gui.update(node->_latest_angle, node->_latest_distance, node->[01;31m[K_robot_x[m[K, node->_robot_y, node->_robot_yaw);
+      |                                                                             [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:16:12:[m[K [01;36m[Knote: [m[Kdeclared private here
+   16 |     double [01;36m[K_robot_x[m[K = 0.0, _robot_y = 0.0, _robot_yaw = 0.0;
+      |            [01;36m[K^~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:19:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kdouble MappingNode::_robot_y[m[K’ is private within this context
+   19 |         node->gui.update(node->_latest_angle, node->_latest_distance, node->_robot_x, node->[01;31m[K_robot_y[m[K, node->_robot_yaw);
+      |                                                                                             [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:16:28:[m[K [01;36m[Knote: [m[Kdeclared private here
+   16 |     double _robot_x = 0.0, [01;36m[K_robot_y[m[K = 0.0, _robot_yaw = 0.0;
+      |                            [01;36m[K^~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:19:109:[m[K [01;31m[Kerror: [m[K‘[01m[Kdouble MappingNode::_robot_yaw[m[K’ is private within this context
+   19 |         node->gui.update(node->_latest_angle, node->_latest_distance, node->_robot_x, node->_robot_y, node->[01;31m[K_robot_yaw[m[K);
+      |                                                                                                             [01;31m[K^~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:16:44:[m[K [01;36m[Knote: [m[Kdeclared private here
+   16 |     double _robot_x = 0.0, _robot_y = 0.0, [01;36m[K_robot_yaw[m[K = 0.0;
+      |                                            [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:19:25:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KGUI::update(float&, float&, double&, double&, double&)[m[K’
+   19 |         [01;31m[Knode->gui.update(node->_latest_angle, node->_latest_distance, node->_robot_x, node->_robot_y, node->_robot_yaw)[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid GUI::update(bool&, float, float, float, float, float)[m[K’
+   46 |     void [01;36m[Kupdate[m[K(bool& needs_update, float angle, float len, float robot_x, float robot_y, float robot_yaw); // Updated parameter name
+      |          [01;36m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:10:[m[K [01;36m[Knote: [m[K  candidate expects 6 arguments, 5 provided
+gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:76: CMakeFiles/lidar_gui.dir/src/main.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:90: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

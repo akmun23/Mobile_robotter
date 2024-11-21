@@ -1,0 +1,626 @@
+[0.000000] (-) TimerEvent: {}
+[0.001129] (controller_input) JobQueued: {'identifier': 'controller_input', 'dependencies': OrderedDict()}
+[0.003861] (dtmf_to_cmd_vel) JobQueued: {'identifier': 'dtmf_to_cmd_vel', 'dependencies': OrderedDict()}
+[0.004226] (lidar_data) JobQueued: {'identifier': 'lidar_data', 'dependencies': OrderedDict()}
+[0.004437] (lidar_gui) JobQueued: {'identifier': 'lidar_gui', 'dependencies': OrderedDict()}
+[0.004593] (controller_input) JobStarted: {'identifier': 'controller_input'}
+[0.044757] (dtmf_to_cmd_vel) JobStarted: {'identifier': 'dtmf_to_cmd_vel'}
+[0.081770] (lidar_data) JobStarted: {'identifier': 'lidar_data'}
+[0.097379] (-) TimerEvent: {}
+[0.111367] (lidar_gui) JobStarted: {'identifier': 'lidar_gui'}
+[0.156379] (controller_input) JobProgress: {'identifier': 'controller_input', 'progress': 'cmake'}
+[0.162734] (controller_input) JobProgress: {'identifier': 'controller_input', 'progress': 'build'}
+[0.169695] (controller_input) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input', '--', '-j16', '-l16'], 'cwd': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'aksel'), ('LC_TIME', 'en_DK.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/aksel'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_DK.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1670'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/aksel/.nvm'), ('COLCON_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install:/home/aksel/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'aksel'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'aksel'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/usr/share/gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/aksel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/AkselSkole:@/tmp/.ICE-unix/1670,unix/AkselSkole:/tmp/.ICE-unix/1670'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_DK.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b20352e8_cd35_4160_975d_c4d320ebd855'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_DK.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.133'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_DK.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_DK.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', ':/usr/share/gazebo'), ('LC_IDENTIFICATION', 'en_DK.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/aksel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/aksel/turtlebot3_ws/build/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/build/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_DK.UTF-8'), ('LC_PAPER', 'en_DK.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.189833] (dtmf_to_cmd_vel) JobProgress: {'identifier': 'dtmf_to_cmd_vel', 'progress': 'cmake'}
+[0.191815] (dtmf_to_cmd_vel) JobProgress: {'identifier': 'dtmf_to_cmd_vel', 'progress': 'build'}
+[0.198254] (dtmf_to_cmd_vel) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel', '--', '-j16', '-l16'], 'cwd': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'aksel'), ('LC_TIME', 'en_DK.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/aksel'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_DK.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1670'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/aksel/.nvm'), ('COLCON_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install:/home/aksel/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'aksel'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'aksel'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/usr/share/gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/aksel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/AkselSkole:@/tmp/.ICE-unix/1670,unix/AkselSkole:/tmp/.ICE-unix/1670'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_DK.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b20352e8_cd35_4160_975d_c4d320ebd855'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_DK.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.133'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_DK.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_DK.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', ':/usr/share/gazebo'), ('LC_IDENTIFICATION', 'en_DK.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/aksel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/aksel/turtlebot3_ws/build/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/build/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_DK.UTF-8'), ('LC_PAPER', 'en_DK.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.205747] (-) TimerEvent: {}
+[0.205890] (lidar_data) JobProgress: {'identifier': 'lidar_data', 'progress': 'cmake'}
+[0.212465] (lidar_data) JobProgress: {'identifier': 'lidar_data', 'progress': 'build'}
+[0.215875] (lidar_data) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data', '--', '-j16', '-l16'], 'cwd': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'aksel'), ('LC_TIME', 'en_DK.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/aksel'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_DK.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1670'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/aksel/.nvm'), ('COLCON_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install:/home/aksel/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'aksel'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'aksel'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/usr/share/gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/aksel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/AkselSkole:@/tmp/.ICE-unix/1670,unix/AkselSkole:/tmp/.ICE-unix/1670'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_DK.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b20352e8_cd35_4160_975d_c4d320ebd855'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_DK.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.133'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_DK.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_DK.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', ':/usr/share/gazebo'), ('LC_IDENTIFICATION', 'en_DK.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/aksel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/aksel/turtlebot3_ws/build/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/build/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_DK.UTF-8'), ('LC_PAPER', 'en_DK.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.242793] (lidar_gui) JobProgress: {'identifier': 'lidar_gui', 'progress': 'cmake'}
+[0.249415] (lidar_gui) JobProgress: {'identifier': 'lidar_gui', 'progress': 'build'}
+[0.254669] (lidar_gui) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui', '--', '-j16', '-l16'], 'cwd': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'aksel'), ('LC_TIME', 'en_DK.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/aksel'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_DK.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1670'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/aksel/.nvm'), ('COLCON_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install:/home/aksel/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'aksel'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'aksel'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/usr/share/gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/aksel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/AkselSkole:@/tmp/.ICE-unix/1670,unix/AkselSkole:/tmp/.ICE-unix/1670'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_DK.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b20352e8_cd35_4160_975d_c4d320ebd855'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_DK.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.133'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_DK.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_DK.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', ':/usr/share/gazebo'), ('LC_IDENTIFICATION', 'en_DK.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/aksel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/aksel/turtlebot3_ws/build/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/build/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_DK.UTF-8'), ('LC_PAPER', 'en_DK.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.305876] (-) TimerEvent: {}
+[0.407223] (-) TimerEvent: {}
+[0.509251] (-) TimerEvent: {}
+[0.555150] (lidar_gui) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target lidar_gui\x1b[0m\n'}
+[0.557538] (controller_input) StdoutLine: {'line': b'[100%] Built target controller_input\n'}
+[0.584736] (dtmf_to_cmd_vel) StdoutLine: {'line': b'[100%] Built target dtmf_to_cmd_vel\n'}
+[0.609487] (-) TimerEvent: {}
+[0.632397] (controller_input) CommandEnded: {'returncode': 0}
+[0.636271] (lidar_data) StdoutLine: {'line': b'[100%] Built target lidar_data\n'}
+[0.655350] (dtmf_to_cmd_vel) CommandEnded: {'returncode': 0}
+[0.696357] (lidar_gui) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o\x1b[0m\n'}
+[0.697062] (lidar_gui) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o\x1b[0m\n'}
+[0.698054] (lidar_gui) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o\x1b[0m\n'}
+[0.705147] (lidar_gui) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o\x1b[0m\n'}
+[0.709728] (-) TimerEvent: {}
+[0.717136] (lidar_data) CommandEnded: {'returncode': 0}
+[0.810185] (-) TimerEvent: {}
+[0.815678] (controller_input) JobProgress: {'identifier': 'controller_input', 'progress': 'install'}
+[0.889114] (controller_input) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input'], 'cwd': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'aksel'), ('LC_TIME', 'en_DK.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/aksel'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_DK.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1670'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/aksel/.nvm'), ('COLCON_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install:/home/aksel/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'aksel'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'aksel'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/usr/share/gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/aksel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/AkselSkole:@/tmp/.ICE-unix/1670,unix/AkselSkole:/tmp/.ICE-unix/1670'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_DK.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b20352e8_cd35_4160_975d_c4d320ebd855'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_DK.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.133'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_DK.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_DK.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', ':/usr/share/gazebo'), ('LC_IDENTIFICATION', 'en_DK.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/aksel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/aksel/turtlebot3_ws/build/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/build/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_DK.UTF-8'), ('LC_PAPER', 'en_DK.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.898576] (dtmf_to_cmd_vel) JobProgress: {'identifier': 'dtmf_to_cmd_vel', 'progress': 'install'}
+[0.900785] (dtmf_to_cmd_vel) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel'], 'cwd': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'aksel'), ('LC_TIME', 'en_DK.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/aksel'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_DK.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1670'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/aksel/.nvm'), ('COLCON_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install:/home/aksel/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'aksel'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'aksel'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/usr/share/gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/aksel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/AkselSkole:@/tmp/.ICE-unix/1670,unix/AkselSkole:/tmp/.ICE-unix/1670'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_DK.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b20352e8_cd35_4160_975d_c4d320ebd855'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_DK.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.133'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_DK.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_DK.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', ':/usr/share/gazebo'), ('LC_IDENTIFICATION', 'en_DK.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/aksel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/aksel/turtlebot3_ws/build/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/build/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_DK.UTF-8'), ('LC_PAPER', 'en_DK.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.910343] (-) TimerEvent: {}
+[0.927889] (lidar_data) JobProgress: {'identifier': 'lidar_data', 'progress': 'install'}
+[0.930084] (lidar_data) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data'], 'cwd': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US'), ('USER', 'aksel'), ('LC_TIME', 'en_DK.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/aksel/turtlebot3_ws/install/dynamixel_sdk/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('HOME', '/home/aksel'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_DK.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1670'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('COLORTERM', 'truecolor'), ('NVM_DIR', '/home/aksel/.nvm'), ('COLCON_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install:/home/aksel/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'aksel'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'aksel'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/usr/share/gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/aksel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/AkselSkole:@/tmp/.ICE-unix/1670,unix/AkselSkole:/tmp/.ICE-unix/1670'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_DK.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/b20352e8_cd35_4160_975d_c4d320ebd855'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_DK.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.133'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '30'), ('AMENT_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_DK.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_DK.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', ':/usr/share/gazebo'), ('LC_IDENTIFICATION', 'en_DK.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data'), ('TURTLEBOT3_MODEL', 'burger'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=e671256cc7aad30f601bf89d673d7c91'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/aksel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/aksel/turtlebot3_ws/build/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/build/turtlebot3_example:/home/aksel/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_DK.UTF-8'), ('LC_PAPER', 'en_DK.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('NVM_RC_VERSION', ''), ('CMAKE_PREFIX_PATH', '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel:/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input:/home/aksel/turtlebot3_ws/install/turtlebot3:/home/aksel/turtlebot3_ws/install/turtlebot3_simulations:/home/aksel/turtlebot3_ws/install/turtlebot3_bringup:/home/aksel/turtlebot3_ws/install/turtlebot3_node:/home/aksel/turtlebot3_ws/install/turtlebot3_navigation2:/home/aksel/turtlebot3_ws/install/turtlebot3_fake_node:/home/aksel/turtlebot3_ws/install/turtlebot3_msgs:/home/aksel/turtlebot3_ws/install/turtlebot3_gazebo:/home/aksel/turtlebot3_ws/install/turtlebot3_description:/home/aksel/turtlebot3_ws/install/turtlebot3_cartographer:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_examples:/home/aksel/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/aksel/turtlebot3_ws/install/dynamixel_sdk:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.940663] (controller_input) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.942737] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/controller_input/controller_input\n'}
+[0.942840] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input//launch\n'}
+[0.942961] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input//launch/controller_launch.py\n'}
+[0.943591] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/package_run_dependencies/controller_input\n'}
+[0.944531] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/parent_prefix_path/controller_input\n'}
+[0.945400] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.sh\n'}
+[0.946323] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.dsv\n'}
+[0.947660] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.sh\n'}
+[0.948706] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.dsv\n'}
+[0.949614] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.bash\n'}
+[0.950253] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.sh\n'}
+[0.950325] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.zsh\n'}
+[0.950403] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.dsv\n'}
+[0.950480] (controller_input) StdoutLine: {'line': b'-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.dsv\n'}
+[0.950565] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/packages/controller_input\n'}
+[0.950765] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig.cmake\n'}
+[0.951745] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig-version.cmake\n'}
+[0.952858] (controller_input) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.xml\n'}
+[0.957712] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.961262] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/dtmf_to_cmd_vel/dtmf_to_cmd_vel\n'}
+[0.963813] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel//launch\n'}
+[0.964695] (controller_input) CommandEnded: {'returncode': 0}
+[0.970820] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/package_run_dependencies/dtmf_to_cmd_vel\n'}
+[0.971245] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/parent_prefix_path/dtmf_to_cmd_vel\n'}
+[0.972461] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/ament_prefix_path.sh\n'}
+[0.973640] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/ament_prefix_path.dsv\n'}
+[0.975651] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/path.sh\n'}
+[0.976770] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/path.dsv\n'}
+[0.977839] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.bash\n'}
+[0.977935] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.sh\n'}
+[0.978079] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.zsh\n'}
+[0.981513] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.dsv\n'}
+[0.982674] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.dsv\n'}
+[0.983832] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/packages/dtmf_to_cmd_vel\n'}
+[0.984790] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/cmake/dtmf_to_cmd_velConfig.cmake\n'}
+[0.984876] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/cmake/dtmf_to_cmd_velConfig-version.cmake\n'}
+[0.985407] (dtmf_to_cmd_vel) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.xml\n'}
+[1.004402] (lidar_data) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.006011] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/lidar_data/lidar_data\n'}
+[1.006276] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data//launch\n'}
+[1.010510] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/package_run_dependencies/lidar_data\n'}
+[1.012089] (-) TimerEvent: {}
+[1.013130] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/parent_prefix_path/lidar_data\n'}
+[1.014664] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.sh\n'}
+[1.019722] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/ament_prefix_path.dsv\n'}
+[1.020238] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.sh\n'}
+[1.020323] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/environment/path.dsv\n'}
+[1.020424] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.bash\n'}
+[1.022838] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.sh\n'}
+[1.025964] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.zsh\n'}
+[1.026974] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/local_setup.dsv\n'}
+[1.033381] (lidar_data) StdoutLine: {'line': b'-- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.dsv\n'}
+[1.034082] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/ament_index/resource_index/packages/lidar_data\n'}
+[1.034202] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig.cmake\n'}
+[1.039587] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/cmake/lidar_dataConfig-version.cmake\n'}
+[1.040919] (lidar_data) StdoutLine: {'line': b'-- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.xml\n'}
+[1.070378] (dtmf_to_cmd_vel) CommandEnded: {'returncode': 0}
+[1.112269] (-) TimerEvent: {}
+[1.123797] (lidar_data) CommandEnded: {'returncode': 0}
+[1.212779] (-) TimerEvent: {}
+[1.274963] (controller_input) JobEnded: {'identifier': 'controller_input', 'rc': 0}
+[1.314199] (-) TimerEvent: {}
+[1.390943] (dtmf_to_cmd_vel) JobEnded: {'identifier': 'dtmf_to_cmd_vel', 'rc': 0}
+[1.418526] (-) TimerEvent: {}
+[1.436759] (lidar_data) JobEnded: {'identifier': 'lidar_data', 'rc': 0}
+[1.518970] (-) TimerEvent: {}
+[1.620300] (-) TimerEvent: {}
+[1.722578] (-) TimerEvent: {}
+[1.761782] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:1\x1b[m\x1b[K:\n'}
+[1.763979] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KWall::Wall(int, int, Size)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.765412] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:50:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWall::size\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.767016] (lidar_gui) StderrLine: {'line': b'   50 |     Size \x1b[01;35m\x1b[Ksize\x1b[m\x1b[K;\n'}
+[1.768600] (lidar_gui) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.769397] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:48:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KWall::squareType Wall::type\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.769494] (lidar_gui) StderrLine: {'line': b'   48 |     squareType \x1b[01;35m\x1b[Ktype\x1b[m\x1b[K;\n'}
+[1.769574] (lidar_gui) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.769644] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:11:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.769731] (lidar_gui) StderrLine: {'line': b'   11 | \x1b[01;35m\x1b[KWall\x1b[m\x1b[K::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}\n'}
+[1.770395] (lidar_gui) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.771564] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:1\x1b[m\x1b[K:\n'}
+[1.772689] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KWall::Wall(Point, Size)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.773885] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:50:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWall::size\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.775238] (lidar_gui) StderrLine: {'line': b'   50 |     Size \x1b[01;35m\x1b[Ksize\x1b[m\x1b[K;\n'}
+[1.776389] (lidar_gui) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.776499] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:48:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KWall::squareType Wall::type\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.776584] (lidar_gui) StderrLine: {'line': b'   48 |     squareType \x1b[01;35m\x1b[Ktype\x1b[m\x1b[K;\n'}
+[1.776664] (lidar_gui) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.776735] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:13:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.777334] (lidar_gui) StderrLine: {'line': b'   13 | \x1b[01;35m\x1b[KWall\x1b[m\x1b[K::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}\n'}
+[1.778874] (lidar_gui) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.780011] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:1\x1b[m\x1b[K:\n'}
+[1.781434] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KWall::Wall(Point, Size, Wall::squareType)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.782877] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:50:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWall::size\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.783525] (lidar_gui) StderrLine: {'line': b'   50 |     Size \x1b[01;35m\x1b[Ksize\x1b[m\x1b[K;\n'}
+[1.783608] (lidar_gui) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.783708] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:48:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KWall::squareType Wall::type\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.783793] (lidar_gui) StderrLine: {'line': b'   48 |     squareType \x1b[01;35m\x1b[Ktype\x1b[m\x1b[K;\n'}
+[1.784063] (lidar_gui) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.785351] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:15:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.786645] (lidar_gui) StderrLine: {'line': b'   15 | \x1b[01;35m\x1b[KWall\x1b[m\x1b[K::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(type_) {}\n'}
+[1.787800] (lidar_gui) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.822996] (-) TimerEvent: {}
+[1.924827] (-) TimerEvent: {}
+[1.956108] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KWall::Wall(int, int, Size)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.958579] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:11:70:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K*this.Wall::size.Size::width\x1b[m\x1b[K\xe2\x80\x99 is used uninitialized [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized\x07-Wuninitialized\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.959583] (lidar_gui) StderrLine: {'line': b'   11 | Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x(\x1b[01;35m\x1b[Ksize.width\x1b[m\x1b[K / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}\n'}
+[1.960574] (lidar_gui) StderrLine: {'line': b'      |                                                                 \x1b[01;35m\x1b[K~~~~~^~~~~\x1b[m\x1b[K\n'}
+[1.961680] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:11:96:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K*this.Wall::size.Size::height\x1b[m\x1b[K\xe2\x80\x99 is used uninitialized [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized\x07-Wuninitialized\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.962653] (lidar_gui) StderrLine: {'line': b'   11 | Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x(size.width / 2), center_y(\x1b[01;35m\x1b[Ksize.height\x1b[m\x1b[K / 2), size(size_), type(Wall::typeBackground) {}\n'}
+[1.962867] (lidar_gui) StderrLine: {'line': b'      |                                                                                           \x1b[01;35m\x1b[K~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[1.962947] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KWall::Wall(Point, Size)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.963028] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:13:65:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K*this.Wall::size.Size::width\x1b[m\x1b[K\xe2\x80\x99 is used uninitialized [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized\x07-Wuninitialized\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.963068] (lidar_gui) StderrLine: {'line': b'   13 | Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x(\x1b[01;35m\x1b[Ksize.width\x1b[m\x1b[K / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}\n'}
+[1.963112] (lidar_gui) StderrLine: {'line': b'      |                                                            \x1b[01;35m\x1b[K~~~~~^~~~~\x1b[m\x1b[K\n'}
+[1.963151] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:13:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K*this.Wall::size.Size::height\x1b[m\x1b[K\xe2\x80\x99 is used uninitialized [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized\x07-Wuninitialized\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.963212] (lidar_gui) StderrLine: {'line': b'   13 | Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(\x1b[01;35m\x1b[Ksize.height\x1b[m\x1b[K / 2), size(size_), type(Wall::typeBackground) {}\n'}
+[1.963423] (lidar_gui) StderrLine: {'line': b'      |                                                                                      \x1b[01;35m\x1b[K~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[1.963887] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KWall::Wall(Point, Size, Wall::squareType)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.964571] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:15:83:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K*this.Wall::size.Size::width\x1b[m\x1b[K\xe2\x80\x99 is used uninitialized [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized\x07-Wuninitialized\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.965269] (lidar_gui) StderrLine: {'line': b'   15 | Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x(\x1b[01;35m\x1b[Ksize.width\x1b[m\x1b[K / 2), center_y(size.height / 2), size(size_), type(type_) {}\n'}
+[1.965807] (lidar_gui) StderrLine: {'line': b'      |                                                                              \x1b[01;35m\x1b[K~~~~~^~~~~\x1b[m\x1b[K\n'}
+[1.966633] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp:15:109:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K*this.Wall::size.Size::height\x1b[m\x1b[K\xe2\x80\x99 is used uninitialized [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wuninitialized\x07-Wuninitialized\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.967258] (lidar_gui) StderrLine: {'line': b'   15 | Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(\x1b[01;35m\x1b[Ksize.height\x1b[m\x1b[K / 2), size(size_), type(type_) {}\n'}
+[1.967712] (lidar_gui) StderrLine: {'line': b'      |                                                                                                        \x1b[01;35m\x1b[K~~~~~^~~~~~\x1b[m\x1b[K\n'}
+[2.025141] (-) TimerEvent: {}
+[2.126178] (-) TimerEvent: {}
+[2.227554] (-) TimerEvent: {}
+[2.328878] (-) TimerEvent: {}
+[2.430318] (-) TimerEvent: {}
+[2.531844] (-) TimerEvent: {}
+[2.633358] (-) TimerEvent: {}
+[2.734254] (-) TimerEvent: {}
+[2.834710] (-) TimerEvent: {}
+[2.935635] (-) TimerEvent: {}
+[3.037319] (-) TimerEvent: {}
+[3.138841] (-) TimerEvent: {}
+[3.240556] (-) TimerEvent: {}
+[3.309537] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.312710] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KGUI::GUI()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.313719] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:46:8:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGUI::gc\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.314296] (lidar_gui) StderrLine: {'line': b'   46 |     GC \x1b[01;35m\x1b[Kgc\x1b[m\x1b[K = nullptr;\n'}
+[3.314382] (lidar_gui) StderrLine: {'line': b'      |        \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.314446] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:41:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KPixmap GUI::pixmap\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.314488] (lidar_gui) StderrLine: {'line': b'   41 |     Pixmap \x1b[01;35m\x1b[Kpixmap\x1b[m\x1b[K = 0; // Off-screen buffer\n'}
+[3.314526] (lidar_gui) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[3.314562] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:6:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.314612] (lidar_gui) StderrLine: {'line': b'    6 | \x1b[01;35m\x1b[KGUI\x1b[m\x1b[K::GUI() : display(nullptr), window(0), screen(0), gc(nullptr), pixmap(0), gcWall(nullptr), gcEmpty(nullptr), gcRobot(nullptr), _latest_angle(0.0), _latest_distance(0.0), _robot_x(0.0), _robot_y(0.0), _robot_yaw(0.0), robot(0, 0, Size(0, 0)) {\n'}
+[3.314775] (lidar_gui) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[3.315332] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.315777] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:41:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGUI::pixmap\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.316513] (lidar_gui) StderrLine: {'line': b'   41 |     Pixmap \x1b[01;35m\x1b[Kpixmap\x1b[m\x1b[K = 0; // Off-screen buffer\n'}
+[3.317034] (lidar_gui) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[3.317636] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:28:8:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[K_XGC* GUI::gcWall\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.318153] (lidar_gui) StderrLine: {'line': b'   28 |     GC \x1b[01;35m\x1b[KgcWall\x1b[m\x1b[K = nullptr;\n'}
+[3.318647] (lidar_gui) StderrLine: {'line': b'      |        \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[3.319205] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:6:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.319707] (lidar_gui) StderrLine: {'line': b'    6 | \x1b[01;35m\x1b[KGUI\x1b[m\x1b[K::GUI() : display(nullptr), window(0), screen(0), gc(nullptr), pixmap(0), gcWall(nullptr), gcEmpty(nullptr), gcRobot(nullptr), _latest_angle(0.0), _latest_distance(0.0), _robot_x(0.0), _robot_y(0.0), _robot_yaw(0.0), robot(0, 0, Size(0, 0)) {\n'}
+[3.320234] (lidar_gui) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[3.320687] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.321376] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:45:43:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGUI::_robot_yaw\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.321550] (lidar_gui) StderrLine: {'line': b'   45 |     float _robot_x = 0.0, _robot_y = 0.0, \x1b[01;35m\x1b[K_robot_yaw\x1b[m\x1b[K = 0.0;\n'}
+[3.321587] (lidar_gui) StderrLine: {'line': b'      |                                           \x1b[01;35m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.321623] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[KRobot GUI::robot\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.321665] (lidar_gui) StderrLine: {'line': b'   33 |     Robot \x1b[01;35m\x1b[Krobot\x1b[m\x1b[K;\n'}
+[3.321700] (lidar_gui) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[3.321736] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:6:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.321772] (lidar_gui) StderrLine: {'line': b'    6 | \x1b[01;35m\x1b[KGUI\x1b[m\x1b[K::GUI() : display(nullptr), window(0), screen(0), gc(nullptr), pixmap(0), gcWall(nullptr), gcEmpty(nullptr), gcRobot(nullptr), _latest_angle(0.0), _latest_distance(0.0), _robot_x(0.0), _robot_y(0.0), _robot_yaw(0.0), robot(0, 0, Size(0, 0)) {\n'}
+[3.321814] (lidar_gui) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~\x1b[m\x1b[K\n'}
+[3.340734] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid GUI::rescale()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.341662] (-) TimerEvent: {}
+[3.342272] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:128:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint Wall::x\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.342469] (lidar_gui) StderrLine: {'line': b'  128 |             wall.\x1b[01;31m\x1b[Kx\x1b[m\x1b[K += offset;\n'}
+[3.342522] (lidar_gui) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.342634] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.342687] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.342743] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:49:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.343130] (lidar_gui) StderrLine: {'line': b'   49 |     int \x1b[01;36m\x1b[Kx\x1b[m\x1b[K, y, center_x, center_y;\n'}
+[3.343758] (lidar_gui) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.346769] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:133:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint Wall::x\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.349614] (lidar_gui) StderrLine: {'line': b'  133 |             wall.\x1b[01;31m\x1b[Kx\x1b[m\x1b[K -= offset;\n'}
+[3.349670] (lidar_gui) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.349714] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.349764] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.349806] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:49:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.350001] (lidar_gui) StderrLine: {'line': b'   49 |     int \x1b[01;36m\x1b[Kx\x1b[m\x1b[K, y, center_x, center_y;\n'}
+[3.350479] (lidar_gui) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.351277] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:138:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint Wall::y\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.352196] (lidar_gui) StderrLine: {'line': b'  138 |             wall.\x1b[01;31m\x1b[Ky\x1b[m\x1b[K += offset;\n'}
+[3.353108] (lidar_gui) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.354017] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.354778] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.355303] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:49:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.355924] (lidar_gui) StderrLine: {'line': b'   49 |     int x, \x1b[01;36m\x1b[Ky\x1b[m\x1b[K, center_x, center_y;\n'}
+[3.356264] (lidar_gui) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.356343] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:143:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint Wall::y\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.356385] (lidar_gui) StderrLine: {'line': b'  143 |             wall.\x1b[01;31m\x1b[Ky\x1b[m\x1b[K -= offset;\n'}
+[3.356420] (lidar_gui) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.356454] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.356489] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.356529] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:49:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.356565] (lidar_gui) StderrLine: {'line': b'   49 |     int x, \x1b[01;36m\x1b[Ky\x1b[m\x1b[K, center_x, center_y;\n'}
+[3.356608] (lidar_gui) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.356705] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid GUI::paintMap()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.357016] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:162:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint Wall::x\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.357557] (lidar_gui) StderrLine: {'line': b'  162 |                        wall.\x1b[01;31m\x1b[Kx\x1b[m\x1b[K - wall.size.width / 2,\n'}
+[3.357994] (lidar_gui) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.358504] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.358946] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.359421] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:49:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.359810] (lidar_gui) StderrLine: {'line': b'   49 |     int \x1b[01;36m\x1b[Kx\x1b[m\x1b[K, y, center_x, center_y;\n'}
+[3.360268] (lidar_gui) StderrLine: {'line': b'      |         \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.360855] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:162:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSize Wall::size\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.361345] (lidar_gui) StderrLine: {'line': b'  162 |                        wall.x - wall.\x1b[01;31m\x1b[Ksize\x1b[m\x1b[K.width / 2,\n'}
+[3.361939] (lidar_gui) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.362456] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.363293] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.363539] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:50:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.363595] (lidar_gui) StderrLine: {'line': b'   50 |     Size \x1b[01;36m\x1b[Ksize\x1b[m\x1b[K;\n'}
+[3.363663] (lidar_gui) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.363716] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:163:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint Wall::y\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.363768] (lidar_gui) StderrLine: {'line': b'  163 |                        wall.\x1b[01;31m\x1b[Ky\x1b[m\x1b[K - wall.size.height / 2,\n'}
+[3.363819] (lidar_gui) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.364004] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.364572] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.365469] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:49:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.366154] (lidar_gui) StderrLine: {'line': b'   49 |     int x, \x1b[01;36m\x1b[Ky\x1b[m\x1b[K, center_x, center_y;\n'}
+[3.366813] (lidar_gui) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.367527] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:163:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSize Wall::size\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.368275] (lidar_gui) StderrLine: {'line': b'  163 |                        wall.y - wall.\x1b[01;31m\x1b[Ksize\x1b[m\x1b[K.height / 2,\n'}
+[3.369067] (lidar_gui) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.369767] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.370280] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.370402] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:50:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.370474] (lidar_gui) StderrLine: {'line': b'   50 |     Size \x1b[01;36m\x1b[Ksize\x1b[m\x1b[K;\n'}
+[3.370526] (lidar_gui) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.370560] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:164:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSize Wall::size\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.370595] (lidar_gui) StderrLine: {'line': b'  164 |                        wall.\x1b[01;31m\x1b[Ksize\x1b[m\x1b[K.width,\n'}
+[3.370629] (lidar_gui) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.370669] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.370815] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.371243] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:50:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.371663] (lidar_gui) StderrLine: {'line': b'   50 |     Size \x1b[01;36m\x1b[Ksize\x1b[m\x1b[K;\n'}
+[3.372163] (lidar_gui) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.372673] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KSize Wall::size\x1b[m\x1b[K\xe2\x80\x99 is private within this context\n'}
+[3.373165] (lidar_gui) StderrLine: {'line': b'  165 |                        wall.\x1b[01;31m\x1b[Ksize\x1b[m\x1b[K.height);\n'}
+[3.373759] (lidar_gui) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.374394] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11\x1b[m\x1b[K,\n'}
+[3.374798] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1\x1b[m\x1b[K:\n'}
+[3.375268] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:50:10:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared private here\n'}
+[3.375799] (lidar_gui) StderrLine: {'line': b'   50 |     Size \x1b[01;36m\x1b[Ksize\x1b[m\x1b[K;\n'}
+[3.376267] (lidar_gui) StderrLine: {'line': b'      |          \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.442139] (-) TimerEvent: {}
+[3.543510] (-) TimerEvent: {}
+[3.644281] (-) TimerEvent: {}
+[3.745098] (-) TimerEvent: {}
+[3.845819] (-) TimerEvent: {}
+[3.947808] (-) TimerEvent: {}
+[3.961563] (lidar_gui) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:118: CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o] Error 1\n'}
+[3.963770] (lidar_gui) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[4.048299] (-) TimerEvent: {}
+[4.150507] (-) TimerEvent: {}
+[4.252341] (-) TimerEvent: {}
+[4.353281] (-) TimerEvent: {}
+[4.455345] (-) TimerEvent: {}
+[4.556923] (-) TimerEvent: {}
+[4.658480] (-) TimerEvent: {}
+[4.760750] (-) TimerEvent: {}
+[4.863068] (-) TimerEvent: {}
+[4.964515] (-) TimerEvent: {}
+[5.065977] (-) TimerEvent: {}
+[5.167385] (-) TimerEvent: {}
+[5.268834] (-) TimerEvent: {}
+[5.369734] (-) TimerEvent: {}
+[5.471501] (-) TimerEvent: {}
+[5.571952] (-) TimerEvent: {}
+[5.672766] (-) TimerEvent: {}
+[5.774491] (-) TimerEvent: {}
+[5.875872] (-) TimerEvent: {}
+[5.977017] (-) TimerEvent: {}
+[6.078006] (-) TimerEvent: {}
+[6.179173] (-) TimerEvent: {}
+[6.280675] (-) TimerEvent: {}
+[6.382112] (-) TimerEvent: {}
+[6.483962] (-) TimerEvent: {}
+[6.585598] (-) TimerEvent: {}
+[6.687054] (-) TimerEvent: {}
+[6.788392] (-) TimerEvent: {}
+[6.889275] (-) TimerEvent: {}
+[6.989995] (-) TimerEvent: {}
+[7.091592] (-) TimerEvent: {}
+[7.193090] (-) TimerEvent: {}
+[7.294399] (-) TimerEvent: {}
+[7.396242] (-) TimerEvent: {}
+[7.497593] (-) TimerEvent: {}
+[7.599021] (-) TimerEvent: {}
+[7.700512] (-) TimerEvent: {}
+[7.802121] (-) TimerEvent: {}
+[7.903526] (-) TimerEvent: {}
+[8.005420] (-) TimerEvent: {}
+[8.106960] (-) TimerEvent: {}
+[8.208529] (-) TimerEvent: {}
+[8.310117] (-) TimerEvent: {}
+[8.411361] (-) TimerEvent: {}
+[8.512788] (-) TimerEvent: {}
+[8.613674] (-) TimerEvent: {}
+[8.714302] (-) TimerEvent: {}
+[8.815642] (-) TimerEvent: {}
+[8.917192] (-) TimerEvent: {}
+[9.018670] (-) TimerEvent: {}
+[9.120552] (-) TimerEvent: {}
+[9.222480] (-) TimerEvent: {}
+[9.323787] (-) TimerEvent: {}
+[9.425161] (-) TimerEvent: {}
+[9.526570] (-) TimerEvent: {}
+[9.628612] (-) TimerEvent: {}
+[9.730200] (-) TimerEvent: {}
+[9.831881] (-) TimerEvent: {}
+[9.933290] (-) TimerEvent: {}
+[10.034734] (-) TimerEvent: {}
+[10.136321] (-) TimerEvent: {}
+[10.237651] (-) TimerEvent: {}
+[10.338471] (-) TimerEvent: {}
+[10.440173] (-) TimerEvent: {}
+[10.541570] (-) TimerEvent: {}
+[10.643192] (-) TimerEvent: {}
+[10.744523] (-) TimerEvent: {}
+[10.845324] (-) TimerEvent: {}
+[10.947017] (-) TimerEvent: {}
+[11.048415] (-) TimerEvent: {}
+[11.150002] (-) TimerEvent: {}
+[11.251340] (-) TimerEvent: {}
+[11.352837] (-) TimerEvent: {}
+[11.454467] (-) TimerEvent: {}
+[11.556102] (-) TimerEvent: {}
+[11.657807] (-) TimerEvent: {}
+[11.758944] (-) TimerEvent: {}
+[11.859710] (-) TimerEvent: {}
+[11.961478] (-) TimerEvent: {}
+[12.063069] (-) TimerEvent: {}
+[12.164579] (-) TimerEvent: {}
+[12.265592] (-) TimerEvent: {}
+[12.366245] (-) TimerEvent: {}
+[12.467318] (-) TimerEvent: {}
+[12.568352] (-) TimerEvent: {}
+[12.669802] (-) TimerEvent: {}
+[12.771712] (-) TimerEvent: {}
+[12.873570] (-) TimerEvent: {}
+[12.975038] (-) TimerEvent: {}
+[13.076652] (-) TimerEvent: {}
+[13.178084] (-) TimerEvent: {}
+[13.279627] (-) TimerEvent: {}
+[13.381314] (-) TimerEvent: {}
+[13.482821] (-) TimerEvent: {}
+[13.583811] (-) TimerEvent: {}
+[13.684991] (-) TimerEvent: {}
+[13.786452] (-) TimerEvent: {}
+[13.887984] (-) TimerEvent: {}
+[13.989592] (-) TimerEvent: {}
+[14.091066] (-) TimerEvent: {}
+[14.192474] (-) TimerEvent: {}
+[14.294167] (-) TimerEvent: {}
+[14.395384] (-) TimerEvent: {}
+[14.496710] (-) TimerEvent: {}
+[14.597535] (-) TimerEvent: {}
+[14.698956] (-) TimerEvent: {}
+[14.799953] (-) TimerEvent: {}
+[14.900882] (-) TimerEvent: {}
+[15.002160] (-) TimerEvent: {}
+[15.103698] (-) TimerEvent: {}
+[15.205214] (-) TimerEvent: {}
+[15.306663] (-) TimerEvent: {}
+[15.353097] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KMappingNode::MappingNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[15.353624] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:3:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[15.354841] (lidar_gui) StderrLine: {'line': b'    3 | MappingNode::MappingNode(\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[15.355871] (lidar_gui) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[15.357140] (lidar_gui) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[15.358014] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[15.358996] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[15.359788] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:4\x1b[m\x1b[K,\n'}
+[15.360497] (lidar_gui) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1\x1b[m\x1b[K:\n'}
+[15.360685] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1294:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node(const rclcpp::Node&, const string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[15.360745] (lidar_gui) StderrLine: {'line': b' 1294 |   \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[15.360802] (lidar_gui) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[15.360858] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1294:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[15.360917] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:101:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node(const string&, const string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[15.360976] (lidar_gui) StderrLine: {'line': b'  101 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[15.361017] (lidar_gui) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[15.361143] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:101:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 0 provided\n'}
+[15.361493] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:89:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node(const string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[15.361983] (lidar_gui) StderrLine: {'line': b'   89 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[15.362561] (lidar_gui) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[15.363146] (lidar_gui) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:89:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[15.407044] (-) TimerEvent: {}
+[15.508264] (-) TimerEvent: {}
+[15.609735] (-) TimerEvent: {}
+[15.711273] (-) TimerEvent: {}
+[15.811960] (-) TimerEvent: {}
+[15.913562] (-) TimerEvent: {}
+[16.015011] (-) TimerEvent: {}
+[16.116217] (-) TimerEvent: {}
+[16.217333] (-) TimerEvent: {}
+[16.318620] (-) TimerEvent: {}
+[16.420350] (-) TimerEvent: {}
+[16.521643] (-) TimerEvent: {}
+[16.623133] (-) TimerEvent: {}
+[16.724531] (-) TimerEvent: {}
+[16.826153] (-) TimerEvent: {}
+[16.927712] (-) TimerEvent: {}
+[17.028379] (-) TimerEvent: {}
+[17.129816] (-) TimerEvent: {}
+[17.231412] (-) TimerEvent: {}
+[17.332832] (-) TimerEvent: {}
+[17.434511] (-) TimerEvent: {}
+[17.535948] (-) TimerEvent: {}
+[17.636596] (-) TimerEvent: {}
+[17.737426] (-) TimerEvent: {}
+[17.838609] (-) TimerEvent: {}
+[17.940407] (-) TimerEvent: {}
+[18.042079] (-) TimerEvent: {}
+[18.143437] (-) TimerEvent: {}
+[18.245002] (-) TimerEvent: {}
+[18.346516] (-) TimerEvent: {}
+[18.448035] (-) TimerEvent: {}
+[18.549659] (-) TimerEvent: {}
+[18.651398] (-) TimerEvent: {}
+[18.752993] (-) TimerEvent: {}
+[18.854496] (-) TimerEvent: {}
+[18.955982] (-) TimerEvent: {}
+[19.057594] (-) TimerEvent: {}
+[19.159111] (-) TimerEvent: {}
+[19.260499] (-) TimerEvent: {}
+[19.362062] (-) TimerEvent: {}
+[19.463424] (-) TimerEvent: {}
+[19.564761] (-) TimerEvent: {}
+[19.666220] (-) TimerEvent: {}
+[19.767588] (-) TimerEvent: {}
+[19.868848] (-) TimerEvent: {}
+[19.969459] (-) TimerEvent: {}
+[20.070813] (-) TimerEvent: {}
+[20.172413] (-) TimerEvent: {}
+[20.273787] (-) TimerEvent: {}
+[20.375186] (-) TimerEvent: {}
+[20.476711] (-) TimerEvent: {}
+[20.578181] (-) TimerEvent: {}
+[20.679662] (-) TimerEvent: {}
+[20.781422] (-) TimerEvent: {}
+[20.883475] (-) TimerEvent: {}
+[20.985309] (-) TimerEvent: {}
+[21.086872] (-) TimerEvent: {}
+[21.188529] (-) TimerEvent: {}
+[21.289198] (-) TimerEvent: {}
+[21.390320] (-) TimerEvent: {}
+[21.491639] (-) TimerEvent: {}
+[21.593486] (-) TimerEvent: {}
+[21.695084] (-) TimerEvent: {}
+[21.796438] (-) TimerEvent: {}
+[21.898234] (-) TimerEvent: {}
+[21.999665] (-) TimerEvent: {}
+[22.101195] (-) TimerEvent: {}
+[22.202405] (-) TimerEvent: {}
+[22.303854] (-) TimerEvent: {}
+[22.405272] (-) TimerEvent: {}
+[22.506656] (-) TimerEvent: {}
+[22.608147] (-) TimerEvent: {}
+[22.710125] (-) TimerEvent: {}
+[22.810829] (-) TimerEvent: {}
+[22.911432] (-) TimerEvent: {}
+[23.013086] (-) TimerEvent: {}
+[23.114347] (-) TimerEvent: {}
+[23.215852] (-) TimerEvent: {}
+[23.317182] (-) TimerEvent: {}
+[23.418134] (-) TimerEvent: {}
+[23.519346] (-) TimerEvent: {}
+[23.620378] (-) TimerEvent: {}
+[23.721118] (-) TimerEvent: {}
+[23.822562] (-) TimerEvent: {}
+[23.924041] (-) TimerEvent: {}
+[24.025294] (-) TimerEvent: {}
+[24.126814] (-) TimerEvent: {}
+[24.228741] (-) TimerEvent: {}
+[24.330196] (-) TimerEvent: {}
+[24.431351] (-) TimerEvent: {}
+[24.532276] (-) TimerEvent: {}
+[24.633657] (-) TimerEvent: {}
+[24.735243] (-) TimerEvent: {}
+[24.836662] (-) TimerEvent: {}
+[24.938205] (-) TimerEvent: {}
+[25.039525] (-) TimerEvent: {}
+[25.141025] (-) TimerEvent: {}
+[25.242316] (-) TimerEvent: {}
+[25.343744] (-) TimerEvent: {}
+[25.445248] (-) TimerEvent: {}
+[25.546563] (-) TimerEvent: {}
+[25.647870] (-) TimerEvent: {}
+[25.749261] (-) TimerEvent: {}
+[25.850635] (-) TimerEvent: {}
+[25.952160] (-) TimerEvent: {}
+[26.053320] (-) TimerEvent: {}
+[26.154388] (-) TimerEvent: {}
+[26.256148] (-) TimerEvent: {}
+[26.357462] (-) TimerEvent: {}
+[26.458963] (-) TimerEvent: {}
+[26.560408] (-) TimerEvent: {}
+[26.661783] (-) TimerEvent: {}
+[26.763382] (-) TimerEvent: {}
+[26.864964] (-) TimerEvent: {}
+[26.966261] (-) TimerEvent: {}
+[27.067690] (-) TimerEvent: {}
+[27.169036] (-) TimerEvent: {}
+[27.269812] (-) TimerEvent: {}
+[27.370788] (-) TimerEvent: {}
+[27.471393] (-) TimerEvent: {}
+[27.572454] (-) TimerEvent: {}
+[27.672867] (-) TimerEvent: {}
+[27.773490] (-) TimerEvent: {}
+[27.874032] (-) TimerEvent: {}
+[27.974422] (-) TimerEvent: {}
+[28.075229] (-) TimerEvent: {}
+[28.175791] (-) TimerEvent: {}
+[28.277077] (-) TimerEvent: {}
+[28.378283] (-) TimerEvent: {}
+[28.479629] (-) TimerEvent: {}
+[28.581043] (-) TimerEvent: {}
+[28.682492] (-) TimerEvent: {}
+[28.783993] (-) TimerEvent: {}
+[28.885328] (-) TimerEvent: {}
+[28.987247] (-) TimerEvent: {}
+[29.088673] (-) TimerEvent: {}
+[29.190226] (-) TimerEvent: {}
+[29.291763] (-) TimerEvent: {}
+[29.393353] (-) TimerEvent: {}
+[29.495237] (-) TimerEvent: {}
+[29.596733] (-) TimerEvent: {}
+[29.698211] (-) TimerEvent: {}
+[29.799550] (-) TimerEvent: {}
+[29.900183] (-) TimerEvent: {}
+[30.001574] (-) TimerEvent: {}
+[30.103206] (-) TimerEvent: {}
+[30.204691] (-) TimerEvent: {}
+[30.306269] (-) TimerEvent: {}
+[30.407599] (-) TimerEvent: {}
+[30.509320] (-) TimerEvent: {}
+[30.610994] (-) TimerEvent: {}
+[30.712383] (-) TimerEvent: {}
+[30.813326] (-) TimerEvent: {}
+[30.914674] (-) TimerEvent: {}
+[31.015602] (-) TimerEvent: {}
+[31.116218] (-) TimerEvent: {}
+[31.217648] (-) TimerEvent: {}
+[31.319173] (-) TimerEvent: {}
+[31.420589] (-) TimerEvent: {}
+[31.521693] (-) TimerEvent: {}
+[31.623113] (-) TimerEvent: {}
+[31.723930] (-) TimerEvent: {}
+[31.824684] (-) TimerEvent: {}
+[31.926463] (-) TimerEvent: {}
+[32.028204] (-) TimerEvent: {}
+[32.129726] (-) TimerEvent: {}
+[32.231254] (-) TimerEvent: {}
+[32.332752] (-) TimerEvent: {}
+[32.434178] (-) TimerEvent: {}
+[32.535464] (-) TimerEvent: {}
+[32.636807] (-) TimerEvent: {}
+[32.738131] (-) TimerEvent: {}
+[32.839273] (-) TimerEvent: {}
+[32.940397] (-) TimerEvent: {}
+[33.041485] (-) TimerEvent: {}
+[33.142130] (-) TimerEvent: {}
+[33.243422] (-) TimerEvent: {}
+[33.275335] (lidar_gui) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:90: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o] Error 1\n'}
+[33.276489] (lidar_gui) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2\n'}
+[33.279272] (lidar_gui) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[33.298825] (lidar_gui) CommandEnded: {'returncode': 2}
+[33.343496] (-) TimerEvent: {}
+[33.444008] (-) TimerEvent: {}
+[33.545456] (-) TimerEvent: {}
+[33.578161] (lidar_gui) JobEnded: {'identifier': 'lidar_gui', 'rc': 2}
+[33.593038] (-) EventReactorShutdown: {}

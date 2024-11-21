@@ -6,11 +6,12 @@
 #include <unistd.h>
 #include <math.h>
 #include <cmath>
-
 #include "dataTypes.h"
 
 class GUI{
 private:
+
+
     //Screen
     Display *display;
     Window window;
