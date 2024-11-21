@@ -1,7 +1,6 @@
 #ifndef GUIWINDOW_H
 #define GUIWINDOW_H
 
-#include <X11/Xlib.h>
 #include <vector>
 #include <unistd.h>
 #include <math.h>
