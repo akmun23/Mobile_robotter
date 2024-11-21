@@ -1,13 +1,9 @@
 #include "GUIWindow.h"
 
 int main() {
-    bool update;
-
+    bool update = false;
     GUI gui;
-
     gui.show();
-
     gui.update(update);
-
     return 0;
 }

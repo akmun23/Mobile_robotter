@@ -3,12 +3,22 @@
 #include <cmath>
 
 GUI::GUI(){
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");       // Set the correct hostname
+    db.setDatabaseName("lidar_db");    // Set your database name
+    db.setUserName("aksel");           // Set the MySQL username
+    db.setPassword("hua28rdc");        // Set the MySQL password
+
+    if (!db.open()) {
+        qDebug() << "Database error:" << db.lastError().text();
+        return;
+    }
 
     //Setting variables
-    emptySize = Size(1,1);
-    wallSize = Size(8,8);
+    emptySize = Size(4, 4);
+    wallSize = Size(8, 8);
 
-    robotSize = Size(10,10);
+    robotSize = Size(10, 10);
 
     //Create display
     display = XOpenDisplay(NULL);
@@ -32,17 +42,10 @@ GUI::GUI(){
     Colormap colorMap = DefaultColormap(display, screen);
     XColor color_Wall, color_Empty, color_Robot;
 
-    //XParseColor(display, colorMap, "gray50", &color_Wall);
-    //XAllocColor(display, colorMap, &color_Wall);
-
-    XParseColor(display, colorMap, "snow4", &color_Empty);
-    XAllocColor(display, colorMap, &color_Empty);
-
     XParseColor(display, colorMap, "firebrick3", &color_Robot);
     XAllocColor(display, colorMap, &color_Robot);
 
     XSetForeground(display, gcWall, BlackPixel(display, screen)); //Wall graphics
-    XSetForeground(display, gcEmpty, color_Empty.pixel); //Empty graphics
     XSetForeground(display, gcRobot, color_Robot.pixel); //Robot graphics
 
     //Robot initialization
@@ -63,7 +66,6 @@ bool GUI::spaceFree(int x_, int y_){
         }
     }
 
-    //cout << "spacefree returned true;" << endl;
     return true;
 }
 
@@ -81,8 +83,6 @@ int GUI::squareOccupy(int x_, int y_){
 void GUI::lidarReading(float angle, float len){
     float x_com, y_com;
 
-    angle = angle*(180/M_PI);
-
     x_com = len*cos(angle);
     y_com = len*sin(angle);
 
@@ -93,6 +93,7 @@ void GUI::lidarReading(float angle, float len){
 
             //if a wall has been recorded, its type should be changed
             wallFrags[i].setType(Wall::typeWall);
+            wallFrags[squareOccupy(robot.x + x_com, robot.y + y_com)].setSize(wallSize);
 
             break;
         }
@@ -181,11 +182,51 @@ void GUI::paintRobot(){
 
 void GUI::update(bool& update){
     int update_counter = 0;
+    QSqlQuery query;
+    std::vector<double> angle;
+    std::vector<double> distance;
 
     while(1){
+        update_counter++;
+        angle.clear();
+        distance.clear();
+        // This should only be true if the size of the query is above 0
+        if (query.exec("SELECT status FROM lidar_data WHERE id = 1") && query.next()) {
+            int status = query.value(0).toInt();
+            if (status == 1) {
+                if(update){
+                    XSync(display, False);
 
-        lidarReading(rand()%360, 200); //Make a timer function
-        movementRobot(1, 10);
+                    if(update_counter){
+                        XClearWindow(display, window);
+                        update_counter = 0;
+                    }
+
+                    wallFrags.clear();
+                    update = false;
+                }
+
+                if (!query.exec("SELECT angle, distance FROM lidar_data WHERE id != 1")) {
+                    qDebug() << "Error retrieving data:" << query.lastError().text();
+                }
+                while (query.next()) {
+                    angle.push_back(query.value(0).toDouble());
+                    distance.push_back(query.value(1).toDouble());
+                }
+                for(int i = 0; i < angle.size(); i++){
+                    lidarReading(angle[i], distance[i]*200);
+                }
+                if (!query.exec("DELETE FROM lidar_data WHERE id != 1")) {
+                    qDebug() << "Error clearing data:" << query.lastError().text();
+                }
+                if (!query.exec("UPDATE lidar_data SET status = 0 WHERE id = 1")) {
+                    qDebug() << "Error updating status flag:" << query.lastError().text();
+                }
+                XPutBackEvent(display, &event);
+            }
+        } else {
+            qDebug() << "Error retrieving data:" << query.lastError().text();
+        }
 
         if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
             cout << "entered rescale" << endl;
@@ -200,17 +241,6 @@ void GUI::update(bool& update){
             if(event.type == Expose){
                 update = true;
             }
-        }
-
-        if(update){
-            XSync(display, False);
-
-            if(update_counter <= 100){
-                XClearWindow(display, window);
-                update_counter = 0;
-            }
-
-            update = false;
         }
 
     }

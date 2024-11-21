@@ -1,0 +1,44 @@
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::paintRobot(float)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:146:26:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point()[m[K’
+  146 |     Point robot_corners[4[01;31m[K][m[K;
+      |                          [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:9[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:13:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(int, int)[m[K’
+   13 |     [01;36m[KPoint[m[K(int x_, int y_);
+      |     [01;36m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:13:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+   10 | struct [01;36m[KPoint[m[K{
+      |        [01;36m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:164:28:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[0].Point::x[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  164 |         { [01;35m[Krobot_corners[0].x[m[K, robot_corners[0].y },
+      |           [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:164:48:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[0].Point::y[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  164 |         { robot_corners[0].x, [01;35m[Krobot_corners[0].y[m[K },
+      |                               [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:28:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[1].Point::x[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  165 |         { [01;35m[Krobot_corners[1].x[m[K, robot_corners[1].y },
+      |           [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:165:48:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[1].Point::y[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  165 |         { robot_corners[1].x, [01;35m[Krobot_corners[1].y[m[K },
+      |                               [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:166:28:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[2].Point::x[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  166 |         { [01;35m[Krobot_corners[2].x[m[K, robot_corners[2].y },
+      |           [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:166:48:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[2].Point::y[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  166 |         { robot_corners[2].x, [01;35m[Krobot_corners[2].y[m[K },
+      |                               [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:167:28:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[3].Point::x[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  167 |         { [01;35m[Krobot_corners[3].x[m[K, robot_corners[3].y }
+      |           [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:167:48:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_corners[3].Point::y[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kshort int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+  167 |         { robot_corners[3].x, [01;35m[Krobot_corners[3].y[m[K }
+      |                               [01;35m[K~~~~~~~~~~~~~~~~~^[m[K
+gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:118: CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

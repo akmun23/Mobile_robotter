@@ -1,0 +1,27 @@
+[0.178s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[0.334s] [35m[1mConsolidate compiler generated dependencies of target lidar_gui[0m
+[0.353s] [ 20%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[2.782s] [ 40%] [32m[1mLinking CXX executable lidar_gui[0m
+[5.483s] [100%] Built target lidar_gui
+[5.555s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[5.789s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui
+[5.835s] -- Install configuration: ""
+[5.837s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/lidar_gui/lidar_gui
+[5.877s] -- Set runtime path of "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/lidar_gui/lidar_gui" to ""
+[5.878s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui//launch
+[5.879s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/package_run_dependencies/lidar_gui
+[5.880s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/parent_prefix_path/lidar_gui
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/ament_prefix_path.sh
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/ament_prefix_path.dsv
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/path.sh
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/path.dsv
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.bash
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.sh
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.zsh
+[5.882s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.dsv
+[5.882s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.dsv
+[5.883s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/packages/lidar_gui
+[5.884s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/cmake/lidar_guiConfig.cmake
+[5.884s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/cmake/lidar_guiConfig-version.cmake
+[5.885s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.xml
+[5.899s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui

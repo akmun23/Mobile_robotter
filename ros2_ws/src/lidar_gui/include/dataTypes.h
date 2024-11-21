@@ -24,7 +24,7 @@ struct Size{
 
 //Robot
 struct Robot{
-    float x, y, orient;
+    float x, y, start_x, start_y, orient;
     Size size;
 
     Robot(){}
@@ -44,13 +44,13 @@ public:
         typeWall
     };
 
+    int x, y, center_x, center_y;
+    Size size;
+
 private:
     squareType type;
 
 public:
-    int x, y, center_x, center_y;
-    Size size;
-
     Wall(int x_, int y_, Size size_);
 
     Wall(Point p, Size size_);
@@ -58,17 +58,16 @@ public:
     Wall(Point p, Size size_, squareType type_);
 
     void setType(squareType type_);
+    void setSize(Size size_);
 
-    squareType getType();
+    squareType getType() const;
 
     int getX();
     int getY();
 
     bool contains(int x_, int y_);
 
-
     bool contains(int x_, int y_, int tolerance);
 };
-
 
 #endif // DATATYPES_H

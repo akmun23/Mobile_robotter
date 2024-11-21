@@ -1,16 +1,21 @@
 #ifndef GUIWINDOW_H
 #define GUIWINDOW_H
 
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
+#include <QDebug>
 #include <X11/Xlib.h>
 #include <vector>
 #include <unistd.h>
 #include <math.h>
 #include <cmath>
-
 #include "dataTypes.h"
 
 class GUI{
 private:
+
+
     //Screen
     Display *display;
     Window window;
