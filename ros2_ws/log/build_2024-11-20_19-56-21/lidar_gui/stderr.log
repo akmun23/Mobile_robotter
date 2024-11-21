@@ -1,0 +1,8 @@
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::update(float, float, float, float, float)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:195:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kgc[m[K’ was not declared in this scope; did you mean ‘[01m[KGC[m[K’?
+  195 |     XCopyArea(display, pixmap, window, [01;31m[Kgc[m[K, 0, 0,
+      |                                        [01;31m[K^~[m[K
+      |                                        [32m[KGC[m[K
+gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:118: CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

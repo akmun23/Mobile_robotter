@@ -3,10 +3,20 @@
 #include <cmath>
 
 GUI::GUI(){
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");       // Set the correct hostname
+    db.setDatabaseName("lidar_db");    // Set your database name
+    db.setUserName("aksel");           // Set the MySQL username
+    db.setPassword("hua28rdc");        // Set the MySQL password
+
+    if (!db.open()) {
+        qDebug() << "Database error:" << db.lastError().text();
+        return;
+    }
 
     //Setting variables
-    emptySize = Size(1,1);
-    wallSize = Size(8,8);
+    emptySize = Size(4, 4);
+    wallSize = Size(8, 8);
 
     robotSize = Size(20,20);
 
@@ -31,9 +41,6 @@ GUI::GUI(){
     //Color
     Colormap colorMap = DefaultColormap(display, screen);
     XColor color_Wall, color_Empty, color_Robot;
-
-    XParseColor(display, colorMap, "snow4", &color_Empty);
-    XAllocColor(display, colorMap, &color_Empty);
 
     XParseColor(display, colorMap, "firebrick3", &color_Robot);
     XAllocColor(display, colorMap, &color_Robot);
@@ -76,8 +83,6 @@ int GUI::squareOccupy(int x_, int y_){
 void GUI::lidarReading(float angle, float len){
     float x_com, y_com;
 
-    angle = angle*(180/M_PI);
-
     x_com = len*cos(angle);
     y_com = len*sin(angle);
 
@@ -88,6 +93,8 @@ void GUI::lidarReading(float angle, float len){
 
             //if a wall has been recorded, its type should be changed
             wallFrags[i].setType(Wall::typeWall);
+            wallFrags[squareOccupy(robot.x + x_com, robot.y + y_com)].setSize(wallSize);
+
             break;
         }
         else if((i == (wallFrags.size() - 1)) && (spaceFree(robot.x + x_com, robot.y + y_com))){
@@ -166,8 +173,20 @@ void GUI::paintRobot(){
 
 void GUI::update(bool& update){
     int update_counter = 0;
+    QSqlQuery query;
+    std::vector<double> angle;
+    std::vector<double> distance;
 
     while(1){
+        update_counter++;
+        angle.clear();
+        distance.clear();
+        // This should only be true if the size of the query is above 0
+        if (query.exec("SELECT status FROM lidar_data WHERE id = 1") && query.next()) {
+            int status = query.value(0).toInt();
+            if (status == 1) {
+                if(update){
+                    XSync(display, False);
 
         update_counter++;
         lidarReading(rand()%360, 200); //Make a timer function

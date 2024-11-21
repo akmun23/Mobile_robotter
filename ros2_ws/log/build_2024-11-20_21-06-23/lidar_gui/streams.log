@@ -1,0 +1,16 @@
+[0.158s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[0.432s] [35m[1mConsolidate compiler generated dependencies of target lidar_gui[0m
+[0.565s] [ 20%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o[0m
+[0.567s] [ 40%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o[0m
+[0.568s] [ 60%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[14.503s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:17:27:[m[K [01;31m[Kerror: [m[Kdefinition of implicitly-declared ‘[01m[Kvirtual MappingNode::~MappingNode()[m[K’
+[14.504s]    17 | MappingNode::~MappingNode([01;31m[K)[m[K {}
+[14.504s]       |                           [01;31m[K^[m[K
+[14.517s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::scanCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[14.518s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:22:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knoise_threshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[14.519s]    22 |     float [01;35m[Knoise_threshold[m[K = 0.1;
+[14.519s]       |           [01;35m[K^~~~~~~~~~~~~~~[m[K
+[29.486s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:90: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o] Error 1
+[29.488s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+[29.490s] gmake: *** [Makefile:146: all] Error 2
+[29.509s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16

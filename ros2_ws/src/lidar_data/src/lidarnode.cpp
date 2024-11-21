@@ -29,6 +29,8 @@ MappingNode::~MappingNode() {
 
 // Callback for LiDAR data
 void MappingNode::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
+    _distance.clear();
+    _angle.clear();
     float angle = msg->angle_min;
 
     for (size_t i = 0; i < msg->ranges.size(); ++i) {
@@ -83,24 +85,24 @@ void MappingNode::sendMapDataToGUI(std::vector<double>& distance, std::vector<do
         int status = query.value(0).toInt();
         if (status == 0) {
             // Insert LiDAR data into the database
-            for (size_t i = 0; i < x_points.size(); ++i) {
+            for (size_t i = 0; i < distance.size(); ++i) {
                 // Prepare SQL statement to insert data
                 query.prepare("INSERT INTO lidar_data (angle, distance) VALUES (:angle, :distance)");
                 query.bindValue(":angle", angle[i]);
                 query.bindValue(":distance", distance[i]);
 
                 if (!query.exec()) {
-                    RCLCPP_ERROR(this->get_logger(), "Error inserting data into lidar_data: %s", query.lastError().text().toStdString().c_str());
+                    qDebug() << "Error inserting data into lidar_data" << query.lastError().text();
                 }
             }
 
             // After inserting the data, update the status to 1 (new data)
             query.prepare("UPDATE lidar_data SET `status` = 1 WHERE id = 1");
             if (!query.exec()) {
-                RCLCPP_ERROR(this->get_logger(), "Error updating status in lidar_data: %s", query.lastError().text().toStdString().c_str());
+                qDebug() << "Error updating status in lidar_data" << query.lastError().text();
             }
         }
     } else {
-        RCLCPP_ERROR(this->get_logger(), "Error checking status from lidar_data: %s", query.lastError().text().toStdString().c_str());
+        qDebug() << "Error updating status in lidar_data" << query.lastError().text();
     }
 }

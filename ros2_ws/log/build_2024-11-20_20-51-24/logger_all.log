@@ -1,0 +1,314 @@
+[0.606s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.608s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x73010ac4c2b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x73010ac17c70>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x73010ac17c70>>)
+[1.514s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.514s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.514s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.514s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.514s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.514s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.515s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws'
+[1.515s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.516s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.517s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.518s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.518s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.519s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.519s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.519s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.520s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.582s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.583s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.583s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.584s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.584s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.585s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.586s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.586s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.586s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.586s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.586s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.588s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.589s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.590s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.590s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.591s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.592s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.592s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.592s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.594s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extensions ['ignore', 'ignore_ament_install']
+[1.595s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extension 'ignore'
+[1.596s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extension 'ignore_ament_install'
+[1.596s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extensions ['colcon_pkg']
+[1.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extension 'colcon_pkg'
+[1.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extensions ['colcon_meta']
+[1.597s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extension 'colcon_meta'
+[1.598s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extensions ['ros']
+[1.598s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_input) by extension 'ros'
+[1.612s] DEBUG:colcon.colcon_core.package_identification:Package 'src/controller_input' with type 'ros.ament_cmake' and name 'controller_input'
+[1.613s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extensions ['ignore', 'ignore_ament_install']
+[1.614s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extension 'ignore'
+[1.614s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extension 'ignore_ament_install'
+[1.615s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extensions ['colcon_pkg']
+[1.615s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extension 'colcon_pkg'
+[1.616s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extensions ['colcon_meta']
+[1.616s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extension 'colcon_meta'
+[1.617s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extensions ['ros']
+[1.617s] Level 1:colcon.colcon_core.package_identification:_identify(src/dtmf_to_cmd_vel) by extension 'ros'
+[1.621s] DEBUG:colcon.colcon_core.package_identification:Package 'src/dtmf_to_cmd_vel' with type 'ros.ament_cmake' and name 'dtmf_to_cmd_vel'
+[1.622s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extensions ['ignore', 'ignore_ament_install']
+[1.622s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extension 'ignore'
+[1.623s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extension 'ignore_ament_install'
+[1.623s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extensions ['colcon_pkg']
+[1.624s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extension 'colcon_pkg'
+[1.624s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extensions ['colcon_meta']
+[1.624s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extension 'colcon_meta'
+[1.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extensions ['ros']
+[1.625s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_data) by extension 'ros'
+[1.628s] DEBUG:colcon.colcon_core.package_identification:Package 'src/lidar_data' with type 'ros.ament_cmake' and name 'lidar_data'
+[1.629s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extensions ['ignore', 'ignore_ament_install']
+[1.630s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extension 'ignore'
+[1.630s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extension 'ignore_ament_install'
+[1.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extensions ['colcon_pkg']
+[1.631s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extension 'colcon_pkg'
+[1.632s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extensions ['colcon_meta']
+[1.632s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extension 'colcon_meta'
+[1.632s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extensions ['ros']
+[1.633s] Level 1:colcon.colcon_core.package_identification:_identify(src/lidar_gui) by extension 'ros'
+[1.635s] DEBUG:colcon.colcon_core.package_identification:Package 'src/lidar_gui' with type 'ros.ament_cmake' and name 'lidar_gui'
+[1.636s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.636s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.637s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.637s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.637s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.745s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.745s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.760s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install
+[1.765s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 15 installed packages in /home/aksel/turtlebot3_ws/install
+[1.772s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 281 installed packages in /opt/ros/humble
+[1.843s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.036s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'cmake_args' from command line to 'None'
+[2.037s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'cmake_target' from command line to 'None'
+[2.037s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.038s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'cmake_clean_cache' from command line to 'False'
+[2.038s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'cmake_clean_first' from command line to 'False'
+[2.038s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'cmake_force_configure' from command line to 'False'
+[2.038s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'ament_cmake_args' from command line to 'None'
+[2.039s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'catkin_cmake_args' from command line to 'None'
+[2.039s] Level 5:colcon.colcon_core.verb:set package 'controller_input' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.039s] DEBUG:colcon.colcon_core.verb:Building package 'controller_input' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input', 'merge_install': False, 'path': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input', 'symlink_install': False, 'test_result_base': None}
+[2.042s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'cmake_args' from command line to 'None'
+[2.042s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'cmake_target' from command line to 'None'
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'cmake_clean_cache' from command line to 'False'
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'cmake_clean_first' from command line to 'False'
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'cmake_force_configure' from command line to 'False'
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'ament_cmake_args' from command line to 'None'
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'catkin_cmake_args' from command line to 'None'
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'dtmf_to_cmd_vel' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.043s] DEBUG:colcon.colcon_core.verb:Building package 'dtmf_to_cmd_vel' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel', 'merge_install': False, 'path': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel', 'symlink_install': False, 'test_result_base': None}
+[2.043s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'cmake_args' from command line to 'None'
+[2.044s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'cmake_target' from command line to 'None'
+[2.044s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.044s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'cmake_clean_cache' from command line to 'False'
+[2.044s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'cmake_clean_first' from command line to 'False'
+[2.044s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'cmake_force_configure' from command line to 'False'
+[2.045s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'ament_cmake_args' from command line to 'None'
+[2.045s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'catkin_cmake_args' from command line to 'None'
+[2.045s] Level 5:colcon.colcon_core.verb:set package 'lidar_data' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.045s] DEBUG:colcon.colcon_core.verb:Building package 'lidar_data' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data', 'merge_install': False, 'path': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data', 'symlink_install': False, 'test_result_base': None}
+[2.048s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'cmake_args' from command line to 'None'
+[2.048s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'cmake_target' from command line to 'None'
+[2.049s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.049s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'cmake_clean_cache' from command line to 'False'
+[2.049s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'cmake_clean_first' from command line to 'False'
+[2.049s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'cmake_force_configure' from command line to 'False'
+[2.049s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'ament_cmake_args' from command line to 'None'
+[2.050s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'catkin_cmake_args' from command line to 'None'
+[2.050s] Level 5:colcon.colcon_core.verb:set package 'lidar_gui' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.050s] DEBUG:colcon.colcon_core.verb:Building package 'lidar_gui' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui', 'merge_install': False, 'path': '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui', 'symlink_install': False, 'test_result_base': None}
+[2.050s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.054s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.056s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input' with build type 'ament_cmake'
+[2.057s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input'
+[2.068s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.069s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.070s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.099s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel' with build type 'ament_cmake'
+[2.101s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel'
+[2.102s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.102s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.130s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data' with build type 'ament_cmake'
+[2.133s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_data'
+[2.135s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.135s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.167s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui' with build type 'ament_cmake'
+[2.169s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui'
+[2.171s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.171s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.254s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[2.279s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+[2.311s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[2.336s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[2.713s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[2.738s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+[2.791s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data -- -j16 -l16
+[2.978s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input
+[2.989s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel
+[3.019s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data
+[3.057s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(controller_input)
+[3.061s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input
+[3.089s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input' for CMake module files
+[3.094s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input' for CMake config files
+[3.096s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller_input', 'cmake_prefix_path')
+[3.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/hook/cmake_prefix_path.ps1'
+[3.101s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/hook/cmake_prefix_path.dsv'
+[3.104s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/hook/cmake_prefix_path.sh'
+[3.109s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib'
+[3.111s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/bin'
+[3.111s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/pkgconfig/controller_input.pc'
+[3.112s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/python3.10/site-packages'
+[3.112s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/bin'
+[3.115s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.ps1'
+[3.118s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.dsv'
+[3.124s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.sh'
+[3.127s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.bash'
+[3.133s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.zsh'
+[3.134s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/colcon-core/packages/controller_input)
+[3.147s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dtmf_to_cmd_vel)
+[3.148s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel' for CMake module files
+[3.153s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel
+[3.155s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel' for CMake config files
+[3.155s] Level 1:colcon.colcon_core.shell:create_environment_hook('dtmf_to_cmd_vel', 'cmake_prefix_path')
+[3.157s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/hook/cmake_prefix_path.ps1'
+[3.161s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/hook/cmake_prefix_path.dsv'
+[3.162s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/hook/cmake_prefix_path.sh'
+[3.168s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib'
+[3.168s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/bin'
+[3.168s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/pkgconfig/dtmf_to_cmd_vel.pc'
+[3.168s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/python3.10/site-packages'
+[3.170s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/bin'
+[3.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.ps1'
+[3.176s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.dsv'
+[3.177s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.sh'
+[3.180s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.bash'
+[3.182s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.zsh'
+[3.183s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/colcon-core/packages/dtmf_to_cmd_vel)
+[3.189s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lidar_data)
+[3.192s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data' for CMake module files
+[3.197s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_data
+[3.198s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data' for CMake config files
+[3.199s] Level 1:colcon.colcon_core.shell:create_environment_hook('lidar_data', 'cmake_prefix_path')
+[3.202s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/hook/cmake_prefix_path.ps1'
+[3.204s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/hook/cmake_prefix_path.dsv'
+[3.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/hook/cmake_prefix_path.sh'
+[3.210s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib'
+[3.211s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/bin'
+[3.211s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/pkgconfig/lidar_data.pc'
+[3.213s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/python3.10/site-packages'
+[3.214s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/bin'
+[3.218s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.ps1'
+[3.220s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.dsv'
+[3.223s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.sh'
+[3.226s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.bash'
+[3.227s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.zsh'
+[3.230s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/colcon-core/packages/lidar_data)
+[3.327s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(controller_input)
+[3.327s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input' for CMake module files
+[3.332s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input' for CMake config files
+[3.334s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller_input', 'cmake_prefix_path')
+[3.334s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/hook/cmake_prefix_path.ps1'
+[3.338s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/hook/cmake_prefix_path.dsv'
+[3.341s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/hook/cmake_prefix_path.sh'
+[3.343s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib'
+[3.344s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/bin'
+[3.345s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/pkgconfig/controller_input.pc'
+[3.347s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/python3.10/site-packages'
+[3.348s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/bin'
+[3.348s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.ps1'
+[3.352s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.dsv'
+[3.355s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.sh'
+[3.357s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.bash'
+[3.361s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.zsh'
+[3.368s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/colcon-core/packages/controller_input)
+[3.419s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dtmf_to_cmd_vel)
+[3.422s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel' for CMake module files
+[3.426s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel' for CMake config files
+[3.426s] Level 1:colcon.colcon_core.shell:create_environment_hook('dtmf_to_cmd_vel', 'cmake_prefix_path')
+[3.428s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/hook/cmake_prefix_path.ps1'
+[3.432s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/hook/cmake_prefix_path.dsv'
+[3.434s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/hook/cmake_prefix_path.sh'
+[3.438s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib'
+[3.439s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/bin'
+[3.439s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/pkgconfig/dtmf_to_cmd_vel.pc'
+[3.441s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/python3.10/site-packages'
+[3.441s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/bin'
+[3.442s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.ps1'
+[3.447s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.dsv'
+[3.448s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.sh'
+[3.452s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.bash'
+[3.455s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.zsh'
+[3.455s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/colcon-core/packages/dtmf_to_cmd_vel)
+[3.464s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lidar_data)
+[3.466s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data' for CMake module files
+[3.470s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data' for CMake config files
+[3.472s] Level 1:colcon.colcon_core.shell:create_environment_hook('lidar_data', 'cmake_prefix_path')
+[3.474s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/hook/cmake_prefix_path.ps1'
+[3.476s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/hook/cmake_prefix_path.dsv'
+[3.478s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/hook/cmake_prefix_path.sh'
+[3.483s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib'
+[3.483s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/bin'
+[3.483s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/pkgconfig/lidar_data.pc'
+[3.484s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/lib/python3.10/site-packages'
+[3.487s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/bin'
+[3.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.ps1'
+[3.492s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.dsv'
+[3.497s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.sh'
+[3.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.bash'
+[3.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/lidar_data/package.zsh'
+[3.507s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_data/share/colcon-core/packages/lidar_data)
+[4.066s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[4.303s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lidar_gui)
+[4.305s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui' for CMake module files
+[4.307s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui' for CMake config files
+[4.309s] Level 1:colcon.colcon_core.shell:create_environment_hook('lidar_gui', 'cmake_prefix_path')
+[4.312s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/hook/cmake_prefix_path.ps1'
+[4.316s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/hook/cmake_prefix_path.dsv'
+[4.316s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/hook/cmake_prefix_path.sh'
+[4.323s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib'
+[4.324s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/bin'
+[4.324s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/pkgconfig/lidar_gui.pc'
+[4.324s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/python3.10/site-packages'
+[4.325s] Level 1:colcon.colcon_core.environment:checking '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/bin'
+[4.328s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.ps1'
+[4.332s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.dsv'
+[4.333s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.sh'
+[4.337s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.bash'
+[4.339s] INFO:colcon.colcon_core.shell:Creating package script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.zsh'
+[4.341s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/colcon-core/packages/lidar_gui)
+[4.354s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.355s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.356s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[4.356s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.392s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.394s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.394s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.462s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.464s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/local_setup.ps1'
+[4.469s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/_local_setup_util_ps1.py'
+[4.476s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/setup.ps1'
+[4.490s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/local_setup.sh'
+[4.493s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/_local_setup_util_sh.py'
+[4.498s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/setup.sh'
+[4.508s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/local_setup.bash'
+[4.510s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/setup.bash'
+[4.522s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/local_setup.zsh'
+[4.525s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/setup.zsh'

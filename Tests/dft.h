@@ -1,7 +1,7 @@
 #ifndef DFT_H
 #define DFT_H
 
-
+#include <chrono>
 #include <algorithm>
 #include <iostream>
 #include <fstream>
@@ -19,12 +19,22 @@ void computeDFT(const std::vector<double>& input, std::vector<std::complex<doubl
 std::vector<double> findDominantFrequency(const std::vector<std::complex<double>>& dft, double samplingRate);
 
 // Function to read DTMF data from file
-std::vector<double> readDTMFData(const std::string& filename, int sampleRate);
+std::vector<double> readDTMFDataDFT(const std::string& filename, int sampleRate);
 
 //Function to get Correct DTMF Char
-char getDTMFCharacter(int rowFreq, int colFreq);
+char getDTMFCharacter(double rowFreq, double colFreq);
+
+double TimePassedDFT(std::chrono::high_resolution_clock::time_point start);
 
 //Function to get DTMF Message
-std::vector<std::string> trueDTMF(const std::vector<double>& dominantFrequencies);
+std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
+
+void runDFT(std::string filename, int sampleRate, int bufferSize);
+
+//Function to get DTMF Message
+std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
+
+void checkOutputFile(std::string filename, double calculationTime);
+
 
 #endif

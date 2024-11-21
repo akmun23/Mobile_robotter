@@ -1,15 +1,17 @@
 #ifndef GUIWINDOW_H
 #define GUIWINDOW_H
 
+#include <X11/Xlib.h>
 #include <vector>
 #include <unistd.h>
 #include <math.h>
 #include <cmath>
-
 #include "dataTypes.h"
 
 class GUI{
 private:
+
+
     //Screen
     Display *display;
     Window window;

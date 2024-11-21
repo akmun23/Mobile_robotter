@@ -8,7 +8,6 @@
 #include "GUIWindow.h"
 #include "dataTypes.h"
 
-
 class MappingNode : public rclcpp::Node {
 private:
     // Variables to store current position and a list of scanned points in the global map
@@ -19,16 +18,16 @@ private:
     GUI gui;
 
     // Variables to store initial position and orientation
-    double _initial_x;
-    double _initial_y;
-    double _initial_yaw;
+    double _initial_x = 0.0;
+    double _initial_y = 0.0;
+    double _initial_yaw = 0.0;
     bool initial_pose_set = false;
-    bool update;
+    float _latest_angle = 0.0;
+    float _latest_distance = 0.0;
+    bool update = false;
 
 public:
     MappingNode();
-    
-    ~MappingNode();
 
     // Callback for LiDAR data
     void scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg);

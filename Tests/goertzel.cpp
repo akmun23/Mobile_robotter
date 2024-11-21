@@ -26,6 +26,7 @@ std::chrono::duration<double> elapsedTimeCompareProgram;
 std::chrono::high_resolution_clock::time_point startToneCalculation;
 std::chrono::high_resolution_clock::time_point endToneCalculation;
 std::chrono::duration<double> elapsedToneCalculation;
+double timeSumToneCalculation = 0;
 int toneCounter = 0;
 
 
@@ -207,6 +208,7 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
             analyzeDataWithGoertzel(data, sampleRate);
             endToneCalculation = std::chrono::high_resolution_clock::now();;
             elapsedToneCalculation = endToneCalculation - startToneCalculation;
+            timeSumToneCalculation += elapsedToneCalculation.count();
             toneCounter++;
             if((TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)  && (ReceivedCompareProgram.size() < 6) && (ReceivedCompareProgram.size() > 0)){
 
@@ -385,8 +387,8 @@ void GoertzelTesting::checkOutputFile(std::string filename, double calculationTi
     checkedOutputFile << "Total Messages: " << (messageCounter-1) << std::endl;
     checkedOutputFile << "Correct format percentage: " << ((correct+incorrectMessage)*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
-    checkedOutputFile << "Average time taken to calculate Entire sequence: " << calculationTime*1000  << "ms."<< std::endl;
-    checkedOutputFile << "Average time taken to calculate tone: " << (elapsedToneCalculation.count()/toneCounter)*1000  << "ms." << std::endl;
+    checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime*1000  << " ms."<< std::endl;
+    checkedOutputFile << "Average time taken to calculate Buffer: " << (timeSumToneCalculation/toneCounter)*1000  << " ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 
     fileToBeChecked.close();
@@ -475,7 +477,7 @@ void GoertzelTesting::processFileTest(const std::string& filename, int sampleRat
     outputFileGoertzel.close();
 
     std::chrono::duration<double> CalculationTime;
-    for (int i = 0; i < timeAtMaxCorrect.size(); ++i) {
+    for (int i = 0; i < 1; ++i) {
 
         std::cout << std::endl;
         std::cout <<"----------------------------------------------" << std::endl;
@@ -491,7 +493,7 @@ void GoertzelTesting::processFileTest(const std::string& filename, int sampleRat
         std::cout << std::endl;
     }
     double elapsedTime = CalculationTime.count();
-    checkOutputFile("Goertzel_Test_Output.txt", elapsedTime/timeAtMaxCorrect.size());
+    checkOutputFile("Goertzel_Test_Output.txt", elapsedTime);
 
 }
 

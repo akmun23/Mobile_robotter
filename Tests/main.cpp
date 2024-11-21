@@ -17,7 +17,7 @@ int main(){
      *
      * 5 - Program to just play audio
     */
-    RunProgram(2);
+    RunProgram(4);
 
     return 0;
 }

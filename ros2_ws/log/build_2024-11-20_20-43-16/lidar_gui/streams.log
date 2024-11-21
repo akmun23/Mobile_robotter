@@ -1,0 +1,118 @@
+[0.035s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[0.073s] [35m[1mConsolidate compiler generated dependencies of target lidar_gui[0m
+[0.093s] [ 40%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o[0m
+[0.093s] [ 40%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o[0m
+[0.093s] [ 60%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[1.559s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[1.560s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:47:100:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid GUI::update(bool&, float, float, float, float, float)[m[K’ conflicts with a previous declaration
+[1.561s]    47 |     void update(bool& update, float angle, float len, float robot_x, float robot_y, float robot_yaw[01;31m[K)[m[K; // Updated parameter name
+[1.562s]       |                                                                                                    [01;31m[K^[m[K
+[1.563s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:10:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kbool GUI::update[m[K’
+[1.563s]    33 |     bool [01;36m[Kupdate[m[K = false;
+[1.564s]       |          [01;36m[K^~~~~~[m[K
+[1.889s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In constructor ‘[01m[KGUI::GUI()[m[K’:
+[1.889s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:33:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcolor_Wall[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.889s]    33 |     XColor [01;35m[Kcolor_Wall[m[K, color_Empty, color_Robot;
+[1.889s]       |            [01;35m[K^~~~~~~~~~[m[K
+[1.889s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:33:24:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcolor_Empty[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[1.891s]    33 |     XColor color_Wall, [01;35m[Kcolor_Empty[m[K, color_Robot;
+[1.893s]       |                        [01;35m[K^~~~~~~~~~~[m[K
+[1.895s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kbool GUI::spaceFree(int, int)[m[K’:
+[1.895s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:50:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[1.895s]    50 |     for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[1.896s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[1.896s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kint GUI::squareOccupy(int, int)[m[K’:
+[1.896s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:63:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[1.896s]    63 |     for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[1.897s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[1.898s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::lidarReading(float, float, float)[m[K’:
+[1.899s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:82:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[1.900s]    82 |     for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[1.901s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[1.901s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:87:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[1.902s]    87 |         else if(([01;35m[Ki == (wallFrags.size() - 1)[m[K)){
+[1.902s]       |                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.903s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::paintMap()[m[K’:
+[1.903s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:128:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[1.903s]   128 |     for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[1.903s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[1.904s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K At global scope:
+[1.907s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:137:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid GUI::update(bool&, float, float, float, float, float)[m[K’
+[1.908s]   137 | void [01;31m[KGUI[m[K::update(bool& update, float angle, float len, float robot_x, float robot_y, float robot_yaw){
+[1.909s]       |      [01;31m[K^~~[m[K
+[1.910s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[1.910s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:10:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kbool GUI::update[m[K’
+[1.910s]    33 |     bool [01;36m[Kupdate[m[K = false;
+[1.910s]       |          [01;36m[K^~~~~~[m[K
+[1.910s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:11:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass GUI[m[K’ defined here
+[1.910s]    11 | class [01;36m[KGUI[m[K{
+[1.912s]       |       [01;36m[K^~~[m[K
+[2.339s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kint GUI::squareOccupy(int, int)[m[K’:
+[2.340s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:71:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[2.340s]    71 | [01;35m[K}[m[K
+[2.341s]       | [01;35m[K^[m[K
+[2.383s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:118: CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o] Error 1
+[2.383s] gmake[2]: *** Waiting for unfinished jobs....
+[13.419s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+[13.420s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp:5[m[K:
+[13.421s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:47:100:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid GUI::update(bool&, float, float, float, float, float)[m[K’ conflicts with a previous declaration
+[13.421s]    47 |     void update(bool& update, float angle, float len, float robot_x, float robot_y, float robot_yaw[01;31m[K)[m[K; // Updated parameter name
+[13.421s]       |                                                                                                    [01;31m[K^[m[K
+[13.421s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:10:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kbool GUI::update[m[K’
+[13.421s]    33 |     bool [01;36m[Kupdate[m[K = false;
+[13.421s]       |          [01;36m[K^~~~~~[m[K
+[13.463s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+[13.463s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[13.463s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:47:100:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid GUI::update(bool&, float, float, float, float, float)[m[K’ conflicts with a previous declaration
+[13.464s]    47 |     void update(bool& update, float angle, float len, float robot_x, float robot_y, float robot_yaw[01;31m[K)[m[K; // Updated parameter name
+[13.465s]       |                                                                                                    [01;31m[K^[m[K
+[13.465s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:10:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kbool GUI::update[m[K’
+[13.466s]    33 |     bool [01;36m[Kupdate[m[K = false;
+[13.466s]       |          [01;36m[K^~~~~~[m[K
+[13.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::scanCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[13.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:30:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool GUI::update[m[K’ is private within this context
+[13.997s]    30 |                 gui.[01;31m[Kupdate[m[K(update, _latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw);
+[13.997s]       |                     [01;31m[K^~~~~~[m[K
+[13.998s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+[13.999s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[14.000s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:10:[m[K [01;36m[Knote: [m[Kdeclared private here
+[14.001s]    33 |     bool [01;36m[Kupdate[m[K = false;
+[14.001s]       |          [01;36m[K^~~~~~[m[K
+[14.031s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:30:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kupdate[m[K’ was not declared in this scope
+[14.032s]    30 |                 gui.update([01;31m[Kupdate[m[K, _latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw);
+[14.032s]       |                            [01;31m[K^~~~~~[m[K
+[14.032s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:30:27:[m[K [01;31m[Kerror: [m[Kexpression cannot be used as a function
+[14.032s]    30 |                 [01;31m[Kgui.update(update, _latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw)[m[K;
+[14.032s]       |                 [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[14.032s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:22:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knoise_threshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[14.032s]    22 |     float [01;35m[Knoise_threshold[m[K = 0.1;
+[14.032s]       |           [01;35m[K^~~~~~~~~~~~~~~[m[K
+[14.047s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K In member function ‘[01m[Kvoid MappingNode::odomCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[14.048s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:65:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool GUI::update[m[K’ is private within this context
+[14.049s]    65 |     gui.[01;31m[Kupdate[m[K(update, _latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw);
+[14.049s]       |         [01;31m[K^~~~~~[m[K
+[14.050s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:8[m[K,
+[14.050s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[14.051s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:33:10:[m[K [01;36m[Knote: [m[Kdeclared private here
+[14.051s]    33 |     bool [01;36m[Kupdate[m[K = false;
+[14.052s]       |          [01;36m[K^~~~~~[m[K
+[14.079s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:65:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kupdate[m[K’ was not declared in this scope
+[14.080s]    65 |     gui.update([01;31m[Kupdate[m[K, _latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw);
+[14.081s]       |                [01;31m[K^~~~~~[m[K
+[14.081s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:65:15:[m[K [01;31m[Kerror: [m[Kexpression cannot be used as a function
+[14.081s]    65 |     [01;31m[Kgui.update(update, _latest_angle, _latest_distance, _robot_x, _robot_y, _robot_yaw)[m[K;
+[14.081s]       |     [01;31m[K~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[14.081s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:[m[K At global scope:
+[14.081s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:68:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid MappingNode::updateGUI()[m[K’
+[14.081s]    68 | void [01;31m[KMappingNode[m[K::updateGUI() {
+[14.081s]       |      [01;31m[K^~~~~~~~~~~[m[K
+[14.082s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:68:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid MappingNode::updateGUI()[m[K’
+[14.082s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:1[m[K:
+[14.082s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/lidarnode.h:11:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass MappingNode[m[K’ defined here
+[14.083s]    11 | class [01;36m[KMappingNode[m[K : public rclcpp::Node {
+[14.083s]       |       [01;36m[K^~~~~~~~~~~[m[K
+[16.516s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:76: CMakeFiles/lidar_gui.dir/src/main.cpp.o] Error 1
+[28.779s] gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:90: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o] Error 1
+[28.781s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+[28.783s] gmake: *** [Makefile:146: all] Error 2
+[28.800s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
