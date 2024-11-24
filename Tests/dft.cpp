@@ -26,20 +26,11 @@ struct pair_hash {
     }
 };
 
-std::vector<double> readDTMFDataDFT(const std::string& filename, int sampleRate) {
+std::vector<double> readDTMFDataDFT(std::ifstream& file, int sampleRate) {
     std::vector<double> signal;
-    std::ifstream inFile;
-
-
-    inFile.open(filename);
-
-    if (!inFile) {
-        std::cerr << "Unable to open file datafile.txt";
-        exit(1);   // call system to stop
-    }
     double x;
 
-    while (inFile >> x) {
+    while (file >> x) {
         signal.push_back(x);
     }
 
@@ -119,17 +110,11 @@ std::vector<double> findDominantFrequency(const std::vector<std::complex<double>
 }
 
 // Function to read DTMF data from file
-std::vector<double> readDTMFData(const std::string& filename) {
+std::vector<double> readDTMFData(std::ifstream &file) {
     std::vector<double> signal;
-    std::ifstream inFile(filename);
-
-    if (!inFile) {
-        std::cerr << "Unable to open file " << filename << std::endl;
-        exit(1);   // call system to stop
-    }
 
     double x;
-    while (inFile >> x) {
+    while (file >> x) {
         signal.push_back(x);
     }
 
@@ -238,14 +223,16 @@ std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::strin
 }
 
 
-std::vector<double> runDFT(std::string filename, int sampleRate, int bufferSize){
+std::vector<double> runDFT(std::ifstream &file, int sampleRate, int bufferSize){
     TimeForEntireSequenceStartDFT = std::chrono::high_resolution_clock::now();
     std::string MessageDetected = "";
     // Read DTMF data from file
     int correctMessages = 0;
     int incorrectMessages = 0;
     int timedOutMessages = 0;
-    std::vector<double> data = readDTMFDataDFT(filename, sampleRate);
+    // Why does the line below not work?
+    std::vector<double> data = readDTMFDataDFT(file, sampleRate);
+
     if (data.empty()) {
         std::cerr << "Error: No data read from file!" << std::endl;
         return {};

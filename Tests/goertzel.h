@@ -19,8 +19,8 @@ public:
     GoertzelTesting();
 
     // Public methods
-    void processFile(const std::string& filename, int sampleRate, int bufferSize);
-    std::vector<double> processFileTest(const std::string& filename, int sampleRate, int bufferSize);
+    void processFile(std::ifstream &file, int sampleRate, int bufferSize);
+    std::vector<double> processFileTest(std::ifstream &file, int sampleRate, int bufferSize);
 
 
 private:

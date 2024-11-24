@@ -65,20 +65,12 @@ std::vector<std::complex<double>> FFTProcessing::fft(const std::vector<std::comp
 }
 
 // Function to read DTMF data from file in chunks
-std::vector<double> FFTProcessing::readDTMFDataFFT(const std::string& filename, int sampleRate) {
+std::vector<double> FFTProcessing::readDTMFDataFFT(std::ifstream &file, int sampleRate) {
     std::vector<double> signal;
-    std::ifstream inFile;
 
-
-    inFile.open(filename);
-
-    if (!inFile) {
-        std::cerr << "Unable to open file datafile.txt";
-        exit(1);   // call system to stop
-    }
     double x;
 
-    while (inFile >> x) {
+    while (file >> x) {
         signal.push_back(x);
     }
 
@@ -210,14 +202,14 @@ void FFTProcessing::displayReceivedSignal() {
     clockStartMessage = std::chrono::high_resolution_clock::now();
 }
 
-std::vector<double> FFTProcessing::processFile(const std::string& filename, int sampleRate, int bufferSize) {
+std::vector<double> FFTProcessing::processFile(std::ifstream& file, int sampleRate, int bufferSize) {
     TimeForEntireSequenceStartFFT = std::chrono::high_resolution_clock::now();
     std::string MessageDetected = "";
     // Read DTMF data from file
     int correctMessages = 0;
     int incorrectMessages = 0;
     int timedOutMessages = 0;
-    std::vector<double> data = readDTMFDataFFT(filename, sampleRate);
+    std::vector<double> data = readDTMFDataFFT(file, sampleRate);
     if (data.empty()) {
         std::cerr << "Error: No data read from file!" << std::endl;
         return {};

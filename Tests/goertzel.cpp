@@ -12,7 +12,7 @@ GoertzelTesting::GoertzelTesting() {}
 
 double pi = 3.14159265358979323846;
 
-int MinMagnitude = 500;
+int MinMagnitude = 200;
 bool LetterReceivedCompareProgram = false;
 bool startOfMessageReceivedCompareProgram = false;
 std::vector<char> ReceivedCompareProgram;
@@ -170,7 +170,7 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
 }
 
 // Function to process the file and detect DTMF tones in chunks
-void GoertzelTesting::processFile(const std::string& filename, int sampleRate, int bufferSize) {
+void GoertzelTesting::processFile(std::ifstream &file, int sampleRate, int bufferSize) {
 
     int Iteration = 1;
     /*
@@ -188,19 +188,16 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
     int incorrect = 0;
     int messageCounter = 1;
     double timeSum = 0;
+    file.clear();
+    file.seekg(0, std::ios::beg);
     for (int i = 0; i < Iteration; ++i) {
 
         messageCounter = 1;
-        std::ifstream inFile(filename);
-        if (!inFile) {
-           std::cerr << "Unable to open file " << filename << std::endl;
-           return;
-        }
 
         std::vector<double> data;
         while (true) {
             std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-            data = readDTMFDataChunk(inFile, bufferSize);
+            data = readDTMFDataChunk(file, bufferSize);
             if (data.size() < 1500){
                 break;
             }
@@ -271,7 +268,6 @@ void GoertzelTesting::processFile(const std::string& filename, int sampleRate, i
         }
         //std::cout << "Average time taken for processing chunks: " << sum / tonecounter << " seconds." << std::endl;
         //std::cout << "Maximum time taken for processing a chunk: " << maxDuration << " seconds." << std::endl;
-        inFile.close();
     }
     /*
     outputFileGoertzel << "----------------------------------------------" << std::endl;
@@ -409,7 +405,7 @@ std::vector<double> GoertzelTesting::checkOutputFile(std::string filename, doubl
 
 
 
-std::vector<double> GoertzelTesting::processFileTest(const std::string& filename, int sampleRate, int bufferSize) {
+std::vector<double> GoertzelTesting::processFileTest(std::ifstream &file, int sampleRate, int bufferSize) {
 
     int maxCorrect = 0;
     std::vector<double> timeAtMaxCorrect;
@@ -417,16 +413,11 @@ std::vector<double> GoertzelTesting::processFileTest(const std::string& filename
     while(timeToReadToneCompareProgram < (0.00029*4)){
         int correctCounter = 0;
         int failCounter = 0;
-        std::ifstream inFile(filename);
-        if (!inFile) {
-            std::cerr << "Unable to open file " << filename << std::endl;
-            return {};
-        }
 
         std::vector<double> data;
         while (true) {
             std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-            data = readDTMFDataChunk(inFile, bufferSize);
+            data = readDTMFDataChunk(file, bufferSize);
             if (data.size() < 1500){
                 break;
             }
@@ -472,8 +463,6 @@ std::vector<double> GoertzelTesting::processFileTest(const std::string& filename
             timeToSendMessageCompareProgram = timeToReadToneCompareProgram*5;
         }
 
-
-        inFile.close();
     }
 
     std::cout << "Max correct messages: " << maxCorrect << std::endl;
@@ -495,7 +484,7 @@ std::vector<double> GoertzelTesting::processFileTest(const std::string& filename
         timeToReadToneCompareProgram = timeAtMaxCorrect[i];
         timeToSendMessageCompareProgram = timeToReadToneCompareProgram*5;
         std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-        processFile(filename, sampleRate, bufferSize);
+        processFile(file, sampleRate, bufferSize);
         std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
         CalculationTime += end - start;
         std::cout <<"----------------------------------------------" << std::endl;

@@ -19,7 +19,7 @@ void computeDFT(const std::vector<double>& input, std::vector<std::complex<doubl
 std::vector<double> findDominantFrequency(const std::vector<std::complex<double>>& dft, double samplingRate);
 
 // Function to read DTMF data from file
-std::vector<double> readDTMFDataDFT(const std::string& filename, int sampleRate);
+std::vector<double> readDTMFDataDFT(std::ifstream &file, int sampleRate);
 
 //Function to get Correct DTMF Char
 char getDTMFCharacter(double rowFreq, double colFreq);
@@ -29,7 +29,7 @@ double TimePassedDFT(std::chrono::high_resolution_clock::time_point start);
 //Function to get DTMF Message
 std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
 
-std::vector<double> runDFT(std::string filename, int sampleRate, int bufferSize);
+std::vector<double> runDFT(std::ifstream &file, int sampleRate, int bufferSize);
 
 //Function to get DTMF Message
 std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);

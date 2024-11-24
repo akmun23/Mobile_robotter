@@ -19,7 +19,7 @@ public:
     FFTProcessing(int minMagnitude, const std::vector<int>& dtmfRowFrequencies, const std::vector<int>& dtmfColumnFrequencies, int frequencyTolerance);
 
     // Function to process the file and detect DTMF tones
-    std::vector<double> processFile(const std::string& filename, int sampleRate, int bufferSize);
+    std::vector<double> processFile(std::ifstream &file, int sampleRate, int bufferSize);
 
 private:
     int minMagnitude; // Minimum magnitude to consider a frequency as detected
@@ -38,7 +38,7 @@ private:
     unsigned int bitReverse(unsigned int x, int log2n);
 
     // Function to read DTMF data from file in chunks
-    std::vector<double> readDTMFDataFFT(const std::string& filename, int sampleRate);
+    std::vector<double> readDTMFDataFFT(std::ifstream &file, int sampleRate);
     // Function to perform FFT
     std::vector<std::complex<double>> fft(const std::vector<std::complex<double>>& input, int log2n);
 
