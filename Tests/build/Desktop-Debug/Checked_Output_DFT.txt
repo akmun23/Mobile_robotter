@@ -3,138 +3,138 @@ New sequence of messages
 ----------------------------------------------
 
 Message 1
-Message Correct Format and correct message
-*15C2#
+Message Incorrect Format
+*15B20
 ----------------------------------------------
 
 Message 2
-Message Correct Format but incorrect message
-*174C#
+Message Correct Format and correct message
+*17BC#
 ----------------------------------------------
 
 Message 3
-Message Incorrect Format
-*911DD
+Message Correct Format and correct message
+*91AD#
 ----------------------------------------------
 
 Message 4
-Message Incorrect Format
-*74650
+Message Correct Format and correct message
+*7462#
 ----------------------------------------------
 
 Message 5
-Message Correct Format and correct message
-*15C2#
+Message Incorrect Format
+*1377
 ----------------------------------------------
 
 Message 6
-Message Incorrect Format
-17BC#*
+Message Correct Format and correct message
+*17BC#
 ----------------------------------------------
 
 Message 7
-Message Incorrect Format
-91AD#*
+Message Correct Format and correct message
+*91AD#
 ----------------------------------------------
 
 Message 8
 Message Incorrect Format
-7462#
+*74622
 ----------------------------------------------
 
 Message 9
 Message Correct Format and correct message
-*15C2#
+*1379#
 ----------------------------------------------
 
 Message 10
 Message Correct Format and correct message
-*17BC#
+*15C2#
 ----------------------------------------------
 
 Message 11
-Message Incorrect Format
-*91ADD
+Message Correct Format and correct message
+*17BC#
 ----------------------------------------------
 
 Message 12
 Message Correct Format and correct message
-*7462#
+*91AD#
 ----------------------------------------------
 
 Message 13
 Message Correct Format and correct message
-*1379#
+*7462#
 ----------------------------------------------
 
 Message 14
-Message Correct Format but incorrect message
-**1
+Message Correct Format and correct message
+*1379#
 ----------------------------------------------
 
 Message 15
 Message Correct Format and correct message
-*17BC#
+*15C2#
 ----------------------------------------------
 
 Message 16
 Message Correct Format and correct message
-*91AD#
+*17BC#
 ----------------------------------------------
 
 Message 17
-Message Incorrect Format
-*74622
+Message Correct Format and correct message
+*91AD#
 ----------------------------------------------
 
 Message 18
 Message Correct Format and correct message
-*1379#
+*7462#
 ----------------------------------------------
 
 Message 19
 Message Correct Format and correct message
-*15C2#
+*1379#
 ----------------------------------------------
 
 Message 20
-Message Incorrect Format
-*17BC9
+Message Correct Format and correct message
+*15C2#
 ----------------------------------------------
 
 Message 21
 Message Correct Format and correct message
-*91AD#
+*17BC#
 ----------------------------------------------
 
 Message 22
 Message Correct Format and correct message
-*7462#
+*91AD#
 ----------------------------------------------
 
 Message 23
-Message Correct Format and correct message
-*1379#
+Message Incorrect Format
+*74620
 ----------------------------------------------
 
 Message 24
 Message Correct Format and correct message
-*15C2#
+*1379#
 ----------------------------------------------
 
 Message 25
-Message Correct Format and correct message
-*17BC#
+Message Incorrect Format
+15C2#*
 ----------------------------------------------
 
 Message 26
-Message Correct Format and correct message
-*91AD#
+Message Incorrect Format
+17BC#*
 ----------------------------------------------
 
 Message 27
-Message Correct Format and correct message
-*7462#
+Message Incorrect Format
+1AD#*7
 ----------------------------------------------
 
 Message 28
@@ -143,8 +143,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 29
-Message Correct Format and correct message
-*15C2#
+Message Incorrect Format
+*15C20
 ----------------------------------------------
 
 Message 30
@@ -163,8 +163,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 33
-Message Incorrect Format
-*13799
+Message Correct Format and correct message
+*1379#
 ----------------------------------------------
 
 Message 34
@@ -183,13 +183,13 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 37
-Message Correct Format and correct message
-*7462#
+Message Incorrect Format
+*74620
 ----------------------------------------------
 
 Message 38
-Message Correct Format and correct message
-*1379#
+Message Incorrect Format
+*13799
 ----------------------------------------------
 
 Message 39
@@ -213,8 +213,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 43
-Message Incorrect Format
-*13799
+Message Correct Format and correct message
+*1379#
 ----------------------------------------------
 
 Message 44
@@ -233,8 +233,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 47
-Message Incorrect Format
-*74622
+Message Correct Format and correct message
+*7462#
 ----------------------------------------------
 
 Message 48
@@ -242,389 +242,14 @@ Message Correct Format and correct message
 *1379#
 ----------------------------------------------
 
-Message 49
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 50
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 51
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 52
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 53
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 54
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 55
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 56
-Message Incorrect Format
-91AD#*
-----------------------------------------------
-
-Message 57
-Message Incorrect Format
-7462#*
-----------------------------------------------
-
-Message 58
-Message Incorrect Format
-1379#*
-----------------------------------------------
-
-Message 59
-Message Incorrect Format
-15C2#*
-----------------------------------------------
-
-Message 60
-Message Incorrect Format
-7BBC#*
-----------------------------------------------
-
-Message 61
-Message Incorrect Format
-*74622
-----------------------------------------------
-
-Message 62
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 63
-Message Incorrect Format
-*155A4
-----------------------------------------------
-
-Message 64
-Message Incorrect Format
-*521*7
-----------------------------------------------
-
-Message 65
-Message Incorrect Format
-*7602*
-----------------------------------------------
-
-Message 66
-Message Incorrect Format
-*82725
-----------------------------------------------
-
-Message 67
-Message Incorrect Format
-**145C
-----------------------------------------------
-
-Message 68
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 69
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 70
-Message Incorrect Format
-*74650
-----------------------------------------------
-
-Message 71
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 72
-Message Incorrect Format
-*15C20
-----------------------------------------------
-
-Message 73
-Message Correct Format but incorrect message
-*174C#
-----------------------------------------------
-
-Message 74
-Message Incorrect Format
-*911DD
-----------------------------------------------
-
-Message 75
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 76
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 77
-Message Incorrect Format
-*15C20
-----------------------------------------------
-
-Message 78
-Message Incorrect Format
-*174BD
-----------------------------------------------
-
-Message 79
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 80
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 81
-Message Correct Format but incorrect message
-*1377#
-----------------------------------------------
-
-Message 82
-Message Incorrect Format
-*15820
-----------------------------------------------
-
-Message 83
-Message Incorrect Format
-*1746C
-----------------------------------------------
-
-Message 84
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 85
-Message Incorrect Format
-*74620
-----------------------------------------------
-
-Message 86
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 87
-Message Incorrect Format
-*158C0
-----------------------------------------------
-
-Message 88
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 89
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 90
-Message Incorrect Format
-*74620
-----------------------------------------------
-
-Message 91
-Message Incorrect Format
-*13779
-----------------------------------------------
-
-Message 92
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 93
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 94
-Message Incorrect Format
-*91ADD
-----------------------------------------------
-
-Message 95
-Message Incorrect Format
-*74660
-----------------------------------------------
-
-Message 96
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 97
-Message Incorrect Format
-*15C20
-----------------------------------------------
-
-Message 98
-Message Incorrect Format
-*174CD
-----------------------------------------------
-
-Message 99
-Message Incorrect Format
-*91ADD
-----------------------------------------------
-
-Message 100
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 101
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 102
-Message Incorrect Format
-*15820
-----------------------------------------------
-
-Message 103
-Message Incorrect Format
-*17BBC
-----------------------------------------------
-
-Message 104
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 105
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 106
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 107
-Message Incorrect Format
-*15520
-----------------------------------------------
-
-Message 108
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 109
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 110
-Message Incorrect Format
-*74650
-----------------------------------------------
-
-Message 111
-Message Correct Format but incorrect message
-*1397#
-----------------------------------------------
-
-Message 112
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 113
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 114
-Message Correct Format but incorrect message
-*91A##
-----------------------------------------------
-
-Message 115
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 116
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 117
-Message Incorrect Format
-***577
-----------------------------------------------
-
-Message 118
-Message Incorrect Format
-*57175
-----------------------------------------------
-
-Message 119
-Message Incorrect Format
-*94712
-----------------------------------------------
-
-Message 120
-Message Incorrect Format
-897458
-----------------------------------------------
-
-Message 121
-Message Incorrect Format
-*00854
-----------------------------------------------
-
-Message 122
-Message Incorrect Format
-*64#75
-----------------------------------------------
-
-Message 123
-Message Incorrect Format
-*54065
-----------------------------------------------
-
 
 ----------------------------------------------
-Correct Messages: 68
-Incorrect Messages: 6
-Incorrect Format Messages: 49
-Total Messages: 123
-Correct format percentage: 60%
-Correct Messages percentage: 55%
-Time taken to calculate Entire sequence: 462518 ms.
-Average time taken to calculate Buffer: 121.499 ms.
+Correct Messages: 38
+Incorrect Messages: 0
+Incorrect Format Messages: 10
+Total Messages: 48
+Correct format percentage: 79%
+Correct Messages percentage: 79%
+Time taken to calculate Entire sequence: 192549 ms.
+Average time taken to calculate Buffer: 121.243 ms.
 ----------------------------------------------
