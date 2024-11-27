@@ -14,6 +14,7 @@
 #include <iostream>  // Include the input/output stream library
 #include <fstream>   // Include the file stream library
 
+
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
 #define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
 
@@ -163,16 +164,15 @@ public:
      */
     static double TimePassed(std::chrono::high_resolution_clock::time_point start);
 
-    void startTimedRecording(int RecordingTime);
-
     void InitForStoringInFile();
+
+    void startTimedRecording(int RecordingTime);
 
     static int streamCallbackForStoringInFile(
         const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
         const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
         void* userData
         );
-
 };
 
 #endif // AUDIO_H

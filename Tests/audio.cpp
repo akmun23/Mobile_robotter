@@ -1,4 +1,5 @@
 #include "audio.h"
+#include <atomic>
 #include <unistd.h>
 
 // Variables for the listening function
@@ -24,7 +25,28 @@ std::vector<int> Received;
 int direction = 0;
 int drivingSpeed = 0;
 
-// All the dtmf tones frequencies
+
+// Constants for goertzel algorithm
+// Calculated before the program starts to save time
+// make an atomic double
+
+double k0_697 = FRAMES_PER_BUFFER * 697 / SAMPLE_RATE;
+double k0_770 = FRAMES_PER_BUFFER * 770 / SAMPLE_RATE;
+double k0_852 = FRAMES_PER_BUFFER * 852 / SAMPLE_RATE;
+double k0_941 = FRAMES_PER_BUFFER * 941 / SAMPLE_RATE;
+double k0_1209 = FRAMES_PER_BUFFER * 1209 / SAMPLE_RATE;
+double k0_1336 = FRAMES_PER_BUFFER * 1336 / SAMPLE_RATE;
+double k0_1477 = FRAMES_PER_BUFFER * 1477 / SAMPLE_RATE;
+double k0_1633 = FRAMES_PER_BUFFER * 1633 / SAMPLE_RATE;
+
+double omega_I_697 = cos(2 * M_PI * k0_697 / FRAMES_PER_BUFFER);
+double omega_I_770 = cos(2 * M_PI * k0_770 / FRAMES_PER_BUFFER);
+double omega_I_852 = cos(2 * M_PI * k0_852 / FRAMES_PER_BUFFER);
+double omega_I_941 = cos(2 * M_PI * k0_941 / FRAMES_PER_BUFFER);
+double omega_I_1209 = cos(2 * M_PI * k0_1209 / FRAMES_PER_BUFFER);
+double omega_I_1336 = cos(2 * M_PI * k0_1336 / FRAMES_PER_BUFFER);
+double omega_I_1477 = cos(2 * M_PI * k0_1477 / FRAMES_PER_BUFFER);
+double omega_I_1633 = cos(2 * M_PI * k0_1633 / FRAMES_PER_BUFFER);
 std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 std::vector<double> mags(tones.size());
 
@@ -341,6 +363,7 @@ void Goertzel::reactOnSignal(){
         printf("\n The robot is driving at speed %i in direction %i \n",drivingSpeed, direction);
         fflush(stdout);
     }
+    
 }
 
 void Goertzel::end(){
