@@ -38,7 +38,8 @@ struct Robot{
 
     Robot(Point p, Size size_);
 
-    void rotatePoint(double angle);
+    void rotate(double angle);
+    void update();
 };
 
 //Wall

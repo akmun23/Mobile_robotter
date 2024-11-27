@@ -4,10 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <iostream>
 #include <vector>
-#include<unistd.h>
-#include <chrono>
-
-#include <time.h>
+#include <unistd.h>
 #include <math.h>
 
 namespace sound {
@@ -151,8 +148,6 @@ void RunSoundProgram() {
     usleep(1*1000*1000*2);    // Sleep for 2 seconds
     samples.clear();
 
-
-
     for(int i = 0; i < 10; ++i){
         playSequence("*15C2#");
         playSequence("*17bc#");
@@ -162,10 +157,13 @@ void RunSoundProgram() {
 
 
 
+
+        playSequence("*4032#");
+        usleep(1500000);
+        playSequence("*2632#");
+        usleep(1500000);
+
     }
-
-
-
 }
 
 

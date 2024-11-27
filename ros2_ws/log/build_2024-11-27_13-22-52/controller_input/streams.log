@@ -1,0 +1,11 @@
+[0.018s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target controller_input[0m
+[0.075s] [ 33%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/controllerinput.cpp.o[0m
+[2.119s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K In constructor ‘[01m[KcontrollerInput::controllerInput()[m[K’:
+[2.119s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:14:27:[m[K [01;31m[Kerror: [m[K‘[01m[Ksound[m[K’ has not been declared
+[2.119s]    14 |         samples.push_back([01;31m[Ksound[m[K::SineWave(i, 200, 0.5));
+[2.119s]       |                           [01;31m[K^~~~~[m[K
+[3.955s] gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:90: CMakeFiles/controller_input.dir/src/controllerinput.cpp.o] Error 1
+[3.956s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
+[3.956s] gmake: *** [Makefile:146: all] Error 2
+[3.958s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
