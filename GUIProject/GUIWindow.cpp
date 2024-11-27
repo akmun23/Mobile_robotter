@@ -4,11 +4,12 @@
 #include <algorithm>
 
 GUI::GUI(){
+
     //Setting variables
     emptySize = Size(1,1);
     wallSize = Size(8,8);
 
-    robotSize = Size(20,20);
+    robotSize = Size(60,60);
 
     //Create display
     display = XOpenDisplay(NULL);
@@ -142,47 +143,24 @@ void GUI::rescale(){
     }
 }
 
-void GUI::fillRect(Point vertices[4], GC gc){
+void GUI::findPoints(vector<Point>& points, Point p1, Point p2, bool TF = true){
 
-    float x_min = std::min({vertices[0].x, vertices[1].x, vertices[2].x, vertices[3].x});
-    float x_max = std::max({vertices[0].x, vertices[1].x, vertices[2].x, vertices[3].x});
-
-    int x_diff = static_cast<int>(x_max - x_min);
-
-    //float y_min = std::min({vertices[0].y, vertices[1].y, vertices[2].y, vertices[3].y});
-    //float y_max = std::max({vertices[0].y, vertices[1].y, vertices[2].y, vertices[3].y});
-
-    float y0_corner = vertices[0].y, y1_corner = vertices[1].y, y3_corner = vertices[3].y, y_upper_diff = y0_corner - y1_corner;
-
-    cout << "------" << endl << "y1: " << vertices[1].y << " y2: " << vertices[3].y << endl;
-
-    Point Points[x_diff * 2];
-
-    for(int i = x_min; i < x_max; i++){
-
-        cout << "y1: " << y0_corner + ((y_upper_diff/x_diff)*i) << " y2: " << y3_corner + ((y_upper_diff/x_diff)*i) << endl;
-
-        XDrawLine(display, window, gc, x_min + i, y0_corner + ((y_upper_diff/x_diff)*i), x_min + i, y3_corner + ((y_upper_diff/x_diff)*i));
-
-        //Points[i] = Point(x_min + i, y0_corner + (y_upper_diff/x_diff)*i);
-        //Points[i] = Point(x_min + i, y3_corner + (y_upper_diff/x_diff)*i);
+    if(TF){
+        points.clear();
     }
 
-    //XDrawLines(display, window, gc, Points);
+    points.push_back(p1);
 
+    int dx = p2.x - p1.x;
+    int dy = p2.y - p1.y;
+    int dist = sqrt(((p2.x - p1.x)*(p2.x - p1.x)) + ((p2.y - p1.y)*(p2.y - p1.y)));
 
-}
-
-void GUI::paintMap(){
-    //Draw the rectangles the correspoding color
-    for(int i = 0; i < wallFrags.size(); i++){
-        XFillRectangle(display, window, (wallFrags[i].getType() == Wall::typeWall ? gcWall : gcEmpty), wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
+    for(int i = 1; i < (dist/4); i++){
+        points.push_back(Point(p1.x + (dx * i)/(dist/4), p1.y + (dy * i)/(dist/4)));
     }
 }
 
-void GUI::paintRobot(){
-    usleep(1000);
-    robot.rotatePoint(0);
+void GUI::drawRect(Point vertices[4], GC gc){ //Assumes the square is rectangular (corner angles = 90 deg), but can be rotated.
 
     for(int i = 0; i < 4; i++){
 
@@ -198,20 +176,37 @@ void GUI::paintRobot(){
         }
     }
 
-    fillRect(robot.locRobot, gcRobot);
+    vector<Point> pointsStart;
+    vector<Point> pointsEnd;
 
-    /*int minY = std::min({robot.pointsXAxis[0].y, robot.pointsXAxis[1].y, robot.pointsXAxis[2].y, robot.pointsXAxis[3].y});
-    int maxY = std::max({robot.pointsXAxis[0].y, robot.pointsXAxis[1].y, robot.pointsXAxis[2].y, robot.pointsXAxis[3].y});
-    vector<float> intersections;
+    findPoints(pointsStart, vertices[0], vertices[3]);
+    findPoints(pointsEnd, vertices[1], vertices[2]);
 
+    for(int i = 0; i < pointsStart.size(); i++){
+        XDrawLine(display, window, gcGreen, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
+    }
 
-    auto intersection = [y](int )*/
+    findPoints(pointsStart, vertices[0], vertices[1]);
+    findPoints(pointsEnd, vertices[3], vertices[2]);
 
+    for(int i = 0; i < pointsStart.size(); i++){
+        XDrawLine(display, window, gc, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
+    }
+}
 
-    /*auto intersect = [y](int x1, int y1, int x2, int y2) -> int{
-    if (y1 == y2) return x1; // Horizontal edge
-    return static_cast<int>(x1 + (y - y1) * (x2 - x1) / static_cast<float>(y2 - y1));
-    };*/
+void GUI::paintMap(){
+    //Draw the rectangles the correspoding color
+    for(int i = 0; i < wallFrags.size(); i++){
+        XFillRectangle(display, window, (wallFrags[i].getType() == Wall::typeWall ? gcWall : gcEmpty), wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
+    }
+}
+
+void GUI::paintRobot(){
+    robot.rotateToAngle(0);
+
+    drawRect(robot.locRobot, gcRobot);
+    drawRect(robot.orientXRobot, gcRed);
+    drawRect(robot.orientYRobot, gcGreen);
 
     XPutBackEvent(display, &event);
 }
@@ -230,7 +225,7 @@ void GUI::update(bool& update){
             rescale();
         }*/
 
-        paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
+        paintMap();
         paintRobot();
 
         if(XPending(display) > 0){
