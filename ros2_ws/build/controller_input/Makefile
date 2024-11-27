@@ -210,6 +210,30 @@ controller_input/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/controller_input.dir/build.make CMakeFiles/controller_input.dir/build
 .PHONY : controller_input/fast
 
+src/controllerinput.o: src/controllerinput.cpp.o
+.PHONY : src/controllerinput.o
+
+# target to build an object file
+src/controllerinput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/controller_input.dir/build.make CMakeFiles/controller_input.dir/src/controllerinput.cpp.o
+.PHONY : src/controllerinput.cpp.o
+
+src/controllerinput.i: src/controllerinput.cpp.i
+.PHONY : src/controllerinput.i
+
+# target to preprocess a source file
+src/controllerinput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/controller_input.dir/build.make CMakeFiles/controller_input.dir/src/controllerinput.cpp.i
+.PHONY : src/controllerinput.cpp.i
+
+src/controllerinput.s: src/controllerinput.cpp.s
+.PHONY : src/controllerinput.s
+
+# target to generate assembly for a file
+src/controllerinput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/controller_input.dir/build.make CMakeFiles/controller_input.dir/src/controllerinput.cpp.s
+.PHONY : src/controllerinput.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -250,6 +274,9 @@ help:
 	@echo "... controller_input_uninstall"
 	@echo "... uninstall"
 	@echo "... controller_input"
+	@echo "... src/controllerinput.o"
+	@echo "... src/controllerinput.i"
+	@echo "... src/controllerinput.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

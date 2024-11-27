@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/controller_input.dir/src/controllerinput.cpp.o"
+  "CMakeFiles/controller_input.dir/src/controllerinput.cpp.o.d"
   "CMakeFiles/controller_input.dir/src/main.cpp.o"
   "CMakeFiles/controller_input.dir/src/main.cpp.o.d"
   "controller_input"

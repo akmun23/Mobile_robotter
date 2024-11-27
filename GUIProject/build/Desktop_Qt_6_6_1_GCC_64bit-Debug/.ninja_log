@@ -1,0 +1,5 @@
+# ninja log v5
+0	174	1732698566673734717	CMakeFiles/GUIProject.dir/main.cpp.o	f26f28bc840bd05d
+0	278	1732698566805735019	CMakeFiles/GUIProject.dir/dataTypes.cpp.o	2c4ca98d2eda3885
+0	405	1732698566932735309	CMakeFiles/GUIProject.dir/GUIWindow.cpp.o	24fe6c43a968ea53
+405	455	1732698566981735421	GUIProject	119b62807928d9c1
