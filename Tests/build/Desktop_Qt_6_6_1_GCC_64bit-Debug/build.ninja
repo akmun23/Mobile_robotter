@@ -51,19 +51,31 @@ build cmake_object_order_depends_target_Tests: phony || CMakeFiles/Tests.dir
 
 build CMakeFiles/Tests.dir/main.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel/Documents/GitHub/Mobile_robotter/Tests/main.cpp || cmake_object_order_depends_target_Tests
   DEP_FILE = CMakeFiles/Tests.dir/main.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++11
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Tests.dir
   OBJECT_FILE_DIR = CMakeFiles/Tests.dir
 
 build CMakeFiles/Tests.dir/audio.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel/Documents/GitHub/Mobile_robotter/Tests/audio.cpp || cmake_object_order_depends_target_Tests
   DEP_FILE = CMakeFiles/Tests.dir/audio.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++11
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Tests.dir
   OBJECT_FILE_DIR = CMakeFiles/Tests.dir
 
 build CMakeFiles/Tests.dir/dft.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel/Documents/GitHub/Mobile_robotter/Tests/dft.cpp || cmake_object_order_depends_target_Tests
   DEP_FILE = CMakeFiles/Tests.dir/dft.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++11
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/Tests.dir
+
+build CMakeFiles/Tests.dir/fft.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel/Documents/GitHub/Mobile_robotter/Tests/fft.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles/Tests.dir/fft.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/Tests.dir
+
+build CMakeFiles/Tests.dir/goertzel.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel/Documents/GitHub/Mobile_robotter/Tests/goertzel.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles/Tests.dir/goertzel.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Tests.dir
   OBJECT_FILE_DIR = CMakeFiles/Tests.dir
 
@@ -75,9 +87,9 @@ build CMakeFiles/Tests.dir/dft.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel/Docu
 #############################################
 # Link the executable Tests
 
-build Tests: CXX_EXECUTABLE_LINKER__Tests_Debug CMakeFiles/Tests.dir/main.cpp.o CMakeFiles/Tests.dir/audio.cpp.o CMakeFiles/Tests.dir/dft.cpp.o
+build Tests: CXX_EXECUTABLE_LINKER__Tests_Debug CMakeFiles/Tests.dir/main.cpp.o CMakeFiles/Tests.dir/audio.cpp.o CMakeFiles/Tests.dir/dft.cpp.o CMakeFiles/Tests.dir/fft.cpp.o CMakeFiles/Tests.dir/goertzel.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   FLAGS = -DQT_QML_DEBUG -g
-  LINK_LIBRARIES = -lrt  -lasound  -ljack  -lpthread  -lportaudio
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1  -lrt  -lasound  -ljack  -lpthread  -lportaudio  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/Tests.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -153,14 +165,14 @@ build all: phony Tests
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../../CMakeLists.txt .qtc/package-manager/auto-setup.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../../CMakeLists.txt .qtc/package-manager/auto-setup.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../../CMakeLists.txt .qtc/package-manager/auto-setup.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake: phony
+build ../../CMakeLists.txt .qtc/package-manager/auto-setup.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake /usr/share/cmake-3.22/Modules/CMakeCInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Compiler/GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.22/Modules/Platform/Linux.cmake /usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.1/CMakeCCompiler.cmake CMakeFiles/3.22.1/CMakeCXXCompiler.cmake CMakeFiles/3.22.1/CMakeSystem.cmake: phony
 
 
 #############################################
