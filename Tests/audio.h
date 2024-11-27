@@ -14,7 +14,6 @@
 #include <iostream>  // Include the input/output stream library
 #include <fstream>   // Include the file stream library
 
-#include "dtmf_to_cmd_vel_node.h" // Forward declaration
 
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
 #define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
@@ -38,7 +37,6 @@ private:
     PaError err;
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
-    static DtmfToCmdVelNode* dtmfNode;
 
 public:
     Goertzel();
@@ -165,16 +163,12 @@ public:
      * @return double
      */
     static double TimePassed(std::chrono::high_resolution_clock::time_point start);
-    
-    static void setDtmfNode(DtmfToCmdVelNode* node) {
-        dtmfNode = node;
-    }
 
+    void InitForStoringInFile();
 
+    void startTimedRecording(int RecordingTime);
 
-
-
-
+    int streamCallbackForStoringInFile;
 };
 
 #endif // AUDIO_H

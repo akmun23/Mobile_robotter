@@ -50,8 +50,6 @@ double omega_I_1633 = cos(2 * M_PI * k0_1633 / FRAMES_PER_BUFFER);
 std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 std::vector<double> mags(tones.size());
 
-DtmfToCmdVelNode* Audio::dtmfNode = nullptr;
-
 Goertzel::Goertzel() {}
 
 void Goertzel::checkErr(PaError err) {
@@ -368,10 +366,6 @@ void Goertzel::reactOnSignal(){
         fflush(stdout);
     }
     
-    // Use the global dtmfNode pointer to call the publishTwistMessage function
-    if (dtmfNode) {
-        dtmfNode->publishTwistMessage(drivingSpeed, direction);
-    }
 }
 
 void Goertzel::end(){
