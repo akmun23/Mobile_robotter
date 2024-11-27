@@ -30,13 +30,11 @@ struct Size{
 
 //Robot
 struct Robot{
-    float x, y, orient;
+    float x, y, angle;
     Size size, xAxis;
-    Point pointsXAxis[4];
+    Point locRobot[4], orientXRobot[4], orientYRobot[4];
 
     Robot(){}
-
-    Robot(int x_, int y_, Size size_);
 
     Robot(Point p, Size size_);
 
