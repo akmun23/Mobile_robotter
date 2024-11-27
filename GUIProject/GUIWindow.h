@@ -1,17 +1,15 @@
 #ifndef GUIWINDOW_H
 #define GUIWINDOW_H
 
-#include <X11/Xlib.h>
 #include <vector>
 #include <unistd.h>
 #include <math.h>
 #include <cmath>
+
 #include "dataTypes.h"
 
 class GUI{
 private:
-
-
     //Screen
     Display *display;
     Window window;
@@ -28,6 +26,8 @@ private:
     GC gcWall;
     GC gcEmpty;
     GC gcRobot;
+    GC gcRed;
+    GC gcGreen;
 
     //Robot
     Robot robot;
@@ -39,6 +39,7 @@ public:
     void movementRobot(float angle, float intensity);
     void lidarReading(float angle, float len);
     void rescale();
+    void fillRect(Point vertices[], GC gc);
     void paintMap();
     void paintRobot();
     void update(bool& update);
