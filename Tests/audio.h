@@ -168,7 +168,11 @@ public:
 
     void startTimedRecording(int RecordingTime);
 
-    int streamCallbackForStoringInFile;
+    static int streamCallbackForStoringInFile(
+        const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+        const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+        void* userData
+        );
 };
 
 #endif // AUDIO_H

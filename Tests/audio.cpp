@@ -208,7 +208,6 @@ int Goertzel::streamCallback(
             std::cout << std::endl;
             std::cout <<"----------------------------------------------" << std::endl;
             Received.clear();
-            dtmfNode->publishTwistMessage(drivingSpeed, direction);
             startOfMessageReceived = false;
             clockStartMessage = std::chrono::high_resolution_clock::now();
 
@@ -218,7 +217,6 @@ int Goertzel::streamCallback(
             }else{
                 printf("\n Invalid message \n");
                 fflush(stdout);
-                dtmfNode->publishTwistMessage(drivingSpeed, direction);
             }
             for (int i = 0; i < Received.size(); ++i) {
                 std::cout << Received[i] << " ";
