@@ -14,16 +14,12 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr _lidar_subscription;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr _odom_subscription;
     double _robot_x = 0.0, _robot_y = 0.0, _robot_yaw = 0.0;
-    std::vector<double> _distance, _angle;
     GUI gui;
 
-    // Variables to store initial position and orientation
-    double _initial_x = 0.0;
-    double _initial_y = 0.0;
-    double _initial_yaw = 0.0;
+    float _latest_angle, _latest_distance, _initial_x, _initial_y, _initial_yaw;
     bool initial_pose_set = false;
-    float _latest_angle = 0.0;
-    float _latest_distance = 0.0;
+
+    // Variables to store initial position and orientation
     bool update = false;
 
 public:

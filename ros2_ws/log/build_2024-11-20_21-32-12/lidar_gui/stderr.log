@@ -1,7 +1,0 @@
-[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::lidarReading(float, float, float)[m[K’:
-[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:74:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Klocal_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
-   74 |     double [01;35m[Klocal_y[m[K = len * sin(angle) * scale_factor;
-      |            [01;35m[K^~~~~~~[m[K
-[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:75:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krotated_angle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
-   75 |     float [01;35m[Krotated_angle[m[K = angle + yaw;
-      |           [01;35m[K^~~~~~~~~~~~~[m[K

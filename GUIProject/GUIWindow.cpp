@@ -3,17 +3,6 @@
 #include <cmath>
 
 GUI::GUI(){
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");       // Set the correct hostname
-    db.setDatabaseName("lidar_db");    // Set your database name
-    db.setUserName("aksel");           // Set the MySQL username
-    db.setPassword("hua28rdc");        // Set the MySQL password
-
-    if (!db.open()) {
-        qDebug() << "Database error:" << db.lastError().text();
-        return;
-    }
-
     //Setting variables
     emptySize = Size(4, 4);
     wallSize = Size(8, 8);
@@ -172,56 +161,23 @@ void GUI::paintRobot(){
 }
 
 void GUI::update(bool& update){
-    int update_counter = 0;
-    QSqlQuery query;
-    std::vector<double> angle;
-    std::vector<double> distance;
+    // This should only be true if the size of the query is above 0
+    lidarReading(rand()%360, 200); //Make a timer function
 
-    while(1){
-        update_counter++;
-        angle.clear();
-        distance.clear();
-        // This should only be true if the size of the query is above 0
-        if (query.exec("SELECT status FROM lidar_data WHERE id = 1") && query.next()) {
-            int status = query.value(0).toInt();
-            if (status == 1) {
-                if(update){
-                    XSync(display, False);
+    paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
+    paintRobot();
 
-        update_counter++;
-        lidarReading(rand()%360, 200); //Make a timer function
-
-        XSendEvent(display, window, False, ExposureMask, &event);
-
-        //movementRobot(1, 1);
-
-        /*if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
-            cout << "entered rescale" << endl;
-            rescale();
-        }*/
-
-        paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
-        paintRobot();
-
-        if(XPending(display) > 0){
-            XNextEvent(display, &event);
-            if(event.type == Expose){
-                update = true;
-            }
+    if(XPending(display) > 0){
+        XNextEvent(display, &event);
+        if(event.type == Expose){
+            update = true;
         }
+    }
 
-        if(update){
-            XSync(display, False);
-            XClearWindow(display, window);
-
-            /*if(update_counter >= 100){
-                XClearWindow(display, window);
-                update_counter = 0;
-            }*/
-
-            update = false;
-        }
-
+    if(update){
+        XSync(display, False);
+        XClearWindow(display, window);
+        update = false;
     }
 }
 

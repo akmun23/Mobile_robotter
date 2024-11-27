@@ -1,0 +1,43 @@
+[0.017s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target dtmf_to_cmd_vel[0m
+[0.075s] [ 25%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/audio.cpp.o[0m
+[1.859s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In static member function ‘[01m[Kstatic int Goertzel::streamCallback(const void*, void*, long unsigned int, const PaStreamCallbackTimeInfo*, PaStreamCallbackFlags, void*)[m[K’:
+[1.859s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:124:36:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KoutputBuffer[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.859s]   124 |     const void* inputBuffer, [01;35m[Kvoid* outputBuffer[m[K, unsigned long framesPerBuffer,
+[1.859s]       |                              [01;35m[K~~~~~~^~~~~~~~~~~~[m[K
+[1.859s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:124:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KframesPerBuffer[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.859s]   124 |     const void* inputBuffer, void* outputBuffer, [01;35m[Kunsigned long framesPerBuffer[m[K,
+[1.859s]       |                                                  [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[1.859s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:125:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KtimeInfo[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.859s]   125 |     [01;35m[Kconst PaStreamCallbackTimeInfo* timeInfo[m[K, PaStreamCallbackFlags statusFlags,
+[1.859s]       |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[1.859s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:125:69:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KstatusFlags[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.859s]   125 |     const PaStreamCallbackTimeInfo* timeInfo, [01;35m[KPaStreamCallbackFlags statusFlags[m[K,
+[1.859s]       |                                               [01;35m[K~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[1.859s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:126:11:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KuserData[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.859s]   126 |     [01;35m[Kvoid* userData[m[K
+[1.860s]       |     [01;35m[K~~~~~~^~~~~~~~[m[K
+[2.338s] [ 50%] [32m[1mLinking CXX executable dtmf_to_cmd_vel[0m
+[2.512s] [100%] Built target dtmf_to_cmd_vel
+[2.524s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel -- -j16 -l16
+[2.559s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel
+[2.566s] -- Install configuration: ""
+[2.566s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/dtmf_to_cmd_vel/dtmf_to_cmd_vel
+[2.567s] -- Set runtime path of "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/lib/dtmf_to_cmd_vel/dtmf_to_cmd_vel" to ""
+[2.567s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel//launch
+[2.567s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/package_run_dependencies/dtmf_to_cmd_vel
+[2.567s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/parent_prefix_path/dtmf_to_cmd_vel
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/ament_prefix_path.sh
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/ament_prefix_path.dsv
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/path.sh
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/environment/path.dsv
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.bash
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.sh
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.zsh
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/local_setup.dsv
+[2.568s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.dsv
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/ament_index/resource_index/packages/dtmf_to_cmd_vel
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/cmake/dtmf_to_cmd_velConfig.cmake
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/cmake/dtmf_to_cmd_velConfig-version.cmake
+[2.568s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/dtmf_to_cmd_vel/share/dtmf_to_cmd_vel/package.xml
+[2.570s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel

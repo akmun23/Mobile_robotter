@@ -1,12 +1,12 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
+#include <thread>
+#include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 #include <cstring>
 #include <cmath>
-
 #include <portaudio.h>
 #include <vector>
 
@@ -14,18 +14,12 @@
 #include <iostream>  // Include the input/output stream library
 #include <fstream>   // Include the file stream library
 
-#include <rclcpp/rclcpp.hpp>  // ROS 2 client library
-#include <geometry_msgs/msg/twist.hpp>  // ROS 2 Twist message type
-
 #include "dtmf_to_cmd_vel_node.h" // Forward declaration
 
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
 #define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
 
-#define NUM_CHANNELS 2                  // Number of audio channels to capture
-
-#define RecordTimeMs 20000              // How long to record audio for (ms)
-
+#define NUM_CHANNELS 1                  // Number of audio channels to capture (1 = mono, 2 = stereo)
 
 // Define our callback data (data that is passed to every callback function call)
 typedef struct {
@@ -37,18 +31,17 @@ typedef struct {
 static streamCallbackData* spectroData;
 
 
-class Audio 
+class Goertzel
 {
 private:
+
     PaError err;
-    PaStream* stream;
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
     static DtmfToCmdVelNode* dtmfNode;
-    
-public:
-    Audio();
 
+public:
+    Goertzel();
     /**
     *@brief Method to check for errors in PortAudio functions
     *
@@ -70,9 +63,19 @@ public:
     */
     static inline float min(float a, float b);
 
+    /**
+    *@brief Method to initialize PortAudio and allocate memory for the input buffer
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void Init();
+
 
     /**
-    *@brief Method to start the audio stream and record audio for a specified amount of time (RecordTimeMs)
+    *@brief Method to start the audio stream and record audio
     *
     *@param nothing
     *
@@ -80,20 +83,6 @@ public:
     *
     */
     void start();
-
-
-
-    /**
-    *@brief Method to end the audio stream and free allocated resources
-    *
-    *@param nothing
-    *
-    *@return nothing
-    *
-    */
-    void end();
-
-
 
     /**
     *@brief Get the audio devices accessible to PortAudio and their specifications
@@ -123,48 +112,63 @@ public:
         void* userData
         );
 
-    /**
-    *@brief Method to initialize PortAudio and allocate memory for the input buffer
-    *
-    *@param nothing
-    *
-    *@return nothing
-    *
-    */
-    void Init();
-    
-    static void calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator);
 
+    static void calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator);
 
     /**
-    *@brief Method to analyze the output from the Goertzel algorithm and calls ReactOnSignal to store the result
+    *@brief Method to analyze the output from the GoertzelTesting algorithm and calls ReactOnSignal to store the result
     *
     *@param std::vector<double> mags
     *
     *@return bool
     *
     */
-    static bool analyseGoertzelOutput(std::vector<double> mags);
+    static bool analyseGoertzelOutput(std::vector<double>& mags);
 
 
     /**
-    *@brief Method to analyze the output from the Goertzel algorithm and print the results
+    *@brief Method to analyze the output from the GoertzelTesting algorithm and print the results
     *
     *@param std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn
     *
     *@return bool
     *
     */
-    static bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
+    static bool SaveSignal(std::vector<double> &rowMags, std::vector<double> &columnMags, int &maxRow, int &maxColumn);
 
+
+    /**
+    *@brief Method to update the robots speed and direction according to the new message
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
     static void reactOnSignal();
+
+    /**
+    *@brief Method to end the audio stream and free allocated resources
+    *
+    *@param nothing
+    *
+    *@return nothing
+    *
+    */
+    void end();
+
+    /**
+     * @brief Function to get the time passed since start
+     *
+     * @param std::chrono::high_resolution_clock::time_point start
+     *
+     * @return double
+     */
+    static double TimePassed(std::chrono::high_resolution_clock::time_point start);
     
     static void setDtmfNode(DtmfToCmdVelNode* node) {
         dtmfNode = node;
     }
-    
-    
-
 };
 
 #endif // AUDIO_H

@@ -1,18 +1,78 @@
 #include "dataTypes.h"
+#include <iostream>
 
-Point::Point(int x_, int y_) : x(x_), y(y_) {}
+Point::Point(int x_, int y_){
+    x = x_;
+    y = y_;
+}
 
-Size::Size(int width_, int height_) : width(width_), height(height_) {}
+Point::Point(float x_, float y_){
+    x = x_;
+    y = y_;
+}
 
-Robot::Robot(int x_, int y_, Size size_) : x(x_), y(y_), start_x(x_), start_y(y_), size(size_) {}
+Size::Size(int width_, int height_){
+    width = width_;
+    height = height_;
+}
 
-Robot::Robot(Point p, Size size_) : x(p.x), y(p.y), start_x(p.x), start_y(p.y), size(size_) {}
+Robot::Robot(Point p, Size size_){
+    x = p.x;
+    y = p.y;
+    start_x = p.x;
+    start_y = p.y;
 
-Wall::Wall(int x_, int y_, Size size_) : x(x_), y(y_), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
+    size = size_;
+    xAxis.width = size.width;
+    xAxis.height = size.height;
 
-Wall::Wall(Point p, Size size_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(Wall::typeBackground) {}
+    pointsXAxis[0].x = x - size.width/2;
+    pointsXAxis[0].y = y - size.height/2;
+    pointsXAxis[1].x = x - size.width/2;
+    pointsXAxis[1].y = y + size.height/2;
+    pointsXAxis[2].x = x + size.width/2;
+    pointsXAxis[2].y = y + size.height/2;
+    pointsXAxis[3].x = x + size.width/2;
+    pointsXAxis[3].y = y - size.height/2;
+}
 
-Wall::Wall(Point p, Size size_, squareType type_) : x(p.x), y(p.y), center_x(size.width / 2), center_y(size.height / 2), size(size_), type(type_) {}
+// Function to rotate a point around the center of the robot.
+void Robot::rotatePoint(double angle){
+    for (int i = 0; i < 4; i++) {
+        float temp_x = pointsXAxis[i].x - x;
+        float temp_y = pointsXAxis[i].y - y;
+
+        pointsXAxis[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
+        pointsXAxis[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
+    }
+}
+
+Wall::Wall(int x_, int y_, Size size_){
+    x = x_;
+    y = y_;
+    size = size_;
+    center_x = size.width/2;
+    center_y = size.height/2;
+    type = Wall::typeBackground;
+}
+
+Wall::Wall(Point p, Size size_){
+    x = p.x;
+    y = p.y;
+    size = size_;
+    center_x = size.width/2;
+    center_y = size.height/2;
+    type = Wall::typeBackground;
+}
+
+Wall::Wall(Point p, Size size_, squareType type_){
+    x = p.x;
+    y = p.y;
+    size = size_;
+    center_x = size.width/2;
+    center_y = size.height/2;
+    type = type_;
+}
 
 int Wall::getX(){
     return x;

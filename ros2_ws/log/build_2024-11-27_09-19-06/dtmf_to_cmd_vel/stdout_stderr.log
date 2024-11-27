@@ -1,0 +1,238 @@
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found teleop_twist_joy: 2.4.7 (/opt/ros/humble/share/teleop_twist_joy/cmake)
+-- Found rclcpp_components: 16.0.10 (/opt/ros/humble/share/rclcpp_components/cmake)
+-- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel
+[ 75%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/main.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/audio.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/dtmf_to_cmd_vel.dir/src/dtmf_to_cmd_vel_node.cpp.o[0m
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:[m[K In constructor ‘[01m[KDtmfToCmdVelNode::DtmfToCmdVelNode()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:5:31:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ was not declared in this scope; did you mean ‘[01m[K_audio[m[K’?
+    5 |     _audio = std::make_unique<[01;31m[KAudio[m[K>(); // Initialize _audio as a unique pointer
+      |                               [01;31m[K^~~~~[m[K
+      |                               [32m[K_audio[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:5:37:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_unique<<expression error> >()[m[K’
+    5 |     _audio = [01;31m[Kstd::make_unique<Audio>()[m[K; // Initialize _audio as a unique pointer
+      |              [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/dtmf_to_cmd_vel_node.h:4[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)[m[K’
+  961 |     [01;36m[Kmake_unique[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:5:37:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+    5 |     _audio = [01;31m[Kstd::make_unique<Audio>()[m[K; // Initialize _audio as a unique pointer
+      |              [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/dtmf_to_cmd_vel_node.h:4[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)[m[K’
+  967 |     [01;36m[Kmake_unique[m[K(size_t __num)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:5:37:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+    5 |     _audio = [01;31m[Kstd::make_unique<Audio>()[m[K; // Initialize _audio as a unique pointer
+      |              [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/dtmf_to_cmd_vel_node.h:4[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)[m[K’ (deleted)
+  973 |     [01;36m[Kmake_unique[m[K(_Args&&...) = delete;
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:5:37:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+    5 |     _audio = [01;31m[Kstd::make_unique<Audio>()[m[K; // Initialize _audio as a unique pointer
+      |              [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:8:5:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ is not a class, namespace, or enumeration
+    8 |     [01;31m[KAudio[m[K::setDtmfNode(this);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:[m[K At global scope:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:24:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid DtmfToCmdVelNode::testLinearOnly(int)[m[K’
+   24 | void [01;31m[KDtmfToCmdVelNode[m[K::testLinearOnly(int speed) {
+      |      [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:24:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid DtmfToCmdVelNode::testLinearOnly(int)[m[K’
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/dtmf_to_cmd_vel_node.h:11:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass DtmfToCmdVelNode[m[K’ defined here
+   11 | class [01;36m[KDtmfToCmdVelNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:32:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid DtmfToCmdVelNode::testAngularOnly(int)[m[K’
+   32 | void [01;31m[KDtmfToCmdVelNode[m[K::testAngularOnly(int direction) {
+      |      [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:32:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid DtmfToCmdVelNode::testAngularOnly(int)[m[K’
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/dtmf_to_cmd_vel_node.h:11:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass DtmfToCmdVelNode[m[K’ defined here
+   11 | class [01;36m[KDtmfToCmdVelNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:14:19:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+   14 | DtmfToCmdVelNode* [01;31m[KAudio[m[K::dtmfNode = nullptr;
+      |                   [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:16:1:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ does not name a type
+   16 | [01;31m[KAudio[m[K::Audio() {}
+      | [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:18:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+   18 | void [01;31m[KAudio[m[K::checkErr(PaError err) {
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:25:14:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+   25 | inline float [01;31m[KAudio[m[K::min(float a, float b) {
+      |              [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:29:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+   29 | void [01;31m[KAudio[m[K::Init(){
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In function ‘[01m[Kvoid Init()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:32:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kerr[m[K’ was not declared in this scope; did you mean ‘[01m[Kerf[m[K’?
+   32 |     [01;31m[Kerr[m[K = Pa_Initialize();
+      |     [01;31m[K^~~[m[K
+      |     [32m[Kerf[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:44:13:[m[K [01;31m[Kerror: [m[K‘[01m[KinputParameters[m[K’ was not declared in this scope
+   44 |     memset(&[01;31m[KinputParameters[m[K, 0, sizeof(inputParameters));
+      |             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:53:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kstream[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::io_errc::stream[m[K’?
+   53 |         &[01;31m[Kstream[m[K,
+      |          [01;31m[K^~~~~~[m[K
+      |          [32m[Kstd::io_errc::stream[m[K
+In file included from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:14[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/ios_base.h:203:24:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::io_errc::stream[m[K’ declared here
+  203 |   enum class io_errc { [01;36m[Kstream[m[K = 1 };
+      |                        [01;36m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:59:9:[m[K [01;31m[Kerror: [m[K‘[01m[KstreamCallback[m[K’ was not declared in this scope; did you mean ‘[01m[KPaStreamCallback[m[K’?
+   59 |         [01;31m[KstreamCallback[m[K,
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+      |         [32m[KPaStreamCallback[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K At global scope:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:65:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+   65 | void [01;31m[KAudio[m[K::start(){
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In function ‘[01m[Kvoid start()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:68:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kerr[m[K’ was not declared in this scope; did you mean ‘[01m[Kerf[m[K’?
+   68 |     [01;31m[Kerr[m[K = Pa_StartStream(stream);
+      |     [01;31m[K^~~[m[K
+      |     [32m[Kerf[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:68:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kstream[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::io_errc::stream[m[K’?
+   68 |     err = Pa_StartStream([01;31m[Kstream[m[K);
+      |                          [01;31m[K^~~~~~[m[K
+      |                          [32m[Kstd::io_errc::stream[m[K
+In file included from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:14[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/ios_base.h:203:24:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::io_errc::stream[m[K’ declared here
+  203 |   enum class io_errc { [01;36m[Kstream[m[K = 1 };
+      |                        [01;36m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K At global scope:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:76:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+   76 | void [01;31m[KAudio[m[K::getDevices(){
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:100:5:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+  100 | int [01;31m[KAudio[m[K::streamCallback(
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In function ‘[01m[Kint streamCallback(const void*, void*, long unsigned int, const PaStreamCallbackTimeInfo*, PaStreamCallbackFlags, void*)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:116:24:[m[K [01;31m[Kerror: [m[K‘[01m[KcalculateGoertzel[m[K’ was not declared in this scope
+  116 |         std::thread t0([01;31m[KcalculateGoertzel[m[K, tones[0], in, std::ref(mags), 0);
+      |                        [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:163:8:[m[K [01;31m[Kerror: [m[K‘[01m[KanalyseGoertzelOutput[m[K’ was not declared in this scope
+  163 |     if([01;31m[KanalyseGoertzelOutput[m[K(mags)){
+      |        [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:180:17:[m[K [01;31m[Kerror: [m[K‘[01m[KreactOnSignal[m[K’ was not declared in this scope
+  180 |                 [01;31m[KreactOnSignal[m[K();
+      |                 [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:101:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KframesPerBuffer[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  101 |     const void* inputBuffer, void* outputBuffer, [01;35m[Kunsigned long framesPerBuffer[m[K,
+      |                                                  [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:103:11:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KuserData[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  103 |     [01;35m[Kvoid* userData[m[K
+      |     [01;35m[K~~~~~~^~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K At global scope:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:196:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+  196 | void [01;31m[KAudio[m[K::calculateGoertzel(int tone, float* in, std::vector<double>& mags, int magsIterator) {
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:218:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+  218 | bool [01;31m[KAudio[m[K::analyseGoertzelOutput(std::vector<double> mags){
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In function ‘[01m[Kbool analyseGoertzelOutput(std::vector<double, std::allocator<double> >)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:237:8:[m[K [01;31m[Kerror: [m[K‘[01m[KSaveSignal[m[K’ was not declared in this scope
+  237 |     if([01;31m[KSaveSignal[m[K(rowMags,columnMags,maxRow,maxColumn)){
+      |        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K At global scope:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:246:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+  246 | bool [01;31m[KAudio[m[K::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:305:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+  305 | void [01;31m[KAudio[m[K::reactOnSignal(){
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:326:6:[m[K [01;31m[Kerror: [m[K‘[01m[KAudio[m[K’ has not been declared
+  326 | void [01;31m[KAudio[m[K::end(){
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In function ‘[01m[Kvoid end()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:329:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kerr[m[K’ was not declared in this scope; did you mean ‘[01m[Kerf[m[K’?
+  329 |     [01;31m[Kerr[m[K = Pa_StopStream(stream);
+      |     [01;31m[K^~~[m[K
+      |     [32m[Kerf[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:329:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kstream[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::io_errc::stream[m[K’?
+  329 |     err = Pa_StopStream([01;31m[Kstream[m[K);
+      |                         [01;31m[K^~~~~~[m[K
+      |                         [32m[Kstd::io_errc::stream[m[K
+In file included from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:14[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/ios_base.h:203:24:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::io_errc::stream[m[K’ declared here
+  203 |   enum class io_errc { [01;36m[Kstream[m[K = 1 };
+      |                        [01;36m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In function ‘[01m[Kint streamCallback(const void*, void*, long unsigned int, const PaStreamCallbackTimeInfo*, PaStreamCallbackFlags, void*)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:194:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  194 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:[m[K In function ‘[01m[Kbool analyseGoertzelOutput(std::vector<double, std::allocator<double> >)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:243:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  243 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/dtmf_to_cmd_vel.dir/build.make:90: CMakeFiles/dtmf_to_cmd_vel.dir/src/audio.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/main.cpp:2[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:31:28:[m[K [01;35m[Kwarning: [m[K‘[01m[KspectroData[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   31 | static streamCallbackData* [01;35m[KspectroData[m[K;
+      |                            [01;35m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:2[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:31:28:[m[K [01;35m[Kwarning: [m[K‘[01m[KspectroData[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   31 | static streamCallbackData* [01;35m[KspectroData[m[K;
+      |                            [01;35m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/dtmf_to_cmd_vel.dir/build.make:104: CMakeFiles/dtmf_to_cmd_vel.dir/src/dtmf_to_cmd_vel_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/dtmf_to_cmd_vel.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

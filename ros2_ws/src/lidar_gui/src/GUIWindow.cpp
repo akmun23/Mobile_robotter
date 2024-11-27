@@ -89,7 +89,7 @@ void GUI::lidarReading(float angle, float len, float yaw){
     }
 
     // Check if wallFrags has more than 1000 entries and remove until it is below:
-    while(wallFrags.size() > 1000){
+    while(wallFrags.size() > 600){
         wallFrags.erase(wallFrags.begin());
     }
 }
@@ -98,6 +98,14 @@ void GUI::movementRobot(float robot_x, float robot_y){
     // Update robot position to global coordinates
     robot.x = robot.start_x + robot_y * scale_factor;
     robot.y = robot.start_y + robot_x * scale_factor;
+    robot.pointsXAxis[0].x = robot.x - robot.size.width/2;
+    robot.pointsXAxis[0].y = robot.y - robot.size.height/2;
+    robot.pointsXAxis[1].x = robot.x - robot.size.width/2;
+    robot.pointsXAxis[1].y = robot.y + robot.size.height/2;
+    robot.pointsXAxis[2].x = robot.x + robot.size.width/2;
+    robot.pointsXAxis[2].y = robot.y + robot.size.height/2;
+    robot.pointsXAxis[3].x = robot.x + robot.size.width/2;
+    robot.pointsXAxis[3].y = robot.y - robot.size.height/2;
 }
 
 void GUI::rescale() {
@@ -133,21 +141,23 @@ void GUI::paintMap(){
 }
 
 void GUI::paintRobot(float yaw) {
-    // Draw the robot as a square
-    XFillRectangle(display, window, gcRobot, robot.x - robot.size.width/2, robot.y - robot.size.height/2, robot.size.width, robot.size.height);
+    robot.rotatePoint(yaw); // Ensure rotation is applied before drawing
+    for(int i = 0; i < 4; i++){
+        if(i < 3){
+            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[i+1].x, robot.pointsXAxis[i+1].y);
+        }
+        else{
+            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[0].x, robot.pointsXAxis[0].y);
+        }
+    }
+    XPutBackEvent(display, &event);
 }
 
 void GUI::update(bool& update, float angle, float len, float robot_x, float robot_y, float robot_yaw){
-    movementRobot(robot_x, robot_y);
-    lidarReading(angle, len, robot_yaw);
-
-    if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
-        cout << "entered rescale" << endl;
-        rescale();
-    }
-
-    paintMap();
     paintRobot(robot_yaw);
+    movementRobot(robot_x, robot_y); // Ensure robot position is updated
+    lidarReading(angle, len, robot_yaw);
+    paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
 
     if(XPending(display) > 0){
         XNextEvent(display, &event);
@@ -156,11 +166,11 @@ void GUI::update(bool& update, float angle, float len, float robot_x, float robo
         }
     }
 
-    if (update_counter > 500) {
+    if(update){
+        XSync(display, False);
         XClearWindow(display, window);
-        update_counter = 0;
+        update = false;
     }
-    update_counter++;
 }
 
 void GUI::show(){
