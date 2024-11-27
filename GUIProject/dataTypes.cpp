@@ -19,20 +19,12 @@ Size::Size(int width_, int height_){
 Robot::Robot(Point p, Size size_){
     x = p.x;
     y = p.y;
-    angle = 0;
 
     size = size_;
+}
 
+void Robot::update(){
     //Robot location visual
-    //locRobot[0].x = x - size.width/2;
-    //locRobot[0].y = y - size.height/2;
-    //locRobot[1].x = x - size.width/2;
-    //locRobot[1].y = y + size.height/2;
-    //locRobot[2].x = x + size.width/2;
-    //locRobot[2].y = y + size.height/2;
-    //locRobot[3].x = x + size.width/2;
-    //locRobot[3].y = y - size.height/2;
-
     locRobot[0].x = x - size.width/2;
     locRobot[0].y = y - size.height/2;
     locRobot[1].x = x + size.width/2;
@@ -65,32 +57,31 @@ Robot::Robot(Point p, Size size_){
 }
 
 // Function to rotate a point around the center of the robot.
-void Robot::rotateToAngle(double angle_){
+void Robot::rotate(double angle_){
 
-    float temp_x = 0, temp_y = 0, temp_angle = 0;
+    float temp_x = 0, temp_y = 0;
 
-    temp_angle = angle_ - angle; //Calculate the difference in angle
-    angle = angle_; //set "angle_" as the new angle, which assumes we will roatet to that angle
+    angle += angle_;
 
     for(int i = 0; i < 4; i++){
 
         temp_x = locRobot[i].x - x;
         temp_y = locRobot[i].y - y;
 
-        locRobot[i].x = temp_x * cos(temp_angle) - temp_y * sin(temp_angle) + x;
-        locRobot[i].y = temp_x * sin(temp_angle) + temp_y * cos(temp_angle) + y;
+        locRobot[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
+        locRobot[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
 
         temp_x = orientXRobot[i].x - x;
         temp_y = orientXRobot[i].y - y;
 
-        orientXRobot[i].x = temp_x * cos(temp_angle) - temp_y * sin(temp_angle) + x;
-        orientXRobot[i].y = temp_x * sin(temp_angle) + temp_y * cos(temp_angle) + y;
+        orientXRobot[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
+        orientXRobot[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
 
         temp_x = orientYRobot[i].x - x;
         temp_y = orientYRobot[i].y - y;
 
-        orientYRobot[i].x = temp_x * cos(temp_angle) - temp_y * sin(temp_angle) + x;
-        orientYRobot[i].y = temp_x * sin(temp_angle) + temp_y * cos(temp_angle) + y;
+        orientYRobot[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
+        orientYRobot[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
     }
 }
 

@@ -102,13 +102,9 @@ void GUI::lidarReading(float angle, float len){
 
 void GUI::movementRobot(float angle, float intensity){
 
-    int x_com, y_com;
+    //robot.x += 0.01;
 
-    x_com = intensity * cos(angle);
-    y_com = intensity * sin(angle);
-
-    robot.x = robot.x + x_com;
-    robot.y = robot.y + y_com;
+    robot.update();
 }
 
 void GUI::rescale(){
@@ -202,7 +198,7 @@ void GUI::paintMap(){
 }
 
 void GUI::paintRobot(){
-    robot.rotateToAngle(0);
+    robot.rotate(0.1);
 
     drawRect(robot.locRobot, gcRobot);
     drawRect(robot.orientXRobot, gcRed);
@@ -216,9 +212,11 @@ void GUI::update(bool& update){
 
     while(1){
 
+        usleep(10000);
+
         lidarReading(rand()%360, 200); //Make a timer function
 
-        //movementRobot(1, 1);
+        movementRobot(1, 1);
 
         /*if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
             cout << "entered rescale" << endl;
