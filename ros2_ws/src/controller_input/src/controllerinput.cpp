@@ -6,16 +6,11 @@ controllerInput::controllerInput() : Node("controller_input")
     _joySubscriber = this->create_subscription<sensor_msgs::msg::Joy>(
         "joy", 10, std::bind(&controllerInput::joy_callback, this, std::placeholders::_1));
 
-    // Initialize the timer to call the play_dtmf_if_active function every 1 second
-    _timer = this->create_wall_timer(
-        std::chrono::seconds(1),
-        std::bind(&controllerInput::play_dtmf_if_active, this)
-        );
-
     makeAmplitudeFading();
 }
 
 void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
+    usleep(200);
     // Map joystick values to the range [0, 100]
     uint8_t linear_value = mapAxisToByte(msg->axes[1]);  // Linear velocity value
     uint8_t angular_value = mapAxisToByte(msg->axes[0]); // Angular velocity value
@@ -26,6 +21,8 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
     // Save the values to member variables for use in the timer callback
     _latestLinearValue = linear_value;
     _latestAngularValue = angular_value;
+    
+    play_dtmf_if_active();
 }
 
 void controllerInput::play_dtmf_if_active() {
@@ -89,7 +86,7 @@ void controllerInput::playTone(double freq1, double freq2){
     sf::SoundBuffer buffer;
     std::vector<sf::Int16> samples;
 
-    double amp = 0.50;
+    double amp = 0.5;
 
     int time = SamplesPerFrame;
     int sleep = (1000/(AudioPlayRate/SamplesPerFrame))*1000;    // AudioPlayRate/SamplesPerFrame = 7.35 which is times it is sent per sec

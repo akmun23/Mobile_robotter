@@ -8,9 +8,6 @@
 #include <SFML/Audio.hpp>
 #include <iostream>
 #include <vector>
-#include<unistd.h>
-#include <chrono>
-#include <time.h>
 #include <math.h>
 
 class controllerInput : public rclcpp::Node
@@ -18,7 +15,6 @@ class controllerInput : public rclcpp::Node
 private:
     // rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr _publisher;
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr _joySubscriber;
-    rclcpp::TimerBase::SharedPtr _timer;
 
     // Member variables to store the latest joystick values
     uint8_t _latestLinearValue = 0;
