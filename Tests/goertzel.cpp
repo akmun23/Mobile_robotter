@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <unistd.h>
 #include <vector>
 #include <algorithm>
 
@@ -18,8 +19,18 @@ bool startOfMessageReceivedCompareProgram = false;
 std::vector<char> ReceivedCompareProgram;
 std::chrono::high_resolution_clock::time_point clockStartMessageCompareProgram;
 std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram;
-double timeToReadToneCompareProgram = 0.00022*4;  // timeToReadToneCompareProgram is the time it takes to load and calculate the tone
-double timeToSendMessageCompareProgram = timeToReadToneCompareProgram*5;
+std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram1;
+std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram2;
+std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram3;
+std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram4;
+std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram5;
+std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram6;
+
+
+
+double delayBetweenCalculation = 200*1000; // 200 ms in microseconds
+double timeToReadToneCompareProgram = 0.20*4;  // timeToReadToneCompareProgram is the time it takes to load and calculate the tone
+double timeToSendMessageCompareProgram = timeToReadToneCompareProgram*6.04;
 
 std::chrono::duration<double> elapsedTimeCompareProgram;
 
@@ -28,6 +39,18 @@ std::chrono::high_resolution_clock::time_point endToneCalculation;
 std::chrono::duration<double> elapsedToneCalculation;
 double timeSumToneCalculation = 0;
 int toneCounter = 0;
+
+
+
+int MagnitudeCounter = 0;
+double rowMagnitudeSum = 0;
+double rowMaxMagnitude = 0;
+double rowMinMagnitude = 0;
+double colMagnitudeSum = 0;
+double colMaxMagnitude = 0;
+double colMinMagnitude = 0;
+int letterCounter = 0;
+
 
 
 double TimePassed(std::chrono::high_resolution_clock::time_point start){
@@ -112,6 +135,22 @@ bool analyseGoertzelOutput(const std::vector<double>& mags){
 bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
 
     if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceivedCompareProgram && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceivedCompareProgram)){
+        MagnitudeCounter++;
+        rowMagnitudeSum += rowMags[maxRow];
+        colMagnitudeSum += columnMags[maxColumn];
+        if(rowMags[maxRow] > rowMaxMagnitude){
+            rowMaxMagnitude = rowMags[maxRow];
+        }
+        if(rowMags[maxRow] < rowMinMagnitude || MagnitudeCounter == 1){
+            rowMinMagnitude = rowMags[maxRow];
+        }
+        if(columnMags[maxColumn] > colMaxMagnitude){
+            colMaxMagnitude = columnMags[maxColumn];
+        }
+        if(columnMags[maxColumn] < colMinMagnitude || MagnitudeCounter == 1){
+            colMinMagnitude = columnMags[maxColumn];
+        }
+        letterCounter++;
         LetterReceivedCompareProgram = true;
         if(maxRow == 0){
             if(maxColumn == 0){
@@ -147,7 +186,13 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
             if(maxColumn == 0){
                 if(!startOfMessageReceivedCompareProgram){
                     clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
-                    clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
+                    //clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
+                    clockStartToneCompareProgram1 = std::chrono::high_resolution_clock::now();
+                    clockStartToneCompareProgram2 = std::chrono::high_resolution_clock::now();
+                    clockStartToneCompareProgram3 = std::chrono::high_resolution_clock::now();
+                    clockStartToneCompareProgram4 = std::chrono::high_resolution_clock::now();
+                    clockStartToneCompareProgram5 = std::chrono::high_resolution_clock::now();
+                    clockStartToneCompareProgram6 = std::chrono::high_resolution_clock::now();
                 }
                 startOfMessageReceivedCompareProgram = true;
                 ReceivedCompareProgram.push_back('*');
@@ -161,9 +206,23 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
         }
         return true;
     }
-    else if(LetterReceivedCompareProgram && ((TimePassed(clockStartToneCompareProgram)+timeToReadToneCompareProgram/4) > timeToReadToneCompareProgram)){
+    /*else if(LetterReceivedCompareProgram && ((TimePassed(clockStartToneCompareProgram)) > timeToReadToneCompareProgram)){
         LetterReceivedCompareProgram = false;
         clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
+    }*/
+    else if(letterCounter == 1 && ((TimePassed(clockStartToneCompareProgram1)) > timeToReadToneCompareProgram)){
+        LetterReceivedCompareProgram = false;
+    }else if(letterCounter == 2 && ((TimePassed(clockStartToneCompareProgram2)) > timeToReadToneCompareProgram*2)){
+        LetterReceivedCompareProgram = false;
+    }else if(letterCounter == 3 && ((TimePassed(clockStartToneCompareProgram3)) > timeToReadToneCompareProgram*3)){
+        LetterReceivedCompareProgram = false;
+    }else if(letterCounter == 4 && ((TimePassed(clockStartToneCompareProgram4)) > timeToReadToneCompareProgram*4)){
+        LetterReceivedCompareProgram = false;
+    }else if(letterCounter == 5 && ((TimePassed(clockStartToneCompareProgram5)) > timeToReadToneCompareProgram*5)){
+        LetterReceivedCompareProgram = false;
+    }else if(letterCounter == 6 && ((TimePassed(clockStartToneCompareProgram6)) > timeToReadToneCompareProgram*6)){
+        LetterReceivedCompareProgram = false;
+        letterCounter = 0;
     }
 
     return false;
@@ -197,6 +256,7 @@ void GoertzelTesting::processFile(std::ifstream &file, int sampleRate, int buffe
         std::vector<double> data;
         while (true) {
             std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+            std::chrono::high_resolution_clock::time_point test = std::chrono::high_resolution_clock::now();
             data = readDTMFDataChunk(file, bufferSize);
             if (data.size() < 1500){
                 break;
@@ -204,6 +264,7 @@ void GoertzelTesting::processFile(std::ifstream &file, int sampleRate, int buffe
             startToneCalculation = std::chrono::high_resolution_clock::now();
             analyzeDataWithGoertzel(data, sampleRate);
             endToneCalculation = std::chrono::high_resolution_clock::now();;
+            usleep(delayBetweenCalculation);
             elapsedToneCalculation = endToneCalculation - startToneCalculation;
             timeSumToneCalculation += elapsedToneCalculation.count();
             toneCounter++;
@@ -264,6 +325,7 @@ void GoertzelTesting::processFile(std::ifstream &file, int sampleRate, int buffe
             timeToReadToneCompareProgram = (sum/tonecounter)*4;
             timeToSendMessageCompareProgram = timeToReadToneCompareProgram*7;
             */
+            //std::cout << "Time to read tone: " << TimePassed(test) << std::endl;
 
         }
         //std::cout << "Average time taken for processing chunks: " << sum / tonecounter << " seconds." << std::endl;
@@ -410,88 +472,23 @@ std::vector<double> GoertzelTesting::processFileTest(std::ifstream &file, int sa
     int maxCorrect = 0;
     std::vector<double> timeAtMaxCorrect;
 
-    while(timeToReadToneCompareProgram < (0.00029*4)){
-        int correctCounter = 0;
-        int failCounter = 0;
-
-        std::vector<double> data;
-        while (true) {
-            std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-            data = readDTMFDataChunk(file, bufferSize);
-            if (data.size() < 1500){
-                break;
-            }
-
-            analyzeDataWithGoertzel(data, sampleRate);
-            if(((TimePassed(clockStartMessageCompareProgram)) > timeToSendMessageCompareProgram)  && (ReceivedCompareProgram.size() < 6) && (ReceivedCompareProgram.size() > 0)){
-
-                ReceivedCompareProgram.clear();
-                startOfMessageReceivedCompareProgram = false;
-                clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
-
-            }else if(ReceivedCompareProgram.size() == 6){
-                if((ReceivedCompareProgram[0] == '*' && ReceivedCompareProgram[5] == '#') && (TimePassed(clockStartMessageCompareProgram) < timeToSendMessageCompareProgram)){
-                    correctCounter++;
-                }else{
-                    failCounter++;
-                }
-
-
-                ReceivedCompareProgram.clear();
-                startOfMessageReceivedCompareProgram = false;
-                clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
-            }
-        }
-        if(correctCounter > maxCorrect){
-            maxCorrect = correctCounter;
-            timeAtMaxCorrect.clear();
-            timeAtMaxCorrect.push_back(timeToReadToneCompareProgram);
-        }else if(correctCounter == maxCorrect){
-            timeAtMaxCorrect.push_back(timeToReadToneCompareProgram);
-        }
-        /*
-            std::cout <<"----------------------------------------------" << std::endl;
-            std::cout << "Correct messages: " << correctCounter << std::endl;
-            std::cout << "Incorrect messages: " << failCounter << std::endl;
-            std::cout <<"----------------------------------------------" << std::endl;
-        */
-
-        if(correctCounter == 50 && failCounter == 0){
-            break;
-        }else{
-            timeToReadToneCompareProgram = timeToReadToneCompareProgram + 0.0000005;
-            timeToSendMessageCompareProgram = timeToReadToneCompareProgram*5;
-        }
-
-    }
-
-    std::cout << "Max correct messages: " << maxCorrect << std::endl;
-    std::cout << "Time at max correct messages: " << std::endl;
-    for (int i = 0; i < timeAtMaxCorrect.size(); ++i) {
-        std::cout << timeAtMaxCorrect[i] << std::endl;
-    }
     std::ofstream outputFileGoertzel;
 
     outputFileGoertzel.open("Goertzel_Test_Output.txt", std::ios_base::trunc);
     outputFileGoertzel.close();
 
     std::chrono::duration<double> CalculationTime;
-    for (int i = 0; i < 1; ++i) {
-
-        std::cout << std::endl;
-        std::cout <<"----------------------------------------------" << std::endl;
-        std::cout << "Time to read tone: " << timeAtMaxCorrect[i] << std::endl;
-        timeToReadToneCompareProgram = timeAtMaxCorrect[i];
-        timeToSendMessageCompareProgram = timeToReadToneCompareProgram*5;
-        std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-        processFile(file, sampleRate, bufferSize);
-        std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
-        CalculationTime += end - start;
-        std::cout <<"----------------------------------------------" << std::endl;
-        std::cout << std::endl;
-        std::cout << std::endl;
-    }
+    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+    processFile(file, sampleRate, bufferSize);
+    std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+    CalculationTime += end - start;
     double elapsedTime = CalculationTime.count();
+    std::cout << "Average row magnitude: " << rowMagnitudeSum/MagnitudeCounter << std::endl;
+    std::cout << "Average column magnitude: " << colMagnitudeSum/MagnitudeCounter << std::endl;
+    std::cout << "Max row magnitude: " << rowMaxMagnitude << std::endl;
+    std::cout << "Min row magnitude: " << rowMinMagnitude << std::endl;
+    std::cout << "Max column magnitude: " << colMaxMagnitude << std::endl;
+    std::cout << "Min column magnitude: " << colMinMagnitude << std::endl;
     return checkOutputFile("Goertzel_Test_Output.txt", elapsedTime);
 
 

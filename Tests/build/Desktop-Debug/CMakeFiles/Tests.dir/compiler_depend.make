@@ -6,10 +6,13 @@ CMakeFiles/Tests.dir/audio.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/atomic \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
@@ -812,6 +815,7 @@ CMakeFiles/Tests.dir/goertzel.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robot
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
   /usr/include/math.h \
@@ -822,20 +826,25 @@ CMakeFiles/Tests.dir/goertzel.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robot
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/time.h \
+  /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
   /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
   /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -845,6 +854,7 @@ CMakeFiles/Tests.dir/goertzel.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robot
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
@@ -890,6 +900,7 @@ CMakeFiles/Tests.dir/goertzel.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robot
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
@@ -1421,15 +1432,7 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/main.cpp:
 
-/usr/include/unistd.h:
-
-/usr/include/SFML/Graphics/View.hpp:
-
-/usr/include/SFML/Graphics/Transformable.hpp:
-
-/usr/include/strings.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/include/c++/13/bits/stream_iterator.h:
 
 /usr/include/string.h:
 
@@ -1484,6 +1487,10 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/c++/13/ctime:
 
 /usr/include/c++/13/cstdlib:
+
+/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.cpp:
+
+/usr/include/c++/13/cstdint:
 
 /usr/include/c++/13/cstdio:
 
@@ -1549,15 +1556,9 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/stl_map.h:
 
-/usr/include/c++/13/bits/invoke.h:
+/usr/include/stdio.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/c++/13/bits/basic_string.h:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/13/ios:
 
@@ -1589,11 +1590,15 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/c++/13/bits/memoryfwd.h:
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
-/usr/include/c++/13/cstdint:
+/usr/include/x86_64-linux-gnu/asm/errno.h:
 
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.cpp:
+/usr/include/c++/13/ext/numeric_traits.h:
+
+/usr/include/c++/13/bits/stl_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
 
@@ -1605,6 +1610,30 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
+/usr/include/SFML/Graphics/Text.hpp:
+
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/SFML/Graphics/Texture.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
+/usr/include/SFML/Audio/OutputSoundFile.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/c++/13/atomic:
+
+/usr/include/c++/13/bits/basic_string.h:
+
+/usr/include/c++/13/bits/invoke.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
@@ -1612,6 +1641,18 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/SFML/Graphics/RenderWindow.hpp:
 
 /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.cpp:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/include/c++/13/bits/exception.h:
+
+/usr/include/c++/13/streambuf:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/SFML/Audio/SoundSource.hpp:
 
@@ -1622,6 +1663,12 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/13/bits/chrono.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/SFML/Graphics/Shape.hpp:
+
+/usr/include/c++/13/bits/hashtable_policy.h:
 
 /usr/include/features-time64.h:
 
@@ -1639,33 +1686,9 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/locale_facets.tcc:
 
-/usr/include/SFML/Window/GlResource.hpp:
-
-/usr/include/c++/13/type_traits:
-
-/usr/include/SFML/Window/Context.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/c++/13/bit:
-
 /usr/include/c++/13/bits/basic_string.tcc:
 
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.h:
-
-/usr/include/c++/13/bits/move.h:
-
-/usr/include/SFML/Graphics/Text.hpp:
-
-/usr/include/c++/13/bits/ptr_traits.h:
-
-/usr/include/SFML/Graphics/Texture.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
-
-/usr/include/SFML/Audio/OutputSoundFile.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+/usr/include/c++/13/bit:
 
 /usr/include/alloca.h:
 
@@ -1685,30 +1708,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/c++/13/bits/hash_bytes.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/c++/13/bits/exception.h:
-
-/usr/include/c++/13/streambuf:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/c++/13/cwchar:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
 /usr/include/c++/13/iosfwd:
 
 /usr/include/c++/13/bits/predefined_ops.h:
@@ -1717,7 +1716,7 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/new_allocator.h:
 
-/usr/include/linux/close_range.h:
+/usr/include/c++/13/bits/atomic_base.h:
 
 /usr/include/c++/13/bits/stringfwd.h:
 
@@ -1727,15 +1726,31 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/stl_vector.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+/usr/include/SFML/Window/GlResource.hpp:
 
-/usr/include/SFML/Graphics/Shape.hpp:
+/usr/include/c++/13/type_traits:
 
-/usr/include/c++/13/bits/hashtable_policy.h:
+/usr/include/SFML/Window/Context.hpp:
 
-/usr/include/stdio.h:
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_types.h:
+/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.h:
+
+/usr/include/c++/13/bits/move.h:
+
+/usr/include/linux/close_range.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/13/bits/hash_bytes.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/13/iterator:
+
+/usr/include/c++/13/bits/ios_base.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
 
@@ -1756,6 +1771,8 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
+
+/usr/include/c++/13/bits/memoryfwd.h:
 
 /usr/include/c++/13/bits/std_abs.h:
 
@@ -1787,13 +1804,19 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/stl_construct.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
+/usr/include/SFML/Graphics/View.hpp:
 
-/usr/include/c++/13/ext/numeric_traits.h:
+/usr/include/SFML/Graphics/Transformable.hpp:
 
-/usr/include/c++/13/bits/stl_iterator.h:
+/usr/include/strings.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/unistd.h:
+
+/usr/include/c++/13/cwchar:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
@@ -1844,10 +1867,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/sound.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-/usr/include/c++/13/bits/ios_base.h:
-
-/usr/include/c++/13/iterator:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
@@ -1957,9 +1976,9 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/SFML/Graphics/RectangleShape.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
 
@@ -1982,8 +2001,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/SFML/Graphics/Export.hpp:
 
 /usr/include/c++/13/bits/enable_special_members.h:
-
-/usr/include/c++/13/bits/stream_iterator.h:
 
 /usr/include/c++/13/bits/erase_if.h:
 

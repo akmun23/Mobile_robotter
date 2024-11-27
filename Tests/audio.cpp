@@ -1,4 +1,5 @@
 #include "audio.h"
+#include <atomic>
 #include <unistd.h>
 
 // Variables for the listening function
@@ -26,6 +27,8 @@ int drivingSpeed = 0;
 
 // Constants for goertzel algorithm
 // Calculated before the program starts to save time
+// make an atomic double
+
 double k0_697 = FRAMES_PER_BUFFER * 697 / SAMPLE_RATE;
 double k0_770 = FRAMES_PER_BUFFER * 770 / SAMPLE_RATE;
 double k0_852 = FRAMES_PER_BUFFER * 852 / SAMPLE_RATE;
