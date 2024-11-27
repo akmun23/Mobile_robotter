@@ -53,8 +53,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 11
-Message Correct Format and correct message
-*17BC#
+Message Incorrect Format
+*17BBC
 ----------------------------------------------
 
 Message 12
@@ -68,8 +68,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 14
-Message Correct Format and correct message
-*1379#
+Message Incorrect Format
+*13799
 ----------------------------------------------
 
 Message 15
@@ -114,142 +114,137 @@ Message Correct Format and correct message
 
 Message 23
 Message Incorrect Format
-*74620
+*76#*1
 ----------------------------------------------
 
 Message 24
 Message Correct Format and correct message
-*1379#
+*15C2#
 ----------------------------------------------
 
 Message 25
-Message Incorrect Format
-15C2#*
+Message Correct Format and correct message
+*17BC#
 ----------------------------------------------
 
 Message 26
 Message Incorrect Format
-17BC#*
+*91DD
 ----------------------------------------------
 
 Message 27
-Message Incorrect Format
-1AD#*7
-----------------------------------------------
-
-Message 28
 Message Correct Format and correct message
 *1379#
 ----------------------------------------------
 
-Message 29
+Message 28
 Message Incorrect Format
 *15C20
 ----------------------------------------------
 
-Message 30
+Message 29
 Message Correct Format and correct message
 *17BC#
+----------------------------------------------
+
+Message 30
+Message Correct Format and correct message
+*91AD#
 ----------------------------------------------
 
 Message 31
 Message Correct Format and correct message
-*91AD#
+*7462#
 ----------------------------------------------
 
 Message 32
 Message Correct Format and correct message
-*7462#
+*1379#
 ----------------------------------------------
 
 Message 33
 Message Correct Format and correct message
-*1379#
+*15C2#
 ----------------------------------------------
 
 Message 34
 Message Correct Format and correct message
-*15C2#
+*17BC#
 ----------------------------------------------
 
 Message 35
 Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 36
-Message Correct Format and correct message
 *91AD#
 ----------------------------------------------
 
-Message 37
+Message 36
 Message Incorrect Format
 *74620
 ----------------------------------------------
 
-Message 38
+Message 37
 Message Incorrect Format
 *13799
 ----------------------------------------------
 
-Message 39
+Message 38
 Message Correct Format and correct message
 *15C2#
+----------------------------------------------
+
+Message 39
+Message Correct Format and correct message
+*17BC#
 ----------------------------------------------
 
 Message 40
 Message Correct Format and correct message
-*17BC#
+*91AD#
 ----------------------------------------------
 
 Message 41
 Message Correct Format and correct message
-*91AD#
+*7462#
 ----------------------------------------------
 
 Message 42
 Message Correct Format and correct message
-*7462#
+*1379#
 ----------------------------------------------
 
 Message 43
 Message Correct Format and correct message
-*1379#
+*15C2#
 ----------------------------------------------
 
 Message 44
 Message Correct Format and correct message
-*15C2#
+*17BC#
 ----------------------------------------------
 
 Message 45
 Message Correct Format and correct message
-*17BC#
+*91AD#
 ----------------------------------------------
 
 Message 46
 Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 47
-Message Correct Format and correct message
 *7462#
 ----------------------------------------------
 
-Message 48
+Message 47
 Message Correct Format and correct message
 *1379#
 ----------------------------------------------
 
 
 ----------------------------------------------
-Correct Messages: 38
+Correct Messages: 37
 Incorrect Messages: 0
 Incorrect Format Messages: 10
-Total Messages: 48
-Correct format percentage: 79%
-Correct Messages percentage: 79%
-Time taken to calculate Entire sequence: 192514 ms.
-Average time taken to calculate Buffer: 120.921 ms.
+Total Messages: 47
+Correct format percentage: 78%
+Correct Messages percentage: 78%
+Time taken to calculate Entire sequence: 194115 ms.
+Average time taken to calculate Buffer: 121.69 ms.
 ----------------------------------------------

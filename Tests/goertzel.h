@@ -20,7 +20,7 @@ public:
 
     // Public methods
     void processFile(std::ifstream &file, int sampleRate, int bufferSize);
-    std::vector<double> processFileTest(std::ifstream &file, int sampleRate, int bufferSize);
+    std::vector<double> processFileTest(std::ifstream &file, int sampleRate, int bufferSize, int NumberOfChannels);
 
 
 private:

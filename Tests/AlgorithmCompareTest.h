@@ -9,20 +9,31 @@
 std::chrono::duration<double> Maxtime{0};
 std::chrono::duration<double> average{0};
 
+void TimePrinter(std::chrono::high_resolution_clock::time_point start){
+    std::chrono::duration<double> TimeElapsed = std::chrono::high_resolution_clock::now() - start;
+    std::cout << "Time passed: " << TimeElapsed.count() << "s."<< std::endl;
 
+}
 
 int RunCompareTest() {
     int sampleRate = 44100;
     int bufferSize = 1500;
 
     // Input files
-    std::vector<std::string> TestfileNames;
-    //TestfileNames.push_back("/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt");
-    //TestfileNames.push_back("/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt");
-    //TestfileNames.push_back("/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt");
-    //TestfileNames.push_back("/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt");
-    //TestfileNames.push_back("/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt");
-    TestfileNames.push_back("/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt");
+    std::vector<std::pair<int,std::string>> TestfileNames;
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
+    std::vector<std::pair<int,std::string>> DFTTestfileNames = TestfileNames;
+    std::vector<std::pair<int,std::string>> FFTTestfileNames = TestfileNames;
+    std::vector<std::pair<int,std::string>> GoertzelTestfileNames = TestfileNames;
+    GoertzelTestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording1ChannelsShort.txt"});
+    GoertzelTestfileNames.push_back({2,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording2ChannelsShort.txt"});
+
+
 
     // Output Files
     std::ofstream DFT_buffer_CalculationSpeed;
@@ -73,78 +84,90 @@ int RunCompareTest() {
     std::vector<double> DFTCorrectTotal;
     std::vector<double> FFTCorrectTotal;
     std::vector<double> GoertzelCorrectTotal;
-
+    std::chrono::high_resolution_clock::time_point clockStart = std::chrono::high_resolution_clock::now();
     // Loop through the files
-    for (int i = 0; i < TestfileNames.size(); ++i) {
+    std::cout << "Start of DFT" << std::endl;
+    for (int i = 0; i < DFTTestfileNames.size(); ++i) {
         std::ifstream file;
-        file.open(TestfileNames[i]);
+        file.open(DFTTestfileNames[i].second);
         if (!file.is_open()) {
-            std::cerr << "Error: Could not open file " << TestfileNames[i] << std::endl;
+            std::cerr << "Error: Could not open file " << DFTTestfileNames[i].second << std::endl;
             return 1;
         }
-        /*
+
         // DFT algorithm
         DFTResult = runDFT(file, sampleRate, bufferSize);
-        file.clear();
-        file.seekg(0, std::ios::beg);
+        std::cout << "DFT File: "<< i+1 << " Processed" << std::endl;
+        TimePrinter(clockStart);
+        DFTTime.push_back(DFTResult[6]);
+        DFTCorrect.push_back(DFTResult[0]);
+        DFTIncorrect.push_back(DFTResult[1]);
+        DFTIncorrectFormat.push_back(DFTResult[2]);
+        DFTTotal.push_back(DFTResult[3]);
+        DFTCorrectFormat.push_back(DFTResult[4]);
+        DFTCorrectTotal.push_back(DFTResult[5]);
 
+        DFT_buffer_CalculationSpeed << DFTTime[i] << std::endl;
+        DFT_correctAndFailFile << DFTCorrect[i] << " " << DFTIncorrect[i] << " " << DFTIncorrectFormat[i] << " " << DFTTotal[i] << " " << DFTCorrectFormat[i] << " " << DFTCorrectTotal[i] << std::endl;
 
+    }
+    std::cout << "End of DFT" << std::endl;
+    std::cout << "Start of FFT" << std::endl;
+    for (int i = 0; i < FFTTestfileNames.size(); ++i){
+        std::ifstream file;
+        file.open(FFTTestfileNames[i].second);
+        if (!file.is_open()) {
+            std::cerr << "Error: Could not open file " << FFTTestfileNames[i].second << std::endl;
+            return 1;
+        }
         //FFT algorithm;
         FFTProcessing FFTProcessor(100, {697, 770, 852, 941}, {1209, 1336, 1477, 1633}, 20);
         FFTResult = FFTProcessor.processFile(file, sampleRate, bufferSize);
-        file.clear();
-        file.seekg(0, std::ios::beg);
-        */
+        std::cout << "FFT File: "<< i+1 << " Processed" << std::endl;
+        TimePrinter(clockStart);
+
+        FFTTime.push_back(FFTResult[6]);
+        FFTCorrect.push_back(FFTResult[0]);
+        FFTIncorrect.push_back(FFTResult[1]);
+        FFTIncorrectFormat.push_back(FFTResult[2]);
+        FFTTotal.push_back(FFTResult[3]);
+        FFTCorrectFormat.push_back(FFTResult[4]);
+        FFTCorrectTotal.push_back(FFTResult[5]);
+
+        FFT_buffer_CalculationSpeed << FFTTime[i] << std::endl;
+        FFT_correctAndFailFile << FFTCorrect[i] << " " << FFTIncorrect[i] << " " << FFTIncorrectFormat[i] << " " << FFTTotal[i] << " " << FFTCorrectFormat[i] << " " << FFTCorrectTotal[i] << std::endl;
+
+    }
+    std::cout << "End of FFT" << std::endl;
+    std::cout << "Start of Goertzel" << std::endl;
+    for (int i = 0; i < GoertzelTestfileNames.size(); ++i) {
+        std::ifstream file;
+        file.open(GoertzelTestfileNames[i].second);
+        if (!file.is_open()) {
+            std::cerr << "Error: Could not open file " << GoertzelTestfileNames[i].second << std::endl;
+            return 1;
+        }
 
         // Goertzel algorithm
         GoertzelTesting GoertzelProcessor;
-        GoertzelResult = GoertzelProcessor.processFileTest(file, sampleRate, bufferSize);
-        file.close();
+        GoertzelResult = GoertzelProcessor.processFileTest(file, sampleRate, bufferSize, GoertzelTestfileNames[i].first);
+        std::cout << "Goertzel File: "<< i+1 << " Processed" << std::endl;
+        TimePrinter(clockStart);
 
-        // Store the results
-        //DFTTime.push_back(DFTResult[6]);
-        //FFTTime.push_back(FFTResult[6]);
+
         GoertzelTime.push_back(GoertzelResult[6]);
-
-        //DFTCorrect.push_back(DFTResult[0]);
-        //FFTCorrect.push_back(FFTResult[0]);
         GoertzelCorrect.push_back(GoertzelResult[0]);
-
-        //DFTIncorrect.push_back(DFTResult[1]);
-        //FFTIncorrect.push_back(FFTResult[1]);
         GoertzelIncorrect.push_back(GoertzelResult[1]);
-
-        //DFTIncorrectFormat.push_back(DFTResult[2]);
-        //FFTIncorrectFormat.push_back(FFTResult[2]);
         GoertzelIncorrectFormat.push_back(GoertzelResult[2]);
-
-        //DFTTotal.push_back(DFTResult[3]);
-        //FFTTotal.push_back(FFTResult[3]);
         GoertzelTotal.push_back(GoertzelResult[3]);
-
-        //DFTCorrectFormat.push_back(DFTResult[4]);
-        //FFTCorrectFormat.push_back(FFTResult[4]);
         GoertzelCorrectFormat.push_back(GoertzelResult[4]);
-
-        //DFTCorrectTotal.push_back(DFTResult[5]);
-        //FFTCorrectTotal.push_back(FFTResult[5]);
         GoertzelCorrectTotal.push_back(GoertzelResult[5]);
 
-
-
-    }
-
-    // Write to files
-    for (int i = 0; i < TestfileNames.size(); ++i) {
-        //DFT_buffer_CalculationSpeed << DFTTime[i] << std::endl;
-        //FFT_buffer_CalculationSpeed << FFTTime[i] << std::endl;
         Goertzel_buffer_CalculationSpeed << GoertzelTime[i] << std::endl;
-    }
-    for (int i = 0; i < TestfileNames.size(); ++i) {
-        //DFT_correctAndFailFile << DFTCorrect[i] << " " << DFTIncorrect[i] << " " << DFTIncorrectFormat[i] << " " << DFTTotal[i] << " " << DFTCorrectFormat[i] << " " << DFTCorrectTotal[i] << std::endl;
-        //FFT_correctAndFailFile << FFTCorrect[i] << " " << FFTIncorrect[i] << " " << FFTIncorrectFormat[i] << " " << FFTTotal[i] << " " << FFTCorrectFormat[i] << " " << FFTCorrectTotal[i] << std::endl;
         Goertzel_correctAndFailFile << GoertzelCorrect[i] << " " << GoertzelIncorrect[i] << " " << GoertzelIncorrectFormat[i] << " " << GoertzelTotal[i] << " " << GoertzelCorrectFormat[i] << " " << GoertzelCorrectTotal[i] << std::endl;
     }
+    std::cout << "End of Goertzel" << std::endl;
+
 
     DFT_buffer_CalculationSpeed.close();
     FFT_buffer_CalculationSpeed.close();

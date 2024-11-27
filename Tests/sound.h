@@ -153,26 +153,12 @@ void RunSoundProgram() {
 
 
 
-    std::vector<double> Data;
-    auto start = std::chrono::high_resolution_clock::now();
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = end - start;
-    double sum = 0;
-    double min = 0;
-    double max = 0;
-
-
     for(int i = 0; i < 10; ++i){
-        /*playSequence("*15C2#");
+        playSequence("*15C2#");
         playSequence("*17bc#");
         playSequence("*91ad#");
         playSequence("*7462#");
-        playSequence("*1379#");*/
-
-        playSequence("*4032#");
-        usleep(1500000);
-        playSequence("*2632#");
-        usleep(1500000);
+        playSequence("*1379#");
 
 
 

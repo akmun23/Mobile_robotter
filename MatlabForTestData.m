@@ -55,7 +55,7 @@ title('DFT compared with FFT (ms)')
 subplot(1,2,2)
 piechart(SpeedResults_FFT_VS_Goertzel,Categories_FFT_Goertzel,LabelStyle="namedata");
 title('FFT compared with Goertzel (us)')
-%%
+
 % Presicion DFT 
 DFT_CorrectAndFail_ShortEcho = DFT_CorrectAndFailData(CorrectMessages:IncorrectFormat);
 DFT_CorrectAndFail_ShortNoEcho = DFT_CorrectAndFailData(CorrectMessages+DataTestSize:IncorrectFormat+DataTestSize);
@@ -205,3 +205,20 @@ title('Long distance with Echo')
 subplot(2,2,4)
 piechart(CorrectFormat_Long_NoEcho,Categories_CorrectFormat,LabelStyle="namedata")
 title('Long distance without Echo')
+
+
+% 1 Channel vs 2 Channel Goertzel
+
+Goertzel_CorrectFormat_Short_1Channel = Goertzel_CorrectAndFailData(CorrectMessages+DataTestSize*4:IncorrectFormat+DataTestSize*4);
+Goertzel_CorrectFormat_Short_2Channel = Goertzel_CorrectAndFailData(CorrectMessages+DataTestSize*5:IncorrectFormat+DataTestSize*5);
+
+figure('Name','Goertzel channel Precision')
+subplot(1,2,1)
+piechart(Goertzel_CorrectFormat_Short_1Channel,Categories_CorrectIncorrect,LabelStyle="namedata")
+title('1 Channel')
+subplot(1,2,2)
+piechart(Goertzel_CorrectFormat_Short_2Channel,Categories_CorrectIncorrect,LabelStyle="namedata")
+title('2 channel')
+subplot(2,2,3)
+
+

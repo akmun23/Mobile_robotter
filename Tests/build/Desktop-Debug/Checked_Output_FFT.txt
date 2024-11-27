@@ -250,6 +250,6 @@ Incorrect Format Messages: 10
 Total Messages: 48
 Correct format percentage: 79%
 Correct Messages percentage: 79%
-Time taken to calculate Entire sequence: 719.402 ms.
-Average time taken to calculate Buffer: 0.491915 ms.
+Time taken to calculate Entire sequence: 726.847 ms.
+Average time taken to calculate Buffer: 0.507587 ms.
 ----------------------------------------------

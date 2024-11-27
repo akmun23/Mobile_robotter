@@ -257,22 +257,16 @@ std::vector<double> FFTProcessing::processFile(std::ifstream& file, int sampleRa
         MessageDetected = MessageAndState.second;
 
         if(state == 1){
-            std::cout << "----------------------------------------"<< std::endl;
-            std::cout << "Message received: " << MessageDetected << std::endl;
             correctMessages++;
             outputFileFFT << MessageDetected;
             outputFileFFT << std::endl;
             MessageDetected = "";
         }else if(state == 2){
-            std::cout << "----------------------------------------"<< std::endl;
-            std::cout << "Message timed out: " << MessageDetected << std::endl;
             timedOutMessages++;
             outputFileFFT << MessageDetected;
             outputFileFFT << std::endl;
             MessageDetected = "";
         }else if(state == 3){
-            std::cout << "----------------------------------------"<< std::endl;
-            std::cout << "Message wrong format: " << MessageDetected << std::endl;
             incorrectMessages++;
             outputFileFFT << MessageDetected;
             outputFileFFT << std::endl;
@@ -282,14 +276,14 @@ std::vector<double> FFTProcessing::processFile(std::ifstream& file, int sampleRa
         TimeSumCalculationFFT += TimePassedFFT(TimeForCalculationStartFFT);
         countFFT++;
     }
-
+    /*
     std::cout << "The average time for Chunk processing is " << (TimeSumChunkFFT/countFFT)*1000 << " ms." << std::endl;
     std::cout << "The average time for Calculation processing is " << (TimeSumCalculationFFT/countFFT)*1000 << " ms." << std::endl;
     std::cout << "The number of correct messages is: " << correctMessages << std::endl;
     std::cout << "The number of incorrect messages is: " << incorrectMessages << std::endl;
     std::cout << "The number of timed out messages is: " << timedOutMessages << std::endl;
     std::cout << "The % of correct messages is: " << (100*correctMessages)/(correctMessages+incorrectMessages+timedOutMessages) << "%" <<std::endl;
-
+    */
     outputFileFFT.close();
     double calculationTime = TimePassedFFT(TimeForEntireSequenceStartFFT);
     return checkOutputFile("FFT_Test_Output.txt", calculationTime);

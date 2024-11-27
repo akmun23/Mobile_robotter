@@ -293,22 +293,16 @@ std::vector<double> runDFT(std::ifstream &file, int sampleRate, int bufferSize){
         MessageDetected = MessageAndState.second;
 
         if(state == 1){
-            std::cout << "----------------------------------------"<< std::endl;
-            std::cout << "Message received: " << MessageDetected << std::endl;
             correctMessages++;
             outputFileDFT << MessageDetected;
             outputFileDFT << std::endl;
             MessageDetected = "";
         }else if(state == 2){
-            std::cout << "----------------------------------------"<< std::endl;
-            std::cout << "Message timed out: " << MessageDetected << std::endl;
             timedOutMessages++;
             outputFileDFT << MessageDetected;
             outputFileDFT << std::endl;
             MessageDetected = "";
         }else if(state == 3){
-            std::cout << "----------------------------------------"<< std::endl;
-            std::cout << "Message wrong format: " << MessageDetected << std::endl;
             incorrectMessages++;
             outputFileDFT << MessageDetected;
             outputFileDFT << std::endl;
@@ -316,14 +310,14 @@ std::vector<double> runDFT(std::ifstream &file, int sampleRate, int bufferSize){
         }
 
     }
-
+    /*
     std::cout << "The average time for Chunk processing is " << (TimeSumChunkDFT/countDFT)*1000 << " ms." << std::endl;
     std::cout << "The average time for Calculation processing is " << (TimeSumCalculationDFT/countDFT)*1000 << " ms." << std::endl;
     std::cout << "The number of correct messages is: " << correctMessages << std::endl;
     std::cout << "The number of incorrect messages is: " << incorrectMessages << std::endl;
     std::cout << "The number of timed out messages is: " << timedOutMessages << std::endl;
     std::cout << "The % of correct messages is: " << (100*correctMessages)/(correctMessages+incorrectMessages+timedOutMessages) << "%" <<std::endl;
-
+    */
 
     outputFileDFT.close();
     double calculationTime = TimePassedDFT(TimeForEntireSequenceStartDFT);

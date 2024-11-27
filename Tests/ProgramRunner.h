@@ -28,7 +28,7 @@ void ListeningAndAudioProgram() {
 void FileStoringProgram() {
     Goertzel audio;
     audio.InitForStoringInFile();
-    audio.startTimedRecording(54);
+    audio.startTimedRecording(52);
     audio.end();
 }
 
