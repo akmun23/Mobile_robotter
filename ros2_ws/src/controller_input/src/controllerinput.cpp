@@ -10,7 +10,6 @@ controllerInput::controllerInput() : Node("controller_input")
 }
 
 void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
-    usleep(200);
     // Map joystick values to the range [0, 100]
     uint8_t linear_value = mapAxisToByte(msg->axes[1]);  // Linear velocity value
     uint8_t angular_value = mapAxisToByte(msg->axes[0]); // Angular velocity value
@@ -21,26 +20,37 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
     // Save the values to member variables for use in the timer callback
     _latestLinearValue = linear_value;
     _latestAngularValue = angular_value;
-    
-    play_dtmf_if_active();
+
+    if(msg->buttons[0] == 1){
+        play_dtmf_if_active();
+    }
 }
 
 void controllerInput::play_dtmf_if_active() {
-    // Check if the joystick values have changed, including changing to zero
-    if (_latestLinearValue != _previousLinearValue || _latestAngularValue != _previousAngularValue) {
-        // Debug print to show the mapped values
-        std::cout << "Playing DTMF for Linear Value: " << static_cast<int>(_latestLinearValue)
-                  << ", Angular Value: " << static_cast<int>(_latestAngularValue) << std::endl;
+    // Debug print to show the mapped values
+    std::cout << "Playing DTMF for Linear Value: " << static_cast<int>(_latestLinearValue)
+              << ", Angular Value: " << static_cast<int>(_latestAngularValue) << std::endl;
 
-        // Play the DTMF sequence if joystick is active or has changed to zero
-        if (_joystickActive || _latestLinearValue != 0 || _latestAngularValue != 0) {
-            playDTMFSequence(_latestLinearValue, _latestAngularValue);
-        }
-
-        // Update the previous values after playing the sequence
-        _previousLinearValue = _latestLinearValue;
-        _previousAngularValue = _latestAngularValue;
+    // Play the DTMF sequence if joystick is active or has changed to zero
+    sf::SoundBuffer buffer;
+    std::vector<sf::Int16> samples;
+    for (int i = 0; i < 4; i++) {
+        samples.push_back(SineWave(i, 200, 0.01));
     }
+    buffer.loadFromSamples(&samples[0], samples.size(), 1, AudioPlayRate);
+    sf::Sound sound;
+    sound.setBuffer(buffer);
+    sound.play();
+    usleep(1);    // Sleep for 2 seconds
+    samples.clear();
+
+    playDTMFSequence(_latestLinearValue, _latestAngularValue);
+
+
+    // Update the previous values after playing the sequence
+    _previousLinearValue = _latestLinearValue;
+    _previousAngularValue = _latestAngularValue;
+
 }
 
 void controllerInput::makeAmplitudeFading(){

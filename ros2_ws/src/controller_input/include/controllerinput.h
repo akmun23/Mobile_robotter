@@ -8,6 +8,7 @@
 #include <SFML/Audio.hpp>
 #include <iostream>
 #include <vector>
+#include <unistd.h>
 #include <math.h>
 
 class controllerInput : public rclcpp::Node
