@@ -6,7 +6,8 @@
 
 int main(int argc, char *argv[]) {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<MappingNode>());
+    auto node = std::make_shared<MappingNode>();
+    rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
 }

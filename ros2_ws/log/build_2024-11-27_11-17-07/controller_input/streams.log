@@ -1,0 +1,11 @@
+[0.020s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.065s] [35m[1mConsolidate compiler generated dependencies of target controller_input[0m
+[0.083s] [ 33%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/main.cpp.o[0m
+[2.442s] [ 66%] [32m[1mLinking CXX executable controller_input[0m
+[2.480s] /usr/bin/ld: CMakeFiles/controller_input.dir/src/controllerinput.cpp.o: in function `sound::SineWave(double, double, double)':
+[2.480s] controllerinput.cpp:(.text+0x69): multiple definition of `sound::SineWave(double, double, double)'; CMakeFiles/controller_input.dir/src/main.cpp.o:main.cpp:(.text+0x0): first defined here
+[2.717s] collect2: error: ld returned 1 exit status
+[2.719s] gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:208: controller_input] Error 1
+[2.719s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
+[2.720s] gmake: *** [Makefile:146: all] Error 2
+[2.723s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16

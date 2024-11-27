@@ -10,7 +10,11 @@ using namespace std;
 struct Point{
     int x, y;
 
+    Point(){}
+
     Point(int x_, int y_);
+
+    Point(float x_, float y_);
 };
 
 //Size
@@ -25,13 +29,14 @@ struct Size{
 //Robot
 struct Robot{
     float x, y, start_x, start_y, orient;
-    Size size;
+    Size size, xAxis;
+    Point pointsXAxis[4];
 
     Robot(){}
 
-    Robot(int x_, int y_, Size size_);
-
     Robot(Point p, Size size_);
+
+    void rotatePoint(double angle);
 };
 
 //Wall
@@ -44,13 +49,13 @@ public:
         typeWall
     };
 
-    int x, y, center_x, center_y;
-    Size size;
-
 private:
     squareType type;
 
 public:
+    int x, y, center_x, center_y;
+    Size size;
+
     Wall(int x_, int y_, Size size_);
 
     Wall(Point p, Size size_);

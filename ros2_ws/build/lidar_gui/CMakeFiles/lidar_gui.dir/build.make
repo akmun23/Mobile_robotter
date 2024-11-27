@@ -73,57 +73,57 @@ CMakeFiles/lidar_gui.dir/src/main.cpp.o: CMakeFiles/lidar_gui.dir/flags.make
 CMakeFiles/lidar_gui.dir/src/main.cpp.o: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp
 CMakeFiles/lidar_gui.dir/src/main.cpp.o: CMakeFiles/lidar_gui.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/main.cpp.o -MF CMakeFiles/lidar_gui.dir/src/main.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/main.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/main.cpp.o -MF CMakeFiles/lidar_gui.dir/src/main.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/main.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp
 
 CMakeFiles/lidar_gui.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lidar_gui.dir/src/main.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp > CMakeFiles/lidar_gui.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp > CMakeFiles/lidar_gui.dir/src/main.cpp.i
 
 CMakeFiles/lidar_gui.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lidar_gui.dir/src/main.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp -o CMakeFiles/lidar_gui.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/main.cpp -o CMakeFiles/lidar_gui.dir/src/main.cpp.s
 
 CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o: CMakeFiles/lidar_gui.dir/flags.make
 CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp
 CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o: CMakeFiles/lidar_gui.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o -MF CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o -MF CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp
 
 CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp > CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp > CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.i
 
 CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp -o CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp -o CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.s
 
 CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o: CMakeFiles/lidar_gui.dir/flags.make
 CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp
 CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o: CMakeFiles/lidar_gui.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o -MF CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o -MF CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp
 
 CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp > CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp > CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.i
 
 CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp -o CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/dataTypes.cpp -o CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.s
 
 CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o: CMakeFiles/lidar_gui.dir/flags.make
 CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp
 CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o: CMakeFiles/lidar_gui.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o -MF CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o -MF CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o.d -o CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp
 
 CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp > CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp > CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.i
 
 CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp -o CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp -o CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.s
 
 # Object files for target lidar_gui
 lidar_gui_OBJECTS = \

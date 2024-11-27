@@ -23,7 +23,9 @@ find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 include_directories(include)
 
 # Add executable
-add_executable(controller_input src/main.cpp)
+add_executable(controller_input src/main.cpp
+               src/controllerinput.cpp include/controllerinput.h
+              )
 
 target_link_libraries(controller_input sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
 

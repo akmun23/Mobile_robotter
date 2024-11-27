@@ -1,0 +1,176 @@
+[35m[1mConsolidate compiler generated dependencies of target controller_input[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/main.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/controllerinput.cpp.o[0m
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:32:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+   14 | class controllerInput : public [01;31m[Krclcpp[m[K::Node
+      |                                [01;31m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:40:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[KNode[m[K’
+   14 | class controllerInput : public rclcpp::[01;31m[KNode[m[K
+      |                                        [01;31m[K^~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:16:1:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kprivate[m[K’
+   16 | [01;31m[Kprivate[m[K:
+      | [01;31m[K^~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:16:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before ‘[01m[Kprivate[m[K’
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:15:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   15 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:19:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ does not name a type
+   19 |     [01;31m[Krclcpp[m[K::TimerBase::SharedPtr _timer;
+      |     [01;31m[K^~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:42:1:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kpublic[m[K’
+   42 | [01;31m[Kpublic[m[K:
+      | [01;31m[K^~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ does not name a type
+   45 |     void joy_callback(const [01;31m[Ksensor_msgs[m[K::msg::Joy::SharedPtr msg);
+      |                             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:45:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   45 |     void joy_callback(const sensor_msgs::msg[01;31m[K::[m[KJoy::SharedPtr msg);
+      |                                             [01;31m[K^~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   45 |     void joy_callback[34m[K([m[Kconst sensor_msgs::msg[01;31m[K:[m[K[32m[K:[m[KJoy::SharedPtr msg);
+      |                      [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+      |                                             [32m[K)[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:45:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+   45 |     void joy_callback(const sensor_msgs::msg[01;31m[K::[m[KJoy::SharedPtr msg);
+      |                                             [01;31m[K^~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:57:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+   57 | [01;31m[K}[m[K;
+      | [01;31m[K^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:3:34:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass controllerInput[m[K’
+    3 | controllerInput::controllerInput([01;31m[K)[m[K : Node("controller_input")
+      |                                  [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass controllerInput[m[K’
+   14 | class [01;36m[KcontrollerInput[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:16:42:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ does not name a type
+   16 | void controllerInput::joy_callback(const [01;31m[Ksensor_msgs[m[K::msg::Joy::SharedPtr msg) {
+      |                                          [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:16:58:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   16 | void controllerInput::joy_callback(const sensor_msgs::msg[01;31m[K::[m[KJoy::SharedPtr msg) {
+      |                                                          [01;31m[K^~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:16:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   16 | void controllerInput::joy_callback[34m[K([m[Kconst sensor_msgs::msg[01;31m[K:[m[K[32m[K:[m[KJoy::SharedPtr msg) {
+      |                                   [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+      |                                                          [32m[K)[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:16:58:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+   16 | void controllerInput::joy_callback(const sensor_msgs::msg[01;31m[K::[m[KJoy::SharedPtr msg) {
+      |                                                          [01;31m[K^~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:29:43:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass controllerInput[m[K’
+   29 | void controllerInput::play_dtmf_if_active([01;31m[K)[m[K {
+      |                                           [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass controllerInput[m[K’
+   14 | class [01;36m[KcontrollerInput[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:47:43:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass controllerInput[m[K’
+   47 | void controllerInput::makeAmplitudeFading([01;31m[K)[m[K{
+      |                                           [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass controllerInput[m[K’
+   14 | class [01;36m[KcontrollerInput[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:68:45:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass controllerInput[m[K’
+   68 | int controllerInput::mapCharToIndex(char key[01;31m[K)[m[K {
+      |                                             [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass controllerInput[m[K’
+   14 | class [01;36m[KcontrollerInput[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:86:58:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass controllerInput[m[K’
+   86 | void controllerInput::playTone(double freq1, double freq2[01;31m[K)[m[K{
+      |                                                          [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass controllerInput[m[K’
+   14 | class [01;36m[KcontrollerInput[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:109:63:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass controllerInput[m[K’
+  109 | void controllerInput::playSequence(const std::string &sequence[01;31m[K)[m[K {
+      |                                                               [01;31m[K^[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass controllerInput[m[K’
+   14 | class [01;36m[KcontrollerInput[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:90: CMakeFiles/controller_input.dir/src/controllerinput.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:2[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:18:26:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ was not declared in this scope
+   18 |     rclcpp::Subscription<[01;31m[Ksensor_msgs[m[K::msg::Joy>::SharedPtr _joySubscriber;
+      |                          [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:18:47:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   18 |     rclcpp::Subscription<sensor_msgs::msg::Joy[01;31m[K>[m[K::SharedPtr _joySubscriber;
+      |                                               [01;31m[K^[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:18:47:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:18:47:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:18:47:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:18:50:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   18 |     rclcpp::Subscription<sensor_msgs::msg::Joy>::[01;31m[KSharedPtr[m[K _joySubscriber;
+      |                                                  [01;31m[K^~~~~~~~~[m[K
+      |                                                           [32m[K;[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:18:60:[m[K [01;31m[Kerror: [m[K‘[01m[K_joySubscriber[m[K’ does not name a type
+   18 |     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr [01;31m[K_joySubscriber[m[K;
+      |                                                            [01;31m[K^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:2[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:43:5:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[KControllerInput[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   43 |     [01;31m[KControllerInput[m[K();
+      |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ does not name a type
+   45 |     void joy_callback(const [01;31m[Ksensor_msgs[m[K::msg::Joy::SharedPtr msg);
+      |                             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:45:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   45 |     void joy_callback(const sensor_msgs::msg[01;31m[K::[m[KJoy::SharedPtr msg);
+      |                                             [01;31m[K^~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   45 |     void joy_callback[34m[K([m[Kconst sensor_msgs::msg[01;31m[K:[m[K[32m[K:[m[KJoy::SharedPtr msg);
+      |                      [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+      |                                             [32m[K)[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:42:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   45 |     void joy_callback(const sensor_msgs::[01;31m[Kmsg[m[K::Joy::SharedPtr msg);
+      |                                          [01;31m[K^~~[m[K
+      |                                             [32m[K;[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:45:47:[m[K [01;31m[Kerror: [m[K‘[01m[KJoy[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+   45 |     void joy_callback(const sensor_msgs::msg::[01;31m[KJoy[m[K::SharedPtr msg);
+      |                                               [01;31m[K^~~[m[K
+In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+                 from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+                 from [01m[K/usr/include/c++/11/memory:64[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:1[m[K:
+/usr/include/c++/11/ext/new_allocator.h: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = controllerInput; _Args = {}; _Tp = controllerInput][m[K’:
+[01m[K/usr/include/c++/11/bits/alloc_traits.h:516:17:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = controllerInput; _Args = {}; _Tp = controllerInput; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<controllerInput>][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:519:39:[m[K   required from ‘[01m[Kstd::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {}; _Tp = controllerInput; _Alloc = std::allocator<controllerInput>; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:650:16:[m[K   required from ‘[01m[Kstd::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = controllerInput; _Alloc = std::allocator<controllerInput>; _Args = {}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:[m[K   required from ‘[01m[Kstd::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<controllerInput>; _Args = {}; _Tp = controllerInput; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:409:59:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<controllerInput>; _Args = {}; _Tp = controllerInput][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:862:14:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = controllerInput; _Alloc = std::allocator<controllerInput>; _Args = {}][m[K’
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:878:39:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = controllerInput; _Args = {}][m[K’
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:7:51:[m[K   required from here
+[01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[KcontrollerInput::controllerInput()[m[K’
+  162 |         { [01;31m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+      |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:2[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;36m[Knote: [m[K‘[01m[KcontrollerInput::controllerInput()[m[K’ is implicitly deleted because the default definition would be ill-formed:
+   14 | class [01;36m[KcontrollerInput[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:14:7:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::Node()[m[K’
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1294:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::Node(const rclcpp::Node&, const string&)[m[K’
+ 1294 |   [01;36m[KNode[m[K(
+      |   [01;36m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1294:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:101:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::Node(const string&, const string&, const rclcpp::NodeOptions&)[m[K’
+  101 |   explicit [01;36m[KNode[m[K(
+      |            [01;36m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:101:12:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:89:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::Node(const string&, const rclcpp::NodeOptions&)[m[K’
+   89 |   explicit [01;36m[KNode[m[K(
+      |            [01;36m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:89:12:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:76: CMakeFiles/controller_input.dir/src/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

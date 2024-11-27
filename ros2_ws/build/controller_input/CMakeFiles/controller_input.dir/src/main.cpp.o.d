@@ -599,6 +599,7 @@ CMakeFiles/controller_input.dir/src/main.cpp.o: \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
+ /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joy.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__struct.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
@@ -684,6 +685,4 @@ CMakeFiles/controller_input.dir/src/main.cpp.o: \
  /usr/include/SFML/Audio/SoundFileFactory.hpp \
  /usr/include/SFML/Audio/SoundFileFactory.inl \
  /usr/include/SFML/Audio/SoundFileReader.hpp \
- /usr/include/SFML/Audio/SoundFileWriter.hpp \
- /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/sound.h \
- /usr/include/c++/11/math.h
+ /usr/include/SFML/Audio/SoundFileWriter.hpp /usr/include/c++/11/math.h

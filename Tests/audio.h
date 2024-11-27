@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <cstring>
 #include <cmath>
-
 #include <portaudio.h>
 #include <vector>
 
@@ -15,6 +14,7 @@
 #include <iostream>  // Include the input/output stream library
 #include <fstream>   // Include the file stream library
 
+#include "dtmf_to_cmd_vel_node.h" // Forward declaration
 
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
 #define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
@@ -35,11 +35,10 @@ class Goertzel
 {
 private:
 
-
     PaError err;
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
-
+    static DtmfToCmdVelNode* dtmfNode;
 
 public:
     Goertzel();
@@ -166,43 +165,10 @@ public:
      * @return double
      */
     static double TimePassed(std::chrono::high_resolution_clock::time_point start);
-
-
-    /**
-     * @brief Same function as Init() but for storing the audio in a file
-     *
-     * @param nothing
-     *
-     * @return nothing
-     */
-    void InitForStoringInFile();
-
-
-    /**
-     * @brief Same as start() but only runs for a specified time
-     *
-     * @param int RecordingTime
-     *
-     * @return nothing
-     */
-    void startTimedRecording(int RecordingTime);
-
-
-    /**
-     * @brief Instead of reacting to the signal, store the audio in a file
-     *
-     * @param const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags, void* userData
-     *
-     * @return nothing
-     */
-    static int streamCallbackForStoringInFile(
-        const void* inputBuffer,
-        void* outputBuffer,
-        unsigned long framesPerBuffer,
-        const PaStreamCallbackTimeInfo* timeInfo,
-        PaStreamCallbackFlags statusFlags,
-        void* userData
-        );
+    
+    static void setDtmfNode(DtmfToCmdVelNode* node) {
+        dtmfNode = node;
+    }
 
 
 

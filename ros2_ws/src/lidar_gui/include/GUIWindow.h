@@ -32,6 +32,7 @@ private:
 
     int update_counter = 0;
     const float scale_factor = 320.0;
+    float _prev_angle = 0;
 
 public:
     GUI();

@@ -1,22 +1,12 @@
 #include "GUIWindow.h"
 #include <iostream>
 #include <cmath>
+#include <algorithm>
 
 GUI::GUI(){
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");       // Set the correct hostname
-    db.setDatabaseName("lidar_db");    // Set your database name
-    db.setUserName("aksel");           // Set the MySQL username
-    db.setPassword("hua28rdc");        // Set the MySQL password
-
-    if (!db.open()) {
-        qDebug() << "Database error:" << db.lastError().text();
-        return;
-    }
-
     //Setting variables
-    emptySize = Size(4, 4);
-    wallSize = Size(8, 8);
+    emptySize = Size(1,1);
+    wallSize = Size(8,8);
 
     robotSize = Size(20,20);
 
@@ -37,24 +27,35 @@ GUI::GUI(){
     gcWall = XCreateGC(display, window, 0, NULL);
     gcEmpty = XCreateGC(display, window, 0, NULL);
     gcRobot = XCreateGC(display, window, 0, NULL);
+    gcRed = XCreateGC(display, window, 0, NULL);
+    gcGreen = XCreateGC(display, window, 0, NULL);
 
     //Color
     Colormap colorMap = DefaultColormap(display, screen);
-    XColor color_Wall, color_Empty, color_Robot;
+    XColor color_Wall, color_Empty, color_Robot, color_Red, color_Green;
 
-    XParseColor(display, colorMap, "firebrick3", &color_Robot);
+    XParseColor(display, colorMap, "snow4", &color_Empty);
+    XAllocColor(display, colorMap, &color_Empty);
+
+    XParseColor(display, colorMap, "steelblue", &color_Robot);
     XAllocColor(display, colorMap, &color_Robot);
+
+    XParseColor(display, colorMap, "firebrick3", &color_Red);
+    XAllocColor(display, colorMap, &color_Red);
+
+    XParseColor(display, colorMap, "springgreen4", &color_Green);
+    XAllocColor(display, colorMap, &color_Green);
 
     XSetForeground(display, gcWall, BlackPixel(display, screen)); //Wall graphics
     XSetForeground(display, gcRobot, color_Robot.pixel); //Robot graphics
+    XSetForeground(display, gcRed, color_Red.pixel); //Orient X
+    XSetForeground(display, gcGreen, color_Green.pixel); //Orient Y
 
     //Robot initialization
     robot = Robot(Point(XDisplayWidth(display, screen)/2, XDisplayHeight(display, screen)/2), robotSize);
 
     wallFrags.push_back(Wall(Point(0,0), emptySize));
 }
-
-using namespace std;
 
 bool GUI::spaceFree(int x_, int y_){
     for(int i = 0; i < wallFrags.size(); i++){
@@ -78,6 +79,8 @@ int GUI::squareOccupy(int x_, int y_){
             continue;
         }
     }
+
+    return 0;
 }
 
 void GUI::lidarReading(float angle, float len){
@@ -89,15 +92,7 @@ void GUI::lidarReading(float angle, float len){
     for(int i = 0; i < wallFrags.size(); i++){
 
         //Generate wall
-        if(wallFrags[i].contains(robot.x + x_com, robot.y + y_com) && (wallFrags[i].getType() != Wall::typeWall)){ //Does a square exist on the recorded coords?
-
-            //if a wall has been recorded, its type should be changed
-            wallFrags[i].setType(Wall::typeWall);
-            wallFrags[squareOccupy(robot.x + x_com, robot.y + y_com)].setSize(wallSize);
-
-            break;
-        }
-        else if((i == (wallFrags.size() - 1)) && (spaceFree(robot.x + x_com, robot.y + y_com))){
+        if((i == (wallFrags.size() - 1)) && (spaceFree(robot.x + x_com, robot.y + y_com))){
             wallFrags.push_back(Wall(Point(robot.x + x_com, robot.y + y_com), wallSize, Wall::typeWall)); //
             break;
         }
@@ -147,6 +142,37 @@ void GUI::rescale(){
     }
 }
 
+void GUI::fillRect(Point vertices[4], GC gc){
+
+    float x_min = std::min({vertices[0].x, vertices[1].x, vertices[2].x, vertices[3].x});
+    float x_max = std::max({vertices[0].x, vertices[1].x, vertices[2].x, vertices[3].x});
+
+    int x_diff = static_cast<int>(x_max - x_min);
+
+    //float y_min = std::min({vertices[0].y, vertices[1].y, vertices[2].y, vertices[3].y});
+    //float y_max = std::max({vertices[0].y, vertices[1].y, vertices[2].y, vertices[3].y});
+
+    float y0_corner = vertices[0].y, y1_corner = vertices[1].y, y3_corner = vertices[3].y, y_upper_diff = y0_corner - y1_corner;
+
+    cout << "------" << endl << "y1: " << vertices[1].y << " y2: " << vertices[3].y << endl;
+
+    Point Points[x_diff * 2];
+
+    for(int i = x_min; i < x_max; i++){
+
+        cout << "y1: " << y0_corner + ((y_upper_diff/x_diff)*i) << " y2: " << y3_corner + ((y_upper_diff/x_diff)*i) << endl;
+
+        XDrawLine(display, window, gc, x_min + i, y0_corner + ((y_upper_diff/x_diff)*i), x_min + i, y3_corner + ((y_upper_diff/x_diff)*i));
+
+        //Points[i] = Point(x_min + i, y0_corner + (y_upper_diff/x_diff)*i);
+        //Points[i] = Point(x_min + i, y3_corner + (y_upper_diff/x_diff)*i);
+    }
+
+    //XDrawLines(display, window, gc, Points);
+
+
+}
+
 void GUI::paintMap(){
     //Draw the rectangles the correspoding color
     for(int i = 0; i < wallFrags.size(); i++){
@@ -155,43 +181,47 @@ void GUI::paintMap(){
 }
 
 void GUI::paintRobot(){
-
+    usleep(1000);
+    robot.rotatePoint(0);
 
     for(int i = 0; i < 4; i++){
+
         if(i < 3){
-            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[i+1].x, robot.pointsXAxis[i+1].y);
+            XDrawLine(display, window, gcRobot, robot.locRobot[i].x, robot.locRobot[i].y, robot.locRobot[i+1].x, robot.locRobot[i+1].y);
+            XDrawLine(display, window, gcRed, robot.orientXRobot[i].x, robot.orientXRobot[i].y, robot.orientXRobot[i+1].x, robot.orientXRobot[i+1].y);
+            XDrawLine(display, window, gcGreen, robot.orientYRobot[i].x, robot.orientYRobot[i].y, robot.orientYRobot[i+1].x, robot.orientYRobot[i+1].y);
         }
         else{
-            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[0].x, robot.pointsXAxis[0].y);
+            XDrawLine(display, window, gcRobot, robot.locRobot[i].x, robot.locRobot[i].y, robot.locRobot[0].x, robot.locRobot[0].y);
+            XDrawLine(display, window, gcRed, robot.orientXRobot[i].x, robot.orientXRobot[i].y, robot.orientXRobot[0].x, robot.orientXRobot[0].y);
+            XDrawLine(display, window, gcGreen, robot.orientYRobot[i].x, robot.orientYRobot[i].y, robot.orientYRobot[0].x, robot.orientYRobot[0].y);
         }
     }
 
-    robot.rotatePoint(0.01); //Angle in radians
+    fillRect(robot.locRobot, gcRobot);
+
+    /*int minY = std::min({robot.pointsXAxis[0].y, robot.pointsXAxis[1].y, robot.pointsXAxis[2].y, robot.pointsXAxis[3].y});
+    int maxY = std::max({robot.pointsXAxis[0].y, robot.pointsXAxis[1].y, robot.pointsXAxis[2].y, robot.pointsXAxis[3].y});
+    vector<float> intersections;
+
+
+    auto intersection = [y](int )*/
+
+
+    /*auto intersect = [y](int x1, int y1, int x2, int y2) -> int{
+    if (y1 == y2) return x1; // Horizontal edge
+    return static_cast<int>(x1 + (y - y1) * (x2 - x1) / static_cast<float>(y2 - y1));
+    };*/
 
     XPutBackEvent(display, &event);
 }
 
 void GUI::update(bool& update){
     int update_counter = 0;
-    QSqlQuery query;
-    std::vector<double> angle;
-    std::vector<double> distance;
 
     while(1){
-        update_counter++;
-        angle.clear();
-        distance.clear();
-        // This should only be true if the size of the query is above 0
-        if (query.exec("SELECT status FROM lidar_data WHERE id = 1") && query.next()) {
-            int status = query.value(0).toInt();
-            if (status == 1) {
-                if(update){
-                    XSync(display, False);
 
-        update_counter++;
         lidarReading(rand()%360, 200); //Make a timer function
-
-        XSendEvent(display, window, False, ExposureMask, &event);
 
         //movementRobot(1, 1);
 
@@ -213,15 +243,8 @@ void GUI::update(bool& update){
         if(update){
             XSync(display, False);
             XClearWindow(display, window);
-
-            /*if(update_counter >= 100){
-                XClearWindow(display, window);
-                update_counter = 0;
-            }*/
-
             update = false;
         }
-
     }
 }
 
