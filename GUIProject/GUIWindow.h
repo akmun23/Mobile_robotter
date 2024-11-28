@@ -39,7 +39,7 @@ public:
     void movementRobot(float angle, float intensity);
     void lidarReading(float angle, float len);
     void rescale();
-    void findPoints(vector<Point>& points, Point p1, Point p2, bool TF);
+    void findPoints(vector<Point>& points, Point p1, Point p2, int tolerance, bool TF);
     void drawRect(Point vertices[], GC gc);
     void paintMap();
     void paintRobot();
