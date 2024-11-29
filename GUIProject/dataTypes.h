@@ -35,7 +35,6 @@ struct Robot{
     Point locRobot[4], orientXRobot[4], orientYRobot[4];
 
     Robot(){}
-
     Robot(Point p, Size size_);
 
     void rotate(double angle);

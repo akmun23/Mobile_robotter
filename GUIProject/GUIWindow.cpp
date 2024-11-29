@@ -102,44 +102,43 @@ void GUI::lidarReading(float angle, float len){
 
 void GUI::movementRobot(float angle, float intensity){
 
-    //robot.x += 0.01;
-
-    robot.update();
+    //robot.x -= 0.1;
+    //robot.y += 0.1;
 }
 
 void GUI::rescale(){
 
-    if(robot.x < (XDisplayWidth(display, screen) * 0.1)){
+    if(robot.x < 400){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].x = wallFrags[i].x + 500;
+            wallFrags[i].x = wallFrags[i].x + 400;
         }
 
-        robot.x = robot.x + 500;
+        robot.x = robot.x + 400;
     }
-    else if(robot.x > (XDisplayWidth(display, screen) * 0.9)){
+    else if(robot.x > (XDisplayWidth(display, screen) - 400)){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].x = wallFrags[i].x - 500;
+            wallFrags[i].x = wallFrags[i].x - 400;
         }
 
-        robot.x = robot.x - 500;
+        robot.x = robot.x - 400;
     }
-    else if(robot.y < (XDisplayHeight(display, screen) * 0.1)){
+    else if(robot.y < 400){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].y = wallFrags[i].y + 500;
+            wallFrags[i].y = wallFrags[i].y + 400;
         }
 
-        robot.y = robot.y + 500;
+        robot.y = robot.y + 400;
     }
-    else{
+    else if(robot.y > (XDisplayHeight(display, screen) - 400)){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].y = wallFrags[i].y - 500;
+            wallFrags[i].y = wallFrags[i].y - 400;
         }
 
-        robot.y = robot.y - 500;
+        robot.y = robot.y - 400;
     }
 }
 
-void GUI::findPoints(vector<Point>& points, Point p1, Point p2, bool TF = true){
+void GUI::findPoints(vector<Point>& points, Point p1, Point p2, int tolerance = 1, bool TF = true){ //Finds alle
 
     if(TF){
         points.clear();
@@ -151,8 +150,8 @@ void GUI::findPoints(vector<Point>& points, Point p1, Point p2, bool TF = true){
     int dy = p2.y - p1.y;
     int dist = sqrt(((p2.x - p1.x)*(p2.x - p1.x)) + ((p2.y - p1.y)*(p2.y - p1.y)));
 
-    for(int i = 1; i < (dist/4); i++){
-        points.push_back(Point(p1.x + (dx * i)/(dist/4), p1.y + (dy * i)/(dist/4)));
+    for(int i = 1; i < (dist/tolerance); i++){
+        points.push_back(Point(p1.x + (dx * i)/(dist/tolerance), p1.y + (dy * i)/(dist/tolerance)));
     }
 }
 
@@ -175,15 +174,15 @@ void GUI::drawRect(Point vertices[4], GC gc){ //Assumes the square is rectangula
     vector<Point> pointsStart;
     vector<Point> pointsEnd;
 
-    findPoints(pointsStart, vertices[0], vertices[3]);
-    findPoints(pointsEnd, vertices[1], vertices[2]);
+    findPoints(pointsStart, vertices[0], vertices[3], 4);
+    findPoints(pointsEnd, vertices[1], vertices[2], 4);
 
     for(int i = 0; i < pointsStart.size(); i++){
         XDrawLine(display, window, gcGreen, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
     }
 
-    findPoints(pointsStart, vertices[0], vertices[1]);
-    findPoints(pointsEnd, vertices[3], vertices[2]);
+    findPoints(pointsStart, vertices[0], vertices[1], 4);
+    findPoints(pointsEnd, vertices[3], vertices[2], 4);
 
     for(int i = 0; i < pointsStart.size(); i++){
         XDrawLine(display, window, gc, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
@@ -198,8 +197,6 @@ void GUI::paintMap(){
 }
 
 void GUI::paintRobot(){
-    robot.rotate(0.1);
-
     drawRect(robot.locRobot, gcRobot);
     drawRect(robot.orientXRobot, gcRed);
     drawRect(robot.orientYRobot, gcGreen);
@@ -214,29 +211,28 @@ void GUI::update(bool& update){
 
         usleep(10000);
 
-        lidarReading(rand()%360, 200); //Make a timer function
+        lidarReading(rand()%360, 200);
 
-        movementRobot(1, 1);
+        movementRobot(1, 1); //Handles change in robot location
+        rescale(); //Moves everything on the screen, to make the screen "wider", to compensate for limited screen size.
 
-        /*if((robot.x < (XDisplayWidth(display, screen) * 0.1)) || (robot.x > (XDisplayWidth(display, screen) * 0.9)) || (robot.y < (XDisplayHeight(display, screen) * 0.1)) || (robot.y > (XDisplayWidth(display, screen) * 0.9))){
-            cout << "entered rescale" << endl;
-            rescale();
-        }*/
+        robot.update(); //Update the visuals, ie. rectangles, in accordance with the location of the robot.
+        robot.rotate(0.1); //Rotates the robot a certain amount, angle in radian.
 
         paintMap();
         paintRobot();
 
-        if(XPending(display) > 0){
-            XNextEvent(display, &event);
+        if(XPending(display) > 0){ //Is there an Event waiting to be drawn?
+            XNextEvent(display, &event); //Select the next event to be drawn.
             if(event.type == Expose){
-                update = true;
+                update = true; //Allow the screen to update.
             }
         }
 
-        if(update){
-            XSync(display, False);
-            XClearWindow(display, window);
-            update = false;
+        if(update){ //Update the screen
+            XSync(display, False); //Sync the screen with the data in the system
+            XClearWindow(display, window); //Clear the window, needs to be after XSync, for some reason.
+            update = false; //Stop the screen from continously updating
         }
     }
 }

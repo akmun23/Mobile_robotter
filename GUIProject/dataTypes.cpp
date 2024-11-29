@@ -1,5 +1,4 @@
 #include "dataTypes.h"
-#include <iostream>
 
 Point::Point(int x_, int y_){
     x = x_;
@@ -19,6 +18,7 @@ Size::Size(int width_, int height_){
 Robot::Robot(Point p, Size size_){
     x = p.x;
     y = p.y;
+    angle = 0;
 
     size = size_;
 }
@@ -43,7 +43,6 @@ void Robot::update(){
     orientXRobot[2].y = y + size.height/6;
     orientXRobot[3].x = x + size.width/2;
     orientXRobot[3].y = y + size.height/6;
-
 
     //Robot Y Orient Axis
     orientYRobot[0].x = x - size.width/6;
