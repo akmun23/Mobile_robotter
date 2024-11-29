@@ -22,7 +22,7 @@ double SineWave(double time, double freq, double amp) {
 
 std::vector<double> AmplitudeFading;
 int Delay = 1000;
-int SamplesPerFrame2 = Delay*6;
+int SamplesPerFrame2 = Delay*7.5;
 int AudioSamplesPerFrame = SamplesPerFrame2-Delay*2;
 int AudioPlayRate = 44100;
 

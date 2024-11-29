@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <thread>
 #include <unistd.h>
 #include <vector>
 #include <algorithm>
@@ -13,7 +14,7 @@ GoertzelTesting::GoertzelTesting() {}
 
 double pi = 3.14159265358979323846;
 
-int MinMagnitude = 200;
+int MinMagnitude = 150;
 bool LetterReceivedCompareProgram = false;
 bool startOfMessageReceivedCompareProgram = false;
 std::vector<char> ReceivedCompareProgram;
@@ -29,7 +30,7 @@ std::chrono::high_resolution_clock::time_point clockStartToneCompareProgram6;
 
 
 double delayBetweenCalculation = 200*1000; // 200 ms in microseconds
-double timeToReadToneCompareProgram = 0.201*4;  // timeToReadToneCompareProgram is the time it takes to load and calculate the tone
+double timeToReadToneCompareProgram = 1.25;  // timeToReadToneCompareProgram is the time it takes to load and calculate the tone
 double timeToSendMessageCompareProgram = timeToReadToneCompareProgram*6.04;
 
 std::chrono::duration<double> elapsedTimeCompareProgram;
@@ -37,6 +38,8 @@ std::chrono::duration<double> elapsedTimeCompareProgram;
 std::chrono::high_resolution_clock::time_point startToneCalculation;
 std::chrono::high_resolution_clock::time_point endToneCalculation;
 std::chrono::duration<double> elapsedToneCalculation;
+double calcTimeMax = 0;
+double calcTimeMin = 0;
 double timeSumToneCalculation = 0;
 int toneCounter = 0;
 int NUM_ChannelsCompareProgram = 1;
@@ -52,6 +55,9 @@ double colMaxMagnitude = 0;
 double colMinMagnitude = 0;
 int letterCounter = 0;
 double ExtraTimeValue = 0;
+
+char lastDFTMTone = ' ';
+
 
 
 
@@ -94,15 +100,24 @@ void goertzel(const std::vector<double>& samples, int targetFreq, int sampleRate
 }
 
 // Function to analyze the data using the GoertzelTesting algorithm
-void GoertzelTesting::analyzeDataWithGoertzel(const std::vector<double>& data, int sampleRate) {
+void GoertzelTesting::analyzeDataWithGoertzel(const std::vector<double>& data, const int& sampleRate) {
     std::vector<int> dtmfTones = { 697, 770, 852, 941, 1209, 1336, 1477, 1633 };
     std::vector<double> magnitudes(dtmfTones.size(), 0.0);
-
-    for (size_t i = 0; i < dtmfTones.size(); ++i) {
+    startToneCalculation = std::chrono::high_resolution_clock::now();
+    for (int i = 0; i < dtmfTones.size(); ++i) {
         goertzel(data, dtmfTones[i], sampleRate, magnitudes[i]);
     }
+    endToneCalculation = std::chrono::high_resolution_clock::now();;
+    elapsedToneCalculation = endToneCalculation - startToneCalculation;
+    timeSumToneCalculation += elapsedToneCalculation.count();
+    if (elapsedToneCalculation.count() > calcTimeMax) {
+        calcTimeMax = elapsedToneCalculation.count();
+    }
+    if (calcTimeMin == 0 || elapsedToneCalculation.count() < calcTimeMin) {
+        calcTimeMin = elapsedToneCalculation.count();
+    }
 
-    if (analyseGoertzelOutput(magnitudes)) {
+    if (analyseGoertzelOutput(magnitudes)) {               //   These lines could be deleted and only analyseGoertzelOutput(magnitudes) is needed
         //std::cout << "DTMF tone detected!" << std::endl;
     }
     else {
@@ -126,7 +141,7 @@ bool analyseGoertzelOutput(const std::vector<double>& mags){
         }
     }
 
-    if(SaveSignal(rowMags,columnMags,maxRow,maxColumn)){
+    if(SaveSignal(rowMags,columnMags,maxRow,maxColumn)){  // This line could be deleted and only SaveSignal(rowMags,columnMags,maxRow,maxColumn) is needed
         return true;
     }else{
         return false;
@@ -134,78 +149,85 @@ bool analyseGoertzelOutput(const std::vector<double>& mags){
 
 }
 
+
+char lookUpDTMFTone(int maxRow, int maxColumn){
+    if(maxRow == 0){
+        if(maxColumn == 0){
+            return('1');
+        }else if(maxColumn == 1){
+            return('2');
+        }else if(maxColumn == 2){
+            return('3');
+        }else if(maxColumn == 3){
+            return('A');
+        }
+    }else if(maxRow == 1){
+        if(maxColumn == 0){
+            return('4');
+        }else if(maxColumn == 1){
+            return('5');
+        }else if(maxColumn == 2){
+            return('6');
+        }else if(maxColumn == 3){
+            return('B');
+        }
+    }else if(maxRow == 2){
+        if(maxColumn == 0){
+            return('7');
+        }else if(maxColumn == 1){
+            return('8');
+        }else if(maxColumn == 2){
+            return('9');
+        }else if(maxColumn == 3){
+            return('C');
+        }
+    }else if(maxRow == 3){
+        if(maxColumn == 0){
+            if(!startOfMessageReceivedCompareProgram){
+                clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
+                //clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
+                clockStartToneCompareProgram1 = std::chrono::high_resolution_clock::now();
+                clockStartToneCompareProgram2 = std::chrono::high_resolution_clock::now();
+                clockStartToneCompareProgram3 = std::chrono::high_resolution_clock::now();
+                clockStartToneCompareProgram4 = std::chrono::high_resolution_clock::now();
+                clockStartToneCompareProgram5 = std::chrono::high_resolution_clock::now();
+                clockStartToneCompareProgram6 = std::chrono::high_resolution_clock::now();
+            }
+            startOfMessageReceivedCompareProgram = true;
+            return('*');
+        }else if(maxColumn == 1){
+            return('0');
+        }else if(maxColumn == 2){
+            return('#');
+        }else if(maxColumn == 3){
+            return('D');
+        }
+    }
+    return ' ';
+}
+
+
 bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
 
-    if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceivedCompareProgram && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceivedCompareProgram)){
-        MagnitudeCounter++;
-        rowMagnitudeSum += rowMags[maxRow];
-        colMagnitudeSum += columnMags[maxColumn];
-        if(rowMags[maxRow] > rowMaxMagnitude){
-            rowMaxMagnitude = rowMags[maxRow];
+    if (rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceivedCompareProgram && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceivedCompareProgram) && lastDFTMTone == ' '){
+        lastDFTMTone = lookUpDTMFTone(maxRow,maxColumn);
+        std::cout << "-------------------------------------" << std::endl;
+        std::cout <<"Tone spotted 1 time: " << lastDFTMTone << std::endl;
+    }else if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceivedCompareProgram && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceivedCompareProgram) && lastDFTMTone != ' '){
+        char NewDTMFTone = lookUpDTMFTone(maxRow,maxColumn);
+
+        if (lastDFTMTone == NewDTMFTone){
+            ReceivedCompareProgram.push_back(NewDTMFTone);
+            letterCounter++;
+            LetterReceivedCompareProgram = true;
+            lastDFTMTone = ' ';
+            std::cout << "MATCH - Tone spotted 2 time: " << NewDTMFTone << std::endl;
+        }else{
+            lastDFTMTone = NewDTMFTone;
+            std::cout << "NO MATCH - Tone spotted 2 time: " << NewDTMFTone << std::endl;
         }
-        if(rowMags[maxRow] < rowMinMagnitude || MagnitudeCounter == 1){
-            rowMinMagnitude = rowMags[maxRow];
-        }
-        if(columnMags[maxColumn] > colMaxMagnitude){
-            colMaxMagnitude = columnMags[maxColumn];
-        }
-        if(columnMags[maxColumn] < colMinMagnitude || MagnitudeCounter == 1){
-            colMinMagnitude = columnMags[maxColumn];
-        }
-        letterCounter++;
-        LetterReceivedCompareProgram = true;
-        if(maxRow == 0){
-            if(maxColumn == 0){
-                ReceivedCompareProgram.push_back('1');
-            }else if(maxColumn == 1){
-                ReceivedCompareProgram.push_back('2');
-            }else if(maxColumn == 2){
-                ReceivedCompareProgram.push_back('3');
-            }else if(maxColumn == 3){
-                ReceivedCompareProgram.push_back('A');
-            }
-        }else if(maxRow == 1){
-            if(maxColumn == 0){
-                ReceivedCompareProgram.push_back('4');
-            }else if(maxColumn == 1){
-                ReceivedCompareProgram.push_back('5');
-            }else if(maxColumn == 2){
-                ReceivedCompareProgram.push_back('6');
-            }else if(maxColumn == 3){
-                ReceivedCompareProgram.push_back('B');
-            }
-        }else if(maxRow == 2){
-            if(maxColumn == 0){
-                ReceivedCompareProgram.push_back('7');
-            }else if(maxColumn == 1){
-                ReceivedCompareProgram.push_back('8');
-            }else if(maxColumn == 2){
-                ReceivedCompareProgram.push_back('9');
-            }else if(maxColumn == 3){
-                ReceivedCompareProgram.push_back('C');
-            }
-        }else if(maxRow == 3){
-            if(maxColumn == 0){
-                if(!startOfMessageReceivedCompareProgram){
-                    clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
-                    //clockStartToneCompareProgram = std::chrono::high_resolution_clock::now();
-                    clockStartToneCompareProgram1 = std::chrono::high_resolution_clock::now();
-                    clockStartToneCompareProgram2 = std::chrono::high_resolution_clock::now();
-                    clockStartToneCompareProgram3 = std::chrono::high_resolution_clock::now();
-                    clockStartToneCompareProgram4 = std::chrono::high_resolution_clock::now();
-                    clockStartToneCompareProgram5 = std::chrono::high_resolution_clock::now();
-                    clockStartToneCompareProgram6 = std::chrono::high_resolution_clock::now();
-                }
-                startOfMessageReceivedCompareProgram = true;
-                ReceivedCompareProgram.push_back('*');
-            }else if(maxColumn == 1){
-                ReceivedCompareProgram.push_back('0');
-            }else if(maxColumn == 2){
-                ReceivedCompareProgram.push_back('#');
-            }else if(maxColumn == 3){
-                ReceivedCompareProgram.push_back('D');
-            }
-        }
+
+
         return true;
     }
     /*else if(LetterReceivedCompareProgram && ((TimePassed(clockStartToneCompareProgram)) > timeToReadToneCompareProgram)){
@@ -225,6 +247,7 @@ bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int
     }else if(letterCounter == 6 && ((TimePassed(clockStartToneCompareProgram6)+ExtraTimeValue) > timeToReadToneCompareProgram*6)){
         LetterReceivedCompareProgram = false;
         letterCounter = 0;
+        lastDFTMTone = ' ';
     }
 
     return false;
@@ -260,16 +283,12 @@ void GoertzelTesting::processFile(std::ifstream &file, int sampleRate, int buffe
             std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
             std::chrono::high_resolution_clock::time_point test = std::chrono::high_resolution_clock::now();
             data = readDTMFDataChunk(file, bufferSize);
-            if (data.size() < 1500){
+            if (data.size() < bufferSize){
                 break;
             }
-            startToneCalculation = std::chrono::high_resolution_clock::now();
             analyzeDataWithGoertzel(data, sampleRate);
-            endToneCalculation = std::chrono::high_resolution_clock::now();;
-            usleep(delayBetweenCalculation);
-            elapsedToneCalculation = endToneCalculation - startToneCalculation;
-            timeSumToneCalculation += elapsedToneCalculation.count();
             toneCounter++;
+            usleep(delayBetweenCalculation);
             if((TimePassed(clockStartMessageCompareProgram) > timeToSendMessageCompareProgram)  && (ReceivedCompareProgram.size() < 6) && (ReceivedCompareProgram.size() > 0)){
 
                 if(i == Iteration-1){
@@ -300,6 +319,7 @@ void GoertzelTesting::processFile(std::ifstream &file, int sampleRate, int buffe
                         letterCounter = 0;
                         LetterReceivedCompareProgram = false;
 
+
                     }
                 }else{
                     if(i == Iteration-1){
@@ -312,12 +332,15 @@ void GoertzelTesting::processFile(std::ifstream &file, int sampleRate, int buffe
                         messageCounter++;
                         letterCounter = 0;
                         LetterReceivedCompareProgram = false;
+
                     }
                 }
                 ReceivedCompareProgram.clear();
                 startOfMessageReceivedCompareProgram = false;
                 clockStartMessageCompareProgram = std::chrono::high_resolution_clock::now();
+
             }
+            //std::cout << "Time to calculate buffer: " << TimePassed(start) << std::endl;
         }
     }
     outputFileGoertzel.close();
@@ -419,6 +442,8 @@ std::vector<double> GoertzelTesting::checkOutputFile(std::string filename, doubl
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime*1000  << " ms."<< std::endl;
     checkedOutputFile << "Average time taken to calculate Buffer: " << (timeSumToneCalculation/toneCounter)*1000  << " ms." << std::endl;
+    checkedOutputFile << "Max time taken to calculate Buffer: " << calcTimeMax*1000 << " ms." << std::endl;
+    checkedOutputFile << "Min time taken to calculate Buffer: " << calcTimeMin*1000 << " ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 
     fileToBeChecked.close();
@@ -432,6 +457,8 @@ std::vector<double> GoertzelTesting::checkOutputFile(std::string filename, doubl
     outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
     outputData.push_back((correct)*100/(messageCounter-1));
     outputData.push_back((timeSumToneCalculation/toneCounter)*1000);
+    outputData.push_back(calcTimeMax*1000);
+    outputData.push_back(calcTimeMin*1000);
     return outputData;
 }
 
@@ -464,7 +491,8 @@ std::vector<double> GoertzelTesting::processFileTest(std::ifstream &file, int sa
     std::cout << "Min column magnitude: " << colMinMagnitude << std::endl;
     */
     return checkOutputFile("Goertzel_Test_Output.txt", elapsedTime);
-
-
 }
+
+
+
 

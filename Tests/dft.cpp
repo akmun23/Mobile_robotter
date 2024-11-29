@@ -17,6 +17,9 @@ double TimeSumChunkDFT = 0;
 double TimeSumCalculationDFT = 0;
 int countDFT = 0;
 
+double calcTimeMaxDFT = 0;
+double calcTimeMinDFT = 0;
+
 
 
 struct pair_hash {
@@ -277,6 +280,12 @@ std::vector<double> runDFT(std::ifstream &file, int sampleRate, int bufferSize){
         computeDFT(realChunkData, dftResult); // computes the DFT calculation on realChunkData and returns it to dftResult
         TimeSumCalculationDFT += TimePassedDFT(TimeForChunkStartDFT);
 
+        if(calcTimeMaxDFT < TimePassedDFT(TimeForChunkStartDFT)){
+            calcTimeMaxDFT = TimePassedDFT(TimeForChunkStartDFT);
+        }
+        if(calcTimeMinDFT == 0 || calcTimeMinDFT > TimePassedDFT(TimeForChunkStartDFT)){
+            calcTimeMinDFT = TimePassedDFT(TimeForChunkStartDFT);
+        }
 
         // Find dominant frequencies from DFT result
         std::vector<double> DFTdominantFrequencies = findDominantFrequency(dftResult, sampleRate);
@@ -419,6 +428,8 @@ std::vector<double> checkOutputFile(std::string filename, double calculationTime
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime * 1000  << " ms."<< std::endl;
     checkedOutputFile << "Average time taken to calculate Buffer: " << (TimeSumCalculationDFT/countDFT)*1000 << " ms." << std::endl;
+    checkedOutputFile << "Max time taken to calculate Buffer: " << calcTimeMaxDFT*1000 << " ms." << std::endl;
+    checkedOutputFile << "Min time taken to calculate Buffer: " << calcTimeMinDFT*1000 << " ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 
     fileToBeChecked.close();
@@ -432,5 +443,7 @@ std::vector<double> checkOutputFile(std::string filename, double calculationTime
     outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
     outputData.push_back((correct)*100/(messageCounter-1));
     outputData.push_back((TimeSumCalculationDFT/countDFT)*1000);
+    outputData.push_back(calcTimeMaxDFT*1000);
+    outputData.push_back(calcTimeMinDFT*1000);
     return outputData;
 }

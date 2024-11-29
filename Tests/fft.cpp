@@ -19,6 +19,8 @@ std::chrono::high_resolution_clock::time_point TimeForCalculationStartFFT;
 double TimeSumChunkFFT = 0;
 double TimeSumCalculationFFT = 0;
 int countFFT = 0;
+double calcTimeMaxFFT = 0;
+double calcTimeMinFFT = 0;
 
 
 // Constructor for FFTProcessing class
@@ -243,6 +245,13 @@ std::vector<double> FFTProcessing::processFile(std::ifstream& file, int sampleRa
         TimeForCalculationStartFFT = std::chrono::high_resolution_clock::now();
         fftResult = fft(chunkData, log2n);
         TimeSumCalculationFFT += TimePassedFFT(TimeForCalculationStartFFT);
+
+        if (TimePassedFFT(TimeForChunkStartFFT) > calcTimeMaxFFT) {
+            calcTimeMaxFFT = TimePassedFFT(TimeForChunkStartFFT);
+        }
+        if (calcTimeMinFFT == 0 || TimePassedFFT(TimeForChunkStartFFT) < calcTimeMinFFT) {
+            calcTimeMinFFT = TimePassedFFT(TimeForChunkStartFFT);
+        }
 
 
         // Find dominant frequencies in the chunk
@@ -489,6 +498,8 @@ std::vector<double> FFTProcessing::checkOutputFile(std::string filename, double 
     checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime * 1000 << " ms."<< std::endl;
     checkedOutputFile << "Average time taken to calculate Buffer: " << (TimeSumCalculationFFT/countFFT)*1000 << " ms." << std::endl;
+    checkedOutputFile << "Max time taken to calculate Buffer: " << calcTimeMaxFFT * 1000 << " ms." << std::endl;
+    checkedOutputFile << "Min time taken to calculate Buffer: " << calcTimeMinFFT * 1000 << " ms." << std::endl;
     checkedOutputFile << "----------------------------------------------" << std::endl;
 
     fileToBeChecked.close();
@@ -502,6 +513,8 @@ std::vector<double> FFTProcessing::checkOutputFile(std::string filename, double 
     outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
     outputData.push_back((correct)*100/(messageCounter-1));
     outputData.push_back((TimeSumCalculationFFT/countFFT)*1000);
+    outputData.push_back(calcTimeMaxFFT*1000);
+    outputData.push_back(calcTimeMinFFT*1000);
     return outputData;
 }
 

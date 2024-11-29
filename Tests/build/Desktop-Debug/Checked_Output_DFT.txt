@@ -4,247 +4,94 @@ New sequence of messages
 
 Message 1
 Message Incorrect Format
-*15B20
+*21BA
 ----------------------------------------------
 
 Message 2
-Message Correct Format and correct message
-*17BC#
+Message Incorrect Format
+42**5*
 ----------------------------------------------
 
 Message 3
-Message Correct Format and correct message
-*91AD#
+Message Incorrect Format
+D42*
 ----------------------------------------------
 
 Message 4
-Message Correct Format and correct message
-*7462#
+Message Incorrect Format
+527C
 ----------------------------------------------
 
 Message 5
 Message Incorrect Format
-*1377
+*42**5
 ----------------------------------------------
 
 Message 6
-Message Correct Format and correct message
-*17BC#
+Message Incorrect Format
+*B42*
 ----------------------------------------------
 
 Message 7
-Message Correct Format and correct message
-*91AD#
+Message Incorrect Format
+7
 ----------------------------------------------
 
 Message 8
 Message Incorrect Format
-*74622
+**52*
 ----------------------------------------------
 
 Message 9
-Message Correct Format and correct message
-*1379#
+Message Incorrect Format
+*42*
 ----------------------------------------------
 
 Message 10
-Message Correct Format and correct message
-*15C2#
+Message Incorrect Format
+*1D*42
 ----------------------------------------------
 
 Message 11
 Message Incorrect Format
-*17BBC
+*52*7C
 ----------------------------------------------
 
 Message 12
-Message Correct Format and correct message
-*91AD#
+Message Incorrect Format
+1D*42*
 ----------------------------------------------
 
 Message 13
-Message Correct Format and correct message
-*7462#
+Message Incorrect Format
+1801B
 ----------------------------------------------
 
 Message 14
 Message Incorrect Format
-*13799
+*42**5
 ----------------------------------------------
 
 Message 15
-Message Correct Format and correct message
-*15C2#
+Message Incorrect Format
+*7C*1D
 ----------------------------------------------
 
 Message 16
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 17
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 18
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 19
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 20
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 21
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 22
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 23
 Message Incorrect Format
-*76#*1
-----------------------------------------------
-
-Message 24
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 25
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 26
-Message Incorrect Format
-*91DD
-----------------------------------------------
-
-Message 27
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 28
-Message Incorrect Format
-*15C20
-----------------------------------------------
-
-Message 29
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 30
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 31
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 32
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 33
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 34
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 35
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 36
-Message Incorrect Format
-*74620
-----------------------------------------------
-
-Message 37
-Message Incorrect Format
-*13799
-----------------------------------------------
-
-Message 38
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 39
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 40
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 41
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 42
-Message Correct Format and correct message
-*1379#
-----------------------------------------------
-
-Message 43
-Message Correct Format and correct message
-*15C2#
-----------------------------------------------
-
-Message 44
-Message Correct Format and correct message
-*17BC#
-----------------------------------------------
-
-Message 45
-Message Correct Format and correct message
-*91AD#
-----------------------------------------------
-
-Message 46
-Message Correct Format and correct message
-*7462#
-----------------------------------------------
-
-Message 47
-Message Correct Format and correct message
-*1379#
+42*
 ----------------------------------------------
 
 
 ----------------------------------------------
-Correct Messages: 37
+Correct Messages: 0
 Incorrect Messages: 0
-Incorrect Format Messages: 10
-Total Messages: 47
-Correct format percentage: 78%
-Correct Messages percentage: 78%
-Time taken to calculate Entire sequence: 194115 ms.
-Average time taken to calculate Buffer: 121.69 ms.
+Incorrect Format Messages: 16
+Total Messages: 16
+Correct format percentage: 0%
+Correct Messages percentage: 0%
+Time taken to calculate Entire sequence: 74513.7 ms.
+Average time taken to calculate Buffer: 30.8474 ms.
+Max time taken to calculate Buffer: 80.0668 ms.
+Min time taken to calculate Buffer: 7.60423 ms.
 ----------------------------------------------
