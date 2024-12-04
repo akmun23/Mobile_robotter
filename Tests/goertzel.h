@@ -5,24 +5,49 @@
 #include <complex>
 #include <string>
 #include <chrono>
+#include "magnitudeanalysis.h"
 
 // Goertzel algorithm functions
-void goertzel(const std::vector<double>& samples, int targetFreq, int sampleRate, double& power);
-bool analyseGoertzelOutput(const std::vector<double>& mags);
-bool SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn);
-static double TimePassed(std::chrono::high_resolution_clock::time_point start);
-char lookUpDTMFTone(int maxRow, int maxColumn);
-
 
 // Audio processing class
-class GoertzelTesting {
+class GoertzelTesting : public MagnitudeAnalysis{
 public:
     // Constructor
-    GoertzelTesting();
+    GoertzelTesting(int minMagnitude, double timeToReadTone);
+
+    std::chrono::high_resolution_clock::time_point _startToneCalculation;
+
+    std::vector<double> _timeAtMaxCorrect;
+
+    double _calcTimeMax = 0;
+    double _calcTimeMin = 0;
+    double _timeSumToneCalculation = 0;
+    double _timeSum = 0;
+
+    int _NUM_ChannelsCompareProgram = 1;
+    int _toneCounter = 0;
+    int _maxCorrect = 0;
+    int _correct = 0;
+    int _incorrect = 0;
+    int _messageCounter = 1;
+
+
+    // TESTING
+    int _MagnitudeCounter = 0;
+    double _rowMagnitudeSum = 0;
+    double _rowMaxMagnitude = 0;
+    double _rowMinMagnitude = 0;
+    double _colMagnitudeSum = 0;
+    double _colMaxMagnitude = 0;
+    double _colMinMagnitude = 0;
+
 
     // Public methods
-    void processFile(std::ifstream &file, int sampleRate, int bufferSize);
-    std::vector<double> processFileTest(std::ifstream &file, int sampleRate, int bufferSize, int NumberOfChannels);
+    std::vector<double> processFile(std::ifstream &file, int sampleRate, int bufferSize, int NumberOfChannels);
+
+    void goertzel(const std::vector<double>& samples, int targetFreq, int sampleRate, double& power);
+
+    void analyseGoertzelOutput(const std::vector<double>& mags);
 
 
 private:
@@ -32,7 +57,6 @@ private:
     // Method to use Goertzel algorithm on the data
     void analyzeDataWithGoertzel(const std::vector<double>& data, const int &sampleRate);
 
-    std::vector<double> checkOutputFile(std::string filename, double calculationTime);
 
 };
 #endif // GOERTZEL_H

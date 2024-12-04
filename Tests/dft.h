@@ -1,6 +1,7 @@
 #ifndef DFT_H
 #define DFT_H
 
+#include "magnitudeanalysis.h"
 #include <chrono>
 #include <algorithm>
 #include <iostream>
@@ -12,29 +13,56 @@
 
 const double PI_M = 3.1415926536;
 
-// Function to compute the DFT
-void computeDFT(const std::vector<double>& input, std::vector<std::complex<double>>& output);
 
-// Function to find the dominant frequencies
-std::vector<double> findDominantFrequency(const std::vector<std::complex<double>>& dft, double samplingRate);
 
-// Function to read DTMF data from file
-std::vector<double> readDTMFDataDFT(std::ifstream &file, int sampleRate);
+class DFT : public MagnitudeAnalysis{
+private:
+    // Constructor
 
-//Function to get Correct DTMF Char
-char getDTMFCharacter(double rowFreq, double colFreq);
+    int _messageCounter = 1;
+    int _correctMessages = 0;
+    int _incorrectMessages = 0;
+    int _timedOutMessages = 0;
 
-double TimePassedDFT(std::chrono::high_resolution_clock::time_point start);
+    double _timeSum = 0;
 
-//Function to get DTMF Message
-std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
+    std::vector<double> _timeAtMaxCorrect;
 
-std::vector<double> runDFT(std::ifstream &file, int sampleRate, int bufferSize);
+    std::vector<int> _tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 
-//Function to get DTMF Message
-std::pair<int, std::string> ToneAndMessageHandling(char detectedTone, std::string Message);
+    std::chrono::high_resolution_clock::time_point _TimeForEntireSequenceStartDFT;
+    std::chrono::high_resolution_clock::time_point _TimeForChunkStartDFT;
+    std::chrono::high_resolution_clock::time_point _TimeForCalculationStartDFT;
 
-std::vector<double> checkOutputFile(std::string filename, double calculationTime);
+
+
+    double _TimeSumChunkDFT = 0;
+    double _TimeSumCalculationDFT = 0;
+    int _countDFT = 0;
+    double _calcTimeMaxDFT = 0;
+    double _calcTimeMinDFT = 0;
+
+
+
+
+public:
+
+    DFT(int minMagnitude, double timeToReadTone);
+
+    std::vector<double> readDTMFDataChunk(std::ifstream& inFile, int& bufferSize);
+
+    std::vector<double> runDFT(std::ifstream &file, int& sampleRate, int& bufferSize);
+
+    // Function to compute the DFT
+    void computeDFT(const std::vector<double>& input, int &sampleRate);
+
+    // Function to read DTMF data from file
+    std::vector<double> readDTMFDataDFT(std::ifstream &file, int& sampleRate);
+
+};
+
+
+
 
 
 #endif

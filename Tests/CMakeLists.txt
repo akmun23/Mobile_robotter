@@ -20,6 +20,7 @@ add_executable(${PROJECT_NAME} main.cpp
     fft.h fft.cpp
     ProgramRunner.h
     goertzel.h goertzel.cpp
+    magnitudeanalysis.h magnitudeanalysis.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} sfml-system sfml-window sfml-graphics sfml-network sfml-audio)

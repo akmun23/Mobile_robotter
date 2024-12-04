@@ -194,6 +194,7 @@ CMakeFiles/Tests.dir/main.cpp.o: \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h /usr/include/c++/13/chrono \
+ /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h \
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/dft.h \
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.h \
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/sound.h \

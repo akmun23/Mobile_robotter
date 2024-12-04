@@ -9,7 +9,7 @@ bool endProgram = false;
 // Variables for time invervals
 double timeToSendMessage = 1.076;  // 763 ms is the time from the start of the message to the end of the message it is rounded up to
 double SamplesPerFrame = 6000; //  SamplesPerFrame is the amount of frames in a tone this i specified in the sound program
-double timeToReadTone = 0.179;  // timeToReadTone is the time from the start of the tone to the end of the tone in ms
+double timeToReadTone = 0.144;  // timeToReadTone is the time from the start of the tone to the end of the tone in ms
 
 // Variables for Clocks
 auto clockStartMessage = std::chrono::high_resolution_clock::now();

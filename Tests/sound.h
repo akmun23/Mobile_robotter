@@ -6,6 +6,9 @@
 #include <vector>
 #include <unistd.h>
 #include <math.h>
+#include <chrono>
+std::chrono::high_resolution_clock::time_point startSoundProgram = std::chrono::high_resolution_clock::now();
+
 
 namespace sound {
 double SineWave(double time, double freq, double amp) {
@@ -22,7 +25,7 @@ double SineWave(double time, double freq, double amp) {
 
 std::vector<double> AmplitudeFading;
 int Delay = 1000;
-int SamplesPerFrame2 = Delay*7.5;
+int SamplesPerFrame2 = Delay*6;
 int AudioSamplesPerFrame = SamplesPerFrame2-Delay*2;
 int AudioPlayRate = 44100;
 
@@ -89,7 +92,7 @@ void playTone(double freq1, double freq2){
     }
 
     buffer.loadFromSamples(&samples[0], samples.size(), 1, AudioPlayRate);
-
+    // Calculated elapsed time from start
     sf::Sound sound;
     sound.setBuffer(buffer);
     sound.play();
@@ -150,18 +153,18 @@ void RunSoundProgram() {
 
     for(int i = 0; i < 10; ++i){
         playSequence("*15C2#");
-        playSequence("*17bc#");
-        playSequence("*91ad#");
-        playSequence("*7462#");
-        playSequence("*1379#");
+        //playSequence("*17bc#");
+        //playSequence("*91ad#");
+        //playSequence("*7462#");
+        //playSequence("*1379#");
 
 
 
 
-        playSequence("*4032#");
-        usleep(1500000);
-        playSequence("*2632#");
-        usleep(1500000);
+        //playSequence("*4032#");
+        //usleep(1500000);
+        //playSequence("*2632#");
+        //usleep(1500000);
 
     }
 }

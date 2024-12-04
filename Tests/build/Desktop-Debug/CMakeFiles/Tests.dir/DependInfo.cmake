@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/dft.cpp" "CMakeFiles/Tests.dir/dft.cpp.o" "gcc" "CMakeFiles/Tests.dir/dft.cpp.o.d"
   "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/fft.cpp" "CMakeFiles/Tests.dir/fft.cpp.o" "gcc" "CMakeFiles/Tests.dir/fft.cpp.o.d"
   "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.cpp" "CMakeFiles/Tests.dir/goertzel.cpp.o" "gcc" "CMakeFiles/Tests.dir/goertzel.cpp.o.d"
+  "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.cpp" "CMakeFiles/Tests.dir/magnitudeanalysis.cpp.o" "gcc" "CMakeFiles/Tests.dir/magnitudeanalysis.cpp.o.d"
   "/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/main.cpp" "CMakeFiles/Tests.dir/main.cpp.o" "gcc" "CMakeFiles/Tests.dir/main.cpp.o.d"
   )
 

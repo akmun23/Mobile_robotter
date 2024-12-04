@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Tests.dir/fft.cpp.o.d"
   "CMakeFiles/Tests.dir/goertzel.cpp.o"
   "CMakeFiles/Tests.dir/goertzel.cpp.o.d"
+  "CMakeFiles/Tests.dir/magnitudeanalysis.cpp.o"
+  "CMakeFiles/Tests.dir/magnitudeanalysis.cpp.o.d"
   "CMakeFiles/Tests.dir/main.cpp.o"
   "CMakeFiles/Tests.dir/main.cpp.o.d"
   "Tests"

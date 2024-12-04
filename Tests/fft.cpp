@@ -1,33 +1,13 @@
 #include "fft.h"
 #include <fstream>
 #include <iostream>
-#include <unordered_map>
-#include <iterator>
-#include <algorithm>
-
-std::chrono::high_resolution_clock::time_point clockStartMessageFFT;
-std::chrono::high_resolution_clock::time_point clockStartToneFFT;
-std::vector<char> MessageFFT;
-bool LetterReceivedFFT = false;
-bool startOfMessageReceivedFFT = false;
-
-double TimeToProcessChunkFFT = 0.00033*4;
-double timeToSendMessageFFT = TimeToProcessChunkFFT*7;
-std::chrono::high_resolution_clock::time_point TimeForEntireSequenceStartFFT;
-std::chrono::high_resolution_clock::time_point TimeForChunkStartFFT;
-std::chrono::high_resolution_clock::time_point TimeForCalculationStartFFT;
-double TimeSumChunkFFT = 0;
-double TimeSumCalculationFFT = 0;
-int countFFT = 0;
-double calcTimeMaxFFT = 0;
-double calcTimeMinFFT = 0;
+#include <unistd.h>
 
 
 // Constructor for FFTProcessing class
 // Initializes member variables
-FFTProcessing::FFTProcessing(int minMagnitude, const std::vector<int>& dtmfRowFrequencies, const std::vector<int>& dtmfColumnFrequencies, int frequencyTolerance)
-    : minMagnitude(minMagnitude), dtmfRowFrequencies(dtmfRowFrequencies), dtmfColumnFrequencies(dtmfColumnFrequencies), frequencyTolerance(frequencyTolerance),
-    timeToReadTone(0.000234 * 4), timeToSendMessage(0.000234 * 4 * 7), letterReceived(false), startOfMessageReceived(false) {}
+FFTProcessing::FFTProcessing(int minMagnitude, double timeToReadTone, int frequencyTolerance)
+: MagnitudeAnalysis(minMagnitude, timeToReadTone), _minMagnitude(minMagnitude), _frequencyTolerance(frequencyTolerance) {}
 
 // Function to reverse bits for FFT
 unsigned int FFTProcessing::bitReverse(unsigned int x, int log2n) {
@@ -42,6 +22,7 @@ unsigned int FFTProcessing::bitReverse(unsigned int x, int log2n) {
 
 // Function to perform FFT
 std::vector<std::complex<double>> FFTProcessing::fft(const std::vector<std::complex<double>>& input, int log2n) {
+    _TimeForCalculationStartFFT = std::chrono::high_resolution_clock::now();
     int n = 1 << log2n;
     std::vector<std::complex<double>> a(n);
     // Rearrange input array elements in bit-reversed order
@@ -63,42 +44,53 @@ std::vector<std::complex<double>> FFTProcessing::fft(const std::vector<std::comp
             }
         }
     }
+
+
+    double calcTime = timePassed(_TimeForCalculationStartFFT);
+    _TimeSumCalculationFFT += calcTime;
+    if (calcTime > _calcTimeMaxFFT) {
+        _calcTimeMaxFFT = calcTime;
+    }
+    if (_calcTimeMinFFT == 0 || calcTime < _calcTimeMinFFT) {
+        _calcTimeMinFFT = calcTime;
+    }
+    usleep(200000);
     return a;
 }
 
 // Function to read DTMF data from file in chunks
-std::vector<double> FFTProcessing::readDTMFDataFFT(std::ifstream &file, int sampleRate) {
+std::vector<double> FFTProcessing::readDTMFData(std::ifstream& inFile, int bufferSize) {
     std::vector<double> signal;
+    signal.resize(bufferSize);
+    double value;
+    for (int i = 0; i < bufferSize; ++i) {
 
-    double x;
-
-    while (file >> x) {
-        signal.push_back(x);
+        if(inFile >> value){
+            signal[i] = value;
+        }else {
+            signal.resize(i);
+            break;
+        }
     }
-
     return signal;
 }
+
 
 // Function to find dominant frequencies in FFT result
 std::vector<double> FFTProcessing::findDominantFrequencies(const std::vector<std::complex<double>>& fftResult, int sampleRate) {
     std::unordered_map<int, double> freqMagMap;
 
-    int N = fftResult.size();
-    std::vector<double> dominantFreqs;
+    std::vector<int> Tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
+    std::vector<double> TonesMaxMag = {0, 0, 0, 0, 0, 0, 0, 0};
     std::vector<double> magnitudes;
 
-    // Define the frequency bounds for DTMF tones
-    std::vector<std::pair<double, double>> dtmfBounds = {
-        {687, 707}, {760, 780}, {842, 862}, {931, 951},
-        {1199, 1219}, {1326, 1346}, {1467, 1487}, {1623, 1643}
-    };
-
+    int N = fftResult.size();
     for (int i = 0; i < N / 2; ++i) {
         double frequency = i * sampleRate / N;
         bool withinBounds = false;
 
-        for (auto& bounds : dtmfBounds) {
-            if (frequency >= bounds.first && frequency <= bounds.second) {
+        for (int ii = 0; ii < Tones.size(); ++ii) {
+            if((frequency >= (Tones[ii]-_frequencyTolerance)) && (frequency <= (Tones[ii]+_frequencyTolerance))){
                 withinBounds = true;
                 break;
             }
@@ -111,410 +103,71 @@ std::vector<double> FFTProcessing::findDominantFrequencies(const std::vector<std
         }
     }
 
-    // Sort magnitudes and get top two frequencies
-
-    double maxRowMagnitude = 0;
-    double maxRowIndex = 0;
-    double maxColMagnitude = 0;
-    double maxColIndex = 0;
-
     for (int i = 0; i < magnitudes.size(); ++i) {
 
-        if(i* sampleRate / N < 1000){
-            if(magnitudes[i] > maxRowMagnitude && magnitudes[i] > 3){
-                maxRowMagnitude = magnitudes[i];
-                maxRowIndex = i;
-            }
-        }else if(i * sampleRate / N > 1150){
-            if(magnitudes[i] > maxColMagnitude && magnitudes[i] > 3){
-                maxColMagnitude = magnitudes[i];
-                maxColIndex = i;
-            }
-        }
-    }
+        double currentFreg = i * sampleRate / N;
 
-    dominantFreqs.push_back(maxRowIndex * sampleRate / N);
-    dominantFreqs.push_back(maxColIndex * sampleRate / N);
-
-    return dominantFreqs;
-
-}
-
-
-// Function to calculate elapsed time
-double FFTProcessing::timePassed(std::chrono::high_resolution_clock::time_point start) {
-    return std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
-}
-
-// Function to save detected DTMF signals and manage message state
-bool FFTProcessing::saveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn) {
-    if (rowMags[maxRow] > minMagnitude && columnMags[maxColumn] > minMagnitude && !letterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)) {
-        letterReceived = true;
-        // Save detected tone based on DTMF frequency mapping
-        if (maxRow == 0) {
-            if (maxColumn == 0) receivedSignal.push_back('1');
-            else if (maxColumn == 1) receivedSignal.push_back('2');
-            else if (maxColumn == 2) receivedSignal.push_back('3');
-            else if (maxColumn == 3) receivedSignal.push_back('A');
-        }
-        else if (maxRow == 1) {
-            if (maxColumn == 0) receivedSignal.push_back('4');
-            else if (maxColumn == 1) receivedSignal.push_back('5');
-            else if (maxColumn == 2) receivedSignal.push_back('6');
-            else if (maxColumn == 3) receivedSignal.push_back('B');
-        }
-        else if (maxRow == 2) {
-            if (maxColumn == 0) receivedSignal.push_back('7');
-            else if (maxColumn == 1) receivedSignal.push_back('8');
-            else if (maxColumn == 2) receivedSignal.push_back('9');
-            else if (maxColumn == 3) receivedSignal.push_back('C');
-        }
-        else if (maxRow == 3) {
-            if (maxColumn == 0) {
-                if (!startOfMessageReceived) {
-                    clockStartMessage = std::chrono::high_resolution_clock::now();
-                    clockStartTone = std::chrono::high_resolution_clock::now();
+        for (int ii = 0; ii < Tones.size(); ++ii) {
+            if((Tones[ii]-_frequencyTolerance) < currentFreg && currentFreg < (Tones[ii]+_frequencyTolerance)){
+                if(magnitudes[i] > TonesMaxMag[ii] && magnitudes[i] > _minMagnitude){
+                    TonesMaxMag[ii] = magnitudes[i];
                 }
-                startOfMessageReceived = true;
-                receivedSignal.push_back('*');
             }
-            else if (maxColumn == 1) receivedSignal.push_back('0');
-            else if (maxColumn == 2) receivedSignal.push_back('#');
-            else if (maxColumn == 3) receivedSignal.push_back('D');
         }
-        return true;
     }
-    else if (letterReceived && ((timePassed(clockStartTone) + timeToReadTone / 4) > timeToReadTone)) {
-        letterReceived = false;
-        clockStartTone = std::chrono::high_resolution_clock::now();
-    }
-    return false;
-}
+    return TonesMaxMag;
 
-void FFTProcessing::displayReceivedSignal() {
-    if (!receivedSignal.empty()) {
-        std::cout << "_____________\n";
-        for (char ch : receivedSignal) {
-            std::cout << ch;
-        }
-        std::cout << "\n_____________\n";
-    }
-    receivedSignal.clear();
-    startOfMessageReceived = false;
-    clockStartMessage = std::chrono::high_resolution_clock::now();
 }
 
 std::vector<double> FFTProcessing::processFile(std::ifstream& file, int sampleRate, int bufferSize) {
-    TimeForEntireSequenceStartFFT = std::chrono::high_resolution_clock::now();
-    std::string MessageDetected = "";
-    // Read DTMF data from file
-    int correctMessages = 0;
-    int incorrectMessages = 0;
-    int timedOutMessages = 0;
-    std::vector<double> data = readDTMFDataFFT(file, sampleRate);
-    if (data.empty()) {
-        std::cerr << "Error: No data read from file!" << std::endl;
-        return {};
-    }
+    _TimeForEntireSequenceStartFFT = std::chrono::high_resolution_clock::now();
     std::ofstream outputFileFFT;
     outputFileFFT.open("FFT_Test_Output.txt", std::ios_base::trunc); // The file is opened in append mode meaning that the data will be added to the end of the file
     outputFileFFT.close();
     outputFileFFT.open("FFT_Test_Output.txt", std::ios_base::app); // The file is opened in append mode meaning that the data will be added to the end of the file
     outputFileFFT << "New sequence of messages" << std::endl;
-    // Process the data in chunks of size 3000
-    int numChunks = (data.size() + bufferSize - 1) / bufferSize; // Round up to cover remaining samples if any
-    for (int chunk = 0; chunk < numChunks; ++chunk) {
+
+    while(true){
         std::chrono::high_resolution_clock::time_point TimeForChunkStartFFT = std::chrono::high_resolution_clock::now();
-        int startIndex = chunk * bufferSize;
-        int endIndex = std::min(startIndex + bufferSize, static_cast<int>(data.size()));
+        _data = readDTMFData(file, bufferSize);
+        if(_data.size() < bufferSize){
+            break;
+        }
+        std::vector<std::complex<double>> complexData;
+        for (int i = 0; i < _data.size(); ++i) {
+            complexData.push_back({ _data[i], 0.0 });
+        }
 
-
-        // Create a chunk of data to process
-        std::vector<std::complex<double>> chunkData(data.begin() + startIndex, data.begin() + endIndex);
 
         // Zero-padding to make the chunk size equal to the next power of two
-        int n = chunkData.size();
+        int n = complexData.size();
         int log2n = std::ceil(std::log2(n));    // Finds the lowest integer value to put to the power of 2 to get n or higher
         int paddedSize = 1 << log2n;            // Finds the 2^log2n value by bit shifting 1 by log2n
-        chunkData.resize(paddedSize, { 0.0, 0.0 }); // Zero pad if necessary
+        complexData.resize(paddedSize, { 0.0, 0.0 }); // Zero pad if necessary
 
 
         std::vector<std::complex<double>> fftResult(paddedSize);
 
         // Perform FFT on the chunk
-        TimeForCalculationStartFFT = std::chrono::high_resolution_clock::now();
-        fftResult = fft(chunkData, log2n);
-        TimeSumCalculationFFT += TimePassedFFT(TimeForCalculationStartFFT);
-
-        if (TimePassedFFT(TimeForChunkStartFFT) > calcTimeMaxFFT) {
-            calcTimeMaxFFT = TimePassedFFT(TimeForChunkStartFFT);
-        }
-        if (calcTimeMinFFT == 0 || TimePassedFFT(TimeForChunkStartFFT) < calcTimeMinFFT) {
-            calcTimeMinFFT = TimePassedFFT(TimeForChunkStartFFT);
-        }
+        fftResult = fft(complexData, log2n);
 
 
-        // Find dominant frequencies in the chunk
-        std::vector<double> dominantFrequencies = findDominantFrequencies(fftResult, sampleRate);
-        //Process DTMF Tones #NEW
-        char detectedTone = getDTMFCharacter(dominantFrequencies[0], dominantFrequencies[1]);
+        std::vector<double> dominantFrequencies = findDominantFrequencies(fftResult, sampleRate); // START HER DEN KAN IKKE FINDE HASHTAGS
+
+        analyseMagnitudes(dominantFrequencies);
+
+        checkMessageState(outputFileFFT, _correctMessages, _incorrectMessages, _TimeSumCalculationFFT, _messageCounter);
 
 
-        int state = 5;
-        std::pair<int,std::string> MessageAndState = ToneAndMessageHandling(detectedTone, MessageDetected);
-        state = MessageAndState.first;
-        MessageDetected = MessageAndState.second;
 
-        if(state == 1){
-            correctMessages++;
-            outputFileFFT << MessageDetected;
-            outputFileFFT << std::endl;
-            MessageDetected = "";
-        }else if(state == 2){
-            timedOutMessages++;
-            outputFileFFT << MessageDetected;
-            outputFileFFT << std::endl;
-            MessageDetected = "";
-        }else if(state == 3){
-            incorrectMessages++;
-            outputFileFFT << MessageDetected;
-            outputFileFFT << std::endl;
-            MessageDetected = "";
-        }
-        TimeSumChunkFFT += TimePassedFFT(TimeForChunkStartFFT);
-        TimeSumCalculationFFT += TimePassedFFT(TimeForCalculationStartFFT);
-        countFFT++;
+        _TimeSumChunkFFT += timePassed(TimeForChunkStartFFT);
+        _TimeSumCalculationFFT += timePassed(_TimeForCalculationStartFFT);
+        _countFFT++;
     }
-    /*
-    std::cout << "The average time for Chunk processing is " << (TimeSumChunkFFT/countFFT)*1000 << " ms." << std::endl;
-    std::cout << "The average time for Calculation processing is " << (TimeSumCalculationFFT/countFFT)*1000 << " ms." << std::endl;
-    std::cout << "The number of correct messages is: " << correctMessages << std::endl;
-    std::cout << "The number of incorrect messages is: " << incorrectMessages << std::endl;
-    std::cout << "The number of timed out messages is: " << timedOutMessages << std::endl;
-    std::cout << "The % of correct messages is: " << (100*correctMessages)/(correctMessages+incorrectMessages+timedOutMessages) << "%" <<std::endl;
-    */
     outputFileFFT.close();
-    double calculationTime = TimePassedFFT(TimeForEntireSequenceStartFFT);
-    return checkOutputFile("FFT_Test_Output.txt", calculationTime);
-}
+    _calculationTime = timePassed(_TimeForEntireSequenceStartFFT);
+    double avgCalcTime = _TimeSumCalculationFFT/_countFFT;
 
-
-
-//Function to get Correct DTMF Char
-char FFTProcessing::getDTMFCharacter(double rowFreq, double colFreq){
-    {
-
-        if( 687 <= rowFreq && rowFreq <= 707 ){
-            if(1199 <= colFreq && colFreq <= 1219){
-                return '1';
-            }else if(1326 <= colFreq && colFreq <= 1346){
-                return '2';
-            }else if(1467 <= colFreq && colFreq <= 1487){
-                return '3';
-            }else if(1623 <= colFreq && colFreq <= 1643){
-                return 'A';
-            }
-        }else if(760 <= rowFreq && rowFreq <= 780){
-            if(1199 <= colFreq && colFreq <= 1219){
-                return '4';
-            }else if(1326 <= colFreq && colFreq <= 1346){
-                return '5';
-            }else if(1467 <= colFreq && colFreq <= 1487){
-                return '6';
-            }else if(1623 <= colFreq && colFreq <= 1643){
-                return 'B';
-            }
-        }else if(842 <= rowFreq && rowFreq <= 862){
-            if(1199 <= colFreq && colFreq <= 1219){
-                return '7';
-            }else if(1326 <= colFreq && colFreq <= 1346){
-                return '8';
-            }else if(1467 <= colFreq && colFreq <= 1487){
-                return '9';
-            }else if(1623 <= colFreq && colFreq <= 1643){
-                return 'C';
-            }
-        }else if(931 <= rowFreq && rowFreq <= 951){
-
-            if(1199 <= colFreq && colFreq <= 1219){
-                if(!startOfMessageReceivedFFT){
-                    clockStartMessageFFT = std::chrono::high_resolution_clock::now();
-                    clockStartToneFFT = std::chrono::high_resolution_clock::now();
-                }
-                startOfMessageReceivedFFT = true;
-                return '*';
-            }else if(1326 <= colFreq && colFreq <= 1346){
-                return '0';
-            }else if(1467 <= colFreq && colFreq <= 1487){
-                return '#';
-            }else if(1623 <= colFreq && colFreq <= 1643){
-                return 'D';
-            }
-        }
-        return ' ';
-    }
-}
-
-double FFTProcessing::TimePassedFFT(std::chrono::high_resolution_clock::time_point start){
-    std::chrono::duration<double> elapsedTimeMessageFFT;
-    elapsedTimeMessageFFT = std::chrono::high_resolution_clock::now() - start;
-
-    return elapsedTimeMessageFFT.count();
-}
-
-//Functionto find DTMF message #NEW
-// The output int equals state of the message
-// 0 - Message not done
-// 1 - Message done
-// 2 - Message timed out
-// 3 - Message wrong format
-std::pair<int, std::string> FFTProcessing::ToneAndMessageHandling(char detectedTone, std::string Message){
-    if(!LetterReceivedFFT && (detectedTone == '*' || startOfMessageReceivedFFT)){
-        LetterReceivedFFT = true;
-        if(detectedTone != ' '){
-            Message += detectedTone;
-        }
-
-        if(((TimePassedFFT(clockStartMessageFFT)) > timeToSendMessageFFT)  && (Message.size() < 6) && (Message.size() > 0)){
-
-            startOfMessageReceivedFFT = false;
-            clockStartMessageFFT = std::chrono::high_resolution_clock::now();
-            return {2, Message};
-
-        }else if(Message.size() == 6){
-            if((Message[0] == '*' && Message[5] == '#') && (TimePassedFFT(clockStartMessageFFT) < timeToSendMessageFFT)){
-                startOfMessageReceivedFFT = false;
-                clockStartMessageFFT = std::chrono::high_resolution_clock::now();
-                return {1, Message};
-            }else{
-                startOfMessageReceivedFFT = false;
-                clockStartMessageFFT = std::chrono::high_resolution_clock::now();
-                return {3, Message};
-            }
-        }
-    }else if(LetterReceivedFFT && ((TimePassedFFT(clockStartToneFFT)+TimeToProcessChunkFFT/4) > TimeToProcessChunkFFT)){
-        LetterReceivedFFT = false;
-        clockStartToneFFT = std::chrono::high_resolution_clock::now();
-    }
-
-    return {0, Message};
-}
-
-
-
-
-std::vector<double> FFTProcessing::checkOutputFile(std::string filename, double calculationTime){
-
-
-    std::ofstream checkedOutputFile;
-    std::ifstream fileToBeChecked;
-    checkedOutputFile.open("Checked_Output_FFT.txt", std::ios_base::trunc);
-    checkedOutputFile.close();
-
-    checkedOutputFile.open("Checked_Output_FFT.txt", std::ios_base::app);
-    fileToBeChecked.open(filename);
-    if (!fileToBeChecked) {
-        std::cerr << "Unable to open file " << filename << std::endl;
-        return {};
-    }
-    std::string line;
-
-    int messageCounter = 1;
-    int correct = 0;
-    int incorrectMessage = 0;
-    int incorrectFormat = 0;
-    while (std::getline(fileToBeChecked, line)) {
-        if(line == "*15C2#"){
-            correct++;
-            checkedOutputFile << "Message " << messageCounter << std::endl;
-            checkedOutputFile << "Message Correct Format and correct message" << std::endl;
-            checkedOutputFile << line << std::endl;
-            checkedOutputFile <<"----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-
-            messageCounter++;
-        }else if(line == "*17BC#"){
-            correct++;
-            checkedOutputFile << "Message " << messageCounter << std::endl;
-            checkedOutputFile << "Message Correct Format and correct message" << std::endl;
-            checkedOutputFile << line << std::endl;
-            checkedOutputFile <<"----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-            messageCounter++;
-        }else if(line == "*91AD#"){
-            correct++;
-            checkedOutputFile << "Message " << messageCounter << std::endl;
-            checkedOutputFile << "Message Correct Format and correct message" << std::endl;
-            checkedOutputFile << line << std::endl;
-            checkedOutputFile <<"----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-            messageCounter++;
-        }else if(line == "*7462#"){
-            correct++;
-            checkedOutputFile << "Message " << messageCounter << std::endl;
-            checkedOutputFile << "Message Correct Format and correct message" << std::endl;
-            checkedOutputFile << line << std::endl;
-            checkedOutputFile <<"----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-            messageCounter++;
-        }else if(line == "*1379#"){
-            correct++;
-            checkedOutputFile << "Message " << messageCounter << std::endl;
-            checkedOutputFile << "Message Correct Format and correct message" << std::endl;
-            checkedOutputFile << line << std::endl;
-            checkedOutputFile <<"----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-            messageCounter++;
-        }else if(line == "New sequence of messages"){
-            checkedOutputFile << "----------------------------------------------" << std::endl;
-            checkedOutputFile << "New sequence of messages" << std::endl;
-            checkedOutputFile << "----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-        }else if(line[0] == '*' && line[5] == '#'){
-            incorrectMessage++;
-            checkedOutputFile << "Message " << messageCounter << std::endl;
-            checkedOutputFile << "Message Correct Format but incorrect message" << std::endl;
-            checkedOutputFile << line << std::endl;
-            checkedOutputFile <<"----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-            messageCounter++;
-        }else{
-            incorrectFormat++;
-            checkedOutputFile << "Message " << messageCounter << std::endl;
-            checkedOutputFile << "Message Incorrect Format" << std::endl;
-            checkedOutputFile << line << std::endl;
-            checkedOutputFile <<"----------------------------------------------" << std::endl;
-            checkedOutputFile << std::endl;
-            messageCounter++;
-        }
-    }
-    checkedOutputFile << std::endl;
-    checkedOutputFile << "----------------------------------------------" << std::endl;
-    checkedOutputFile << "Correct Messages: " << correct << std::endl;
-    checkedOutputFile << "Incorrect Messages: " << incorrectMessage << std::endl;
-    checkedOutputFile << "Incorrect Format Messages: " << incorrectFormat << std::endl;
-    checkedOutputFile << "Total Messages: " << (messageCounter-1) << std::endl;
-    checkedOutputFile << "Correct format percentage: " << ((correct+incorrectMessage)*100)/(messageCounter-1) << "%" << std::endl;
-    checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
-    checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime * 1000 << " ms."<< std::endl;
-    checkedOutputFile << "Average time taken to calculate Buffer: " << (TimeSumCalculationFFT/countFFT)*1000 << " ms." << std::endl;
-    checkedOutputFile << "Max time taken to calculate Buffer: " << calcTimeMaxFFT * 1000 << " ms." << std::endl;
-    checkedOutputFile << "Min time taken to calculate Buffer: " << calcTimeMinFFT * 1000 << " ms." << std::endl;
-    checkedOutputFile << "----------------------------------------------" << std::endl;
-
-    fileToBeChecked.close();
-    checkedOutputFile.close();
-
-    std::vector<double> outputData;
-    outputData.push_back(correct);
-    outputData.push_back(incorrectMessage);
-    outputData.push_back(incorrectFormat);
-    outputData.push_back(messageCounter-1);
-    outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
-    outputData.push_back((correct)*100/(messageCounter-1));
-    outputData.push_back((TimeSumCalculationFFT/countFFT)*1000);
-    outputData.push_back(calcTimeMaxFFT*1000);
-    outputData.push_back(calcTimeMinFFT*1000);
-    return outputData;
+    return checkOutputFile("FFT_Test_Output.txt", _calculationTime, "Checked_Output_FFT.txt", avgCalcTime, _calcTimeMaxFFT, _calcTimeMinFFT);
 }
 
