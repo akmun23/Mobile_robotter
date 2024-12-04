@@ -4,8 +4,8 @@
 
 GUI::GUI(){
     //Setting variables
-    emptySize = Size(5,5);
-    wallSize = Size(5,5);
+    emptySize = Size(1,1);
+    wallSize = Size(8,8);
     robotSize = Size(15 * scale_factor / 100, 10 * scale_factor / 100);
 
     //Create display
@@ -25,6 +25,8 @@ GUI::GUI(){
     gcWall = XCreateGC(display, window, 0, NULL);
     gcEmpty = XCreateGC(display, window, 0, NULL);
     gcRobot = XCreateGC(display, window, 0, NULL);
+    gcRed = XCreateGC(display, window, 0, NULL);
+    gcGreen = XCreateGC(display, window, 0, NULL);
 
     //Color
     Colormap colorMap = DefaultColormap(display, screen);
@@ -69,43 +71,40 @@ int GUI::squareOccupy(int x_, int y_){
 }
 
 void GUI::lidarReading(float angle, float len, float yaw){
-    int x_com, y_com;
-    float rotated_angle = angle + yaw;
-    double local_x = len * cos(rotated_angle) * scale_factor;
-    double local_y = len * sin(rotated_angle) * scale_factor;
+    float x_com, y_com;
 
-    x_com = local_x;
-    y_com = local_y;
+    double rotated_angle = angle + yaw;
 
-    for(std::size_t i = 0; i < wallFrags.size(); i++){
-        // Generate wallrobot.y +
-        if(wallFrags[i].contains(robot.x + x_com, robot.y + y_com)){
-            break;
-        }
-        else if((i == (wallFrags.size() - 1))){
-            wallFrags.push_back(Wall(Point(robot.x + x_com, robot.y + y_com), wallSize, Wall::typeWall)); 
-            break;
-        }
+    x_com = len * cos(rotated_angle) * scale_factor;
+    y_com = len * sin(rotated_angle) * scale_factor;
+
+    if(spaceFree(robot.x + x_com, robot.y + y_com)){ //if there is no wall drawn at the detected point, create a new wall.
+        wallFrags.push_back(Wall(Point(robot.x + x_com, robot.y + y_com), wallSize, Wall::typeWall));
     }
 
     // Check if wallFrags has more than 1000 entries and remove until it is below:
+    /*
     while(wallFrags.size() > 600){
         wallFrags.erase(wallFrags.begin());
     }
+    */
 }
 
 void GUI::movementRobot(float robot_x, float robot_y){
     // Update robot position to global coordinates
-    robot.x = robot.start_x + robot_y * scale_factor;
-    robot.y = robot.start_y + robot_x * scale_factor;
-    robot.pointsXAxis[0].x = robot.x - robot.size.width/2;
-    robot.pointsXAxis[0].y = robot.y - robot.size.height/2;
-    robot.pointsXAxis[1].x = robot.x - robot.size.width/2;
-    robot.pointsXAxis[1].y = robot.y + robot.size.height/2;
-    robot.pointsXAxis[2].x = robot.x + robot.size.width/2;
-    robot.pointsXAxis[2].y = robot.y + robot.size.height/2;
-    robot.pointsXAxis[3].x = robot.x + robot.size.width/2;
-    robot.pointsXAxis[3].y = robot.y - robot.size.height/2;
+    double x_com = robot.x - (robot.start_x + robot_x * scale_factor);
+    double y_com = robot.y - (robot.start_y + robot_y * scale_factor);
+
+    robot.x = robot.start_x + robot_x * scale_factor;
+    robot.y = robot.start_y + robot_y * scale_factor;
+    robot.update();
+
+
+    for(size_t i = 0; i < wallFrags.size(); i++){
+        wallFrags[i].x -= x_com;
+        wallFrags[i].y -= y_com;
+    }
+
 }
 
 void GUI::rescale() {
@@ -140,24 +139,71 @@ void GUI::paintMap(){
     }
 }
 
-void GUI::paintRobot(float yaw) {
-    robot.rotatePoint(yaw); // Ensure rotation is applied before drawing
+void GUI::findPoints(vector<Point>& points, Point p1, Point p2, bool TF){
+    if(TF){
+        points.clear();
+    }
+
+    points.push_back(p1);
+
+    int dx = p2.x - p1.x;
+    int dy = p2.y - p1.y;
+    int dist = sqrt(((p2.x - p1.x)*(p2.x - p1.x)) + ((p2.y - p1.y)*(p2.y - p1.y)));
+
+    for(int i = 1; i < (dist/4); i++){
+        points.push_back(Point(p1.x + (dx * i)/(dist/4), p1.y + (dy * i)/(dist/4)));
+    }
+}
+
+void GUI::drawRect(Point vertices[4], GC gc){ //Assumes the square is rectangular (corner angles = 90 deg), but can be rotated.
+
     for(int i = 0; i < 4; i++){
+
         if(i < 3){
-            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[i+1].x, robot.pointsXAxis[i+1].y);
+            XDrawLine(display, window, gcRobot, robot.locRobot[i].x, robot.locRobot[i].y, robot.locRobot[i+1].x, robot.locRobot[i+1].y);
+            XDrawLine(display, window, gcRed, robot.orientXRobot[i].x, robot.orientXRobot[i].y, robot.orientXRobot[i+1].x, robot.orientXRobot[i+1].y);
+            XDrawLine(display, window, gcGreen, robot.orientYRobot[i].x, robot.orientYRobot[i].y, robot.orientYRobot[i+1].x, robot.orientYRobot[i+1].y);
         }
         else{
-            XDrawLine(display, window, gcRobot, robot.pointsXAxis[i].x, robot.pointsXAxis[i].y, robot.pointsXAxis[0].x, robot.pointsXAxis[0].y);
+            XDrawLine(display, window, gcRobot, robot.locRobot[i].x, robot.locRobot[i].y, robot.locRobot[0].x, robot.locRobot[0].y);
+            XDrawLine(display, window, gcRed, robot.orientXRobot[i].x, robot.orientXRobot[i].y, robot.orientXRobot[0].x, robot.orientXRobot[0].y);
+            XDrawLine(display, window, gcGreen, robot.orientYRobot[i].x, robot.orientYRobot[i].y, robot.orientYRobot[0].x, robot.orientYRobot[0].y);
         }
     }
+
+    vector<Point> pointsStart;
+    vector<Point> pointsEnd;
+
+    findPoints(pointsStart, vertices[0], vertices[3]);
+    findPoints(pointsEnd, vertices[1], vertices[2]);
+
+    for(size_t i = 0; i < pointsStart.size(); i++){
+        XDrawLine(display, window, gcGreen, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
+    }
+
+    findPoints(pointsStart, vertices[0], vertices[1]);
+    findPoints(pointsEnd, vertices[3], vertices[2]);
+
+    for(size_t i = 0; i < pointsStart.size(); i++){
+        XDrawLine(display, window, gc, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
+    }
+}
+
+void GUI::paintRobot(float yaw) {
+    robot.rotate(yaw); // Ensure rotation is applied before drawing
+
+    drawRect(robot.locRobot, gcRobot);
+    drawRect(robot.orientXRobot, gcRed);
+    drawRect(robot.orientYRobot, gcGreen);
+
     XPutBackEvent(display, &event);
 }
 
 void GUI::update(bool& update, float angle, float len, float robot_x, float robot_y, float robot_yaw){
     paintRobot(robot_yaw);
-    movementRobot(robot_x, robot_y); // Ensure robot position is updated
+    movementRobot(robot_x, robot_y);
     lidarReading(angle, len, robot_yaw);
-    paintMap(); //First detected walls gets drawn over, because of the hierachy of the vector. Squares should maybe also be constructed through a middle point, and not top left
+    paintMap();
 
     if(XPending(display) > 0){
         XNextEvent(display, &event);

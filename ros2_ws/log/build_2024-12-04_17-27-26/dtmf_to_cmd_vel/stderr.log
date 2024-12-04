@@ -1,0 +1,24 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp: In static member function ‘static int Goertzel::streamCallback(const void*, void*, long unsigned int, const PaStreamCallbackTimeInfo*, PaStreamCallbackFlags, void*)’:
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:124:36: warning: unused parameter ‘outputBuffer’ [-Wunused-parameter]
+  124 |     const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+      |                              ~~~~~~^~~~~~~~~~~~
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:124:64: warning: unused parameter ‘framesPerBuffer’ [-Wunused-parameter]
+  124 |     const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+      |                                                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:125:37: warning: unused parameter ‘timeInfo’ [-Wunused-parameter]
+  125 |     const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:125:69: warning: unused parameter ‘statusFlags’ [-Wunused-parameter]
+  125 |     const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+      |                                               ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/audio.cpp:126:11: warning: unused parameter ‘userData’ [-Wunused-parameter]
+  126 |     void* userData
+      |     ~~~~~~^~~~~~~~
+In file included from /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/main.cpp:2:
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:31:28: warning: ‘spectroData’ defined but not used [-Wunused-variable]
+   31 | static streamCallbackData* spectroData;
+      |                            ^~~~~~~~~~~
+In file included from /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/src/dtmf_to_cmd_vel_node.cpp:2:
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/dtmf_to_cmd_vel/include/audio.h:31:28: warning: ‘spectroData’ defined but not used [-Wunused-variable]
+   31 | static streamCallbackData* spectroData;
+      |                            ^~~~~~~~~~~

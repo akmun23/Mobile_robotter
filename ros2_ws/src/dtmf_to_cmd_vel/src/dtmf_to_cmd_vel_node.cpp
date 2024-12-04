@@ -23,12 +23,14 @@ void DtmfToCmdVelNode::publishTwistMessage(int speed, int direction) {
 }
 
 void DtmfToCmdVelNode::publishTwistMessage(bool error){
-	auto twistMsg = geometry_msgs::msg::Twist();
-	twistMsg.linear.x = 0;
+  if(error){
+    auto twistMsg = geometry_msgs::msg::Twist();
+    twistMsg.linear.x = 0;
     twistMsg.angular.z = 0;
     _publisher->publish(twistMsg);
     printf("Error received. Robot stopped \n");
-    fflush(stdout);   
+    fflush(stdout);
+  }
 }
 
 

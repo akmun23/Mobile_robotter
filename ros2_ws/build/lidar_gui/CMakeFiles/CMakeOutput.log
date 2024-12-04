@@ -15,10 +15,10 @@ The CXX compiler identification is GNU, found in "/home/aksel/Documents/GitHub/M
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b2a74/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b2a74.dir/build.make CMakeFiles/cmTC_b2a74.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6e447/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6e447.dir/build.make CMakeFiles/cmTC_6e447.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++   -v -o CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+Building CXX object CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -28,8 +28,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b2a74.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b2a74.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJ2tg8f.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6e447.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_6e447.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccgwhNGK.s
 GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -53,15 +53,15 @@ GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b2a74.dir/'
- as -v --64 -o CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJ2tg8f.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6e447.dir/'
+ as -v --64 -o CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccgwhNGK.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.'
-Linking CXX executable cmTC_b2a74
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2a74.dir/link.txt --verbose=1
-/usr/bin/c++  -v CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b2a74 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_6e447
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e447.dir/link.txt --verbose=1
+/usr/bin/c++  -v CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_6e447 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -74,9 +74,9 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b2a74' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b2a74.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMb0xuM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b2a74 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b2a74' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b2a74.'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6e447' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6e447.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccikr1L5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_6e447 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6e447' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6e447.'
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -106,10 +106,10 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b2a74/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b2a74.dir/build.make CMakeFiles/cmTC_b2a74.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6e447/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6e447.dir/build.make CMakeFiles/cmTC_6e447.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Building CXX object CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -119,8 +119,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b2a74.dir/']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b2a74.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJ2tg8f.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6e447.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_6e447.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccgwhNGK.s]
   ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04) version 11.4.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -144,15 +144,15 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: d591828bb4d392ae8b7b160e5bb0b95f]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b2a74.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJ2tg8f.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6e447.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccgwhNGK.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.']
-  ignore line: [Linking CXX executable cmTC_b2a74]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2a74.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b2a74 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_6e447]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e447.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_6e447 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -165,13 +165,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b2a74' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b2a74.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMb0xuM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b2a74 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6e447' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6e447.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccikr1L5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_6e447 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccMb0xuM.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccikr1L5.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -189,7 +189,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_b2a74] ==> ignore
+    arg [cmTC_6e447] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -203,7 +203,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_b2a74.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_6e447.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -235,13 +235,13 @@ Parsed CXX implicit link information from above output:
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_511d3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_511d3.dir/build.make CMakeFiles/cmTC_511d3.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_decbc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_decbc.dir/build.make CMakeFiles/cmTC_decbc.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_511d3.dir/CheckIncludeFile.cxx.o
-/usr/bin/c++    -o CMakeFiles/cmTC_511d3.dir/CheckIncludeFile.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
-Linking CXX executable cmTC_511d3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_511d3.dir/link.txt --verbose=1
-/usr/bin/c++ CMakeFiles/cmTC_511d3.dir/CheckIncludeFile.cxx.o -o cmTC_511d3 
+Building CXX object CMakeFiles/cmTC_decbc.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++    -o CMakeFiles/cmTC_decbc.dir/CheckIncludeFile.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+Linking CXX executable cmTC_decbc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_decbc.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_decbc.dir/CheckIncludeFile.cxx.o -o cmTC_decbc 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -249,13 +249,13 @@ gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_w
 Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_999e9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_999e9.dir/build.make CMakeFiles/cmTC_999e9.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_902b4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_902b4.dir/build.make CMakeFiles/cmTC_902b4.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_999e9.dir/src.cxx.o
-/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_999e9.dir/src.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_999e9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_999e9.dir/link.txt --verbose=1
-/usr/bin/c++ CMakeFiles/cmTC_999e9.dir/src.cxx.o -o cmTC_999e9 
+Building CXX object CMakeFiles/cmTC_902b4.dir/src.cxx.o
+/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_902b4.dir/src.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_902b4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_902b4.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_902b4.dir/src.cxx.o -o cmTC_902b4 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -283,13 +283,13 @@ int main(void)
 Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8958d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8958d.dir/build.make CMakeFiles/cmTC_8958d.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_79e25/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_79e25.dir/build.make CMakeFiles/cmTC_79e25.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8958d.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_8958d.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_8958d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8958d.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_8958d.dir/CheckFunctionExists.cxx.o -o cmTC_8958d  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+Building CXX object CMakeFiles/cmTC_79e25.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_79e25.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_79e25
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79e25.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_79e25.dir/CheckFunctionExists.cxx.o -o cmTC_79e25  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -297,13 +297,13 @@ gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_w
 Determining if the function gethostbyname exists passed with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3a753/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3a753.dir/build.make CMakeFiles/cmTC_3a753.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5c7a1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5c7a1.dir/build.make CMakeFiles/cmTC_5c7a1.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3a753.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_3a753.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_3a753
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a753.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_3a753.dir/CheckFunctionExists.cxx.o -o cmTC_3a753 
+Building CXX object CMakeFiles/cmTC_5c7a1.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_5c7a1.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_5c7a1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c7a1.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_5c7a1.dir/CheckFunctionExists.cxx.o -o cmTC_5c7a1 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -311,13 +311,13 @@ gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_w
 Determining if the function connect exists passed with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_aa292/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aa292.dir/build.make CMakeFiles/cmTC_aa292.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_06963/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_06963.dir/build.make CMakeFiles/cmTC_06963.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_aa292.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_aa292.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_aa292
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa292.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_aa292.dir/CheckFunctionExists.cxx.o -o cmTC_aa292 
+Building CXX object CMakeFiles/cmTC_06963.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_06963.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_06963
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06963.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_06963.dir/CheckFunctionExists.cxx.o -o cmTC_06963 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -325,13 +325,13 @@ gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_w
 Determining if the function remove exists passed with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_23298/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_23298.dir/build.make CMakeFiles/cmTC_23298.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1ce8b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1ce8b.dir/build.make CMakeFiles/cmTC_1ce8b.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_23298.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_23298.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_23298
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23298.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_23298.dir/CheckFunctionExists.cxx.o -o cmTC_23298 
+Building CXX object CMakeFiles/cmTC_1ce8b.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_1ce8b.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_1ce8b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ce8b.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_1ce8b.dir/CheckFunctionExists.cxx.o -o cmTC_1ce8b 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -339,13 +339,13 @@ gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_w
 Determining if the function shmat exists passed with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e73df/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e73df.dir/build.make CMakeFiles/cmTC_e73df.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b559a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b559a.dir/build.make CMakeFiles/cmTC_b559a.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e73df.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_e73df.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_e73df
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e73df.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_e73df.dir/CheckFunctionExists.cxx.o -o cmTC_e73df 
+Building CXX object CMakeFiles/cmTC_b559a.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_b559a.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckFunctionExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_b559a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b559a.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_b559a.dir/CheckFunctionExists.cxx.o -o cmTC_b559a 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
@@ -353,14 +353,48 @@ gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_w
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
 Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f344a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f344a.dir/build.make CMakeFiles/cmTC_f344a.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_275cd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_275cd.dir/build.make CMakeFiles/cmTC_275cd.dir/build
 gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f344a.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_f344a.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_f344a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f344a.dir/link.txt --verbose=1
-/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_f344a.dir/CheckFunctionExists.cxx.o -o cmTC_f344a  -lICE 
+Building CXX object CMakeFiles/cmTC_275cd.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_275cd.dir/CheckFunctionExists.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_275cd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_275cd.dir/link.txt --verbose=1
+/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_275cd.dir/CheckFunctionExists.cxx.o -o cmTC_275cd  -lICE 
 gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
 
 
 
+Performing C++ SOURCE FILE Test HAVE_STDATOMIC succeeded with the following output:
+Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9f8b8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9f8b8.dir/build.make CMakeFiles/cmTC_9f8b8.dir/build
+gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9f8b8.dir/src.cxx.o
+/usr/bin/c++ -DHAVE_STDATOMIC   -o CMakeFiles/cmTC_9f8b8.dir/src.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_9f8b8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f8b8.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_9f8b8.dir/src.cxx.o -o cmTC_9f8b8 
+gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <atomic>
+#include <cstdint>
+
+void test(volatile std::atomic<std::int64_t> &a)
+{
+    std::int64_t v = a.load(std::memory_order_acquire);
+    while (!a.compare_exchange_strong(v, v + 1,
+                                      std::memory_order_acq_rel,
+                                      std::memory_order_acquire)) {
+        v = a.exchange(v - 1);
+    }
+    a.store(v + 1, std::memory_order_release);
+}
+
+int main(int, char **)
+{
+    void *ptr = (void*)0xffffffc0; // any random pointer
+    test(*reinterpret_cast<std::atomic<std::int64_t> *>(ptr));
+    return 0;
+}

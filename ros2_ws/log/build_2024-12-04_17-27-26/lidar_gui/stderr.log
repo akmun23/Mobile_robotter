@@ -1,0 +1,15 @@
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_dlopen_mode@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_current_sigrtmin_private@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_dlclose@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_siglongjmp@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_longjmp@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_allocate_rtsig_private@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_thread_freeres@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_dlsym@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_current_sigrtmax_private@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `__libc_pthread_init@GLIBC_PRIVATE'
+/usr/bin/ld: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined reference to `_dl_make_stack_executable@GLIBC_PRIVATE'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:249: lidar_gui] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

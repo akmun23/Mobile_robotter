@@ -19,6 +19,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(X11 REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
 
 include_directories(include)
 
@@ -39,7 +40,7 @@ ament_target_dependencies(lidar_gui
   nav_msgs
 )
 
-target_link_libraries(lidar_gui X11::X11)
+target_link_libraries(lidar_gui Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql X11::X11)
 
 # Install the executable to the appropriate directory
 install(TARGETS

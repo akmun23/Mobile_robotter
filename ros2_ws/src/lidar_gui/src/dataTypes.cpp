@@ -1,11 +1,6 @@
 #include "dataTypes.h"
 #include <iostream>
 
-Point::Point(int x_, int y_){
-    x = x_;
-    y = y_;
-}
-
 Point::Point(float x_, float y_){
     x = x_;
     y = y_;
@@ -23,27 +18,67 @@ Robot::Robot(Point p, Size size_){
     start_y = p.y;
 
     size = size_;
-    xAxis.width = size.width;
-    xAxis.height = size.height;
+}
 
-    pointsXAxis[0].x = x - size.width/2;
-    pointsXAxis[0].y = y - size.height/2;
-    pointsXAxis[1].x = x - size.width/2;
-    pointsXAxis[1].y = y + size.height/2;
-    pointsXAxis[2].x = x + size.width/2;
-    pointsXAxis[2].y = y + size.height/2;
-    pointsXAxis[3].x = x + size.width/2;
-    pointsXAxis[3].y = y - size.height/2;
+void Robot::update(){
+    //Robot location visual
+    locRobot[0].x = x - size.width/2;
+    locRobot[0].y = y - size.height/2;
+    locRobot[1].x = x + size.width/2;
+    locRobot[1].y = y - size.height/2;
+    locRobot[2].x = x + size.width/2;
+    locRobot[2].y = y + size.height/2;
+    locRobot[3].x = x - size.width/2;
+    locRobot[3].y = y + size.height/2;
+
+    //Robot X Orient Axis
+    orientXRobot[0].x = x + size.width/2;
+    orientXRobot[0].y = y - size.height/6;
+    orientXRobot[1].x = x + (2*size.width);
+    orientXRobot[1].y = y - size.height/6;
+    orientXRobot[2].x = x + (2*size.width);
+    orientXRobot[2].y = y + size.height/6;
+    orientXRobot[3].x = x + size.width/2;
+    orientXRobot[3].y = y + size.height/6;
+
+
+    //Robot Y Orient Axis
+    orientYRobot[0].x = x - size.width/6;
+    orientYRobot[0].y = y + size.height/2;
+    orientYRobot[1].x = x - size.width/6;
+    orientYRobot[1].y = y + (2*size.height);
+    orientYRobot[2].x = x + size.width/6;
+    orientYRobot[2].y = y + (2*size.height);
+    orientYRobot[3].x = x + size.width/6;
+    orientYRobot[3].y = y + size.height/2;
 }
 
 // Function to rotate a point around the center of the robot.
-void Robot::rotatePoint(double angle){
-    for (int i = 0; i < 4; i++) {
-        float temp_x = pointsXAxis[i].x - x;
-        float temp_y = pointsXAxis[i].y - y;
+void Robot::rotate(double angle_){
 
-        pointsXAxis[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
-        pointsXAxis[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
+    float temp_x = 0, temp_y = 0;
+
+    angle = angle_;
+
+    for(int i = 0; i < 4; i++){
+
+        temp_x = locRobot[i].x - x;
+        temp_y = locRobot[i].y - y;
+
+        locRobot[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
+        locRobot[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
+
+        temp_x = orientXRobot[i].x - x;
+        temp_y = orientXRobot[i].y - y;
+
+        orientXRobot[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
+        orientXRobot[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
+
+        temp_x = orientYRobot[i].x - x;
+        temp_y = orientYRobot[i].y - y;
+
+        orientYRobot[i].x = temp_x * cos(angle) - temp_y * sin(angle) + x;
+        orientYRobot[i].y = temp_x * sin(angle) + temp_y * cos(angle) + y;
     }
 }
 

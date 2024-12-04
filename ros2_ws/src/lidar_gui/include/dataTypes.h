@@ -12,8 +12,6 @@ struct Point{
 
     Point(){}
 
-    Point(int x_, int y_);
-
     Point(float x_, float y_);
 };
 
@@ -28,15 +26,16 @@ struct Size{
 
 //Robot
 struct Robot{
-    float x, y, start_x, start_y, orient;
+    double_t x, y, start_x, start_y, angle;
     Size size, xAxis;
-    Point pointsXAxis[4];
+    Point locRobot[4], orientXRobot[4], orientYRobot[4];
 
     Robot(){}
 
     Robot(Point p, Size size_);
 
-    void rotatePoint(double angle);
+    void rotate(double angle);
+    void update();
 };
 
 //Wall

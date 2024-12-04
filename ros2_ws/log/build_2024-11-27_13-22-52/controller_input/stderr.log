@@ -1,7 +1,0 @@
-[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K In constructor ‘[01m[KcontrollerInput::controllerInput()[m[K’:
-[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:14:27:[m[K [01;31m[Kerror: [m[K‘[01m[Ksound[m[K’ has not been declared
-   14 |         samples.push_back([01;31m[Ksound[m[K::SineWave(i, 200, 0.5));
-      |                           [01;31m[K^~~~~[m[K
-gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:90: CMakeFiles/controller_input.dir/src/controllerinput.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

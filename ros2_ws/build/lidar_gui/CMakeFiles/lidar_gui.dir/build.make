@@ -152,6 +152,8 @@ lidar_gui: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspection_c.s
 lidar_gui: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so
 lidar_gui: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so
 lidar_gui: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_py.so
+lidar_gui: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.2.4
+lidar_gui: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.2.4
 lidar_gui: /usr/lib/x86_64-linux-gnu/libX11.so
 lidar_gui: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so
 lidar_gui: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so
@@ -238,6 +240,10 @@ lidar_gui: /opt/ros/humble/lib/librcpputils.so
 lidar_gui: /opt/ros/humble/lib/librosidl_runtime_c.so
 lidar_gui: /opt/ros/humble/lib/librcutils.so
 lidar_gui: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+lidar_gui: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.2.4
+lidar_gui: /usr/lib/x86_64-linux-gnu/libGLX.so
+lidar_gui: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+lidar_gui: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.2.4
 lidar_gui: CMakeFiles/lidar_gui.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable lidar_gui"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lidar_gui.dir/link.txt --verbose=$(VERBOSE)

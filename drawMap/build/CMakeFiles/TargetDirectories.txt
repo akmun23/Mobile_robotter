@@ -1,0 +1,7 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/drawMap/build/CMakeFiles/drawMap.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/drawMap/build/CMakeFiles/edit_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/drawMap/build/CMakeFiles/rebuild_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/drawMap/build/CMakeFiles/list_install_components.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/drawMap/build/CMakeFiles/install.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/drawMap/build/CMakeFiles/install/local.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/drawMap/build/CMakeFiles/install/strip.dir

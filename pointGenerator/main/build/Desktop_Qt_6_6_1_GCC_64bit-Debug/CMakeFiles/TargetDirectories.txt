@@ -1,0 +1,7 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/pointGenerator/main/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/pointGenerator.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/pointGenerator/main/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/pointGenerator/main/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/pointGenerator/main/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/list_install_components.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/pointGenerator/main/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/install.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/pointGenerator/main/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/install/local.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/pointGenerator/main/build/Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/install/strip.dir
