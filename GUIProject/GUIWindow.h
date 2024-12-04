@@ -35,7 +35,6 @@ private:
 public:
     GUI();
     bool spaceFree(int x_, int y_);
-    int squareOccupy(int x_, int y_);
     void movementRobot(float angle, float intensity);
     void lidarReading(float angle, float len);
     void rescale();
