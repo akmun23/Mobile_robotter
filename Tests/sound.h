@@ -153,12 +153,10 @@ void RunSoundProgram() {
 
     for(int i = 0; i < 10; ++i){
         playSequence("*15C2#");
-        //playSequence("*17bc#");
-        //playSequence("*91ad#");
-        //playSequence("*7462#");
-        //playSequence("*1379#");
-
-
+        playSequence("*17bc#");
+        playSequence("*91ad#");
+        playSequence("*7462#");
+        playSequence("*1379#");
 
 
         //playSequence("*4032#");

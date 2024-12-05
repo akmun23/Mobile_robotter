@@ -3,6 +3,7 @@
 
 CMakeFiles/Tests.dir/audio.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.cpp \
   /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.h \
+  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -75,6 +76,7 @@ CMakeFiles/Tests.dir/audio.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter
   /usr/include/c++/13/bits/vector.tcc \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/chrono \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdint \
@@ -1656,12 +1658,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.cpp:
 
-/usr/include/string.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
-
-/usr/include/stdlib.h:
-
 /usr/include/pthread.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
@@ -1726,6 +1722,8 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/clocale:
 
+/usr/include/c++/13/chrono:
+
 /usr/include/SFML/Window/ContextSettings.hpp:
 
 /usr/include/c++/13/cerrno:
@@ -1776,25 +1774,9 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
 
-/usr/include/c++/13/ios:
-
 /usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/SFML/Window.hpp:
-
-/usr/include/SFML/System/FileInputStream.hpp:
-
-/usr/include/c++/13/ext/alloc_traits.h:
-
-/usr/include/c++/13/new:
-
-/usr/include/c++/13/bits/alloc_traits.h:
-
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h:
-
-/usr/include/c++/13/bits/concept_check.h:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
@@ -1805,6 +1787,12 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
+
+/usr/include/SFML/Audio/SoundSource.hpp:
+
+/usr/include/c++/13/string:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -1852,6 +1840,22 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
+/usr/include/SFML/System/Vector2.inl:
+
+/usr/include/SFML/System/Thread.inl:
+
+/usr/include/c++/13/tuple:
+
+/usr/include/c++/13/bits/nested_exception.h:
+
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
+
+/usr/include/c++/13/bits/basic_ios.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
@@ -1871,12 +1875,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/SFML/Audio/SoundSource.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/c++/13/string:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
@@ -1904,27 +1902,17 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/locale_facets.tcc:
 
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/backward/binders.h:
+
+/usr/include/features.h:
+
 /usr/include/c++/13/bits/basic_string.tcc:
 
 /usr/include/c++/13/bit:
 
 /usr/include/alloca.h:
-
-/usr/include/SFML/System/Vector2.inl:
-
-/usr/include/SFML/System/Thread.inl:
-
-/usr/include/c++/13/tuple:
-
-/usr/include/c++/13/bits/nested_exception.h:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
-
-/usr/include/c++/13/bits/basic_ios.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/c++/13/iosfwd:
 
@@ -1936,11 +1924,21 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/atomic_base.h:
 
-/usr/include/c++/13/bits/stringfwd.h:
+/usr/include/SFML/Window.hpp:
 
-/usr/include/c++/13/backward/binders.h:
+/usr/include/SFML/System/FileInputStream.hpp:
 
-/usr/include/features.h:
+/usr/include/c++/13/ext/alloc_traits.h:
+
+/usr/include/c++/13/new:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/c++/13/ios:
 
 /usr/include/c++/13/bits/stl_vector.h:
 
@@ -2025,6 +2023,12 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/c++/13/bits/stl_algobase.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/string.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
 
 /usr/include/SFML/Graphics/View.hpp:
 
@@ -2227,8 +2231,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/ProgramRunner.h:
 
 /usr/include/c++/13/bits/stl_heap.h:
-
-/usr/include/c++/13/chrono:
 
 /usr/include/SFML/Graphics/VertexArray.hpp:
 

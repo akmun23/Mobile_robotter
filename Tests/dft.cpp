@@ -23,7 +23,7 @@ std::vector<double> DFT::readDTMFDataChunk(std::ifstream& inFile, int& bufferSiz
 
 // Function to compute the DFT
 void DFT::computeDFT(const std::vector<double>& input, int& sampleRate) {
-    _TimeForChunkStartDFT = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point TimeForCalculationStartDFT =std::chrono::high_resolution_clock::now();
 
     int N = input.size();
     std::vector<double> output(_tones.size());
@@ -39,7 +39,7 @@ void DFT::computeDFT(const std::vector<double>& input, int& sampleRate) {
 
 
 
-    double TimeForCalculationDFT = timePassed(_TimeForChunkStartDFT);
+    double TimeForCalculationDFT = timePassed(TimeForCalculationStartDFT);
     _TimeSumCalculationDFT += TimeForCalculationDFT;
 
     if(_calcTimeMaxDFT < TimeForCalculationDFT){
@@ -55,7 +55,7 @@ void DFT::computeDFT(const std::vector<double>& input, int& sampleRate) {
 
 
 std::vector<double> DFT::runDFT(std::ifstream &file, int &sampleRate, int &bufferSize){
-    _TimeForEntireSequenceStartDFT = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point  TimeForEntireSequenceStartDFT = std::chrono::high_resolution_clock::now();
 
     std::ofstream outputFileDFT;
     outputFileDFT.open("DFT_Test_Output.txt", std::ios_base::trunc); // The file is opened in append mode meaning that the data will be added to the end of the file
@@ -76,23 +76,18 @@ std::vector<double> DFT::runDFT(std::ifstream &file, int &sampleRate, int &buffe
 
         _countDFT++;
 
-        checkMessageState(outputFileDFT, _correctMessages, _incorrectMessages, _TimeSumCalculationDFT, _messageCounter);
+        checkMessageState(outputFileDFT, _correctMessages, _incorrectMessages, _messageCounter);
 
 
 
     }
-    /*
-    std::cout << "The average time for Chunk processing is " << (TimeSumChunkDFT/countDFT)*1000 << " ms." << std::endl;
-    std::cout << "The average time for Calculation processing is " << (TimeSumCalculationDFT/countDFT)*1000 << " ms." << std::endl;
-    std::cout << "The number of correct messages is: " << correctMessages << std::endl;
-    std::cout << "The number of incorrect messages is: " << incorrectMessages << std::endl;
-    std::cout << "The number of timed out messages is: " << timedOutMessages << std::endl;
-    std::cout << "The % of correct messages is: " << (100*correctMessages)/(correctMessages+incorrectMessages+timedOutMessages) << "%" <<std::endl;
-    */
+
 
     outputFileDFT.close();
-    double calculationTime = timePassed(_TimeForEntireSequenceStartDFT);
+    double calculationTime = timePassed(TimeForEntireSequenceStartDFT);
     double avgCalcTime = _TimeSumCalculationDFT/_countDFT;
+    std::cout << "The average time for Calculation processing is " << avgCalcTime*1000<< " ms." << std::endl;
+
     return checkOutputFile("DFT_Test_Output.txt", calculationTime, "Checked_Output_DFT.txt", avgCalcTime, _calcTimeMaxDFT, _calcTimeMinDFT);
 }
 

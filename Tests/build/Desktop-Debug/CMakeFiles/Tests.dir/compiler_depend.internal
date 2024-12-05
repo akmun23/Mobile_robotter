@@ -4,6 +4,7 @@
 CMakeFiles/Tests.dir/audio.cpp.o
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.cpp
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.h
+ /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
@@ -76,6 +77,7 @@ CMakeFiles/Tests.dir/audio.cpp.o
  /usr/include/c++/13/bits/vector.tcc
  /usr/include/c++/13/cctype
  /usr/include/c++/13/cerrno
+ /usr/include/c++/13/chrono
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
  /usr/include/c++/13/cstdint

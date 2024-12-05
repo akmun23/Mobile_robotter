@@ -156,12 +156,8 @@ std::vector<double> FFTProcessing::processFile(std::ifstream& file, int sampleRa
 
         analyseMagnitudes(dominantFrequencies);
 
-        checkMessageState(outputFileFFT, _correctMessages, _incorrectMessages, _TimeSumCalculationFFT, _messageCounter);
+        checkMessageState(outputFileFFT, _correctMessages, _incorrectMessages, _messageCounter);
 
-
-
-        _TimeSumChunkFFT += timePassed(TimeForChunkStartFFT);
-        _TimeSumCalculationFFT += timePassed(_TimeForCalculationStartFFT);
         _countFFT++;
     }
     outputFileFFT.close();

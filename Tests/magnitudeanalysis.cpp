@@ -12,10 +12,7 @@ MagnitudeAnalysis::MagnitudeAnalysis(int minMagnitude, double timeToReadTone) : 
 
 double MagnitudeAnalysis::timePassed(std::chrono::high_resolution_clock::time_point& start){
     std::chrono::duration<double> elapsedTime = std::chrono::high_resolution_clock::now() - start;
-
-    double result = elapsedTime.count();
-    return result;
-
+    return elapsedTime.count();;
 }
 
 
@@ -127,7 +124,43 @@ char MagnitudeAnalysis::lookUpDTMFTone(int maxRow, int maxColumn){
     }
     return ' ';
 }
+int MagnitudeAnalysis::getValueFromLetter(char letter){
 
+    if(letter == '0'){
+        return 0;
+    }else if(letter == '1'){
+        return 1;
+    }else if(letter == '2'){
+        return 2;
+    }else if(letter == '3'){
+        return 3;
+    }else if(letter == '4'){
+        return 4;
+    }else if(letter == '5'){
+        return 5;
+    }else if(letter == '6'){
+        return 6;
+    }else if(letter == '7'){
+        return 7;
+    }else if(letter == '8'){
+        return 8;
+    }else if(letter == '9'){
+        return 9;
+    }else if(letter == 'A'){
+        return 10;
+    }else if(letter == 'B'){
+        return 11;
+    }else if(letter == 'C'){
+        return 12;
+    }else if(letter == 'D'){
+        return 13;
+    }else if(letter == '*'){
+        return 14;
+    }else if(letter == '#'){
+        return 15;
+    }
+    return 0;
+}
 
 void MagnitudeAnalysis::ActOnDTMFSequence(char FoundTone){
 
@@ -137,6 +170,7 @@ void MagnitudeAnalysis::ActOnDTMFSequence(char FoundTone){
         std::cout << "Tone spotted : " << FoundTone << std::endl;
     }
     _receivedMessage.push_back(FoundTone);
+    _receivedValues.push_back(getValueFromLetter(FoundTone));
     _startOfMessageReceived = true;
     _letterCounter++;
     _currentDTMFSequence.clear();
@@ -185,6 +219,7 @@ void MagnitudeAnalysis::ResetVariablesAfterMessage(){
     _currentDTMFSequence.clear();
     _letterReceived = false;
     _receivedMessage.clear();
+    _receivedValues.clear();
     _startOfMessageReceived = false;
     _clockStartMessage = std::chrono::high_resolution_clock::now();
     std::cout << std::endl;
@@ -192,40 +227,73 @@ void MagnitudeAnalysis::ResetVariablesAfterMessage(){
     std::cout << std::endl;
 }
 
+void MagnitudeAnalysis::reactOnSignal(){
+
+    _drivingSpeed = (_receivedValues[1]*16+_receivedValues[2]);
+    _direction = (_receivedValues[3]*16+_receivedValues[4]);
+    _fullMessageReceived = true;
+
+}
 
 
+void MagnitudeAnalysis::checkMessageState(std::ofstream &file, int &correct, int &incorrect, int &messageCounter){
 
-void MagnitudeAnalysis::checkMessageState(std::ofstream &file, int &correct, int &incorrect, double &timeSum, int &messageCounter){
-    std::vector<char> ReceivedMessage = getReceivedMessage();
-
-    if((getStartMessageTimePassed() > getMessagesTimeToread())  && (ReceivedMessage.size() < 6) && (ReceivedMessage.size() > 0)){
+    if((getStartMessageTimePassed() > getMessagesTimeToread())  && (_receivedMessage.size() < 6) && (_receivedMessage.size() > 0)){
         incorrect++;
-        for (int ii = 0; ii < ReceivedMessage.size(); ++ii) {
-            file << ReceivedMessage[ii] << " ";
+        for (int ii = 0; ii < _receivedMessage.size(); ++ii) {
+            file << _receivedMessage[ii] << " ";
         }
-        timeSum += getStartMessageTimePassed();
         file << std::endl;
         messageCounter++;
+        std::cout << "Message Incorrect Format" << std::endl;
+        reactOnSignal();
         ResetVariablesAfterMessage();
 
-    }else if(ReceivedMessage.size() == 6){
-        if((ReceivedMessage[0] == '*' && ReceivedMessage[5] == '#') && (getStartMessageTimePassed() < getMessagesTimeToread())){
+    }else if(_receivedMessage.size() == 6){
+        if((_receivedMessage[0] == '*' && _receivedMessage[5] == '#') && (getStartMessageTimePassed() < getMessagesTimeToread())){
             correct++;
+            reactOnSignal();
+            std::cout << "Message Correct Format" << std::endl;
+
         }else{
             incorrect++;
+            reactOnSignal();
+            std::cout << "Message Incorrect" << std::endl;
+
         }
 
 
-        for (int ii = 0; ii < ReceivedMessage.size(); ++ii) {
-            file << ReceivedMessage[ii] << " ";
+        for (int ii = 0; ii < _receivedMessage.size(); ++ii) {
+            file << _receivedMessage[ii] << " ";
         }
-        timeSum += getStartMessageTimePassed();
         file << std::endl;
         messageCounter++;
+        reactOnSignal();
         ResetVariablesAfterMessage();
     }
 }
 
+void MagnitudeAnalysis::checkMessageState(){
+    if((getStartMessageTimePassed() > getMessagesTimeToread())  && (_receivedMessage.size() < 6) && (_receivedMessage.size() > 0)){
+
+        std::cout << "Message Incorrect Format" << std::endl;
+        reactOnSignal();
+        ResetVariablesAfterMessage();
+
+    }else if(_receivedMessage.size() == 6){
+        if((_receivedMessage[0] == '*' && _receivedMessage[5] == '#') && (getStartMessageTimePassed() < getMessagesTimeToread())){
+            reactOnSignal();
+            std::cout << "Message Correct Format" << std::endl;
+
+        }else{
+            reactOnSignal();
+            std::cout << "Message Incorrect" << std::endl;
+
+        }
+        reactOnSignal();
+        ResetVariablesAfterMessage();
+    }
+}
 
 
 
@@ -356,6 +424,9 @@ std::vector<double> MagnitudeAnalysis::checkOutputFile(std::string filename, dou
 std::vector<char> MagnitudeAnalysis::getReceivedMessage(){
     return _receivedMessage;
 }
+std::vector<int> MagnitudeAnalysis::getReceivedValues(){
+    return _receivedValues;
+}
 
 double MagnitudeAnalysis::getStartMessageTimePassed(){
     return timePassed(_clockStartMessage);
@@ -383,4 +454,21 @@ double MagnitudeAnalysis::getMessagesTimeToread(){
 }
 double MagnitudeAnalysis::getToneTimeToRead(){
     return _timeToReadTone;
+}
+
+int MagnitudeAnalysis::getDrivingSpeed(){
+    return _drivingSpeed;
+}
+int MagnitudeAnalysis::getDirection(){
+    return _direction;
+}
+
+bool MagnitudeAnalysis::getMessagesReceived(){
+    return _fullMessageReceived;
+}
+
+///////////////////////////////////////////// SETTER FUNCTIONS ////////////////////////////////////////////////////
+
+void MagnitudeAnalysis::setMessagesReceived(bool received){
+    _fullMessageReceived = received;
 }

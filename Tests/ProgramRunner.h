@@ -11,7 +11,7 @@
 
 
 void RunListeningProgram() {
-    Goertzel audio;
+    Goertzel audio(60, 0.140);
     audio.Init();
     audio.start();
     audio.end();
@@ -26,7 +26,7 @@ void ListeningAndAudioProgram() {
 }
 
 void FileStoringProgram() {
-    Goertzel audio;
+    Goertzel audio(60, 0.140);
     audio.InitForStoringInFile();
     audio.startTimedRecording(52);
     audio.end();

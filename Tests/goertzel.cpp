@@ -99,7 +99,7 @@ std::vector<double> GoertzelTesting::processFile(std::ifstream &file, int sample
            }
            analyzeDataWithGoertzel(data, sampleRate);
            _toneCounter++;
-           checkMessageState(outputFileGoertzel, _correct, _incorrect, _timeSumToneCalculation, _messageCounter);
+           checkMessageState(outputFileGoertzel, _correct, _incorrect, _messageCounter);
 
        }
     outputFileGoertzel.close();

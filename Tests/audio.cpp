@@ -25,6 +25,8 @@ std::vector<int> Received;
 int direction = 0;
 int drivingSpeed = 0;
 
+bool newMagCalculation = false;
+
 
 // Constants for goertzel algorithm
 // Calculated before the program starts to save time
@@ -50,7 +52,7 @@ double omega_I_1633 = cos(2 * M_PI * k0_1633 / FRAMES_PER_BUFFER);
 std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 std::vector<double> mags(tones.size());
 
-Goertzel::Goertzel() {}
+Goertzel::Goertzel(int minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {}
 
 void Goertzel::checkErr(PaError err) {
     if (err != paNoError) {
@@ -115,7 +117,20 @@ void Goertzel::start(){
     checkErr(err);
 
     while (!endProgram) {
+        if(newMagCalculation){
+            analyseMagnitudes(mags);
+            checkMessageState();
+            newMagCalculation = false;
 
+        }
+
+        if(getMessagesReceived()){
+
+            int direction = getDirection();
+            int drivingSpeed = getDrivingSpeed();
+            std::cout << "Direction: " << direction << " Speed: " << drivingSpeed << std::endl;
+            setMessagesReceived(false);
+        }
     }
 }
 
@@ -187,7 +202,7 @@ int Goertzel::streamCallback(
     printf("\r");
     printf("%f seconds --- 697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f",((float)end - start)/CLOCKS_PER_SEC, mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
     fflush(stdout);
-    */
+    *//*
     printf("\r");
     printf("697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f", mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
     fflush(stdout);
@@ -228,7 +243,9 @@ int Goertzel::streamCallback(
             clockStartMessage = std::chrono::high_resolution_clock::now();
         }
         return paContinue;
-    }
+    }*/
+    newMagCalculation = true;
+    return paContinue;
 
 }
 void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator) {
@@ -350,20 +367,6 @@ bool Goertzel::SaveSignal(std::vector<double>& rowMags, std::vector<double>& col
     }
 
     return false;
-}
-
-void Goertzel::reactOnSignal(){
-    drivingSpeed = (Received[1]*16+Received[2]);
-    direction = (Received[3]*16+Received[4]);
-
-    if(drivingSpeed == 128 && direction == 128){
-        printf("The robot has stopped \n");
-        fflush(stdout);
-    }else{
-        printf("\n The robot is driving at speed %i in direction %i \n",drivingSpeed, direction);
-        fflush(stdout);
-    }
-    
 }
 
 void Goertzel::end(){

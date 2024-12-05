@@ -30,11 +30,6 @@ private:
 
     std::vector<int> _tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 
-    std::chrono::high_resolution_clock::time_point _TimeForEntireSequenceStartDFT;
-    std::chrono::high_resolution_clock::time_point _TimeForChunkStartDFT;
-    std::chrono::high_resolution_clock::time_point _TimeForCalculationStartDFT;
-
-
 
     double _TimeSumChunkDFT = 0;
     double _TimeSumCalculationDFT = 0;

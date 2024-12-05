@@ -1,6 +1,7 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
+#include "magnitudeanalysis.h"
 #include <thread>
 #include <time.h>
 #include <stdlib.h>
@@ -16,9 +17,9 @@
 
 
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
-#define FRAMES_PER_BUFFER 1500.0        // How many audio samples to send to our callback function for each channel
+#define FRAMES_PER_BUFFER 750.0        // How many audio samples to send to our callback function for each channel
 
-#define NUM_CHANNELS 1                  // Number of audio channels to capture (1 = mono, 2 = stereo)
+#define NUM_CHANNELS 2                  // Number of audio channels to capture (1 = mono, 2 = stereo)
 
 // Define our callback data (data that is passed to every callback function call)
 typedef struct {
@@ -30,7 +31,7 @@ typedef struct {
 static streamCallbackData* spectroData;
 
 
-class Goertzel
+class Goertzel : public MagnitudeAnalysis
 {
 private:
 
@@ -39,7 +40,7 @@ private:
     PaStreamParameters inputParameters;
 
 public:
-    Goertzel();
+    Goertzel(int minMagnitude, double timeToReadTone);
     /**
     *@brief Method to check for errors in PortAudio functions
     *
@@ -134,17 +135,6 @@ public:
     */
     static bool SaveSignal(std::vector<double> &rowMags, std::vector<double> &columnMags, int &maxRow, int &maxColumn);
 
-
-    /**
-    *@brief Method to update the robots speed and direction according to the new message
-    *
-    *@param nothing
-    *
-    *@return nothing
-    *
-    */
-    static void reactOnSignal();
-
     /**
     *@brief Method to end the audio stream and free allocated resources
     *
@@ -173,6 +163,7 @@ public:
         const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
         void* userData
         );
+
 };
 
 #endif // AUDIO_H

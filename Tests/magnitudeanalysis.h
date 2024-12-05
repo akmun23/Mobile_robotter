@@ -21,14 +21,19 @@ private:
     int _minMagnitude = 0;       // SKAL I CONSTRUCTOR
     int _letterCounter = 0;
 
+    int _drivingSpeed = 0;
+    int _direction = 0;
+
     double _timeToReadTone = 0;   // SKAL I CONSTRUCTOR
     double _timeToReadMessage = 0;  // SKAL I CONSTRUCTOR
 
     bool _letterReceived = false;
     bool _startOfMessageReceived = false;
+    bool _fullMessageReceived = false;
 
     std::vector<char> _currentDTMFSequence;
     std::vector<char> _receivedMessage;
+    std::vector<int> _receivedValues;
 
 public:
 
@@ -52,9 +57,15 @@ public:
 
     double timePassed(std::chrono::high_resolution_clock::time_point& start);
 
-    void checkMessageState(std::ofstream &file, int &correct, int &incorrect, double &timeSum, int &messageCounter);
+    void checkMessageState(std::ofstream &file, int &correct, int &incorrect, int &messageCounter);
+    void checkMessageState();
+
 
     std::vector<double> checkOutputFile(std::string filename, double calculationTime, std::string outputFile, double avgCalcTime, double maxCalcTime, double minCalcTime);
+
+    int getValueFromLetter(char letter);
+
+    void reactOnSignal();
 
 
 
@@ -62,11 +73,18 @@ public:
     // GETTER FUNCTIONS
 
     std::vector<char> getReceivedMessage();
+    std::vector<int> getReceivedValues();
 
     double getStartMessageTimePassed();
     double getStartToneTimePassed(int index);
     double getMessagesTimeToread();
     double getToneTimeToRead();
+    int getDrivingSpeed();
+    int getDirection();
+    bool getMessagesReceived();
+
+    // SETTER FUNCTIONS
+    void setMessagesReceived(bool received);
 
 
 };
