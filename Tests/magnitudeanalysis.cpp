@@ -5,8 +5,8 @@
 
 
 
-MagnitudeAnalysis::MagnitudeAnalysis(int minMagnitude, double timeToReadTone) : _minMagnitude(minMagnitude), _timeToReadTone(timeToReadTone) {
-    _timeToReadMessage = timeToReadTone*7.2;   // FIND UD AF EN PASSENDE VÆRDI HER ISTEDET FOR 7.2
+MagnitudeAnalysis::MagnitudeAnalysis(double minMagnitude, double timeToReadTone) : _minMagnitude(minMagnitude), _timeToReadTone(timeToReadTone) {
+    _timeToReadMessage = timeToReadTone*6;   // FIND UD AF EN PASSENDE VÆRDI HER ISTEDET FOR 7.2
 }
 
 
@@ -40,7 +40,6 @@ void MagnitudeAnalysis::analyseMagnitudes(const std::vector<double>& mags){   //
 
 
 void MagnitudeAnalysis::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
-    //std::cout << "Tone Detected test: " << lookUpDTMFTone(maxRow,maxColumn) << std::endl;
     if (rowMags[maxRow] > _minMagnitude && columnMags[maxColumn] > _minMagnitude && !_letterReceived && ((maxRow == 3 && maxColumn == 0) || _startOfMessageReceived)){
         _currentDTMFSequence.push_back(lookUpDTMFTone(maxRow,maxColumn));
     }

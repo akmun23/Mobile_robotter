@@ -10,6 +10,7 @@
 #include <cmath>
 #include <portaudio.h>
 #include <vector>
+#include "fft.h"
 
 // For debuq file
 #include <iostream>  // Include the input/output stream library
@@ -19,7 +20,7 @@
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
 #define FRAMES_PER_BUFFER 750.0        // How many audio samples to send to our callback function for each channel
 
-#define NUM_CHANNELS 2                  // Number of audio channels to capture (1 = mono, 2 = stereo)
+#define NUM_CHANNELS 1                  // Number of audio channels to capture (1 = mono, 2 = stereo) Set to 2 for goertzel and 1 for FFT
 
 // Define our callback data (data that is passed to every callback function call)
 typedef struct {
@@ -39,8 +40,10 @@ private:
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
 
+
 public:
-    Goertzel(int minMagnitude, double timeToReadTone);
+    Goertzel(double minMagnitude, double timeToReadTone);
+
     /**
     *@brief Method to check for errors in PortAudio functions
     *
@@ -109,7 +112,7 @@ public:
         const PaStreamCallbackTimeInfo* timeInfo,
         PaStreamCallbackFlags statusFlags,
         void* userData
-        );
+    );
 
 
     static void calculateGoertzel(int tone, const float* in, std::vector<double>& mags, int magsIterator);
@@ -162,7 +165,19 @@ public:
         const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
         const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
         void* userData
-        );
+    );
+
+    /// FFT Test
+
+    void InitForFFT();
+
+    void startFFT();
+
+    static int streamCallbackFFT(
+        const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+        const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+        void* userData
+    );
 
 };
 

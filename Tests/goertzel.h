@@ -13,7 +13,7 @@
 class GoertzelTesting : public MagnitudeAnalysis{
 public:
     // Constructor
-    GoertzelTesting(int minMagnitude, double timeToReadTone);
+    GoertzelTesting(double minMagnitude, double timeToReadTone);
 
     std::chrono::high_resolution_clock::time_point _startToneCalculation;
 

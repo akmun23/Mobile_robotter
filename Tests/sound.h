@@ -150,19 +150,26 @@ void RunSoundProgram() {
     sound.play();
     usleep(1*1000*1000*2);    // Sleep for 2 seconds
     samples.clear();
+    int DelayBetweenTones = 1000*15; // 15 ms
 
     for(int i = 0; i < 10; ++i){
-        playSequence("*15C2#");
+        /*playSequence("*15C2#");
+        usleep(DelayBetweenTones);
         playSequence("*17bc#");
+        usleep(DelayBetweenTones);
         playSequence("*91ad#");
+        usleep(DelayBetweenTones);
         playSequence("*7462#");
+        usleep(DelayBetweenTones);
         playSequence("*1379#");
+        usleep(DelayBetweenTones);*/
 
 
-        //playSequence("*4032#");
-        //usleep(1500000);
-        //playSequence("*2632#");
-        //usleep(1500000);
+
+        playSequence("*4032#");
+        usleep(DelayBetweenTones);
+        playSequence("*2632#");
+        usleep(DelayBetweenTones);
 
     }
 }

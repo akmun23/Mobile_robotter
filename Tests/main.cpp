@@ -16,8 +16,10 @@ int main(){
      * 4 - Program to record and save audio to a file
      *
      * 5 - Program to just play audio
+     *
+     * 6 - Same as 3 but with FFT
     */
-    RunProgram(3);
+    RunProgram(6);
 
     return 0;
 }

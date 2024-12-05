@@ -4,55 +4,12 @@
 
 // Variables for the listening function
 PaStream* stream;
-bool endProgram = false;
-
-// Variables for time invervals
-double timeToSendMessage = 1.076;  // 763 ms is the time from the start of the message to the end of the message it is rounded up to
-double SamplesPerFrame = 6000; //  SamplesPerFrame is the amount of frames in a tone this i specified in the sound program
-double timeToReadTone = 0.144;  // timeToReadTone is the time from the start of the tone to the end of the tone in ms
-
-// Variables for Clocks
-auto clockStartMessage = std::chrono::high_resolution_clock::now();
-auto clockStartTone = std::chrono::high_resolution_clock::now();
-auto clockEndTone = std::chrono::high_resolution_clock::now();
-
-// Variables for tone detection
-bool LetterReceived = false;
-bool startOfMessageReceived = false;
-std::vector<int> Received;
-
-// Variables for robot control
-int direction = 0;
-int drivingSpeed = 0;
 
 bool newMagCalculation = false;
-
-
-// Constants for goertzel algorithm
-// Calculated before the program starts to save time
-// make an atomic double
-
-double k0_697 = FRAMES_PER_BUFFER * 697 / SAMPLE_RATE;
-double k0_770 = FRAMES_PER_BUFFER * 770 / SAMPLE_RATE;
-double k0_852 = FRAMES_PER_BUFFER * 852 / SAMPLE_RATE;
-double k0_941 = FRAMES_PER_BUFFER * 941 / SAMPLE_RATE;
-double k0_1209 = FRAMES_PER_BUFFER * 1209 / SAMPLE_RATE;
-double k0_1336 = FRAMES_PER_BUFFER * 1336 / SAMPLE_RATE;
-double k0_1477 = FRAMES_PER_BUFFER * 1477 / SAMPLE_RATE;
-double k0_1633 = FRAMES_PER_BUFFER * 1633 / SAMPLE_RATE;
-
-double omega_I_697 = cos(2 * M_PI * k0_697 / FRAMES_PER_BUFFER);
-double omega_I_770 = cos(2 * M_PI * k0_770 / FRAMES_PER_BUFFER);
-double omega_I_852 = cos(2 * M_PI * k0_852 / FRAMES_PER_BUFFER);
-double omega_I_941 = cos(2 * M_PI * k0_941 / FRAMES_PER_BUFFER);
-double omega_I_1209 = cos(2 * M_PI * k0_1209 / FRAMES_PER_BUFFER);
-double omega_I_1336 = cos(2 * M_PI * k0_1336 / FRAMES_PER_BUFFER);
-double omega_I_1477 = cos(2 * M_PI * k0_1477 / FRAMES_PER_BUFFER);
-double omega_I_1633 = cos(2 * M_PI * k0_1633 / FRAMES_PER_BUFFER);
 std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
-std::vector<double> mags(tones.size());
+std::vector<double> mags = {0, 0, 0, 0, 0, 0, 0, 0};
 
-Goertzel::Goertzel(int minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {}
+Goertzel::Goertzel(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {}
 
 void Goertzel::checkErr(PaError err) {
     if (err != paNoError) {
@@ -64,15 +21,6 @@ void Goertzel::checkErr(PaError err) {
 inline float Goertzel::min(float a, float b) {
     return a < b ? a : b;
 }
-
-double Goertzel::TimePassed(std::chrono::high_resolution_clock::time_point start){
-    std::chrono::duration<double> elapsedTime;
-    elapsedTime = std::chrono::high_resolution_clock::now() - start;
-
-    return elapsedTime.count();
-
-}
-
 
 void Goertzel::Init(){
 
@@ -116,7 +64,7 @@ void Goertzel::start(){
     err = Pa_StartStream(stream);
     checkErr(err);
 
-    while (!endProgram) {
+    while (true) {
         if(newMagCalculation){
             analyseMagnitudes(mags);
             checkMessageState();
@@ -167,17 +115,6 @@ int Goertzel::streamCallback(
     // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
     float* in = (float*)inputBuffer;
 
-    //int start = clock();
-    // Uden threads //
-    /*
-    for (int i = 0; i < tones.size(); ++i) {
-        calculateGoertzel(tones[i], in, mags, i);
-
-    }*/
-    ////////////////////////////////////////////////////////////////////////////
-
-    // Threads
-
     std::thread t0(calculateGoertzel, tones[0], in, std::ref(mags), 0);
     std::thread t1(calculateGoertzel, tones[1], in, std::ref(mags), 1);
     std::thread t2(calculateGoertzel, tones[2], in, std::ref(mags), 2);
@@ -196,54 +133,6 @@ int Goertzel::streamCallback(
     t6.join();
     t7.join();
 
-    /*
-    int end = clock();
-
-    printf("\r");
-    printf("%f seconds --- 697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f",((float)end - start)/CLOCKS_PER_SEC, mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
-    fflush(stdout);
-    *//*
-    printf("\r");
-    printf("697: %f, 770: %f, 852: %f, 941: %f, 1209: %f, 1336: %f, 1477: %f, 1633: %f", mags[0], mags[1], mags[2], mags[3], mags[4], mags[5], mags[6], mags[7]);
-    fflush(stdout);
-
-
-    if(analyseGoertzelOutput(mags)){
-        endProgram = true;
-        return paAbort;
-
-    }else{
-
-        if((TimePassed(clockStartMessage) > timeToSendMessage)  && (Received.size() < 6) && (Received.size() > 0)){
-            printf("\n Message timed out \n");
-            fflush(stdout);
-            for (int i = 0; i < Received.size(); ++i) {
-                std::cout << Received[i] << " ";
-            }
-            std::cout << std::endl;
-            std::cout <<"----------------------------------------------" << std::endl;
-            Received.clear();
-            startOfMessageReceived = false;
-            clockStartMessage = std::chrono::high_resolution_clock::now();
-
-        }else if(Received.size() == 6){
-            if((Received[0] == 14 && Received[5] == 15) && (TimePassed(clockStartMessage) < timeToSendMessage)){
-                reactOnSignal();
-            }else{
-                printf("\n Invalid message \n");
-                fflush(stdout);
-            }
-            for (int i = 0; i < Received.size(); ++i) {
-                std::cout << Received[i] << " ";
-            }
-            std::cout << std::endl;
-            std::cout <<"----------------------------------------------" << std::endl;
-            Received.clear();
-            startOfMessageReceived = false;
-            clockStartMessage = std::chrono::high_resolution_clock::now();
-        }
-        return paContinue;
-    }*/
     newMagCalculation = true;
     return paContinue;
 
@@ -274,100 +163,6 @@ void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>&
     mags[magsIterator] = v1*v1 + v2*v2 - omega_I*v1*v2;
 }
 
-bool Goertzel::analyseGoertzelOutput(std::vector<double> &mags){
-    std::vector<double> rowMags = {mags[0], mags[1], mags[2], mags[3]};
-    std::vector<double> columnMags = {mags[4], mags[5], mags[6], mags[7]};
-
-    int maxRow = 0;
-    int maxColumn = 0;
-
-    for (int i = 1; i < 4; ++i) {
-        if (rowMags[i] > rowMags[maxRow]) {
-            maxRow = i;
-        }
-        if (columnMags[i] > columnMags[maxColumn]) {
-            maxColumn = i;
-        }
-    }
-
-    if(SaveSignal(rowMags,columnMags,maxRow,maxColumn)){
-        return true;
-    }else{
-        return false;
-    }
-
-}
-
-bool Goertzel::SaveSignal(std::vector<double>& rowMags, std::vector<double>& columnMags, int& maxRow, int& maxColumn){
-    int MinMagnitude = 200;
-
-    if(rowMags[maxRow] > MinMagnitude && columnMags[maxColumn] > MinMagnitude && !LetterReceived && ((maxRow == 3 && maxColumn == 0) || startOfMessageReceived)){
-        LetterReceived = true;
-        if(maxRow == 0){
-            if(maxColumn == 0){
-                Received.push_back(1);
-            }else if(maxColumn == 1){
-                Received.push_back(2);
-            }else if(maxColumn == 2){
-                Received.push_back(3);
-            }else if(maxColumn == 3){
-                Received.push_back(10);
-            }
-        }else if(maxRow == 1){
-            if(maxColumn == 0){
-                Received.push_back(4);
-            }else if(maxColumn == 1){
-                Received.push_back(5);
-            }else if(maxColumn == 2){
-                Received.push_back(6);
-            }else if(maxColumn == 3){
-                Received.push_back(11);
-            }
-        }else if(maxRow == 2){
-            if(maxColumn == 0){
-                Received.push_back(7);
-            }else if(maxColumn == 1){
-                Received.push_back(8);
-            }else if(maxColumn == 2){
-                Received.push_back(9);
-            }else if(maxColumn == 3){
-                Received.push_back(12);
-            }
-        }else if(maxRow == 3){
-            if(maxColumn == 0){
-                if(!startOfMessageReceived){
-                    clockStartMessage = std::chrono::high_resolution_clock::now();
-                    clockStartTone = std::chrono::high_resolution_clock::now();
-                }
-                startOfMessageReceived = true;
-                Received.push_back(14);
-            }else if(maxColumn == 1){
-                Received.push_back(0);
-            }else if(maxColumn == 2){
-                Received.push_back(15);
-            }else if(maxColumn == 3){
-                Received.push_back(13);
-            }
-        }
-    }/*else if((rowMags[maxRow] < MinMagnitude || columnMags[maxColumn] < MinMagnitude) && LetterReceived){
-        LetterReceived = false;
-    }*/
-    else if(LetterReceived && ((TimePassed(clockStartTone)+0.026) > timeToReadTone)){
-        LetterReceived = false;
-
-        /*
-        std::cout << std::endl;
-        std::cout << "Time passed:   " << TimePassed(clockStartTone) << "           ";
-        std::cout << "Time to read:  " << timeToReadTone << "        ";
-        std::cout << "Letter received: " << Received[Received.size()-1] << std::endl;
-        std::cout << std::endl;
-        */
-        clockStartTone = std::chrono::high_resolution_clock::now();
-
-    }
-
-    return false;
-}
 
 void Goertzel::end(){
 
@@ -483,3 +278,77 @@ int Goertzel::streamCallbackForStoringInFile(
     return paContinue;
 
 }
+
+
+
+///////////////////////////////////////////// FFT //////////////////////////////////////////////
+/// \brief Goertzel::InitForFFT
+
+void Goertzel::InitForFFT(){
+
+    // Initialize PortAudio
+    err = Pa_Initialize();
+    checkErr(err);
+
+    // Allocate and define the callback data
+    spectroData = (streamCallbackData*)malloc(sizeof(streamCallbackData));
+    spectroData->in = (double*)malloc(sizeof(double) * FRAMES_PER_BUFFER);
+    if (spectroData->in == NULL) {
+        printf("Could not allocate spectro data\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Define stream capture specifications
+    memset(&inputParameters, 0, sizeof(inputParameters));
+    inputParameters.channelCount = NUM_CHANNELS;
+    inputParameters.device = Pa_GetDefaultInputDevice();
+    inputParameters.hostApiSpecificStreamInfo = nullptr;
+    inputParameters.sampleFormat = paFloat32;
+    inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
+
+    // Open the PortAudio stream
+    err = Pa_OpenStream(
+        &stream,
+        &inputParameters,
+        nullptr,
+        SAMPLE_RATE,
+        FRAMES_PER_BUFFER,
+        paNoFlag,
+        streamCallbackFFT,
+        spectroData
+        );
+    checkErr(err);
+
+
+}
+
+void Goertzel::startFFT(){
+    // Begin capturing audio
+    err = Pa_StartStream(stream);
+    checkErr(err);
+
+    while (true) {
+        if(newMagCalculation){
+            analyseMagnitudes(mags);
+            checkMessageState();
+            newMagCalculation = false;
+
+        }
+    }
+}
+
+int Goertzel::streamCallbackFFT(
+    const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+    const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+    void* userData
+    ){
+    // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
+    float* in = (float*)inputBuffer;
+    FFTProcessing fft = FFTProcessing(0.5,0.140, 20);
+    mags = fft.processSound(in, SAMPLE_RATE, FRAMES_PER_BUFFER);
+
+    newMagCalculation = true;
+    return paContinue;
+
+}
+

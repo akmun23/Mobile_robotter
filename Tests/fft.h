@@ -42,10 +42,13 @@ private:
 
 public:
     // Constructor to initialize the class with required parameters
-    FFTProcessing(int minMagnitude, double timeToReadTone, int frequencyTolerance);
+    FFTProcessing(double minMagnitude, double timeToReadTone, int frequencyTolerance);
 
     // Function to process the file and detect DTMF tones
     std::vector<double> processFile(std::ifstream &file, int sampleRate, int bufferSize);
+
+    std::vector<double> processSound(float* input, int sampleRate, int bufferSize);
+
 
     // Function to perform FFT
     std::vector<std::complex<double>> fft(const std::vector<std::complex<double>>& input, int log2n);

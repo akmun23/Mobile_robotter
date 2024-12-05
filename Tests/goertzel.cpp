@@ -9,7 +9,7 @@
 
 
 // Constructor
-GoertzelTesting::GoertzelTesting(int minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {};
+GoertzelTesting::GoertzelTesting(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {};
 
 
 double pi = 3.14159265358979323846;

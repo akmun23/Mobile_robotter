@@ -40,7 +40,7 @@ public:
     // PUBLIC VARIABLES
 
     // Constructor
-    MagnitudeAnalysis(int magnitude, double timeToReadTone);
+    MagnitudeAnalysis(double magnitude, double timeToReadTone);
 
     // PUBLIC FUNCTIONS
     void analyseMagnitudes(const std::vector<double>& mags);

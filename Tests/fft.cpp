@@ -6,7 +6,7 @@
 
 // Constructor for FFTProcessing class
 // Initializes member variables
-FFTProcessing::FFTProcessing(int minMagnitude, double timeToReadTone, int frequencyTolerance)
+FFTProcessing::FFTProcessing(double minMagnitude, double timeToReadTone, int frequencyTolerance)
 : MagnitudeAnalysis(minMagnitude, timeToReadTone), _minMagnitude(minMagnitude), _frequencyTolerance(frequencyTolerance) {}
 
 // Function to reverse bits for FFT
@@ -54,7 +54,7 @@ std::vector<std::complex<double>> FFTProcessing::fft(const std::vector<std::comp
     if (_calcTimeMinFFT == 0 || calcTime < _calcTimeMinFFT) {
         _calcTimeMinFFT = calcTime;
     }
-    usleep(200000);
+    //usleep(200000);
     return a;
 }
 
@@ -78,7 +78,6 @@ std::vector<double> FFTProcessing::readDTMFData(std::ifstream& inFile, int buffe
 
 // Function to find dominant frequencies in FFT result
 std::vector<double> FFTProcessing::findDominantFrequencies(const std::vector<std::complex<double>>& fftResult, int sampleRate) {
-    std::unordered_map<int, double> freqMagMap;
 
     std::vector<int> Tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
     std::vector<double> TonesMaxMag = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -167,3 +166,26 @@ std::vector<double> FFTProcessing::processFile(std::ifstream& file, int sampleRa
     return checkOutputFile("FFT_Test_Output.txt", _calculationTime, "Checked_Output_FFT.txt", avgCalcTime, _calcTimeMaxFFT, _calcTimeMinFFT);
 }
 
+
+
+std::vector<double> FFTProcessing::processSound(float* input, int sampleRate, int bufferSize){
+
+
+
+       std::vector<std::complex<double>> complexData;
+       for (int i = 0; i < bufferSize; ++i) {
+           complexData.push_back({ input[i], 0.0 });
+       }
+       // Zero-padding to make the chunk size equal to the next power of two
+       int n = complexData.size();
+       int log2n = std::ceil(std::log2(n));    // Finds the lowest integer value to put to the power of 2 to get n or higher
+       int paddedSize = 1 << log2n;            // Finds the 2^log2n value by bit shifting 1 by log2n
+       complexData.resize(paddedSize, { 0.0, 0.0 }); // Zero pad if necessary
+       std::vector<std::complex<double>> fftResult(paddedSize);
+       // Perform FFT on the chunk
+       fftResult = fft(complexData, log2n);
+       std::vector<double> dominantFrequencies = findDominantFrequencies(fftResult, sampleRate); // START HER DEN KAN IKKE FINDE HASHTAGS
+
+
+       return dominantFrequencies;
+}
