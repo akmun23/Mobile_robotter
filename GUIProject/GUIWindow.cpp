@@ -1,7 +1,6 @@
 #include "GUIWindow.h"
 #include <iostream>
 #include <cmath>
-#include <algorithm>
 
 GUI::GUI(){
 
@@ -60,9 +59,9 @@ GUI::GUI(){
     wallFrags.push_back(Wall(Point(0,0), emptySize));
 }
 
-bool GUI::spaceFree(int x_, int y_){ //Returns true if no wallFrags was found to contain the given point
+bool GUI::spaceFree(int x_, int y_, float tolerance = 0){ //Returns true if no wallFrags was found to contain the given point
     for(int i = 0; i < wallFrags.size(); i++){
-        if(wallFrags[i].contains(x_, y_)){
+        if(wallFrags[i].contains(x_, y_, tolerance)){
             return false;
         }
     }
@@ -93,6 +92,9 @@ void GUI::movementRobot(float angle, float intensity){
     //add movements to the robots position
     robot.x += x_com;
     robot.y += y_com;
+
+    //add movement to visualsr
+    robot.update(x_com, y_com);
 
     //subtract the robots movement from the position of the walls. Makes the walls stay in place, in relation to the robot.
     for(int i = 0; i < wallFrags.size(); i++){
@@ -199,13 +201,14 @@ void GUI::update(bool& update){
 
     while(1){
 
+        usleep(10000);
+
         lidarReading(rand()%360, 200);
 
         movementRobot(0, 0.001); //Handles change in robot location
         rescale(); //Moves everything on the screen, to make the screen "wider", to compensate for limited screen size.
 
-        robot.update(); //Update the visuals, ie. rectangles, in accordance with the location of the robot.
-        robot.rotate(0.1); //Rotates the robot a certain amount, angle in radian.
+        robot.rotate(0.1);
 
         paintMap();
         paintRobot();
@@ -213,14 +216,9 @@ void GUI::update(bool& update){
         if(XPending(display) > 0){ //Is there an Event waiting to be drawn?
             XNextEvent(display, &event); //Select the next event to be drawn.
             if(event.type == Expose){
-                update = true; //Allow the screen to update.
+                XSync(display, False); //Sync the screen with the data in the system
+                XClearWindow(display, window); //Clear the window, needs to be after XSync, for some reason.
             }
-        }
-
-        if(update){ //Update the screen
-            XSync(display, False); //Sync the screen with the data in the system
-            XClearWindow(display, window); //Clear the window, needs to be after XSync, for some reason.
-            update = false; //Stop the screen from continously updating
         }
     }
 }

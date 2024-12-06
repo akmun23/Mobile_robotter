@@ -38,7 +38,7 @@ struct Robot{
     Robot(Point p, Size size_);
 
     void rotate(double angle);
-    void update();
+    void update(double x_com, double y_com);
 };
 
 //Wall
@@ -72,8 +72,7 @@ public:
     int getX();
     int getY();
 
-    bool contains(int x_, int y_);
-    bool contains(int x_, int y_, int tolerance);
+    bool contains(int x_, int y_, float tolerance);
 };
 
 #endif // DATATYPES_H
