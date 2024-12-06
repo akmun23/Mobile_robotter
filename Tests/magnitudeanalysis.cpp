@@ -1,12 +1,13 @@
 #include "magnitudeanalysis.h"
 #include <algorithm>
+#include <cmath>
 #include <iostream>
 #include <chrono>
 
 
 
 MagnitudeAnalysis::MagnitudeAnalysis(double minMagnitude, double timeToReadTone) : _minMagnitude(minMagnitude), _timeToReadTone(timeToReadTone) {
-    _timeToReadMessage = timeToReadTone*6;   // FIND UD AF EN PASSENDE VÆRDI HER ISTEDET FOR 7.2
+    _timeToReadMessage = timeToReadTone*6.4;   // FIND UD AF EN PASSENDE VÆRDI HER ISTEDET FOR 7.2
 }
 
 
@@ -40,6 +41,7 @@ void MagnitudeAnalysis::analyseMagnitudes(const std::vector<double>& mags){   //
 
 
 void MagnitudeAnalysis::SaveSignal(std::vector<double> rowMags, std::vector<double> columnMags, int maxRow, int maxColumn){
+    //std::cout << "Row max: " << maxRow << "Row max mag" << rowMags[maxRow] << " Column max: " << maxColumn << " Column max mag" << columnMags[maxColumn] << std::endl;
     if (rowMags[maxRow] > _minMagnitude && columnMags[maxColumn] > _minMagnitude && !_letterReceived && ((maxRow == 3 && maxColumn == 0) || _startOfMessageReceived)){
         _currentDTMFSequence.push_back(lookUpDTMFTone(maxRow,maxColumn));
     }
@@ -297,6 +299,18 @@ void MagnitudeAnalysis::checkMessageState(){
 
 
 
+void MagnitudeAnalysis::createHammingWindow(int InputSize){
+
+    for (int n = 0; n < InputSize; ++n) {
+        _HammingWindow.push_back(0.54 - 0.46 * cos(2 * M_PI * n / (InputSize - 1)));
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -464,6 +478,10 @@ int MagnitudeAnalysis::getDirection(){
 
 bool MagnitudeAnalysis::getMessagesReceived(){
     return _fullMessageReceived;
+}
+
+std::vector<double> MagnitudeAnalysis::getHammingWindow(){
+    return _HammingWindow;
 }
 
 ///////////////////////////////////////////// SETTER FUNCTIONS ////////////////////////////////////////////////////

@@ -19,7 +19,7 @@ int main(){
      *
      * 6 - Same as 3 but with FFT
     */
-    RunProgram(2);
+    RunProgram(3);
 
     return 0;
 }

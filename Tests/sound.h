@@ -9,11 +9,12 @@
 #include <chrono>
 std::chrono::high_resolution_clock::time_point startSoundProgram = std::chrono::high_resolution_clock::now();
 
+int soundFrequency = 44100;
 
 namespace sound {
 double SineWave(double time, double freq, double amp) {
     double result;
-    double tpc = 44100 / freq; // ticks per cycle
+    double tpc = soundFrequency / freq; // ticks per cycle
     double cycles = time / tpc;
     double rad = 2 * M_PI * cycles;
     double amplitude = 32767 * amp;
@@ -23,11 +24,18 @@ double SineWave(double time, double freq, double amp) {
 }
 
 
+
 std::vector<double> AmplitudeFading;
-int Delay = 1000;
-int SamplesPerFrame2 = Delay*6;
-int AudioSamplesPerFrame = SamplesPerFrame2-Delay*2;
-int AudioPlayRate = 44100;
+int ToneDuration = 80;  // Tone duration in milliseconds
+int PauseDuration = 50; // Pause duration in milliseconds
+                        // Time to detect tone 200us
+int SamplesPerFrame2 = soundFrequency * (ToneDuration + PauseDuration) / 1000;  // Total duration in samples (tone + pause)
+int AudioSamplesPerFrame = SamplesPerFrame2;  // No additional delay since tone + pause combined
+int AudioPlayRate = soundFrequency;
+
+// Exponential fade constants
+const double fadeInRate = 6.0;  // Rate of fade-in (higher value means faster fade-in)
+const double fadeOutRate = 6.0; // Rate of fade-out (higher value means faster fade-out)
 
 // DTMF tone frequencies for digits 0-9
 const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
@@ -37,10 +45,10 @@ const int HIGH_FREQ[16] = {1336, 1209, 1336, 1477, 1209, 1336, 1477, 1209, 1336,
 void makeAmplitudeFading(){
 
     double AudioStart = 0;
-    double fadeInEnd = AudioSamplesPerFrame/6;
-    double fadeOutBegin = AudioSamplesPerFrame-fadeInEnd;
-    double fadeOutEnd = AudioSamplesPerFrame;
-    double End = AudioSamplesPerFrame+Delay;
+    double fadeInEnd = soundFrequency * ToneDuration / 1000 / 6;  // 1/6th of tone duration
+    double fadeOutBegin = soundFrequency * ToneDuration / 1000 - fadeInEnd;  // 5/6th of tone duration
+    double fadeOutEnd = soundFrequency * ToneDuration / 1000;
+    double End = soundFrequency * (ToneDuration + PauseDuration) / 1000;
 
     for (int i = AudioStart; i < fadeInEnd; i++) {
         AmplitudeFading.push_back(i/fadeInEnd);
@@ -138,7 +146,7 @@ void RunSoundProgram() {
     std::vector<sf::Int16> samples;
 
 
-    for (int i = 0; i < 44100*2; i++) {
+    for (int i = 0; i < soundFrequency; i++) {
         samples.push_back(sound::SineWave(i, 200, 0.5));
 
     }
@@ -150,27 +158,22 @@ void RunSoundProgram() {
     sound.play();
     usleep(1*1000*1000*2);    // Sleep for 2 seconds
     samples.clear();
-    int DelayBetweenTones = 1000*15; // 15 ms
+    int DelayBetweenTones = 1000*150; // 15 ms
 
     for(int i = 0; i < 10; ++i){
-        /*playSequence("*15C2#");
-        usleep(DelayBetweenTones);
+        playSequence("*15C2#");
         playSequence("*17bc#");
-        usleep(DelayBetweenTones);
         playSequence("*91ad#");
-        usleep(DelayBetweenTones);
         playSequence("*7462#");
-        usleep(DelayBetweenTones);
         playSequence("*1379#");
-        usleep(DelayBetweenTones);*/
 
 
-
+        /*
         playSequence("*4032#");
         usleep(DelayBetweenTones);
         playSequence("*2632#");
         usleep(DelayBetweenTones);
-
+        */
     }
 }
 

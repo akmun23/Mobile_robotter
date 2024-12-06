@@ -23,7 +23,7 @@ int RunCompareTest() {
 
     int DFTMagnitude = 2;       // 3 works good
     int FFTMagnitude = 2;       // 3 works good
-    int GoertzelMagnitude = 60; // 60 works good
+    int GoertzelMagnitude = 30; // 60 works good
 
     double TimeToCalcDFT = 0.205;
     double TimeToCalcFFT = 0.205;
@@ -38,12 +38,12 @@ int RunCompareTest() {
 
     // Input files
     std::vector<std::pair<int,std::string>> TestfileNames;
-    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt"});
-    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt"});
-    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
-    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
-    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
     std::vector<std::pair<int,std::string>> DFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> FFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> GoertzelTestfileNames = TestfileNames;
@@ -111,7 +111,7 @@ int RunCompareTest() {
 
     std::chrono::high_resolution_clock::time_point clockStart = std::chrono::high_resolution_clock::now();
     // Loop through the files
-
+    /*
     std::cout << "Start of DFT" << std::endl;
     for (int i = 0; i < DFTTestfileNames.size(); ++i) {
         std::ifstream file;
@@ -193,7 +193,7 @@ int RunCompareTest() {
     FFT_buffer_CalculationSpeed << FFTMinTime << std::endl;
 
     std::cout << "End of FFT" << std::endl;
-
+    */
     std::cout << "Start of Goertzel" << std::endl;
 
     for (int i = 0; i < GoertzelTestfileNames.size(); ++i) {
@@ -205,7 +205,7 @@ int RunCompareTest() {
         }
 
         // Goertzel algorithm
-        GoertzelTesting GoertzelProcessor(GoertzelMagnitude, timeToReadToneGoertzel);
+        GoertzelTesting GoertzelProcessor(GoertzelMagnitude, timeToReadToneGoertzel,bufferSize);
         GoertzelResult = GoertzelProcessor.processFile(file, sampleRate, bufferSize, GoertzelTestfileNames[i].first);
         std::cout << "Goertzel File: "<< i+1 << " Processed" << std::endl;
         TimePrinter(clockStart);

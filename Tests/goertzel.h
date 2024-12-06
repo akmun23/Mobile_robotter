@@ -13,11 +13,13 @@
 class GoertzelTesting : public MagnitudeAnalysis{
 public:
     // Constructor
-    GoertzelTesting(double minMagnitude, double timeToReadTone);
+    GoertzelTesting(double minMagnitude, double timeToReadTone, int signalSize);
 
     std::chrono::high_resolution_clock::time_point _startToneCalculation;
 
     std::vector<double> _timeAtMaxCorrect;
+
+    int _signalSize = 0;
 
     double _calcTimeMax = 0;
     double _calcTimeMin = 0;
@@ -56,6 +58,8 @@ private:
 
     // Method to use Goertzel algorithm on the data
     void analyzeDataWithGoertzel(const std::vector<double>& data, const int &sampleRate);
+
+    void calculateInputWithHammingWindow(std::vector<double> in);
 
 
 };

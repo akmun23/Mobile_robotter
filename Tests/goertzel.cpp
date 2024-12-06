@@ -6,10 +6,16 @@
 #include <unistd.h>
 #include <vector>
 #include <algorithm>
+std::vector<double> HammingWindow2;
+std::vector<double> InputAfterHammingWindow2;
 
 
 // Constructor
-GoertzelTesting::GoertzelTesting(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {};
+GoertzelTesting::GoertzelTesting(double minMagnitude, double timeToReadTone, int signalSize) : MagnitudeAnalysis(minMagnitude, timeToReadTone), _signalSize(signalSize){
+    createHammingWindow(_signalSize);
+    HammingWindow2 = getHammingWindow();
+    InputAfterHammingWindow2.resize(_signalSize);
+};
 
 
 double pi = 3.14159265358979323846;
@@ -71,9 +77,14 @@ void GoertzelTesting::analyzeDataWithGoertzel(const std::vector<double>& data, c
         _calcTimeMin = TimePassed;
     }
     usleep(delayBetweenCalculation);
-
-
     analyseMagnitudes(magnitudes);
+}
+
+void GoertzelTesting::calculateInputWithHammingWindow(std::vector<double> in) {
+
+    for (int i = 0; i < _signalSize; ++i) {
+        InputAfterHammingWindow2[i] = in[i] * HammingWindow2[i];
+    }
 }
 
 // Function to process the file and detect DTMF tones in chunks
@@ -97,7 +108,10 @@ std::vector<double> GoertzelTesting::processFile(std::ifstream &file, int sample
            if (data.size() < bufferSize){
                break;
            }
-           analyzeDataWithGoertzel(data, sampleRate);
+           calculateInputWithHammingWindow(data);
+
+           analyzeDataWithGoertzel(InputAfterHammingWindow2, sampleRate);
+
            _toneCounter++;
            checkMessageState(outputFileGoertzel, _correct, _incorrect, _messageCounter);
 

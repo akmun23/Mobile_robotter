@@ -18,7 +18,7 @@
 
 
 #define SAMPLE_RATE 44100.0             // How many audio samples to capture every second (44100 Hz is standard)
-#define FRAMES_PER_BUFFER 750.0        // How many audio samples to send to our callback function for each channel
+#define FRAMES_PER_BUFFER 1024.0        // How many audio samples to send to our callback function for each channel
 
 #define NUM_CHANNELS 1                  // Number of audio channels to capture (1 = mono, 2 = stereo) Set to 2 for goertzel and 1 for FFT
 
@@ -39,6 +39,7 @@ private:
     PaError err;
     double sampleRatio = FRAMES_PER_BUFFER / SAMPLE_RATE;
     PaStreamParameters inputParameters;
+
 
 
 public:
@@ -178,6 +179,9 @@ public:
         const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
         void* userData
     );
+
+    static void calculateInputWithHammingWindow(const float* in);
+
 
 };
 

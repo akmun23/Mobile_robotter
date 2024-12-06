@@ -1,5 +1,4 @@
 #include "audio.h"
-#include <atomic>
 #include <unistd.h>
 
 // Variables for the listening function
@@ -8,8 +7,18 @@ PaStream* stream;
 bool newMagCalculation = false;
 std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 std::vector<double> mags = {0, 0, 0, 0, 0, 0, 0, 0};
+std::vector<double> HammingWindow;
+std::vector<double> InputAfterHammingWindow;
 
-Goertzel::Goertzel(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {}
+
+Goertzel::Goertzel(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {
+    createHammingWindow(FRAMES_PER_BUFFER*NUM_CHANNELS);
+    HammingWindow = getHammingWindow();
+    InputAfterHammingWindow.resize(FRAMES_PER_BUFFER*NUM_CHANNELS);
+
+}
+
+
 
 void Goertzel::checkErr(PaError err) {
     if (err != paNoError) {
@@ -106,6 +115,13 @@ void Goertzel::getDevices(){
     }
 }
 
+void Goertzel::calculateInputWithHammingWindow(const float* in) {
+
+    for (int i = 0; i < FRAMES_PER_BUFFER*NUM_CHANNELS; ++i) {
+        InputAfterHammingWindow[i] = in[i] * HammingWindow[i];
+    }
+}
+
 int Goertzel::streamCallback(
     const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
     const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
@@ -115,6 +131,19 @@ int Goertzel::streamCallback(
     // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
     float* in = (float*)inputBuffer;
 
+
+    /*
+    calculateInputWithHammingWindow(in);
+
+    std::thread t0(calculateGoertzel, tones[0], InputAfterHammingWindow, std::ref(mags), 0);
+    std::thread t1(calculateGoertzel, tones[1], InputAfterHammingWindow, std::ref(mags), 1);
+    std::thread t2(calculateGoertzel, tones[2], InputAfterHammingWindow, std::ref(mags), 2);
+    std::thread t3(calculateGoertzel, tones[3], InputAfterHammingWindow, std::ref(mags), 3);
+    std::thread t4(calculateGoertzel, tones[4], InputAfterHammingWindow, std::ref(mags), 4);
+    std::thread t5(calculateGoertzel, tones[5], InputAfterHammingWindow, std::ref(mags), 5);
+    std::thread t6(calculateGoertzel, tones[6], InputAfterHammingWindow, std::ref(mags), 6);
+    std::thread t7(calculateGoertzel, tones[7], InputAfterHammingWindow, std::ref(mags), 7);
+    */
     std::thread t0(calculateGoertzel, tones[0], in, std::ref(mags), 0);
     std::thread t1(calculateGoertzel, tones[1], in, std::ref(mags), 1);
     std::thread t2(calculateGoertzel, tones[2], in, std::ref(mags), 2);
@@ -123,7 +152,6 @@ int Goertzel::streamCallback(
     std::thread t5(calculateGoertzel, tones[5], in, std::ref(mags), 5);
     std::thread t6(calculateGoertzel, tones[6], in, std::ref(mags), 6);
     std::thread t7(calculateGoertzel, tones[7], in, std::ref(mags), 7);
-
     t0.join();
     t1.join();
     t2.join();
@@ -142,7 +170,7 @@ void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>&
     double k0 = FRAMES_PER_BUFFER*tone/SAMPLE_RATE;
 
     double omega_I = cos(2*M_PI*k0/FRAMES_PER_BUFFER);
-
+    mags[magsIterator] = 0;
 
     //double omega_Q = sin(2*pi*k0/FRAMES_PER_BUFFER); Only needed for normal goertzel
     double v1 = 0;
@@ -161,6 +189,7 @@ void Goertzel::calculateGoertzel(int tone, const float* in, std::vector<double>&
     */
     // Optimized goertzel
     mags[magsIterator] = v1*v1 + v2*v2 - omega_I*v1*v2;
+
 }
 
 

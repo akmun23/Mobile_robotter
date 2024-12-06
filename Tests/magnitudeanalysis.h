@@ -35,6 +35,8 @@ private:
     std::vector<char> _receivedMessage;
     std::vector<int> _receivedValues;
 
+    std::vector<double> _HammingWindow;
+
 public:
 
     // PUBLIC VARIABLES
@@ -67,6 +69,7 @@ public:
 
     void reactOnSignal();
 
+    void createHammingWindow(int InputSize);
 
 
 
@@ -82,6 +85,8 @@ public:
     int getDrivingSpeed();
     int getDirection();
     bool getMessagesReceived();
+
+    std::vector<double> getHammingWindow();
 
     // SETTER FUNCTIONS
     void setMessagesReceived(bool received);
