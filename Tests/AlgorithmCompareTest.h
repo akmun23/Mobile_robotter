@@ -21,8 +21,8 @@ int RunCompareTest() {
     int bufferSize = 750;       // 750 works good
     double AudieBufferSize = 6350.4;
 
-    int DFTMagnitude = 3;       // 5 works good
-    int FFTMagnitude = 3;       // 5 works good
+    int DFTMagnitude = 2;       // 3 works good
+    int FFTMagnitude = 2;       // 3 works good
     int GoertzelMagnitude = 60; // 60 works good
 
     double TimeToCalcDFT = 0.205;
@@ -38,12 +38,12 @@ int RunCompareTest() {
 
     // Input files
     std::vector<std::pair<int,std::string>> TestfileNames;
-    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt"});
-    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt"});
-    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
-    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
-    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
     std::vector<std::pair<int,std::string>> DFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> FFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> GoertzelTestfileNames = TestfileNames;

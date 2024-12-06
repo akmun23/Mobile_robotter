@@ -54,7 +54,7 @@ std::vector<std::complex<double>> FFTProcessing::fft(const std::vector<std::comp
     if (_calcTimeMinFFT == 0 || calcTime < _calcTimeMinFFT) {
         _calcTimeMinFFT = calcTime;
     }
-    //usleep(200000);
+    usleep(200000);
     return a;
 }
 
