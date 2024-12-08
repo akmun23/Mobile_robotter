@@ -1,0 +1,232 @@
+[0.019s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target controller_input[0m
+[0.073s] [ 66%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/main.cpp.o[0m
+[0.073s] [ 66%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/controllerinput.cpp.o[0m
+[2.987s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[2.987s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:44:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ is not a member of ‘[01m[Ksensor_msgs::msg[m[K’
+[2.987s]    22 |     rclcpp::Subscription<sensor_msgs::msg::[01;31m[KLaserScan[m[K>::SharedPtr _lidar_subscription;
+[2.987s]       |                                            [01;31m[K^~~~~~~~~[m[K
+[2.987s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.987s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan[01;31m[K>[m[K::SharedPtr _lidar_subscription;
+[2.987s]       |                                                     [01;31m[K^[m[K
+[2.987s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[2.988s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[2.988s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[2.988s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:56:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[2.988s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::[01;31m[KSharedPtr[m[K _lidar_subscription;
+[2.988s]       |                                                        [01;31m[K^~~~~~~~~[m[K
+[2.988s]       |                                                                 [32m[K;[m[K
+[2.991s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:66:[m[K [01;31m[Kerror: [m[K‘[01m[K_lidar_subscription[m[K’ does not name a type
+[2.991s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr [01;31m[K_lidar_subscription[m[K;
+[2.991s]       |                                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:26:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ was not declared in this scope
+[2.997s]    23 |     rclcpp::Subscription<[01;31m[Knav_msgs[m[K::msg::Odometry>::SharedPtr _odom_subscription;
+[2.997s]       |                          [01;31m[K^~~~~~~~[m[K
+[2.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.997s]    23 |     rclcpp::Subscription<nav_msgs::msg::Odometry[01;31m[K>[m[K::SharedPtr _odom_subscription;
+[2.997s]       |                                                 [01;31m[K^[m[K
+[2.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[2.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[2.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[2.997s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[2.997s]    23 |     rclcpp::Subscription<nav_msgs::msg::Odometry>::[01;31m[KSharedPtr[m[K _odom_subscription;
+[2.998s]       |                                                    [01;31m[K^~~~~~~~~[m[K
+[2.998s]       |                                                             [32m[K;[m[K
+[2.998s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:52:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint controllerInput::SharedPtr[m[K’
+[2.998s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:56:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint controllerInput::SharedPtr[m[K’
+[2.998s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::[01;36m[KSharedPtr[m[K _lidar_subscription;
+[2.998s]       |                                                        [01;36m[K^~~~~~~~~[m[K
+[3.000s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:62:[m[K [01;31m[Kerror: [m[K‘[01m[K_odom_subscription[m[K’ does not name a type
+[3.000s]    23 |     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr [01;31m[K_odom_subscription[m[K;
+[3.000s]       |                                                              [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[3.000s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:27:23:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs::msg[m[K’ does not name a type
+[3.000s]    27 |     sensor_msgs::msg::[01;31m[KLaserScan[m[K::SharedPtr _latest_scan;
+[3.000s]       |                       [01;31m[K^~~~~~~~~[m[K
+[3.002s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:28:5:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ does not name a type
+[3.002s]    28 |     [01;31m[Knav_msgs[m[K::msg::Odometry::SharedPtr _latest_odom;
+[3.002s]       |     [01;31m[K^~~~~~~~[m[K
+[3.024s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K In constructor ‘[01m[KcontrollerInput::controllerInput()[m[K’:
+[3.024s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:30:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_lidar_subscription[m[K’ was not declared in this scope; did you mean ‘[01m[Kcreate_subscription[m[K’?
+[3.024s]    30 |     [01;31m[K_lidar_subscription[m[K = this->create_subscription<sensor_msgs::msg::LaserScan>(
+[3.024s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.024s]       |     [32m[Kcreate_subscription[m[K
+[3.025s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:30:71:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ is not a member of ‘[01m[Ksensor_msgs::msg[m[K’
+[3.025s]    30 |     _lidar_subscription = this->create_subscription<sensor_msgs::msg::[01;31m[KLaserScan[m[K>(
+[3.025s]       |                                                                       [01;31m[K^~~~~~~~~[m[K
+[3.025s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:31:71:[m[K [01;31m[Kerror: [m[K‘[01m[KscanCallback[m[K’ is not a member of ‘[01m[KcontrollerInput[m[K’
+[3.025s]    31 |         "/scan", rclcpp::SensorDataQoS(), std::bind(&controllerInput::[01;31m[KscanCallback[m[K, this, std::placeholders::_1));
+[3.025s]       |                                                                       [01;31m[K^~~~~~~~~~~~[m[K
+[3.036s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:32:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_odom_subscription[m[K’ was not declared in this scope; did you mean ‘[01m[Kcreate_subscription[m[K’?
+[3.036s]    32 |     [01;31m[K_odom_subscription[m[K = this->create_subscription<nav_msgs::msg::Odometry>(
+[3.036s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[3.036s]       |     [32m[Kcreate_subscription[m[K
+[3.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:32:52:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ was not declared in this scope
+[3.041s]    32 |     _odom_subscription = this->create_subscription<[01;31m[Knav_msgs[m[K::msg::Odometry>(
+[3.041s]       |                                                    [01;31m[K^~~~~~~~[m[K
+[3.041s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:32:32:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+[3.042s]    32 |     _odom_subscription = this->[01;31m[Kcreate_subscription<nav_msgs::msg::Odometry>[m[K(
+[3.042s]       |                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.042s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:33:71:[m[K [01;31m[Kerror: [m[K‘[01m[KodomCallback[m[K’ is not a member of ‘[01m[KcontrollerInput[m[K’
+[3.042s]    33 |         "/odom", rclcpp::SensorDataQoS(), std::bind(&controllerInput::[01;31m[KodomCallback[m[K, this, std::placeholders::_1));
+[3.042s]       |                                                                       [01;31m[K^~~~~~~~~~~~[m[K
+[3.042s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:35:18:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ was not declared in this scope
+[3.042s]    35 |     _initial_x = [01;31m[Kmsg[m[K->pose.pose.position.x;
+[3.042s]       |                  [01;31m[K^~~[m[K
+[3.042s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:35:18:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[3.043s] In file included from [01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:7[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/duration.hpp:20[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos.hpp:20[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:32[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:42[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.043s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:4[m[K,
+[3.043s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[3.043s] [01m[K/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+[3.043s]    27 | namespace [01;36m[Kmsg[m[K
+[3.043s]       |           [01;36m[K^~~[m[K
+[3.043s] In file included from [01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:7[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:28[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:30[m[K,
+[3.043s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:45[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.044s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:4[m[K,
+[3.044s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[3.044s] [01m[K/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+[3.044s]    27 | namespace [01;36m[Kmsg[m[K
+[3.044s]       |           [01;36m[K^~~[m[K
+[3.044s] In file included from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:23[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.044s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.044s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:4[m[K,
+[3.045s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[3.045s] [01m[K/opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+[3.045s]    27 | namespace [01;36m[Kmsg[m[K
+[3.045s]       |           [01;36m[K^~~[m[K
+[3.045s] In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__struct.hpp:20[m[K,
+[3.045s]                  from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joy.hpp:7[m[K,
+[3.045s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:5[m[K,
+[3.045s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[3.045s] [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg[m[K’
+[3.045s]    31 | namespace [01;36m[Kmsg[m[K
+[3.045s]       |           [01;36m[K^~~[m[K
+[3.045s] In file included from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joy.hpp:7[m[K,
+[3.045s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:5[m[K,
+[3.045s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[3.045s] [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Ksensor_msgs::msg[m[K’
+[3.045s]    31 | namespace [01;36m[Kmsg[m[K
+[3.045s]       |           [01;36m[K^~~[m[K
+[3.045s] In file included from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:21[m[K,
+[3.045s]                  from [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/twist.hpp:7[m[K,
+[3.045s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:6[m[K,
+[3.045s]                  from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[3.045s] [01m[K/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:27:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kgeometry_msgs::msg[m[K’
+[3.045s]    27 | namespace [01;36m[Kmsg[m[K
+[3.045s]       |           [01;36m[K^~~[m[K
+[3.045s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K At global scope:
+[3.045s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:45:60:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs::msg[m[K’ does not name a type
+[3.045s]    45 | void controllerInput::scanCallback(const sensor_msgs::msg::[01;31m[KLaserScan[m[K::SharedPtr msg) {
+[3.045s]       |                                                            [01;31m[K^~~~~~~~~[m[K
+[3.045s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:45:81:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[3.045s]    45 | void controllerInput::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr [01;31m[Kmsg[m[K) {
+[3.045s]       |                                                                                 [01;31m[K^~~[m[K
+[3.046s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:45:80:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[3.046s]    45 | void controllerInput::scanCallback[34m[K([m[Kconst sensor_msgs::msg::LaserScan::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K) {
+[3.046s]       |                                   [34m[K~[m[K                                            [01;31m[K^[m[K[32m[K~~~[m[K
+[3.046s]       |                                                                                [32m[K)[m[K
+[3.046s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:45:81:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[Kmsg[m[K’
+[3.046s]    45 | void controllerInput::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr [01;31m[Kmsg[m[K) {
+[3.046s]       |                                                                                 [01;31m[K^~~[m[K
+[3.046s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:49:42:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ does not name a type
+[3.046s]    49 | void controllerInput::odomCallback(const [01;31m[Knav_msgs[m[K::msg::Odometry::SharedPtr msg){
+[3.046s]       |                                          [01;31m[K^~~~~~~~[m[K
+[3.046s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:49:55:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+[3.046s]    49 | void controllerInput::odomCallback(const nav_msgs::msg[01;31m[K::[m[KOdometry::SharedPtr msg){
+[3.046s]       |                                                       [01;31m[K^~[m[K
+[3.046s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:49:55:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[3.046s]    49 | void controllerInput::odomCallback[34m[K([m[Kconst nav_msgs::msg[01;31m[K:[m[K[32m[K:[m[KOdometry::SharedPtr msg){
+[3.046s]       |                                   [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+[3.046s]       |                                                       [32m[K)[m[K
+[3.046s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:49:55:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+[3.046s]    49 | void controllerInput::odomCallback(const nav_msgs::msg[01;31m[K::[m[KOdometry::SharedPtr msg){
+[3.046s]       |                                                       [01;31m[K^~[m[K
+[3.057s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K In member function ‘[01m[Kvoid controllerInput::joy_callback(sensor_msgs::msg::Joy_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.057s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:77:12:[m[K [01;31m[Kerror: [m[K‘[01m[K_latest_scan[m[K’ was not declared in this scope
+[3.057s]    77 |         if([01;31m[K_latest_scan[m[K && _latest_odom){
+[3.057s]       |            [01;31m[K^~~~~~~~~~~~[m[K
+[3.065s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:77:28:[m[K [01;31m[Kerror: [m[K‘[01m[K_latest_odom[m[K’ was not declared in this scope
+[3.065s]    77 |         if(_latest_scan && [01;31m[K_latest_odom[m[K){
+[3.065s]       |                            [01;31m[K^~~~~~~~~~~~[m[K
+[3.099s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:2[m[K:
+[3.099s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:44:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ is not a member of ‘[01m[Ksensor_msgs::msg[m[K’
+[3.099s]    22 |     rclcpp::Subscription<sensor_msgs::msg::[01;31m[KLaserScan[m[K>::SharedPtr _lidar_subscription;
+[3.099s]       |                                            [01;31m[K^~~~~~~~~[m[K
+[3.099s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.099s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan[01;31m[K>[m[K::SharedPtr _lidar_subscription;
+[3.099s]       |                                                     [01;31m[K^[m[K
+[3.099s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[3.099s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[3.099s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:53:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[3.099s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:56:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[3.099s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::[01;31m[KSharedPtr[m[K _lidar_subscription;
+[3.099s]       |                                                        [01;31m[K^~~~~~~~~[m[K
+[3.100s]       |                                                                 [32m[K;[m[K
+[3.103s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:66:[m[K [01;31m[Kerror: [m[K‘[01m[K_lidar_subscription[m[K’ does not name a type
+[3.103s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr [01;31m[K_lidar_subscription[m[K;
+[3.103s]       |                                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[3.109s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:26:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ was not declared in this scope
+[3.109s]    23 |     rclcpp::Subscription<[01;31m[Knav_msgs[m[K::msg::Odometry>::SharedPtr _odom_subscription;
+[3.109s]       |                          [01;31m[K^~~~~~~~[m[K
+[3.109s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.109s]    23 |     rclcpp::Subscription<nav_msgs::msg::Odometry[01;31m[K>[m[K::SharedPtr _odom_subscription;
+[3.110s]       |                                                 [01;31m[K^[m[K
+[3.110s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[3.110s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[3.110s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[3.110s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[3.110s]    23 |     rclcpp::Subscription<nav_msgs::msg::Odometry>::[01;31m[KSharedPtr[m[K _odom_subscription;
+[3.110s]       |                                                    [01;31m[K^~~~~~~~~[m[K
+[3.110s]       |                                                             [32m[K;[m[K
+[3.110s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:52:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint controllerInput::SharedPtr[m[K’
+[3.110s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:22:56:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint controllerInput::SharedPtr[m[K’
+[3.110s]    22 |     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::[01;36m[KSharedPtr[m[K _lidar_subscription;
+[3.110s]       |                                                        [01;36m[K^~~~~~~~~[m[K
+[3.112s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:23:62:[m[K [01;31m[Kerror: [m[K‘[01m[K_odom_subscription[m[K’ does not name a type
+[3.112s]    23 |     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr [01;31m[K_odom_subscription[m[K;
+[3.112s]       |                                                              [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[3.113s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:27:23:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs::msg[m[K’ does not name a type
+[3.113s]    27 |     sensor_msgs::msg::[01;31m[KLaserScan[m[K::SharedPtr _latest_scan;
+[3.113s]       |                       [01;31m[K^~~~~~~~~[m[K
+[3.114s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:28:5:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs[m[K’ does not name a type
+[3.114s]    28 |     [01;31m[Knav_msgs[m[K::msg::Odometry::SharedPtr _latest_odom;
+[3.114s]       |     [01;31m[K^~~~~~~~[m[K
+[3.580s] gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:76: CMakeFiles/controller_input.dir/src/main.cpp.o] Error 1
+[3.580s] gmake[2]: *** Waiting for unfinished jobs....
+[4.706s] gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:90: CMakeFiles/controller_input.dir/src/controllerinput.cpp.o] Error 1
+[4.706s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
+[4.706s] gmake: *** [Makefile:146: all] Error 2
+[4.709s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16

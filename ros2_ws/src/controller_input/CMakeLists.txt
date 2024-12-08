@@ -18,7 +18,9 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(teleop_twist_joy REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(nav_msgs REQUIRED)
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
 
 include_directories(include)
 
@@ -27,7 +29,7 @@ add_executable(controller_input src/main.cpp
                src/controllerinput.cpp include/controllerinput.h
               )
 
-target_link_libraries(controller_input sfml-system sfml-window sfml-graphics sfml-network sfml-audio)
+target_link_libraries(controller_input sfml-system sfml-window sfml-graphics sfml-network sfml-audio Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql)
 
 # Specify the dependencies for the target
 ament_target_dependencies(controller_input
@@ -36,6 +38,7 @@ ament_target_dependencies(controller_input
   sensor_msgs
   teleop_twist_joy
   rclcpp_components
+  nav_msgs
 )
 
 # Install the executable

@@ -2,14 +2,67 @@
 
 controllerInput::controllerInput() : Node("controller_input")
 {
+    // Initialize the database connection
+    db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");  // Set the hostname
+    db.setDatabaseName("lidar_db");  // Set your database name
+    db.setUserName("aksel");  // Set MySQL username
+    db.setPassword("hua28rdc");  // Set MySQL password
+
+    if (!db.open()) {
+        RCLCPP_ERROR(this->get_logger(), "Database error: %s", db.lastError().text().toStdString().c_str());
+    }
+
+    //Delete all data from the databse
+    QSqlQuery query;
+    if (!query.exec("DELETE FROM lidar_data")) {
+        qDebug() << "Error deleting data from lidar_data" << query.lastError().text();
+    }
+
+    if (!query.exec("DELETE FROM robot_positions")) {
+        qDebug() << "Error deleting data from robot_positions" << query.lastError().text();
+    }
+
     // Subscribe to the joystick messages
     _joySubscriber = this->create_subscription<sensor_msgs::msg::Joy>(
         "joy", 10, std::bind(&controllerInput::joy_callback, this, std::placeholders::_1));
 
+    // QoS for both LiDAR and odometry data
+    rclcpp::QoS qos{rclcpp::SensorDataQoS()};
+
+    // Subscription to LiDAR and odometry
+    _lidar_subscription = this->create_subscription<sensor_msgs::msg::LaserScan>(
+        "/scan", rclcpp::SensorDataQoS(), std::bind(&controllerInput::scanCallback, this, std::placeholders::_1));
+    _odom_subscription = this->create_subscription<nav_msgs::msg::Odometry>(
+        "/odom", rclcpp::SensorDataQoS(), std::bind(&controllerInput::odomCallback, this, std::placeholders::_1));
+
     makeAmplitudeFading();
 }
 
+controllerInput::~controllerInput() {
+    db.close();
+}
+
+void controllerInput::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
+    _latest_scan = msg;
+}
+
+void controllerInput::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg){
+    if(!_initial_pose_set){
+        _initial_x = msg->pose.pose.position.x;
+        _initial_y = -msg->pose.pose.position.y;
+        _initial_pose_set = true;
+
+        std::cout << _initial_x << std::endl;
+        std::cout << _initial_y << std::endl;
+    }
+
+    _latest_odom = msg;
+}
+
 void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
+    QSqlQuery query;
+
     // Map joystick values to the range [0, 100]
     uint8_t linear_value = mapAxisToByte(msg->axes[1]);  // Linear velocity value
     uint8_t angular_value = mapAxisToByte(msg->axes[0]); // Angular velocity value
@@ -23,6 +76,60 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
 
     if(msg->buttons[0] == 1){
         play_dtmf_if_active();
+    }
+
+    if(_latest_odom){
+        double robot_x = _latest_odom->pose.pose.position.x - _initial_x;
+        double robot_y = -_latest_odom->pose.pose.position.y - _initial_y;
+
+        // Insert robot_x and y into table robot_positions
+        query.prepare("INSERT INTO robot_positions (robot_x, robot_y) VALUES (:robot_x, :robot_y)");
+        query.bindValue(":robot_x", robot_x);
+        query.bindValue(":robot_y", robot_y);
+        if (!query.exec()) {
+            qDebug() << "Error inserting data into robot_positions:" << query.lastError().text();
+        }
+    }
+
+    // Log odom and scan into the database if button 2 is pressed
+    if (msg->buttons[1] == 1) {
+        std::cout << "Updating database" << std::endl;
+        if (_latest_scan && _latest_odom) {
+            const auto &q = _latest_odom->pose.pose.orientation;
+            double siny_cosp = 2.0 * (q.w * q.z + q.x * q.y);
+            double cosy_cosp = 1.0 - 2.0 * (q.y * q.y + q.z * q.z);
+            double robot_yaw = std::atan2(siny_cosp, cosy_cosp);
+            double robot_x = _latest_odom->pose.pose.position.x - _initial_x;
+            double robot_y = -_latest_odom->pose.pose.position.y - _initial_y;
+
+            // Prepare the insert statement
+            QString queryStr = "INSERT INTO lidar_data (distance, angle, robot_x, robot_y, robot_yaw) VALUES ";
+            QStringList valueStrings;
+
+            double angle = _latest_scan->angle_min;
+            for (size_t i = 0; i < _latest_scan->ranges.size(); ++i) {
+                double distance = _latest_scan->ranges[i];
+                if (distance >= _latest_scan->range_min && distance <= _latest_scan->range_max) {
+                    valueStrings.append(
+                        QString("(%1, %2, %3, %4, %5)")
+                            .arg(distance)
+                            .arg(angle)
+                            .arg(robot_x)
+                            .arg(robot_y)
+                            .arg(robot_yaw)
+                        );
+                }
+                angle += _latest_scan->angle_increment;
+            }
+
+            // Execute the batch insert
+            queryStr += valueStrings.join(", ");
+            if (!query.exec(queryStr)) {
+                qDebug() << "Error inserting data into lidar_data:" << query.lastError().text();
+            }
+        } else {
+            RCLCPP_ERROR(this->get_logger(), "No data to log");
+        }
     }
 }
 
@@ -50,15 +157,14 @@ void controllerInput::play_dtmf_if_active() {
     // Update the previous values after playing the sequence
     _previousLinearValue = _latestLinearValue;
     _previousAngularValue = _latestAngularValue;
-
 }
 
 void controllerInput::makeAmplitudeFading(){
     double AudioStart = 0;
-    double fadeInEnd = AudioSamplesPerFrame/6;
-    double fadeOutBegin = AudioSamplesPerFrame-fadeInEnd;
-    double fadeOutEnd = AudioSamplesPerFrame;
-    double End = AudioSamplesPerFrame+Delay;
+    double fadeInEnd = soundFrequency * ToneDuration / 1000 / 6;  // 1/6th of tone duration
+    double fadeOutBegin = soundFrequency * ToneDuration / 1000 - fadeInEnd;  // 5/6th of tone duration
+    double fadeOutEnd = soundFrequency * ToneDuration / 1000;
+    double End = soundFrequency * (ToneDuration + PauseDuration) / 1000;
 
     for (int i = AudioStart; i < fadeInEnd; i++) {
         AmplitudeFading.push_back(i/fadeInEnd);
@@ -72,6 +178,8 @@ void controllerInput::makeAmplitudeFading(){
     for (int i = fadeOutEnd; i < End; i++) {
         AmplitudeFading.push_back(0);
     }
+
+    std::cout << "AmplitudeFading size: " << AmplitudeFading.size() << std::endl;
 }
 
 int controllerInput::mapCharToIndex(char key) {

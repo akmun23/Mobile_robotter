@@ -32,17 +32,13 @@ private:
     //Robot
     Robot robot;
 
-    int update_counter = 0;
-    const float scale_factor = 320.0;
-    float _prev_angle = 0;
-    int counter = 0;
+    const float scale_factor = 160.0;
 
 public:
     GUI();
     bool spaceFree(int x_, int y_);
-    int squareOccupy(int x_, int y_);
     void movementRobot(float robot_x, float robot_y);
-    void lidarReading(float angle, float len, float yaw);
+    void lidarReading(float angle, float len);
     void rescale();
     void paintMap();
     void findPoints(vector<Point>& points, Point p1, Point p2, bool TF = true);
