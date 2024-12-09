@@ -7,7 +7,11 @@
 
 
 MagnitudeAnalysis::MagnitudeAnalysis(double minMagnitude, double timeToReadTone) : _minMagnitude(minMagnitude), _timeToReadTone(timeToReadTone) {
-    _timeToReadMessage = timeToReadTone*6.4;   // FIND UD AF EN PASSENDE VÆRDI HER ISTEDET FOR 7.2
+    _timeToReadMessage = timeToReadTone*6;   // FIND UD AF EN PASSENDE VÆRDI HER ISTEDET FOR 7.2
+}
+
+MagnitudeAnalysis::MagnitudeAnalysis(double magnitude, double timeToReadTone, std::string outFileName) : _minMagnitude(magnitude), _timeToReadTone(timeToReadTone), _outFileName(outFileName){
+    _timeToReadMessage = timeToReadTone*6;
 }
 
 
@@ -169,7 +173,9 @@ void MagnitudeAnalysis::ActOnDTMFSequence(char FoundTone){
         std::cout << "No tone detected" << std::endl;
     }else{
         std::cout << "Tone spotted : " << FoundTone << std::endl;
+
     }
+
     _receivedMessage.push_back(FoundTone);
     _receivedValues.push_back(getValueFromLetter(FoundTone));
     _startOfMessageReceived = true;
@@ -216,6 +222,17 @@ void MagnitudeAnalysis::ActOnTimeout(){
 }
 
 void MagnitudeAnalysis::ResetVariablesAfterMessage(){
+
+    std::ofstream outputFile;
+
+    outputFile.open(_outFileName, std::ios_base::app); // The file is opened in append mode meaning that the data will be added to the end of the file
+
+    for (int ii = 0; ii < _receivedMessage.size(); ++ii) {
+        outputFile << _receivedMessage[ii] << " ";
+    }
+    outputFile << std::endl;
+    outputFile.close();
+
     _letterCounter = 0;
     _currentDTMFSequence.clear();
     _letterReceived = false;
@@ -295,23 +312,6 @@ void MagnitudeAnalysis::checkMessageState(){
         ResetVariablesAfterMessage();
     }
 }
-
-
-
-
-void MagnitudeAnalysis::createHammingWindow(int InputSize){
-
-    for (int n = 0; n < InputSize; ++n) {
-        _HammingWindow.push_back(0.54 - 0.46 * cos(2 * M_PI * n / (InputSize - 1)));
-    }
-}
-
-
-
-
-
-
-
 
 
 

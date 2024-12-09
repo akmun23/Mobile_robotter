@@ -18,18 +18,18 @@ void TimePrinter(std::chrono::high_resolution_clock::time_point start){
 
 int RunCompareTest() {
     int sampleRate = 44100;
-    int bufferSize = 750;       // 750 works good
-    double AudieBufferSize = 6350.4;
+    int bufferSize = 1024;       // 750 works good
+    double AudieBufferSize = 6615;
 
-    int DFTMagnitude = 2;       // 3 works good
-    int FFTMagnitude = 2;       // 3 works good
-    int GoertzelMagnitude = 30; // 60 works good
+    double DFTMagnitude = 0.5;       // 3 works good
+    double FFTMagnitude = 0.5;       // 3 works good
+    double GoertzelMagnitude = 0.5; // 60 works good
 
     double TimeToCalcDFT = 0.205;
     double TimeToCalcFFT = 0.205;
     double TimeToCalcGoertzelWithDelay = 0.21;
 
-    double scalingFactor = 0.9;
+    double scalingFactor = 1;
     double TimeToReadToneDFT = TimeToCalcDFT*(AudieBufferSize/bufferSize)*scalingFactor;
     double timeToReadToneFFT = TimeToCalcFFT*(AudieBufferSize/bufferSize)*scalingFactor;
     double timeToReadToneGoertzel = TimeToCalcGoertzelWithDelay*(AudieBufferSize/bufferSize)*scalingFactor;
@@ -38,12 +38,14 @@ int RunCompareTest() {
 
     // Input files
     std::vector<std::pair<int,std::string>> TestfileNames;
-    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
+    TestfileNames.push_back({1,"/home/pascal/RobotRecordingTest.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/test.txt"});
     std::vector<std::pair<int,std::string>> DFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> FFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> GoertzelTestfileNames = TestfileNames;

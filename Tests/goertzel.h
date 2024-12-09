@@ -14,6 +14,7 @@ class GoertzelTesting : public MagnitudeAnalysis{
 public:
     // Constructor
     GoertzelTesting(double minMagnitude, double timeToReadTone, int signalSize);
+    GoertzelTesting(double minMagnitude, double timeToReadTone, int signalSize, std::string outFileName);
 
     std::chrono::high_resolution_clock::time_point _startToneCalculation;
 
@@ -51,10 +52,13 @@ public:
 
     void analyseGoertzelOutput(const std::vector<double>& mags);
 
+    void goertzelCompare(float* samples, int targetFreq, int sampleRate, double& power);
+
 
 private:
     // Method to read DTMF data from file in chunks
     std::vector<double> readDTMFDataChunk(std::ifstream& inFile, int bufferSize);
+
 
     // Method to use Goertzel algorithm on the data
     void analyzeDataWithGoertzel(const std::vector<double>& data, const int &sampleRate);

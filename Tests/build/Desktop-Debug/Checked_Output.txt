@@ -3,40 +3,165 @@ New sequence of messages
 ----------------------------------------------
 
 Message 1
-Message Correct Format and correct message
-* 1 5 C 2 # 
+Message Incorrect Format
+* 5 # 1 7 # 
 ----------------------------------------------
 
 Message 2
-Message Correct Format and correct message
-* 1 7 B C # 
+Message Incorrect Format
+* 9 1 * 4 5 
 ----------------------------------------------
 
 Message 3
-Message Correct Format and correct message
-* 9 1 A D # 
+Message Incorrect Format
+* 9 * 1 2 * 
 ----------------------------------------------
 
 Message 4
-Message Correct Format and correct message
-* 7 4 6 2 # 
+Message Incorrect Format
+* 9 1 A D 7 
 ----------------------------------------------
 
 Message 5
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* # # 1 1 * 
+----------------------------------------------
+
+Message 6
+Message Incorrect Format
+* A # 1 1 A 
+----------------------------------------------
+
+Message 7
+Message Incorrect Format
+* 4     5   
+----------------------------------------------
+
+Message 8
+Message Incorrect Format
+* 1       * 
+----------------------------------------------
+
+Message 9
+Message Incorrect Format
+* 7 # * 1 # 
+----------------------------------------------
+
+Message 10
+Message Incorrect Format
+* 6 # 1 3 # 
+----------------------------------------------
+
+Message 11
+Message Incorrect Format
+* 2 2 # * 1 
+----------------------------------------------
+
+Message 12
+Message Incorrect Format
+* 1 # 7 2 # 
+----------------------------------------------
+
+Message 13
+Message Incorrect Format
+* 7 * 1 2 * 
+----------------------------------------------
+
+Message 14
+Message Incorrect Format
+* 7 B C # 9 
+----------------------------------------------
+
+Message 15
+Message Incorrect Format
+* 9 # 1 3 # 
+----------------------------------------------
+
+Message 16
+Message Incorrect Format
+* 2 # 4 B C 
+----------------------------------------------
+
+Message 17
+Message Incorrect Format
+* 9 # # 7 2 
+----------------------------------------------
+
+Message 18
+Message Incorrect Format
+* 7 # 1 2 # 
+----------------------------------------------
+
+Message 19
+Message Incorrect Format
+* 9 1 A * 4 
+----------------------------------------------
+
+Message 20
+Message Incorrect Format
+* 7 # 1 2 * 
+----------------------------------------------
+
+Message 21
+Message Incorrect Format
+* 9 1 A D * 
+----------------------------------------------
+
+Message 22
+Message Incorrect Format
+* 2 * 6 # * 
+----------------------------------------------
+
+Message 23
+Message Incorrect Format
+* B # 9 1 A 
+----------------------------------------------
+
+Message 24
+Message Incorrect Format
+* 4 # * 7 9 
+----------------------------------------------
+
+Message 25
+Message Incorrect Format
+* C # 1 B * 
+----------------------------------------------
+
+Message 26
+Message Incorrect Format
+* 7 4 2 * 1 
+----------------------------------------------
+
+Message 27
+Message Incorrect Format
+* 2 * 1 B * 
+----------------------------------------------
+
+Message 28
+Message Incorrect Format
+* * 7 4 6 2 
+----------------------------------------------
+
+Message 29
+Message Incorrect Format
+* 7 # 1 2 # 
+----------------------------------------------
+
+Message 30
+Message Incorrect Format
+* B # 1 A * 
 ----------------------------------------------
 
 
 ----------------------------------------------
-Correct Messages: 5
+Correct Messages: 0
 Incorrect Messages: 0
-Incorrect Format Messages: 0
-Total Messages: 5
-Correct format percentage: 100%
-Correct Messages percentage: 100%
-Time taken to calculate Entire sequence: 94454.9 ms.
-Average time taken to calculate Buffer: 0.189892 ms.
-Max time taken to calculate Buffer: 0.369942 ms.
-Min time taken to calculate Buffer: 0.079236 ms.
+Incorrect Format Messages: 30
+Total Messages: 30
+Correct format percentage: 0%
+Correct Messages percentage: 0%
+Time taken to calculate Entire sequence: 382924 ms.
+Average time taken to calculate Buffer: 0.244935 ms.
+Max time taken to calculate Buffer: 0.419112 ms.
+Min time taken to calculate Buffer: 0.038258 ms.
 ----------------------------------------------

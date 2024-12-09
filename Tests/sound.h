@@ -26,8 +26,8 @@ double SineWave(double time, double freq, double amp) {
 
 
 std::vector<double> AmplitudeFading;
-int ToneDuration = 80;  // Tone duration in milliseconds
-int PauseDuration = 50; // Pause duration in milliseconds
+int ToneDuration = 100;  // Tone duration in milliseconds    (80ms)
+int PauseDuration = 50; // Pause duration in milliseconds   (50ms)
                         // Time to detect tone 200us
 int SamplesPerFrame2 = soundFrequency * (ToneDuration + PauseDuration) / 1000;  // Total duration in samples (tone + pause)
 int AudioSamplesPerFrame = SamplesPerFrame2;  // No additional delay since tone + pause combined
@@ -158,9 +158,10 @@ void RunSoundProgram() {
     sound.play();
     usleep(1*1000*1000*2);    // Sleep for 2 seconds
     samples.clear();
-    int DelayBetweenTones = 1000*150; // 15 ms
+    int DelayBetweenTones = 1000*500; // 15 ms
 
     for(int i = 0; i < 10; ++i){
+
         playSequence("*15C2#");
         playSequence("*17bc#");
         playSequence("*91ad#");
@@ -171,9 +172,14 @@ void RunSoundProgram() {
         /*
         playSequence("*4032#");
         usleep(DelayBetweenTones);
+        playSequence("*3240#");
+        usleep(DelayBetweenTones);
         playSequence("*2632#");
         usleep(DelayBetweenTones);
+        playSequence("*3226#");
+        usleep(DelayBetweenTones);
         */
+
     }
 }
 

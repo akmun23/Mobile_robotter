@@ -9,6 +9,10 @@
 FFTProcessing::FFTProcessing(double minMagnitude, double timeToReadTone, int frequencyTolerance)
 : MagnitudeAnalysis(minMagnitude, timeToReadTone), _minMagnitude(minMagnitude), _frequencyTolerance(frequencyTolerance) {}
 
+
+FFTProcessing::FFTProcessing(double minMagnitude, double timeToReadTone, int frequencyTolerance, std::string outFileName) :
+    MagnitudeAnalysis(minMagnitude, timeToReadTone, outFileName), _minMagnitude(minMagnitude), _frequencyTolerance(frequencyTolerance) {}
+
 // Function to reverse bits for FFT
 unsigned int FFTProcessing::bitReverse(unsigned int x, int log2n) {
     int n = 0;
@@ -54,7 +58,7 @@ std::vector<std::complex<double>> FFTProcessing::fft(const std::vector<std::comp
     if (_calcTimeMinFFT == 0 || calcTime < _calcTimeMinFFT) {
         _calcTimeMinFFT = calcTime;
     }
-    usleep(200000);
+    //usleep(200000);
     return a;
 }
 

@@ -44,6 +44,8 @@ public:
     // Constructor to initialize the class with required parameters
     FFTProcessing(double minMagnitude, double timeToReadTone, int frequencyTolerance);
 
+    FFTProcessing(double minMagnitude, double timeToReadTone, int frequencyTolerance, std::string outFileName);
+
     // Function to process the file and detect DTMF tones
     std::vector<double> processFile(std::ifstream &file, int sampleRate, int bufferSize);
 

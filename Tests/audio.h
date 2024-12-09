@@ -32,6 +32,7 @@ typedef struct {
 static streamCallbackData* spectroData;
 
 
+
 class Goertzel : public MagnitudeAnalysis
 {
 private:
@@ -180,7 +181,17 @@ public:
         void* userData
     );
 
-    static void calculateInputWithHammingWindow(const float* in);
+
+    void InitForCompare();
+
+    void startCompare();
+
+    static int streamCallbackCompare(
+        const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+        const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+        void* userData
+    );
+
 
 
 };

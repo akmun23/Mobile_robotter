@@ -11,15 +11,20 @@
 
 
 void RunListeningProgram() {
-    Goertzel audio(2, 0.1303);
+    Goertzel audio(2, 0.150);
     audio.Init();
     audio.start();
     audio.end();
 }
 void RunListeningProgramFFT() {
-    Goertzel audio(0.2, 0.140);
+    Goertzel audio(0.2, 0.150);
     audio.InitForFFT();
     audio.startFFT();
+}
+void RunListeningProgramCompare() {
+    Goertzel audio(0.5, 0.150);
+    audio.InitForCompare();
+    audio.startCompare();
 }
 
 
@@ -54,6 +59,14 @@ void ListeningAndAudioProgramFFT() {
     thread2.join();
 }
 
+void ListeningAndAudioProgramCompare() {
+    std::thread thread1(RunSoundProgram);
+    std::thread thread2(RunListeningProgramCompare);
+
+    thread1.join();
+    thread2.join();
+}
+
 
 int RunProgram(int ProgramChoice) {
 
@@ -70,6 +83,8 @@ int RunProgram(int ProgramChoice) {
         RunSoundProgram();
     }else if (ProgramChoice == 6){
         ListeningAndAudioProgramFFT();
+    }else if (ProgramChoice == 7){
+        ListeningAndAudioProgramCompare();
     }else{
         std::cout << "Invalid Program Choice" << std::endl;
     }

@@ -1,9 +1,9 @@
 #include "dft.h"
 #include <unistd.h>
 
-DFT::DFT(int minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {};
+DFT::DFT(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {};
 
-
+DFT::DFT(double minMagnitude, double timeToReadTone, std::string outfile) : MagnitudeAnalysis(minMagnitude, timeToReadTone, outfile) {};
 
 std::vector<double> DFT::readDTMFDataChunk(std::ifstream& inFile, int& bufferSize) { // DOESN'T STOP AT END OF FILE
     std::vector<double> signal;
@@ -51,6 +51,36 @@ void DFT::computeDFT(const std::vector<double>& input, int& sampleRate) {
     usleep(200000); // Sleep for 200 ms
 
     analyseMagnitudes(output);
+}
+
+std::vector<double> DFT::computeDFTCompare(float* input, int sampleRate, int FramesPerBuffer) {
+    //std::chrono::high_resolution_clock::time_point TimeForCalculationStartDFT =std::chrono::high_resolution_clock::now();
+
+    int N = FramesPerBuffer;
+    std::vector<double> output(_tones.size());
+    for (int i = 0; i < _tones.size(); ++i) {
+        double k = _tones[i]*N/sampleRate;
+        std::complex<double> sum = 0.0;
+        for (int n = 0; n < N; ++n) {
+            double angle = 2 * PI_M * k * n / N;
+            sum += input[n] * std::exp(-std::complex<float>(0.0, angle));
+        }
+        output[i] = std::abs(sum);
+    }
+    analyseMagnitudes(output);
+
+    /*
+    double TimeForCalculationDFT = timePassed(TimeForCalculationStartDFT);
+    _TimeSumCalculationDFT += TimeForCalculationDFT;
+
+    if(_calcTimeMaxDFT < TimeForCalculationDFT){
+        _calcTimeMaxDFT = TimeForCalculationDFT;
+    }
+    if(_calcTimeMinDFT == 0 || _calcTimeMinDFT > TimeForCalculationDFT){
+        _calcTimeMinDFT = TimeForCalculationDFT;
+    }*/
+
+    return output;
 }
 
 

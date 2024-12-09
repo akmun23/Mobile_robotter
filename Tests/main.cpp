@@ -18,8 +18,10 @@ int main(){
      * 5 - Program to just play audio
      *
      * 6 - Same as 3 but with FFT
+     *
+     * 7 - Program to play audio and listen for DTMF tones using all 3 algorithms
     */
-    RunProgram(3);
+    RunProgram(2);
 
     return 0;
 }
