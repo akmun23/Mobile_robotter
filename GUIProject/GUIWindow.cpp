@@ -137,7 +137,6 @@ void GUI::rescale(){
 }
 
 void GUI::findPoints(vector<Point>& points, Point p1, Point p2, int tolerance = 1, bool TF = true){ //add a point for every "tolerance" amount of points, to "points"
-
     if(TF){
         points.clear();
     }

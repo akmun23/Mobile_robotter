@@ -1,0 +1,38 @@
+[0.019s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target controller_input[0m
+[0.074s] [ 66%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/main.cpp.o[0m
+[0.074s] [ 66%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/controllerinput.cpp.o[0m
+[2.903s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/main.cpp:2[m[K:
+[2.903s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:47:28:[m[K [01;31m[Kerror: [m[K‘[01m[KsoundFrequency[m[K’ was not declared in this scope
+[2.903s]    47 |     int SamplesPerFrame2 = [01;31m[KsoundFrequency[m[K * (ToneDuration + PauseDuration) / 1000;  // Total duration in samples (tone + pause)
+[2.903s]       |                            [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.906s] In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:1[m[K:
+[2.906s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:47:28:[m[K [01;31m[Kerror: [m[K‘[01m[KsoundFrequency[m[K’ was not declared in this scope
+[2.906s]    47 |     int SamplesPerFrame2 = [01;31m[KsoundFrequency[m[K * (ToneDuration + PauseDuration) / 1000;  // Total duration in samples (tone + pause)
+[2.906s]       |                            [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.910s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:49:25:[m[K [01;31m[Kerror: [m[K‘[01m[KsoundFrequency[m[K’ was not declared in this scope
+[2.910s]    49 |     int AudioPlayRate = [01;31m[KsoundFrequency[m[K;
+[2.910s]       |                         [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.912s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/include/controllerinput.h:49:25:[m[K [01;31m[Kerror: [m[K‘[01m[KsoundFrequency[m[K’ was not declared in this scope
+[2.912s]    49 |     int AudioPlayRate = [01;31m[KsoundFrequency[m[K;
+[2.912s]       |                         [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.933s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K In member function ‘[01m[Kvoid controllerInput::joy_callback(sensor_msgs::msg::Joy_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.933s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:78:5:[m[K [01;31m[Kerror: [m[K‘[01m[KQuery[m[K’ was not declared in this scope; did you mean ‘[01m[Kquery[m[K’?
+[2.934s]    78 |     [01;31m[KQuery[m[K.prepare("INSERT INTO robot_positions (robot_x, robot_y) VALUES (:robot_x, :robot_y)");
+[2.934s]       |     [01;31m[K^~~~~[m[K
+[2.934s]       |     [32m[Kquery[m[K
+[2.947s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K In member function ‘[01m[Kvoid controllerInput::makeAmplitudeFading()[m[K’:
+[2.947s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:152:24:[m[K [01;31m[Kerror: [m[K‘[01m[KsoundFrequency[m[K’ was not declared in this scope
+[2.947s]   152 |     double fadeInEnd = [01;31m[KsoundFrequency[m[K * ToneDuration / 1000 / 6;  // 1/6th of tone duration
+[2.947s]       |                        [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.952s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:[m[K In member function ‘[01m[Kvoid controllerInput::playTone(double, double)[m[K’:
+[2.952s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/controller_input/src/controllerinput.cpp:197:16:[m[K [01;31m[Kerror: [m[K‘[01m[KSamplesPerFrame[m[K’ was not declared in this scope; did you mean ‘[01m[KSamplesPerFrame2[m[K’?
+[2.952s]   197 |     int time = [01;31m[KSamplesPerFrame[m[K;
+[2.952s]       |                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.952s]       |                [32m[KSamplesPerFrame2[m[K
+[3.347s] gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:76: CMakeFiles/controller_input.dir/src/main.cpp.o] Error 1
+[3.347s] gmake[2]: *** Waiting for unfinished jobs....
+[6.120s] gmake[2]: *** [CMakeFiles/controller_input.dir/build.make:90: CMakeFiles/controller_input.dir/src/controllerinput.cpp.o] Error 1
+[6.120s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/controller_input.dir/all] Error 2
+[6.120s] gmake: *** [Makefile:146: all] Error 2
+[6.123s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16

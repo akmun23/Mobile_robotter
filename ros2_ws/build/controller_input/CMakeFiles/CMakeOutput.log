@@ -280,3 +280,39 @@ int main(void)
   return 0;
 }
 
+Performing C++ SOURCE FILE Test HAVE_STDATOMIC succeeded with the following output:
+Change Dir: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_448a6/fast && gmake[1]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_448a6.dir/build.make CMakeFiles/cmTC_448a6.dir/build
+gmake[2]: Entering directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_448a6.dir/src.cxx.o
+/usr/bin/c++ -DHAVE_STDATOMIC   -o CMakeFiles/cmTC_448a6.dir/src.cxx.o -c /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_448a6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_448a6.dir/link.txt --verbose=1
+/usr/bin/c++ CMakeFiles/cmTC_448a6.dir/src.cxx.o -o cmTC_448a6 
+gmake[2]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <atomic>
+#include <cstdint>
+
+void test(volatile std::atomic<std::int64_t> &a)
+{
+    std::int64_t v = a.load(std::memory_order_acquire);
+    while (!a.compare_exchange_strong(v, v + 1,
+                                      std::memory_order_acq_rel,
+                                      std::memory_order_acquire)) {
+        v = a.exchange(v - 1);
+    }
+    a.store(v + 1, std::memory_order_release);
+}
+
+int main(int, char **)
+{
+    void *ptr = (void*)0xffffffc0; // any random pointer
+    test(*reinterpret_cast<std::atomic<std::int64_t> *>(ptr));
+    return 0;
+}

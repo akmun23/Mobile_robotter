@@ -20,11 +20,6 @@ def generate_launch_description():
             executable='controller_input',  # Your node's executable
             name='controller_input',  # Node name
             output='screen'  # Output to screen
-        ),
-        Node(package='lidar_data',
-        executable='lidar_data',
-        name='lidar_data',
-        output='screen'
         )
     ])
 
