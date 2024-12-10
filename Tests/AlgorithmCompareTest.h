@@ -17,9 +17,9 @@ void TimePrinter(std::chrono::high_resolution_clock::time_point start){
 }
 
 int RunCompareTest() {
-    int sampleRate = 44100;
-    int bufferSize = 1024;       // 750 works good
-    double AudieBufferSize = 6615;
+    int sampleRate = 16000;
+    int bufferSize = 250;       // 750 works good
+    double AudieBufferSize = 2400;
 
     double DFTMagnitude = 0.5;       // 3 works good
     double FFTMagnitude = 0.5;       // 3 works good
@@ -44,8 +44,16 @@ int RunCompareTest() {
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
-    TestfileNames.push_back({1,"/home/pascal/RobotRecordingTest.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/RobotRecordingTest.txt"});
     //TestfileNames.push_back({1,"/home/pascal/test.txt"});
+
+    // Below are with a samplerate of 16000Hz and 150ms tone lenght
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/UdenRumKort.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/UdenRumLangt.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/NormaltRumTaet.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/NormaltRumLangt.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/EkkoRumKort.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/EkkoRumLangt.txt"});
     std::vector<std::pair<int,std::string>> DFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> FFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> GoertzelTestfileNames = TestfileNames;
@@ -113,7 +121,7 @@ int RunCompareTest() {
 
     std::chrono::high_resolution_clock::time_point clockStart = std::chrono::high_resolution_clock::now();
     // Loop through the files
-    /*
+
     std::cout << "Start of DFT" << std::endl;
     for (int i = 0; i < DFTTestfileNames.size(); ++i) {
         std::ifstream file;
@@ -195,7 +203,7 @@ int RunCompareTest() {
     FFT_buffer_CalculationSpeed << FFTMinTime << std::endl;
 
     std::cout << "End of FFT" << std::endl;
-    */
+
     std::cout << "Start of Goertzel" << std::endl;
 
     for (int i = 0; i < GoertzelTestfileNames.size(); ++i) {

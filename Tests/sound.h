@@ -9,7 +9,7 @@
 #include <chrono>
 std::chrono::high_resolution_clock::time_point startSoundProgram = std::chrono::high_resolution_clock::now();
 
-int soundFrequency = 44100;
+int soundFrequency = 16000;
 
 namespace sound {
 double SineWave(double time, double freq, double amp) {

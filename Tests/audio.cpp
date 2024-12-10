@@ -342,6 +342,11 @@ int Goertzel::streamCallbackFFT(
     FFTProcessing fft = FFTProcessing(0.5,0.140, 20);
     mags = fft.processSound(in, SAMPLE_RATE, FRAMES_PER_BUFFER);
 
+    for (int i = 0; i < mags.size(); ++i) {
+        std::cout << mags[i] << " ";
+    }
+    std::cout << std::endl;
+
     newMagCalculation = true;
     return paContinue;
 

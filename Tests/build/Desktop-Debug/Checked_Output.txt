@@ -4,164 +4,52 @@ New sequence of messages
 
 Message 1
 Message Incorrect Format
-* 5 # 1 7 # 
+*   C   # # 
 ----------------------------------------------
 
 Message 2
 Message Incorrect Format
-* 9 1 * 4 5 
+* 3   D # # 
 ----------------------------------------------
 
 Message 3
 Message Incorrect Format
-* 9 * 1 2 * 
+*   1 D # # 
 ----------------------------------------------
 
 Message 4
 Message Incorrect Format
-* 9 1 A D 7 
+* 6 6 # #   
 ----------------------------------------------
 
 Message 5
 Message Incorrect Format
-* # # 1 1 * 
+*   C C # # 
 ----------------------------------------------
 
 Message 6
 Message Incorrect Format
-* A # 1 1 A 
+*   6 6 # # 
 ----------------------------------------------
 
 Message 7
 Message Incorrect Format
-* 4     5   
+*   6 6 # # 
 ----------------------------------------------
 
 Message 8
 Message Incorrect Format
-* 1       * 
-----------------------------------------------
-
-Message 9
-Message Incorrect Format
-* 7 # * 1 # 
-----------------------------------------------
-
-Message 10
-Message Incorrect Format
-* 6 # 1 3 # 
-----------------------------------------------
-
-Message 11
-Message Incorrect Format
-* 2 2 # * 1 
-----------------------------------------------
-
-Message 12
-Message Incorrect Format
-* 1 # 7 2 # 
-----------------------------------------------
-
-Message 13
-Message Incorrect Format
-* 7 * 1 2 * 
-----------------------------------------------
-
-Message 14
-Message Incorrect Format
-* 7 B C # 9 
-----------------------------------------------
-
-Message 15
-Message Incorrect Format
-* 9 # 1 3 # 
-----------------------------------------------
-
-Message 16
-Message Incorrect Format
-* 2 # 4 B C 
-----------------------------------------------
-
-Message 17
-Message Incorrect Format
-* 9 # # 7 2 
-----------------------------------------------
-
-Message 18
-Message Incorrect Format
-* 7 # 1 2 # 
-----------------------------------------------
-
-Message 19
-Message Incorrect Format
-* 9 1 A * 4 
-----------------------------------------------
-
-Message 20
-Message Incorrect Format
-* 7 # 1 2 * 
-----------------------------------------------
-
-Message 21
-Message Incorrect Format
-* 9 1 A D * 
-----------------------------------------------
-
-Message 22
-Message Incorrect Format
-* 2 * 6 # * 
-----------------------------------------------
-
-Message 23
-Message Incorrect Format
-* B # 9 1 A 
-----------------------------------------------
-
-Message 24
-Message Incorrect Format
-* 4 # * 7 9 
-----------------------------------------------
-
-Message 25
-Message Incorrect Format
-* C # 1 B * 
-----------------------------------------------
-
-Message 26
-Message Incorrect Format
-* 7 4 2 * 1 
-----------------------------------------------
-
-Message 27
-Message Incorrect Format
-* 2 * 1 B * 
-----------------------------------------------
-
-Message 28
-Message Incorrect Format
-* * 7 4 6 2 
-----------------------------------------------
-
-Message 29
-Message Incorrect Format
-* 7 # 1 2 # 
-----------------------------------------------
-
-Message 30
-Message Incorrect Format
-* B # 1 A * 
+*   B   # # 
 ----------------------------------------------
 
 
 ----------------------------------------------
 Correct Messages: 0
 Incorrect Messages: 0
-Incorrect Format Messages: 30
-Total Messages: 30
-Correct format percentage: 0%
-Correct Messages percentage: 0%
-Time taken to calculate Entire sequence: 382924 ms.
-Average time taken to calculate Buffer: 0.244935 ms.
-Max time taken to calculate Buffer: 0.419112 ms.
-Min time taken to calculate Buffer: 0.038258 ms.
+Incorrect Format Messages: 8
+Total Messages: 8
+Time taken to calculate Entire sequence: 705763 ms.
+Average time taken to calculate Buffer: 0.0682235 ms.
+Max time taken to calculate Buffer: 0.153083 ms.
+Min time taken to calculate Buffer: 0.009798 ms.
 ----------------------------------------------

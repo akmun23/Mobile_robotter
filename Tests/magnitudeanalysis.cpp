@@ -405,8 +405,6 @@ std::vector<double> MagnitudeAnalysis::checkOutputFile(std::string filename, dou
     checkedOutputFile << "Incorrect Messages: " << incorrectMessage << std::endl;
     checkedOutputFile << "Incorrect Format Messages: " << incorrectFormat << std::endl;
     checkedOutputFile << "Total Messages: " << (messageCounter-1) << std::endl;
-    checkedOutputFile << "Correct format percentage: " << ((correct+incorrectMessage)*100)/(messageCounter-1) << "%" << std::endl;
-    checkedOutputFile << "Correct Messages percentage: " << (correct*100)/(messageCounter-1) << "%" << std::endl;
     checkedOutputFile << "Time taken to calculate Entire sequence: " << calculationTime * 1000 << " ms."<< std::endl;
     checkedOutputFile << "Average time taken to calculate Buffer: " << avgCalcTime*1000 << " ms." << std::endl;
     checkedOutputFile << "Max time taken to calculate Buffer: " << maxCalcTime * 1000 << " ms." << std::endl;
@@ -421,8 +419,6 @@ std::vector<double> MagnitudeAnalysis::checkOutputFile(std::string filename, dou
     outputData.push_back(incorrectMessage);
     outputData.push_back(incorrectFormat);
     outputData.push_back(messageCounter-1);
-    outputData.push_back((correct+incorrectMessage)*100/(messageCounter-1));
-    outputData.push_back((correct)*100/(messageCounter-1));
     outputData.push_back(avgCalcTime*1000);
     outputData.push_back(maxCalcTime*1000);
     outputData.push_back(minCalcTime*1000);
