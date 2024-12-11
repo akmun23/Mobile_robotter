@@ -8,8 +8,8 @@ Correct Messages: 0
 Incorrect Messages: 0
 Incorrect Format Messages: 0
 Total Messages: 0
-Time taken to calculate Entire sequence: 250.881 ms.
-Average time taken to calculate Buffer: 0.0252924 ms.
-Max time taken to calculate Buffer: 0.034724 ms.
-Min time taken to calculate Buffer: 0.023859 ms.
+Time taken to calculate Entire sequence: 72368.7 ms.
+Average time taken to calculate Buffer: 0.138563 ms.
+Max time taken to calculate Buffer: 0.52282 ms.
+Min time taken to calculate Buffer: 0.022719 ms.
 ----------------------------------------------

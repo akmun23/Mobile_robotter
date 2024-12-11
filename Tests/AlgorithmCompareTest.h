@@ -21,13 +21,13 @@ int RunCompareTest() {
     int bufferSize = 250;       // 750 works good
     double AudieBufferSize = 2400;
 
-    double DFTMagnitude = 0.2;       // 3 works good
-    double FFTMagnitude = 0.2;       // 3 works good
-    double GoertzelMagnitude = 0.2; // 60 works good
+    double DFTMagnitude = 0.05;       // 3 works good
+    double FFTMagnitude = 0.05;       // 3 works good
+    double GoertzelMagnitude = 0.05; // 60 works good
 
-    double TimeToCalcDFT = 0.205;
-    double TimeToCalcFFT = 0.205;
-    double TimeToCalcGoertzelWithDelay = 0.21;
+    double TimeToCalcDFT = 0.021;
+    double TimeToCalcFFT = 0.021;
+    double TimeToCalcGoertzelWithDelay = 0.021;
 
     double scalingFactor = 1;
     double TimeToReadToneDFT = TimeToCalcDFT*(AudieBufferSize/bufferSize)*scalingFactor;

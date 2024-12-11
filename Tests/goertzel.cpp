@@ -15,7 +15,7 @@ GoertzelTesting::GoertzelTesting(double minMagnitude, double timeToReadTone, int
 
 double pi = 3.14159265358979323846;
 
-double delayBetweenCalculation = 200*1000; // 200 ms in microseconds
+double delayBetweenCalculation = 20*1000; // 200 ms in microseconds
 
 // Function to read DTMF data from file in chunks
 std::vector<double> GoertzelTesting::readDTMFDataChunk(std::ifstream& inFile, int bufferSize) {

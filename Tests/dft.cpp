@@ -48,7 +48,7 @@ void DFT::computeDFT(const std::vector<double>& input, int& sampleRate) {
     if(_calcTimeMinDFT == 0 || _calcTimeMinDFT > TimeForCalculationDFT){
         _calcTimeMinDFT = TimeForCalculationDFT;
     }
-    usleep(200000); // Sleep for 200 ms
+    usleep(20000); // Sleep for 200 ms
 
     analyseMagnitudes(output);
 }
