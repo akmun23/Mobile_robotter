@@ -4,32 +4,32 @@ New sequence of messages
 
 Message 1
 Message Incorrect Format
-*   C   # # 
+* 7 B C 9 # 
 ----------------------------------------------
 
 Message 2
 Message Incorrect Format
-* 3   D # # 
+* 9 A D # # 
 ----------------------------------------------
 
 Message 3
 Message Incorrect Format
-*   1 D # # 
+*   4 6 3 # 
 ----------------------------------------------
 
 Message 4
 Message Incorrect Format
-* 6 6 # #   
+* 3 3 9 9 # 
 ----------------------------------------------
 
 Message 5
 Message Incorrect Format
-*   C C # # 
+*   C   # # 
 ----------------------------------------------
 
 Message 6
 Message Incorrect Format
-*   6 6 # # 
+* 3 A D # # 
 ----------------------------------------------
 
 Message 7
@@ -39,17 +39,157 @@ Message Incorrect Format
 
 Message 8
 Message Incorrect Format
-*   B   # # 
+* 3 9 9 9 # 
+----------------------------------------------
+
+Message 9
+Message Incorrect Format
+* 1 C B # # 
+----------------------------------------------
+
+Message 10
+Message Incorrect Format
+*   B B B # 
+----------------------------------------------
+
+Message 11
+Message Incorrect Format
+* 9 7 A D # 
+----------------------------------------------
+
+Message 12
+Message Incorrect Format
+* * 6 6 # # 
+----------------------------------------------
+
+Message 13
+Message Incorrect Format
+* 3 9 9 9 # 
+----------------------------------------------
+
+Message 14
+Message Incorrect Format
+* 7 B B C # 
+----------------------------------------------
+
+Message 15
+Message Incorrect Format
+* 7 6 6 # # 
+----------------------------------------------
+
+Message 16
+Message Incorrect Format
+* 1 C C # # 
+----------------------------------------------
+
+Message 17
+Message Incorrect Format
+*   B B 9 # 
+----------------------------------------------
+
+Message 18
+Message Incorrect Format
+* 9 1 D # # 
+----------------------------------------------
+
+Message 19
+Message Incorrect Format
+* 3 7 9 9 # 
+----------------------------------------------
+
+Message 20
+Message Incorrect Format
+*   C C # # 
+----------------------------------------------
+
+Message 21
+Message Incorrect Format
+* 9 1 D # # 
+----------------------------------------------
+
+Message 22
+Message Incorrect Format
+* * 6 6 # # 
+----------------------------------------------
+
+Message 23
+Message Incorrect Format
+*   C C # # 
+----------------------------------------------
+
+Message 24
+Message Incorrect Format
+* 3 A D # # 
+----------------------------------------------
+
+Message 25
+Message Incorrect Format
+*   6 6 # # 
+----------------------------------------------
+
+Message 26
+Message Incorrect Format
+* 3 7 9 # # 
+----------------------------------------------
+
+Message 27
+Message Incorrect Format
+* 1 B B C # 
+----------------------------------------------
+
+Message 28
+Message Incorrect Format
+* # A D # # 
+----------------------------------------------
+
+Message 29
+Message Incorrect Format
+* 7 6 6 # # 
+----------------------------------------------
+
+Message 30
+Message Incorrect Format
+* 3 3 7 9 # 
+----------------------------------------------
+
+Message 31
+Message Incorrect Format
+*   C   # # 
+----------------------------------------------
+
+Message 32
+Message Incorrect Format
+*   B C 9 # 
+----------------------------------------------
+
+Message 33
+Message Incorrect Format
+* 9 A D # # 
+----------------------------------------------
+
+Message 34
+Message Incorrect Format
+*   6 6 # # 
+----------------------------------------------
+
+Message 35
+Message Incorrect Format
+*   B B # # 
+----------------------------------------------
+
+Message 36
+Message Incorrect Format
+* 7 4 6   # 
 ----------------------------------------------
 
 
 ----------------------------------------------
 Correct Messages: 0
 Incorrect Messages: 0
-Incorrect Format Messages: 8
-Total Messages: 8
-Time taken to calculate Entire sequence: 705763 ms.
-Average time taken to calculate Buffer: 0.0682235 ms.
-Max time taken to calculate Buffer: 0.153083 ms.
-Min time taken to calculate Buffer: 0.009798 ms.
+Incorrect Format Messages: 36
+Total Messages: 36
+Time taken to calculate Entire sequence: 705877 ms.
+Average time taken to calculate Buffer: 0.0728363 ms.
+Max time taken to calculate Buffer: 0.245992 ms.
+Min time taken to calculate Buffer: 0.009917 ms.
 ----------------------------------------------
