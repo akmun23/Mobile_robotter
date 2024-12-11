@@ -41,6 +41,7 @@ void DFT::computeDFT(const std::vector<double>& input, int& sampleRate) {
 
     double TimeForCalculationDFT = timePassed(TimeForCalculationStartDFT);
     _TimeSumCalculationDFT += TimeForCalculationDFT;
+    _AllTimes.push_back(TimeForCalculationDFT);
 
     if(_calcTimeMaxDFT < TimeForCalculationDFT){
         _calcTimeMaxDFT = TimeForCalculationDFT;
@@ -117,6 +118,19 @@ std::vector<double> DFT::runDFT(std::ifstream &file, int &sampleRate, int &buffe
     double calculationTime = timePassed(TimeForEntireSequenceStartDFT);
     double avgCalcTime = _TimeSumCalculationDFT/_countDFT;
     std::cout << "The average time for Calculation processing is " << avgCalcTime*1000<< " ms." << std::endl;
+    // sort _AllTimes
+    std::sort(_AllTimes.begin(),_AllTimes.end());
+    std::cout << "The 25 lowest times are: ";
+    for (int i = 0; i < 25; ++i) {
+        std::cout << _AllTimes[i]*1000 << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "The 25 lowest times are: ";
+    for (int i = _AllTimes.size()-25; i < _AllTimes.size(); ++i) {
+        std::cout << _AllTimes[i]*1000 << " ";
+    }
+    std::cout << std::endl;
+
 
     return checkOutputFile("DFT_Test_Output.txt", calculationTime, "Checked_Output_DFT.txt", avgCalcTime, _calcTimeMaxDFT, _calcTimeMinDFT);
 }

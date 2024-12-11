@@ -23,8 +23,8 @@ Message Incorrect Format
 ----------------------------------------------
 
 Message 5
-Message Incorrect Format
-* 3 3 9 9 # 
+Message Correct Format and correct message
+* 1 3 7 9 # 
 ----------------------------------------------
 
 Message 6
@@ -33,28 +33,28 @@ Message Incorrect Format
 ----------------------------------------------
 
 Message 7
-Message Incorrect Format
-* 1 B B C # 
+Message Correct Format and correct message
+* 1 7 B C # 
 ----------------------------------------------
 
 Message 8
 Message Incorrect Format
-* 9 A D D # 
+* 9 A A D # 
 ----------------------------------------------
 
 Message 9
-Message Incorrect Format
-* * 6 6 2 # 
+Message Correct Format and correct message
+* 7 4 6 2 # 
 ----------------------------------------------
 
 Message 10
 Message Incorrect Format
-* 1 3 # 9 # 
+* 3 3 # 9 # 
 ----------------------------------------------
 
 Message 11
 Message Incorrect Format
-* 1 5 C # # 
+* 1 5 C C # 
 ----------------------------------------------
 
 Message 12
@@ -69,7 +69,7 @@ Message Incorrect Format
 
 Message 14
 Message Incorrect Format
-* 4 4 6 # # 
+* 4 4 6 3 # 
 ----------------------------------------------
 
 Message 15
@@ -78,8 +78,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 16
-Message Incorrect Format
-* 1 5 C # # 
+Message Correct Format and correct message
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 17
@@ -94,12 +94,12 @@ Message Incorrect Format
 
 Message 19
 Message Incorrect Format
-* 7 6 6 2 # 
+* 4 6 6 6 # 
 ----------------------------------------------
 
 Message 20
-Message Incorrect Format
-* 1 5 C C # 
+Message Correct Format and correct message
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 21
@@ -108,8 +108,8 @@ Message Incorrect Format
 ----------------------------------------------
 
 Message 22
-Message Incorrect Format
-* 9 7 A D # 
+Message Correct Format and correct message
+* 9 1 A D # 
 ----------------------------------------------
 
 Message 23
@@ -124,7 +124,7 @@ Message Incorrect Format
 
 Message 25
 Message Incorrect Format
-* 1 5 C 8 # 
+* 5 5 C 8 # 
 ----------------------------------------------
 
 Message 26
@@ -139,17 +139,17 @@ Message Incorrect Format
 
 Message 28
 Message Incorrect Format
-* * 4 6 5 # 
+* 4 4 6 2 # 
 ----------------------------------------------
 
 Message 29
 Message Incorrect Format
-* 3 9 9 9 # 
+* 3 3 9 9 # 
 ----------------------------------------------
 
 Message 30
 Message Incorrect Format
-* 1 5 C # # 
+* 1 5 C 8 # 
 ----------------------------------------------
 
 Message 31
@@ -164,12 +164,12 @@ Message Incorrect Format
 
 Message 33
 Message Incorrect Format
-* 4 4 6 6 # 
+* 7 4 6 6 # 
 ----------------------------------------------
 
 Message 34
 Message Incorrect Format
-* 1 3 9 9 # 
+* 1 9 9 9 # 
 ----------------------------------------------
 
 Message 35
@@ -179,17 +179,17 @@ Message Correct Format and correct message
 
 Message 36
 Message Incorrect Format
-* * 7 B C # 
+* 7 7 B C # 
 ----------------------------------------------
 
 Message 37
 Message Incorrect Format
-* 9 A D D # 
+* 9 A A D # 
 ----------------------------------------------
 
 Message 38
 Message Incorrect Format
-* 7 4 6 # # 
+* 7 4 6 5 # 
 ----------------------------------------------
 
 Message 39
@@ -199,7 +199,7 @@ Message Incorrect Format
 
 Message 40
 Message Incorrect Format
-* 1 C C # # 
+* 1 5 C # # 
 ----------------------------------------------
 
 Message 41
@@ -223,8 +223,8 @@ Message Incorrect Format
 ----------------------------------------------
 
 Message 45
-Message Incorrect Format
-* 5 B C # # 
+Message Correct Format and correct message
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 46
@@ -249,12 +249,12 @@ Message Correct Format and correct message
 
 
 ----------------------------------------------
-Correct Messages: 13
+Correct Messages: 20
 Incorrect Messages: 0
-Incorrect Format Messages: 36
+Incorrect Format Messages: 29
 Total Messages: 49
-Time taken to calculate Entire sequence: 71794.1 ms.
-Average time taken to calculate Buffer: 0.057589 ms.
-Max time taken to calculate Buffer: 0.191765 ms.
-Min time taken to calculate Buffer: 0.010104 ms.
+Time taken to calculate Entire sequence: 71995.6 ms.
+Average time taken to calculate Buffer: 0.063247 ms.
+Max time taken to calculate Buffer: 0.205006 ms.
+Min time taken to calculate Buffer: 0.009521 ms.
 ----------------------------------------------

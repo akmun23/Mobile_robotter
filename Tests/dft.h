@@ -27,6 +27,7 @@ private:
     double _timeSum = 0;
 
     std::vector<double> _timeAtMaxCorrect;
+    std::vector<double> _AllTimes;
 
     std::vector<int> _tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 

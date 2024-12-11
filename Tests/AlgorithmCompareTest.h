@@ -21,9 +21,9 @@ int RunCompareTest() {
     int bufferSize = 250;       // 750 works good
     double AudieBufferSize = 2400;
 
-    double DFTMagnitude = 0.05;       // 3 works good
-    double FFTMagnitude = 0.05;       // 3 works good
-    double GoertzelMagnitude = 0.05; // 60 works good
+    double DFTMagnitude = 0.02;
+    double FFTMagnitude = 0.02;
+    double GoertzelMagnitude = 0.02;
 
     double TimeToCalcDFT = 0.021;
     double TimeToCalcFFT = 0.021;
@@ -103,6 +103,7 @@ int RunCompareTest() {
     std::vector<double> DFTTotal;
     std::vector<double> FFTTotal;
     std::vector<double> GoertzelTotal;
+
 
     double DFTMaxTime = 0;
     double DFTMinTime = 0;
