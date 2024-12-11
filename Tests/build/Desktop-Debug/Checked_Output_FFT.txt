@@ -3,278 +3,263 @@ New sequence of messages
 ----------------------------------------------
 
 Message 1
-Message Incorrect Format
-* 4 4 4 4 1 
+Message Correct Format and correct message
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 2
-Message Incorrect Format
-* * 5 4 * * 
+Message Correct Format and correct message
+* 1 7 B C # 
 ----------------------------------------------
 
 Message 3
 Message Correct Format and correct message
-* 1 7 B C # 
+* 9 1 A D # 
 ----------------------------------------------
 
 Message 4
 Message Correct Format and correct message
-* 9 1 A D # 
+* 7 4 6 2 # 
 ----------------------------------------------
 
 Message 5
 Message Correct Format and correct message
-* 7 4 6 2 # 
+* 1 3 7 9 # 
 ----------------------------------------------
 
 Message 6
 Message Correct Format and correct message
-* 1 3 7 9 # 
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 7
 Message Correct Format and correct message
-* 1 5 C 2 # 
+* 1 7 B C # 
 ----------------------------------------------
 
 Message 8
 Message Correct Format and correct message
-* 1 7 B C # 
+* 9 1 A D # 
 ----------------------------------------------
 
 Message 9
 Message Correct Format and correct message
-* 9 1 A D # 
+* 7 4 6 2 # 
 ----------------------------------------------
 
 Message 10
 Message Correct Format and correct message
-* 7 4 6 2 # 
+* 1 3 7 9 # 
 ----------------------------------------------
 
 Message 11
 Message Correct Format and correct message
-* 1 3 7 9 # 
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 12
 Message Correct Format and correct message
-* 1 5 C 2 # 
+* 1 7 B C # 
 ----------------------------------------------
 
 Message 13
 Message Correct Format and correct message
-* 1 7 B C # 
+* 9 1 A D # 
 ----------------------------------------------
 
 Message 14
 Message Correct Format and correct message
-* 9 1 A D # 
+* 7 4 6 2 # 
 ----------------------------------------------
 
 Message 15
 Message Correct Format and correct message
-* 7 4 6 2 # 
+* 1 3 7 9 # 
 ----------------------------------------------
 
 Message 16
 Message Correct Format and correct message
-* 1 3 7 9 # 
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 17
 Message Correct Format and correct message
-* 1 5 C 2 # 
+* 1 7 B C # 
 ----------------------------------------------
 
 Message 18
 Message Correct Format and correct message
-* 1 7 B C # 
+* 9 1 A D # 
 ----------------------------------------------
 
 Message 19
 Message Correct Format and correct message
-* 9 1 A D # 
+* 7 4 6 2 # 
 ----------------------------------------------
 
 Message 20
 Message Correct Format and correct message
-* 7 4 6 2 # 
+* 1 3 7 9 # 
 ----------------------------------------------
 
 Message 21
 Message Correct Format and correct message
-* 1 3 7 9 # 
+* 1 5 C 2 # 
 ----------------------------------------------
 
 Message 22
 Message Correct Format and correct message
-* 1 5 C 2 # 
+* 1 7 B C # 
 ----------------------------------------------
 
 Message 23
 Message Correct Format and correct message
-* 1 7 B C # 
+* 9 1 A D # 
 ----------------------------------------------
 
 Message 24
-Message Correct Format and correct message
-* 9 1 A D # 
-----------------------------------------------
-
-Message 25
-Message Correct Format and correct message
-* 7 4 6 2 # 
-----------------------------------------------
-
-Message 26
-Message Correct Format and correct message
-* 1 3 7 9 # 
-----------------------------------------------
-
-Message 27
-Message Correct Format and correct message
-* 1 5 C 2 # 
-----------------------------------------------
-
-Message 28
-Message Correct Format and correct message
-* 1 7 B C # 
-----------------------------------------------
-
-Message 29
-Message Correct Format and correct message
-* 9 1 A D # 
-----------------------------------------------
-
-Message 30
-Message Correct Format and correct message
-* 7 4 6 2 # 
-----------------------------------------------
-
-Message 31
-Message Correct Format and correct message
-* 1 3 7 9 # 
-----------------------------------------------
-
-Message 32
-Message Correct Format and correct message
-* 1 5 C 2 # 
-----------------------------------------------
-
-Message 33
-Message Correct Format and correct message
-* 1 7 B C # 
-----------------------------------------------
-
-Message 34
-Message Correct Format and correct message
-* 9 1 A D # 
-----------------------------------------------
-
-Message 35
-Message Correct Format and correct message
-* 7 4 6 2 # 
-----------------------------------------------
-
-Message 36
-Message Correct Format and correct message
-* 1 3 7 9 # 
-----------------------------------------------
-
-Message 37
-Message Correct Format and correct message
-* 1 5 C 2 # 
-----------------------------------------------
-
-Message 38
-Message Correct Format and correct message
-* 1 7 B C # 
-----------------------------------------------
-
-Message 39
-Message Correct Format and correct message
-* 9 1 A D # 
-----------------------------------------------
-
-Message 40
-Message Correct Format and correct message
-* 7 4 6 2 # 
-----------------------------------------------
-
-Message 41
-Message Correct Format and correct message
-* 1 3 7 9 # 
-----------------------------------------------
-
-Message 42
-Message Correct Format and correct message
-* 1 5 C 2 # 
-----------------------------------------------
-
-Message 43
-Message Correct Format and correct message
-* 1 7 B C # 
-----------------------------------------------
-
-Message 44
-Message Correct Format and correct message
-* 9 1 A D # 
-----------------------------------------------
-
-Message 45
-Message Correct Format and correct message
-* 7 4 6 2 # 
-----------------------------------------------
-
-Message 46
-Message Correct Format and correct message
-* 1 3 7 9 # 
-----------------------------------------------
-
-Message 47
-Message Correct Format and correct message
-* 1 5 C 2 # 
-----------------------------------------------
-
-Message 48
-Message Correct Format and correct message
-* 1 7 B C # 
-----------------------------------------------
-
-Message 49
-Message Incorrect Format
-* 1 A A D # 
-----------------------------------------------
-
-Message 50
 Message Incorrect Format
 * 4 4 6 2 # 
 ----------------------------------------------
 
-Message 51
+Message 25
 Message Correct Format and correct message
 * 1 3 7 9 # 
 ----------------------------------------------
 
-Message 52
+Message 26
+Message Correct Format and correct message
+* 1 5 C 2 # 
+----------------------------------------------
+
+Message 27
+Message Correct Format and correct message
+* 1 7 B C # 
+----------------------------------------------
+
+Message 28
+Message Correct Format and correct message
+* 9 1 A D # 
+----------------------------------------------
+
+Message 29
+Message Correct Format and correct message
+* 7 4 6 2 # 
+----------------------------------------------
+
+Message 30
+Message Correct Format and correct message
+* 1 3 7 9 # 
+----------------------------------------------
+
+Message 31
 Message Incorrect Format
-* 4 0 4 5 4 
+* 1 5 C A # 
 ----------------------------------------------
 
-Message 53
-Message Incorrect Format
-* 5 5 4 4 * 
+Message 32
+Message Correct Format and correct message
+* 1 7 B C # 
+----------------------------------------------
+
+Message 33
+Message Correct Format and correct message
+* 9 1 A D # 
+----------------------------------------------
+
+Message 34
+Message Correct Format and correct message
+* 7 4 6 2 # 
+----------------------------------------------
+
+Message 35
+Message Correct Format and correct message
+* 1 3 7 9 # 
+----------------------------------------------
+
+Message 36
+Message Correct Format and correct message
+* 1 5 C 2 # 
+----------------------------------------------
+
+Message 37
+Message Correct Format and correct message
+* 1 7 B C # 
+----------------------------------------------
+
+Message 38
+Message Correct Format and correct message
+* 9 1 A D # 
+----------------------------------------------
+
+Message 39
+Message Correct Format and correct message
+* 7 4 6 2 # 
+----------------------------------------------
+
+Message 40
+Message Correct Format and correct message
+* 1 3 7 9 # 
+----------------------------------------------
+
+Message 41
+Message Correct Format and correct message
+* 1 5 C 2 # 
+----------------------------------------------
+
+Message 42
+Message Correct Format and correct message
+* 1 7 B C # 
+----------------------------------------------
+
+Message 43
+Message Correct Format and correct message
+* 9 1 A D # 
+----------------------------------------------
+
+Message 44
+Message Correct Format and correct message
+* 7 4 6 2 # 
+----------------------------------------------
+
+Message 45
+Message Correct Format and correct message
+* 1 3 7 9 # 
+----------------------------------------------
+
+Message 46
+Message Correct Format and correct message
+* 1 5 C 2 # 
+----------------------------------------------
+
+Message 47
+Message Correct Format and correct message
+* 1 7 B C # 
+----------------------------------------------
+
+Message 48
+Message Correct Format and correct message
+* 9 1 A D # 
+----------------------------------------------
+
+Message 49
+Message Correct Format and correct message
+* 7 4 6 2 # 
+----------------------------------------------
+
+Message 50
+Message Correct Format and correct message
+* 1 3 7 9 # 
 ----------------------------------------------
 
 
 ----------------------------------------------
-Correct Messages: 47
+Correct Messages: 48
 Incorrect Messages: 0
-Incorrect Format Messages: 6
-Total Messages: 53
-Time taken to calculate Entire sequence: 45681.5 ms.
-Average time taken to calculate Buffer: 0.248602 ms.
-Max time taken to calculate Buffer: 0.670377 ms.
-Min time taken to calculate Buffer: 0.045749 ms.
+Incorrect Format Messages: 2
+Total Messages: 50
+Time taken to calculate Entire sequence: 45983.4 ms.
+Average time taken to calculate Buffer: 0.270329 ms.
+Max time taken to calculate Buffer: 0.456702 ms.
+Min time taken to calculate Buffer: 0.135484 ms.
 ----------------------------------------------

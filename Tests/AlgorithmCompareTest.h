@@ -21,9 +21,9 @@ int RunCompareTest() {
     int bufferSize = 400;       // 750 works good
     double AudieBufferSize = 2400;
 
-    double DFTMagnitude = 0.02;
-    double FFTMagnitude = 1;
-    double GoertzelMagnitude = 0.02;
+    double DFTMagnitude = 0.35;
+    double FFTMagnitude = 0.35;
+    double GoertzelMagnitude = 0.35;
 
     double TimeToCalcDFT = 0.021;
     double TimeToCalcFFT = 0.021;
@@ -115,7 +115,7 @@ int RunCompareTest() {
 
     std::chrono::high_resolution_clock::time_point clockStart = std::chrono::high_resolution_clock::now();
     // Loop through the files
-    /*
+
     std::cout << "Start of DFT" << std::endl;
     for (int i = 0; i < DFTTestfileNames.size(); ++i) {
         std::ifstream file;
@@ -154,7 +154,7 @@ int RunCompareTest() {
     DFT_buffer_CalculationSpeed << DFTMinTime << std::endl;
 
     std::cout << "End of DFT" << std::endl;
-    */
+
     std::cout << "Start of FFT" << std::endl;
 
 
