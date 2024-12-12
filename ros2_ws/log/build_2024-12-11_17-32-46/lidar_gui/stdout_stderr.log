@@ -1,0 +1,49 @@
+[ 20%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In constructor ‘[01m[KGUI::GUI()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:50:103:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point(int, int, Size&)[m[K’
+   50 | idth(display, screen)/2, XDisplayHeight(display, screen)/2, robotSize[01;31m[K)[m[K;
+      |                                                                      [01;31m[K^[m[K
+
+In file included from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/GUIWindow.h:9[m[K,
+                 from [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:1[m[K:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:15:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(float, float)[m[K’
+   15 |     [01;36m[KPoint[m[K(float x_, float y_);
+      |     [01;36m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:15:5:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 3 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:13:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point()[m[K’
+   13 |     [01;36m[KPoint[m[K(){}
+      |     [01;36m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:13:5:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+   10 | struct [01;36m[KPoint[m[K{
+      |        [01;36m[K^~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/include/dataTypes.h:10:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 3 provided
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::rescale()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:97:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   97 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+      |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:104:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  104 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+      |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:111:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  111 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+      |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:118:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  118 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+      |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::paintMap()[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:128:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  128 |     for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+      |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::drawRect(Point*, GC)[m[K’:
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:166:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Point>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  166 |     for(int i = 0; [01;35m[Ki < pointsStart.size()[m[K; i++){
+      |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:173:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Point>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  173 |     for(int i = 0; [01;35m[Ki < pointsStart.size()[m[K; i++){
+      |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:118: CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

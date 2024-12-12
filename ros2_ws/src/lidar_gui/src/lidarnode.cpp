@@ -34,7 +34,7 @@ void MappingNode::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
         }
 
         // Update the GUI with the transformed LiDAR data
-        gui.update(update, -_latest_angle - _robot_yaw, distance, _robot_x, -_robot_y, -_robot_yaw);
+        gui.update(update, -_latest_angle - _robot_yaw, distance, -_robot_x, _robot_y, -_robot_yaw);
 
         _latest_angle += msg->angle_increment;
     }

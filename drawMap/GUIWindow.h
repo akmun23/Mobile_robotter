@@ -34,7 +34,7 @@ private:
     GC gcRed;
     GC gcGreen;
 
-    const float scale_factor = 160.0;
+    const float scale_factor = 320.0;
 
     QSqlDatabase db;
 

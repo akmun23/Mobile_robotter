@@ -79,6 +79,12 @@ build CMakeFiles/Tests.dir/goertzel.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel
   OBJECT_DIR = CMakeFiles/Tests.dir
   OBJECT_FILE_DIR = CMakeFiles/Tests.dir
 
+build CMakeFiles/Tests.dir/magnitudeanalysis.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel/Documents/GitHub/Mobile_robotter/Tests/magnitudeanalysis.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles/Tests.dir/magnitudeanalysis.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/Tests.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Tests
@@ -87,7 +93,7 @@ build CMakeFiles/Tests.dir/goertzel.cpp.o: CXX_COMPILER__Tests_Debug /home/aksel
 #############################################
 # Link the executable Tests
 
-build Tests: CXX_EXECUTABLE_LINKER__Tests_Debug CMakeFiles/Tests.dir/main.cpp.o CMakeFiles/Tests.dir/audio.cpp.o CMakeFiles/Tests.dir/dft.cpp.o CMakeFiles/Tests.dir/fft.cpp.o CMakeFiles/Tests.dir/goertzel.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
+build Tests: CXX_EXECUTABLE_LINKER__Tests_Debug CMakeFiles/Tests.dir/main.cpp.o CMakeFiles/Tests.dir/audio.cpp.o CMakeFiles/Tests.dir/dft.cpp.o CMakeFiles/Tests.dir/fft.cpp.o CMakeFiles/Tests.dir/goertzel.cpp.o CMakeFiles/Tests.dir/magnitudeanalysis.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1  -lrt  -lasound  -ljack  -lpthread  -lportaudio  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/Tests.dir

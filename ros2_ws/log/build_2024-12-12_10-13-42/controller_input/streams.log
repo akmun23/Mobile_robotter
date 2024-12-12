@@ -1,0 +1,27 @@
+[0.024s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[0.118s] [ 33%] [32mBuilding CXX object CMakeFiles/controller_input.dir/src/controllerinput.cpp.o[0m
+[13.521s] [ 66%] [32m[1mLinking CXX executable controller_input[0m
+[14.447s] [100%] Built target controller_input
+[14.462s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input -- -j16 -l16
+[14.464s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input
+[14.471s] -- Install configuration: "Debug"
+[14.472s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/controller_input/controller_input
+[14.495s] -- Set runtime path of "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/lib/controller_input/controller_input" to ""
+[14.495s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input//launch
+[14.495s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input//launch/controller_launch.py
+[14.495s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/package_run_dependencies/controller_input
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/parent_prefix_path/controller_input
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.sh
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/ament_prefix_path.dsv
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.sh
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/environment/path.dsv
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.bash
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.sh
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.zsh
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/local_setup.dsv
+[14.496s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.dsv
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/ament_index/resource_index/packages/controller_input
+[14.496s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig.cmake
+[14.497s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/cmake/controller_inputConfig-version.cmake
+[14.497s] -- Up-to-date: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/controller_input/share/controller_input/package.xml
+[14.499s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input

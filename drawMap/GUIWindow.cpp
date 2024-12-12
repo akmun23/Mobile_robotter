@@ -14,6 +14,9 @@ GUI::GUI(){
         std::cerr << "Database error: " << db.lastError().text().toStdString() << std::endl;
     }
 
+    QSqlQuery query;
+    query.prepare("UPDATE lidar_data SET is_read = FALSE WHERE is_read = TRUE");
+
     //Setting variables
     emptySize = Size(1,1);
     wallSize = Size(8,8);
@@ -118,7 +121,7 @@ void GUI::update(bool& update){
         QSqlQuery query;
         int id_first = 0;
         int id_last = 0;
-        query.prepare("SELECT * FROM lidar_data");
+        query.prepare("SELECT * FROM lidar_data WHERE is_read = FALSE");
         if (!query.exec()) {
             std::cerr << "Database error: " << query.lastError().text().toStdString() << std::endl;
         } else {
@@ -156,10 +159,9 @@ void GUI::update(bool& update){
             std::cerr << "Database error: " << query.lastError().text().toStdString() << std::endl;
         } else {
             if(query.last()){
-                id_first = query.value(0).toInt();
                 double robot_x = query.value(1).toDouble();
                 double robot_y = query.value(2).toDouble();
-                paintRobot(robot_x, robot_y);
+                paintRobot(-robot_x, robot_y);
                 paintMap();
             }
         }

@@ -50,7 +50,7 @@ void controllerInput::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr 
 void controllerInput::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg){
     if(!_initial_pose_set){
         _initial_x = msg->pose.pose.position.x;
-        _initial_y = -msg->pose.pose.position.y;
+        _initial_y = msg->pose.pose.position.y;
         _initial_pose_set = true;
 
         std::cout << _initial_x << std::endl;
@@ -80,7 +80,7 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
 
     if(_latest_odom){
         double robot_x = _latest_odom->pose.pose.position.x - _initial_x;
-        double robot_y = -_latest_odom->pose.pose.position.y - _initial_y;
+        double robot_y = _latest_odom->pose.pose.position.y - _initial_y;
 
         // Insert robot_x and y into table robot_positions
         query.prepare("INSERT INTO robot_positions (robot_x, robot_y) VALUES (:robot_x, :robot_y)");
@@ -138,21 +138,22 @@ void controllerInput::play_dtmf_if_active() {
     std::cout << "Playing DTMF for Linear Value: " << static_cast<int>(_latestLinearValue)
               << ", Angular Value: " << static_cast<int>(_latestAngularValue) << std::endl;
 
-    // Play the DTMF sequence if joystick is active or has changed to zero
+    // This is needed dont touch
     sf::SoundBuffer buffer;
     std::vector<sf::Int16> samples;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 2; i++) {
         samples.push_back(SineWave(i, 200, 0.01));
     }
     buffer.loadFromSamples(&samples[0], samples.size(), 1, AudioPlayRate);
     sf::Sound sound;
     sound.setBuffer(buffer);
     sound.play();
-    usleep(1);    // Sleep for 2 seconds
+    usleep(5);
     samples.clear();
+    // Ends here
 
+    // Play the dtmf sequence from the joystick input
     playDTMFSequence(_latestLinearValue, _latestAngularValue);
-
 
     // Update the previous values after playing the sequence
     _previousLinearValue = _latestLinearValue;
@@ -182,24 +183,6 @@ void controllerInput::makeAmplitudeFading(){
     std::cout << "AmplitudeFading size: " << AmplitudeFading.size() << std::endl;
 }
 
-int controllerInput::mapCharToIndex(char key) {
-
-    if(key == '*'){
-        key = 'e';
-    }
-    if(key == '#'){
-        key = 'f';
-    }
-
-    if (key >= '0' && key <= '9') {
-        return key - '0';
-    } else if (key >= 'a' && key <= 'f') {
-        return 10 + (key - 'a');
-    } else {
-        return -1; // Invalid key
-    }
-}
-
 void controllerInput::playTone(double freq1, double freq2){
     sf::SoundBuffer buffer;
     std::vector<sf::Int16> samples;
@@ -223,21 +206,6 @@ void controllerInput::playTone(double freq1, double freq2){
     samples.clear();
 }
 
-void controllerInput::playSequence(const std::string &sequence) {
-    for (char key : sequence) {
-        // Convert the character to the corresponding index
-        int index = mapCharToIndex(tolower(key));
-
-        if (index != -1) { // Valid DTMF key
-            double freq1 = LOW_FREQ[index];
-            double freq2 = HIGH_FREQ[index];
-            playTone(freq1, freq2);
-        } else {
-            std::cout << "Invalid key: " << key << std::endl;
-        }
-    }
-}
-
 uint8_t controllerInput::mapAxisToByte(float axis_value) {
     return static_cast<uint8_t>(round((axis_value + 1.0) / 2.0 * 100));
 }
@@ -249,7 +217,9 @@ void controllerInput::playDTMFSequence(uint8_t linear_value, uint8_t angular_val
 
     // Play two tones for the linear velocity
     int linear_tone1 = (linear_value >> 4) & 0x0F;  // Higher nibble (4 bits)
+    std::cout << linear_tone1 << std::endl;
     int linear_tone2 = linear_value & 0x0F;          // Lower nibble (4 bits)
+    std::cout << linear_tone2 << std::endl;
     playTone(LOW_FREQ[linear_tone1], HIGH_FREQ[linear_tone1]);
     playTone(LOW_FREQ[linear_tone2], HIGH_FREQ[linear_tone2]);
 
@@ -257,7 +227,9 @@ void controllerInput::playDTMFSequence(uint8_t linear_value, uint8_t angular_val
     int angular_tone1 = (angular_value >> 4) & 0x0F; // Higher nibble (4 bits)
     int angular_tone2 = angular_value & 0x0F;        // Lower nibble (4 bits)
     playTone(LOW_FREQ[angular_tone1], HIGH_FREQ[angular_tone1]);
+    std::cout << angular_tone1 << std::endl;
     playTone(LOW_FREQ[angular_tone2], HIGH_FREQ[angular_tone2]);
+    std::cout << angular_tone2 << std::endl;
 
     // Play the stop tone (e.g., DTMF for '#')
     playTone(941, 1477);

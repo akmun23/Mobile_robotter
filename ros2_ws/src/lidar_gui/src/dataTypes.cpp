@@ -32,24 +32,24 @@ void Robot::update(){
     locRobot[3].y = y + size.height/2;
 
     //Robot X Orient Axis
-    orientXRobot[0].x = x + size.width/2;
-    orientXRobot[0].y = y - 5;
-    orientXRobot[1].x = x + (2*size.width);
-    orientXRobot[1].y = y - 5;
-    orientXRobot[2].x = x + (2*size.width);
-    orientXRobot[2].y = y + 5;
-    orientXRobot[3].x = x + size.width/2;
-    orientXRobot[3].y = y + 5;
+    orientXRobot[0].x = x - size.width/2;
+    orientXRobot[0].y = y + 5;
+    orientXRobot[1].x = x - (2*size.width);
+    orientXRobot[1].y = y + 5;
+    orientXRobot[2].x = x - (2*size.width);
+    orientXRobot[2].y = y - 5;
+    orientXRobot[3].x = x - size.width/2;
+    orientXRobot[3].y = y - 5;
 
     //Robot Y Orient Axis
-    orientYRobot[0].x = x + 5;
-    orientYRobot[0].y = y - size.height/2;
-    orientYRobot[1].x = x + 5;
-    orientYRobot[1].y = y - (2*size.width);
-    orientYRobot[2].x = x - 5;
-    orientYRobot[2].y = y - (2*size.width);
-    orientYRobot[3].x = x - 5;
-    orientYRobot[3].y = y - size.height/2;
+    orientYRobot[0].x = x - 5;
+    orientYRobot[0].y = y + size.height/2;
+    orientYRobot[1].x = x - 5;
+    orientYRobot[1].y = y + (2*size.width);
+    orientYRobot[2].x = x + 5;
+    orientYRobot[2].y = y + (2*size.width);
+    orientYRobot[3].x = x + 5;
+    orientYRobot[3].y = y + size.height/2;
 }
 
 // Function to rotate a point around the center of the robot.

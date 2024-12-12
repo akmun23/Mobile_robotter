@@ -5,7 +5,7 @@
 GUI::GUI(){
     //Setting variables
     emptySize = Size(1,1);
-    wallSize = Size(8,8);
+    wallSize = Size(4, 4);
     robotSize = Size(round(10 * scale_factor / 100), round(15 * scale_factor / 100));
 
     //Create display
@@ -47,7 +47,7 @@ GUI::GUI(){
     XSetForeground(display, gcGreen, color_Green.pixel); //Orient Y
 
     //Robot initialization
-    robot = Robot(Point(XDisplayWidth(display, screen)/2, XDisplayHeight(display, screen)-200), robotSize);
+    robot = Robot(Point(XDisplayWidth(display, screen)/2, XDisplayHeight(display, screen)/2), robotSize);
 
     wallFrags.push_back(Wall(Point(0,0), emptySize));
 }
@@ -77,11 +77,12 @@ void GUI::lidarReading(float angle, float len){
     }
 
     // Check if wallFrags has more than 1000 entries and remove until it is below:
-    /*
-    while(wallFrags.size() > 400){
+/*
+    while(wallFrags.size() > 1000){
         wallFrags.erase(wallFrags.begin());
     }
     */
+
 
 }
 
@@ -93,33 +94,33 @@ void GUI::movementRobot(float robot_x, float robot_y){
 
 void GUI::rescale() {
     //if the robot comes near the edge, move it, and the walls.
-    if(robot.x < 400){
+    if(robot.x < 200){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].x = wallFrags[i].x + 400;
+            wallFrags[i].x = wallFrags[i].x + 200;
         }
 
-        robot.start_x = robot.start_x + 400;
+        robot.start_x = robot.start_x + 200;
     }
-    else if(robot.x > (XDisplayWidth(display, screen) - 400)){
+    else if(robot.x > (XDisplayWidth(display, screen) - 200)){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].x = wallFrags[i].x - 400;
+            wallFrags[i].x = wallFrags[i].x - 200;
         }
 
-        robot.start_x = robot.start_x - 400;
+        robot.start_x = robot.start_x - 200;
     }
-    else if(robot.y < 400){
+    else if(robot.y < 200){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].y = wallFrags[i].y + 400;
+            wallFrags[i].y = wallFrags[i].y + 200;
         }
 
-        robot.start_y = robot.start_y + 400;
+        robot.start_y = robot.start_y + 200;
     }
-    else if(robot.y > (XDisplayHeight(display, screen) - 400)){
+    else if(robot.y > (XDisplayHeight(display, screen) - 200)){
         for(int i = 0; i < wallFrags.size(); i++){
-            wallFrags[i].y = wallFrags[i].y - 400;
+            wallFrags[i].y = wallFrags[i].y - 200;
         }
 
-        robot.start_y = robot.start_y - 400;
+        robot.start_y = robot.start_y - 200;
     }
 }
 

@@ -9,7 +9,7 @@
 #include <chrono>
 std::chrono::high_resolution_clock::time_point startSoundProgram = std::chrono::high_resolution_clock::now();
 
-int soundFrequency = 44100;
+int soundFrequency = 16000;
 
 namespace sound {
 double SineWave(double time, double freq, double amp) {
@@ -26,7 +26,7 @@ double SineWave(double time, double freq, double amp) {
 
 
 std::vector<double> AmplitudeFading;
-int ToneDuration = 80;  // Tone duration in milliseconds
+int ToneDuration = 100;  // Tone duration in milliseconds
 int PauseDuration = 50; // Pause duration in milliseconds
                         // Time to detect tone 200us
 int SamplesPerFrame2 = soundFrequency * (ToneDuration + PauseDuration) / 1000;  // Total duration in samples (tone + pause)
@@ -89,10 +89,10 @@ void playTone(double freq1, double freq2){
     sf::SoundBuffer buffer;
     std::vector<sf::Int16> samples;
 
-    float amp = 0.5;
+    float amp = 0.48;
 
     int time = SamplesPerFrame2;
-    int sleep = (1000/(AudioPlayRate/SamplesPerFrame2))*1000;    // AudioPlayRate/SamplesPerFrame = 7.35 which is times it is sent per sec
+    int sleep = (1000/(AudioPlayRate/SamplesPerFrame2))*1000+10;    // AudioPlayRate/SamplesPerFrame = 7.35 which is times it is sent per sec
         // This 1000 divided by this gives the time in ms it is sent then times 1000 to get mikrosec
 
     for (int i = 0; i < time; i++) {
