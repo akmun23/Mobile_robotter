@@ -21,9 +21,9 @@ int RunCompareTest() {
     int bufferSize = 400;       // 750 works good
     double AudieBufferSize = 2400;
 
-    double DFTMagnitude = 0.35;
-    double FFTMagnitude = 0.35;
-    double GoertzelMagnitude = 0.35;
+    double DFTMagnitude = 0.2;
+    double FFTMagnitude = 0.2;
+    double GoertzelMagnitude = 0.2;
 
     double TimeToCalcDFT = 0.021;
     double TimeToCalcFFT = 0.021;
