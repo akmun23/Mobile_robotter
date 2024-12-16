@@ -5,3 +5,4 @@
 /home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles/install.dir
 /home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles/install/local.dir
 /home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles/install/strip.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles/drawMap_autogen.dir

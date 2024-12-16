@@ -1,16 +1,20 @@
 #ifndef GUIWINDOW_H
 #define GUIWINDOW_H
 
-#include <vector>
-#include <unistd.h>
-#include <math.h>
-#include <cmath>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlError>
 #include <QDebug>
 
+#include <X11/Xlib.h>
+#include <vector>
+#include <unistd.h>
+#include <cmath>
+
 #include "dataTypes.h"
+
+#undef slots
+#undef signals
 
 class GUI{
 private:
@@ -25,7 +29,6 @@ private:
     Size wallSize;
     Size robotSize;
     std::vector<Wall> wallFrags;
-    std::vector<Wall> robotFrags;
 
     //Graphics - "Colors"
     GC gcWall;
@@ -33,6 +36,9 @@ private:
     GC gcRobot;
     GC gcRed;
     GC gcGreen;
+
+    //Robot
+    Robot robot;
 
     const float scale_factor = 320.0;
 
@@ -42,10 +48,13 @@ public:
     GUI();
     ~GUI();
     bool spaceFree(int x_, int y_);
-    void lidarReading(double angle, double len, double robot_x, double robot_y, double robot_yaw);
+    void movementRobot(float robot_x, float robot_y);
+    void lidarReading(float angle, float len);
+    void rescale();
     void paintMap();
-    void paintRobot(double robot_x, double robot_y);
-    void robotPaint();
+    void findPoints(std::vector<Point>& points, Point p1, Point p2, bool TF = true);
+    void drawRect(Point vertices[4], GC gc);
+    void paintRobot(float yaw);
     void update(bool& update);
     void show();
 };

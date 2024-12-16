@@ -51,10 +51,19 @@ void controllerInput::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
     if(!_initial_pose_set){
         _initial_x = msg->pose.pose.position.x;
         _initial_y = msg->pose.pose.position.y;
+        auto q = msg->pose.pose.orientation;
+        double siny_cosp = 2.0 * (q.w * q.z + q.x * q.y);
+        double cosy_cosp = 1.0 - 2.0 * (q.y * q.y + q.z * q.z);
+        _initial_yaw = std::atan2(siny_cosp, cosy_cosp);
+
+        _cos_initial = std::cos(_initial_yaw);
+        _sin_initial = std::sin(_initial_yaw);
+
         _initial_pose_set = true;
 
         std::cout << _initial_x << std::endl;
         std::cout << _initial_y << std::endl;
+        std::cout << _initial_yaw << std::endl;
     }
 
     _latest_odom = msg;
@@ -78,19 +87,6 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
         play_dtmf_if_active();
     }
 
-    if(_latest_odom){
-        double robot_x = _latest_odom->pose.pose.position.x - _initial_x;
-        double robot_y = _latest_odom->pose.pose.position.y - _initial_y;
-
-        // Insert robot_x and y into table robot_positions
-        query.prepare("INSERT INTO robot_positions (robot_x, robot_y) VALUES (:robot_x, :robot_y)");
-        query.bindValue(":robot_x", robot_x);
-        query.bindValue(":robot_y", robot_y);
-        if (!query.exec()) {
-            qDebug() << "Error inserting data into robot_positions:" << query.lastError().text();
-        }
-    }
-
     // Log odom and scan into the database if button 2 is pressed
     if (msg->buttons[1] == 1) {
         std::cout << "Updating database" << std::endl;
@@ -99,8 +95,13 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
             double siny_cosp = 2.0 * (q.w * q.z + q.x * q.y);
             double cosy_cosp = 1.0 - 2.0 * (q.y * q.y + q.z * q.z);
             double robot_yaw = std::atan2(siny_cosp, cosy_cosp);
-            double robot_x = _latest_odom->pose.pose.position.x - _initial_x;
-            double robot_y = -_latest_odom->pose.pose.position.y - _initial_y;
+
+            double raw_x = _latest_odom->pose.pose.position.x - _initial_x;
+            double raw_y = _latest_odom->pose.pose.position.y - _initial_y;
+
+            double robot_x = raw_x * _cos_initial + raw_y * _sin_initial;
+            double robot_y = -raw_x * _sin_initial + raw_y * _cos_initial;
+            robot_yaw = robot_yaw - _initial_yaw;
 
             // Prepare the insert statement
             QString queryStr = "INSERT INTO lidar_data (distance, angle, robot_x, robot_y, robot_yaw) VALUES ";
@@ -113,10 +114,10 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
                     valueStrings.append(
                         QString("(%1, %2, %3, %4, %5)")
                             .arg(distance)
-                            .arg(angle)
-                            .arg(robot_x)
+                            .arg(-angle - robot_yaw)
+                            .arg(-robot_x)
                             .arg(robot_y)
-                            .arg(robot_yaw)
+                            .arg(-robot_yaw)
                         );
                 }
                 angle += _latest_scan->angle_increment;

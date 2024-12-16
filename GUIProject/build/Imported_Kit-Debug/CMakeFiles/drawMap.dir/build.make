@@ -69,10 +69,24 @@ include CMakeFiles/drawMap.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/drawMap.dir/flags.make
 
+CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o: CMakeFiles/drawMap.dir/flags.make
+CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o: drawMap_autogen/mocs_compilation.cpp
+CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o: CMakeFiles/drawMap.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o"
+	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o -MF CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/drawMap_autogen/mocs_compilation.cpp
+
+CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.i"
+	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/drawMap_autogen/mocs_compilation.cpp > CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.s"
+	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/drawMap_autogen/mocs_compilation.cpp -o CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/drawMap.dir/main.cpp.o: CMakeFiles/drawMap.dir/flags.make
 CMakeFiles/drawMap.dir/main.cpp.o: /home/aksel/Documents/GitHub/Mobile_robotter/drawMap/main.cpp
 CMakeFiles/drawMap.dir/main.cpp.o: CMakeFiles/drawMap.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/drawMap.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/drawMap.dir/main.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/drawMap.dir/main.cpp.o -MF CMakeFiles/drawMap.dir/main.cpp.o.d -o CMakeFiles/drawMap.dir/main.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/drawMap/main.cpp
 
 CMakeFiles/drawMap.dir/main.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/drawMap.dir/main.cpp.s: cmake_force
 CMakeFiles/drawMap.dir/GUIWindow.cpp.o: CMakeFiles/drawMap.dir/flags.make
 CMakeFiles/drawMap.dir/GUIWindow.cpp.o: /home/aksel/Documents/GitHub/Mobile_robotter/drawMap/GUIWindow.cpp
 CMakeFiles/drawMap.dir/GUIWindow.cpp.o: CMakeFiles/drawMap.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/drawMap.dir/GUIWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/drawMap.dir/GUIWindow.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/drawMap.dir/GUIWindow.cpp.o -MF CMakeFiles/drawMap.dir/GUIWindow.cpp.o.d -o CMakeFiles/drawMap.dir/GUIWindow.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/drawMap/GUIWindow.cpp
 
 CMakeFiles/drawMap.dir/GUIWindow.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/drawMap.dir/GUIWindow.cpp.s: cmake_force
 CMakeFiles/drawMap.dir/dataTypes.cpp.o: CMakeFiles/drawMap.dir/flags.make
 CMakeFiles/drawMap.dir/dataTypes.cpp.o: /home/aksel/Documents/GitHub/Mobile_robotter/drawMap/dataTypes.cpp
 CMakeFiles/drawMap.dir/dataTypes.cpp.o: CMakeFiles/drawMap.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/drawMap.dir/dataTypes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/drawMap.dir/dataTypes.cpp.o"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/drawMap.dir/dataTypes.cpp.o -MF CMakeFiles/drawMap.dir/dataTypes.cpp.o.d -o CMakeFiles/drawMap.dir/dataTypes.cpp.o -c /home/aksel/Documents/GitHub/Mobile_robotter/drawMap/dataTypes.cpp
 
 CMakeFiles/drawMap.dir/dataTypes.cpp.i: cmake_force
@@ -113,6 +127,7 @@ CMakeFiles/drawMap.dir/dataTypes.cpp.s: cmake_force
 
 # Object files for target drawMap
 drawMap_OBJECTS = \
+"CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/drawMap.dir/main.cpp.o" \
 "CMakeFiles/drawMap.dir/GUIWindow.cpp.o" \
 "CMakeFiles/drawMap.dir/dataTypes.cpp.o"
@@ -120,6 +135,7 @@ drawMap_OBJECTS = \
 # External object files for target drawMap
 drawMap_EXTERNAL_OBJECTS =
 
+drawMap: CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o
 drawMap: CMakeFiles/drawMap.dir/main.cpp.o
 drawMap: CMakeFiles/drawMap.dir/GUIWindow.cpp.o
 drawMap: CMakeFiles/drawMap.dir/dataTypes.cpp.o
@@ -132,7 +148,7 @@ drawMap: /usr/lib/x86_64-linux-gnu/libGLX.so
 drawMap: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 drawMap: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.2.4
 drawMap: CMakeFiles/drawMap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable drawMap"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aksel/Documents/GitHub/Mobile_robotter/GUIProject/build/Imported_Kit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable drawMap"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/drawMap.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

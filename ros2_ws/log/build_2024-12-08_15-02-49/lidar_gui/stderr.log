@@ -1,6 +1,0 @@
-/usr/bin/ld: CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o: in function `MappingNode::MappingNode()':
-/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/lidarnode.cpp:3: undefined reference to `vtable for MappingNode'
-collect2: error: ld returned 1 exit status
-gmake[2]: *** [CMakeFiles/lidar_gui.dir/build.make:249: lidar_gui] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_gui.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

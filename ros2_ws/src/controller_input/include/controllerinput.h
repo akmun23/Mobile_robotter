@@ -27,6 +27,10 @@ private:
     bool _initial_pose_set = false;
     double _initial_x = 0;
     double _initial_y = 0;
+    double _initial_yaw = 0;
+    double _cos_initial = 0;
+    double _sin_initial = 0;
+
     sensor_msgs::msg::LaserScan::SharedPtr _latest_scan;
     nav_msgs::msg::Odometry::SharedPtr _latest_odom;
 

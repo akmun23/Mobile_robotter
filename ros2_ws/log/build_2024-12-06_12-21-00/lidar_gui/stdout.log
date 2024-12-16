@@ -1,5 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target lidar_gui[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o[0m

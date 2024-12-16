@@ -174,6 +174,19 @@ drawMap/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/drawMap.dir/build.make CMakeFiles/drawMap.dir/build
 .PHONY : drawMap/fast
 
+#=============================================================================
+# Target rules for targets named drawMap_autogen
+
+# Build rule for target.
+drawMap_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drawMap_autogen
+.PHONY : drawMap_autogen
+
+# fast build rule for target.
+drawMap_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drawMap_autogen.dir/build.make CMakeFiles/drawMap_autogen.dir/build
+.PHONY : drawMap_autogen/fast
+
 GUIWindow.o: GUIWindow.cpp.o
 .PHONY : GUIWindow.o
 
@@ -222,6 +235,30 @@ dataTypes.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/drawMap.dir/build.make CMakeFiles/drawMap.dir/dataTypes.cpp.s
 .PHONY : dataTypes.cpp.s
 
+drawMap_autogen/mocs_compilation.o: drawMap_autogen/mocs_compilation.cpp.o
+.PHONY : drawMap_autogen/mocs_compilation.o
+
+# target to build an object file
+drawMap_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drawMap.dir/build.make CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.o
+.PHONY : drawMap_autogen/mocs_compilation.cpp.o
+
+drawMap_autogen/mocs_compilation.i: drawMap_autogen/mocs_compilation.cpp.i
+.PHONY : drawMap_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+drawMap_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drawMap.dir/build.make CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.i
+.PHONY : drawMap_autogen/mocs_compilation.cpp.i
+
+drawMap_autogen/mocs_compilation.s: drawMap_autogen/mocs_compilation.cpp.s
+.PHONY : drawMap_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+drawMap_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/drawMap.dir/build.make CMakeFiles/drawMap.dir/drawMap_autogen/mocs_compilation.cpp.s
+.PHONY : drawMap_autogen/mocs_compilation.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -258,6 +295,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... drawMap_autogen"
 	@echo "... drawMap"
 	@echo "... GUIWindow.o"
 	@echo "... GUIWindow.i"
@@ -265,6 +303,9 @@ help:
 	@echo "... dataTypes.o"
 	@echo "... dataTypes.i"
 	@echo "... dataTypes.s"
+	@echo "... drawMap_autogen/mocs_compilation.o"
+	@echo "... drawMap_autogen/mocs_compilation.i"
+	@echo "... drawMap_autogen/mocs_compilation.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
