@@ -17,19 +17,19 @@ void TimePrinter(std::chrono::high_resolution_clock::time_point start){
 }
 
 int RunCompareTest() {
-    int sampleRate = 44100;
-    int bufferSize = 750;       // 750 works good
-    double AudieBufferSize = 6350.4;
+    int sampleRate = 16000;
+    int bufferSize = 400;       // 750 works good
+    double AudieBufferSize = 2400;
 
-    int DFTMagnitude = 2;       // 3 works good
-    int FFTMagnitude = 2;       // 3 works good
-    int GoertzelMagnitude = 30; // 60 works good
+    double DFTMagnitude = 0.2;
+    double FFTMagnitude = 0.2;
+    double GoertzelMagnitude = 0.2;
 
-    double TimeToCalcDFT = 0.205;
-    double TimeToCalcFFT = 0.205;
-    double TimeToCalcGoertzelWithDelay = 0.21;
+    double TimeToCalcDFT = 0.021;
+    double TimeToCalcFFT = 0.021;
+    double TimeToCalcGoertzelWithDelay = 0.021;
 
-    double scalingFactor = 0.9;
+    double scalingFactor = 1;
     double TimeToReadToneDFT = TimeToCalcDFT*(AudieBufferSize/bufferSize)*scalingFactor;
     double timeToReadToneFFT = TimeToCalcFFT*(AudieBufferSize/bufferSize)*scalingFactor;
     double timeToReadToneGoertzel = TimeToCalcGoertzelWithDelay*(AudieBufferSize/bufferSize)*scalingFactor;
@@ -38,12 +38,22 @@ int RunCompareTest() {
 
     // Input files
     std::vector<std::pair<int,std::string>> TestfileNames;
-    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingShortVersion.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/Recording.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoShortDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoShortDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingEchoLongDistance.txt"});
     //TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/RecordingNoEchoLongDistance.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/RobotRecordingTest.txt"});
+    //TestfileNames.push_back({1,"/home/pascal/test.txt"});
+
+    // Below are with a samplerate of 16000Hz and 150ms tone lenght
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/UdenRumKort.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/UdenRumLangt.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/NormaltRumTaet.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/NormaltRumLangt.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/EkkoRumKort.txt"});
+    TestfileNames.push_back({1,"/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/build/Desktop-Debug/EkkoRumLangt.txt"});
     std::vector<std::pair<int,std::string>> DFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> FFTTestfileNames = TestfileNames;
     std::vector<std::pair<int,std::string>> GoertzelTestfileNames = TestfileNames;
@@ -94,13 +104,7 @@ int RunCompareTest() {
     std::vector<double> FFTTotal;
     std::vector<double> GoertzelTotal;
 
-    std::vector<double> DFTCorrectFormat;
-    std::vector<double> FFTCorrectFormat;
-    std::vector<double> GoertzelCorrectFormat;
 
-    std::vector<double> DFTCorrectTotal;
-    std::vector<double> FFTCorrectTotal;
-    std::vector<double> GoertzelCorrectTotal;
     double DFTMaxTime = 0;
     double DFTMinTime = 0;
     double FFTMaxTime = 0;
@@ -111,7 +115,7 @@ int RunCompareTest() {
 
     std::chrono::high_resolution_clock::time_point clockStart = std::chrono::high_resolution_clock::now();
     // Loop through the files
-    /*
+
     std::cout << "Start of DFT" << std::endl;
     for (int i = 0; i < DFTTestfileNames.size(); ++i) {
         std::ifstream file;
@@ -127,12 +131,12 @@ int RunCompareTest() {
         std::cout << "DFT File: "<< i+1 << " Processed" << std::endl;
         TimePrinter(clockStart);
         // Time
-        DFTTime.push_back(DFTResult[6]);
-        if (DFTResult[7] > DFTMaxTime){
-            DFTMaxTime = DFTResult[7];
+        DFTTime.push_back(DFTResult[4]);
+        if (DFTResult[5] > DFTMaxTime){
+            DFTMaxTime = DFTResult[5];
         }
-        if (DFTResult[8] < DFTMinTime || i == 0){
-            DFTMinTime = DFTResult[8];
+        if (DFTResult[6] < DFTMinTime || i == 0){
+            DFTMinTime = DFTResult[6];
         }
 
         // Correct and incorrect
@@ -140,11 +144,10 @@ int RunCompareTest() {
         DFTIncorrect.push_back(DFTResult[1]);
         DFTIncorrectFormat.push_back(DFTResult[2]);
         DFTTotal.push_back(DFTResult[3]);
-        DFTCorrectFormat.push_back(DFTResult[4]);
-        DFTCorrectTotal.push_back(DFTResult[5]);
+
 
         DFT_buffer_CalculationSpeed << DFTTime[i] << std::endl;
-        DFT_correctAndFailFile << DFTCorrect[i] << " " << DFTIncorrect[i] << " " << DFTIncorrectFormat[i] << " " << DFTTotal[i] << " " << DFTCorrectFormat[i] << " " << DFTCorrectTotal[i] << std::endl;
+        DFT_correctAndFailFile << DFTCorrect[i] << " " << DFTIncorrect[i] << " " << DFTIncorrectFormat[i] << " " << DFTTotal[i] << std::endl;
 
     }
     DFT_buffer_CalculationSpeed << DFTMaxTime << std::endl;
@@ -169,12 +172,12 @@ int RunCompareTest() {
         TimePrinter(clockStart);
 
         // Time
-        FFTTime.push_back(FFTResult[6]);
-        if (FFTResult[7] > FFTMaxTime){
-            FFTMaxTime = FFTResult[7];
+        FFTTime.push_back(FFTResult[4]);
+        if (FFTResult[5] > FFTMaxTime){
+            FFTMaxTime = FFTResult[5];
         }
-        if (FFTResult[8] < FFTMinTime || i == 0){
-            FFTMinTime = FFTResult[8];
+        if (FFTResult[6] < FFTMinTime || i == 0){
+            FFTMinTime = FFTResult[6];
         }
 
         // Correct and incorrect
@@ -182,18 +185,17 @@ int RunCompareTest() {
         FFTIncorrect.push_back(FFTResult[1]);
         FFTIncorrectFormat.push_back(FFTResult[2]);
         FFTTotal.push_back(FFTResult[3]);
-        FFTCorrectFormat.push_back(FFTResult[4]);
-        FFTCorrectTotal.push_back(FFTResult[5]);
+
 
         FFT_buffer_CalculationSpeed << FFTTime[i] << std::endl;
-        FFT_correctAndFailFile << FFTCorrect[i] << " " << FFTIncorrect[i] << " " << FFTIncorrectFormat[i] << " " << FFTTotal[i] << " " << FFTCorrectFormat[i] << " " << FFTCorrectTotal[i] << std::endl;
+        FFT_correctAndFailFile << FFTCorrect[i] << " " << FFTIncorrect[i] << " " << FFTIncorrectFormat[i] << " " << FFTTotal[i] << std::endl;
 
     }
     FFT_buffer_CalculationSpeed << FFTMaxTime << std::endl;
     FFT_buffer_CalculationSpeed << FFTMinTime << std::endl;
 
     std::cout << "End of FFT" << std::endl;
-    */
+
     std::cout << "Start of Goertzel" << std::endl;
 
     for (int i = 0; i < GoertzelTestfileNames.size(); ++i) {
@@ -211,12 +213,12 @@ int RunCompareTest() {
         TimePrinter(clockStart);
 
         // Time
-        GoertzelTime.push_back(GoertzelResult[6]);
-        if (GoertzelResult[7] > GoertzelMaxTime){
-            GoertzelMaxTime = GoertzelResult[7];
+        GoertzelTime.push_back(GoertzelResult[4]);
+        if (GoertzelResult[5] > GoertzelMaxTime){
+            GoertzelMaxTime = GoertzelResult[5];
         }
-        if (GoertzelResult[8] < GoertzelMinTime || i == 0){
-            GoertzelMinTime = GoertzelResult[8];
+        if (GoertzelResult[6] < GoertzelMinTime || i == 0){
+            GoertzelMinTime = GoertzelResult[6];
         }
 
         // Correct and incorrect
@@ -224,12 +226,11 @@ int RunCompareTest() {
         GoertzelIncorrect.push_back(GoertzelResult[1]);
         GoertzelIncorrectFormat.push_back(GoertzelResult[2]);
         GoertzelTotal.push_back(GoertzelResult[3]);
-        GoertzelCorrectFormat.push_back(GoertzelResult[4]);
-        GoertzelCorrectTotal.push_back(GoertzelResult[5]);
+
 
 
         Goertzel_buffer_CalculationSpeed << GoertzelTime[i] << std::endl;
-        Goertzel_correctAndFailFile << GoertzelCorrect[i] << " " << GoertzelIncorrect[i] << " " << GoertzelIncorrectFormat[i] << " " << GoertzelTotal[i] << " " << GoertzelCorrectFormat[i] << " " << GoertzelCorrectTotal[i] << std::endl;
+        Goertzel_correctAndFailFile << GoertzelCorrect[i] << " " << GoertzelIncorrect[i] << " " << GoertzelIncorrectFormat[i] << " " << GoertzelTotal[i] << std::endl;
     }
 
     Goertzel_buffer_CalculationSpeed << GoertzelMaxTime << std::endl;

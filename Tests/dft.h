@@ -27,6 +27,7 @@ private:
     double _timeSum = 0;
 
     std::vector<double> _timeAtMaxCorrect;
+    std::vector<double> _AllTimes;
 
     std::vector<int> _tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 
@@ -42,7 +43,9 @@ private:
 
 public:
 
-    DFT(int minMagnitude, double timeToReadTone);
+    DFT(double minMagnitude, double timeToReadTone);
+
+    DFT(double minMagnitude, double timeToReadTone, std::string outfile);
 
     std::vector<double> readDTMFDataChunk(std::ifstream& inFile, int& bufferSize);
 
@@ -50,6 +53,8 @@ public:
 
     // Function to compute the DFT
     void computeDFT(const std::vector<double>& input, int &sampleRate);
+
+    std::vector<double> computeDFTCompare(float* input, int sampleRate, int FramesPerBuffer);
 
     // Function to read DTMF data from file
     std::vector<double> readDTMFDataDFT(std::ifstream &file, int& sampleRate);

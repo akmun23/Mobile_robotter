@@ -1,4 +1,6 @@
 #include "audio.h"
+#include "dft.h"
+#include "goertzel.h"
 #include <unistd.h>
 
 // Variables for the listening function
@@ -7,16 +9,8 @@ PaStream* stream;
 bool newMagCalculation = false;
 std::vector<int> tones = {697, 770, 852, 941, 1209, 1336, 1477, 1633};
 std::vector<double> mags = {0, 0, 0, 0, 0, 0, 0, 0};
-std::vector<double> HammingWindow;
-std::vector<double> InputAfterHammingWindow;
 
-
-Goertzel::Goertzel(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {
-    createHammingWindow(FRAMES_PER_BUFFER*NUM_CHANNELS);
-    HammingWindow = getHammingWindow();
-    InputAfterHammingWindow.resize(FRAMES_PER_BUFFER*NUM_CHANNELS);
-
-}
+Goertzel::Goertzel(double minMagnitude, double timeToReadTone) : MagnitudeAnalysis(minMagnitude, timeToReadTone) {}
 
 
 
@@ -80,14 +74,6 @@ void Goertzel::start(){
             newMagCalculation = false;
 
         }
-
-        if(getMessagesReceived()){
-
-            int direction = getDirection();
-            int drivingSpeed = getDrivingSpeed();
-            std::cout << "Direction: " << direction << " Speed: " << drivingSpeed << std::endl;
-            setMessagesReceived(false);
-        }
     }
 }
 
@@ -115,13 +101,6 @@ void Goertzel::getDevices(){
     }
 }
 
-void Goertzel::calculateInputWithHammingWindow(const float* in) {
-
-    for (int i = 0; i < FRAMES_PER_BUFFER*NUM_CHANNELS; ++i) {
-        InputAfterHammingWindow[i] = in[i] * HammingWindow[i];
-    }
-}
-
 int Goertzel::streamCallback(
     const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
     const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
@@ -131,19 +110,6 @@ int Goertzel::streamCallback(
     // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
     float* in = (float*)inputBuffer;
 
-
-    /*
-    calculateInputWithHammingWindow(in);
-
-    std::thread t0(calculateGoertzel, tones[0], InputAfterHammingWindow, std::ref(mags), 0);
-    std::thread t1(calculateGoertzel, tones[1], InputAfterHammingWindow, std::ref(mags), 1);
-    std::thread t2(calculateGoertzel, tones[2], InputAfterHammingWindow, std::ref(mags), 2);
-    std::thread t3(calculateGoertzel, tones[3], InputAfterHammingWindow, std::ref(mags), 3);
-    std::thread t4(calculateGoertzel, tones[4], InputAfterHammingWindow, std::ref(mags), 4);
-    std::thread t5(calculateGoertzel, tones[5], InputAfterHammingWindow, std::ref(mags), 5);
-    std::thread t6(calculateGoertzel, tones[6], InputAfterHammingWindow, std::ref(mags), 6);
-    std::thread t7(calculateGoertzel, tones[7], InputAfterHammingWindow, std::ref(mags), 7);
-    */
     std::thread t0(calculateGoertzel, tones[0], in, std::ref(mags), 0);
     std::thread t1(calculateGoertzel, tones[1], in, std::ref(mags), 1);
     std::thread t2(calculateGoertzel, tones[2], in, std::ref(mags), 2);
@@ -376,8 +342,129 @@ int Goertzel::streamCallbackFFT(
     FFTProcessing fft = FFTProcessing(0.5,0.140, 20);
     mags = fft.processSound(in, SAMPLE_RATE, FRAMES_PER_BUFFER);
 
+    for (int i = 0; i < mags.size(); ++i) {
+        std::cout << mags[i] << " ";
+    }
+    std::cout << std::endl;
+
     newMagCalculation = true;
     return paContinue;
 
 }
 
+
+
+
+///////////////////////////////////////////////////// COMPARE /////////////////////////////////////////////////
+DFT dft = DFT(1,0.150, "DFT_Output.txt");
+FFTProcessing fft = FFTProcessing(1,0.150, 20, "FFT_Output.txt");
+GoertzelTesting GoertzelCompare = GoertzelTesting(1,0.150, FRAMES_PER_BUFFER, "Goertzel_Output.txt");
+
+std::vector<double> magsDFT = {0, 0, 0, 0, 0, 0, 0, 0};
+std::vector<double> magsFFT = {0, 0, 0, 0, 0, 0, 0, 0};
+std::vector<double> magsGoertzel = {0, 0, 0, 0, 0, 0, 0, 0};
+
+
+void Goertzel::InitForCompare(){
+
+    // Initialize PortAudio
+    err = Pa_Initialize();
+    checkErr(err);
+
+    // Allocate and define the callback data
+    spectroData = (streamCallbackData*)malloc(sizeof(streamCallbackData));
+    spectroData->in = (double*)malloc(sizeof(double) * FRAMES_PER_BUFFER);
+    if (spectroData->in == NULL) {
+        printf("Could not allocate spectro data\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Define stream capture specifications
+    memset(&inputParameters, 0, sizeof(inputParameters));
+    inputParameters.channelCount = NUM_CHANNELS;
+    inputParameters.device = Pa_GetDefaultInputDevice();
+    inputParameters.hostApiSpecificStreamInfo = nullptr;
+    inputParameters.sampleFormat = paFloat32;
+    inputParameters.suggestedLatency = Pa_GetDeviceInfo(Pa_GetDefaultInputDevice())->defaultLowInputLatency;
+
+    // Open the PortAudio stream
+    err = Pa_OpenStream(
+        &stream,
+        &inputParameters,
+        nullptr,
+        SAMPLE_RATE,
+        FRAMES_PER_BUFFER,
+        paNoFlag,
+        streamCallbackCompare,
+        spectroData
+        );
+    checkErr(err);
+
+
+}
+
+void RunDFTCompare(){
+    //dft.analyseMagnitudes(magsDFT);
+    dft.checkMessageState();
+}
+void RunFFTCompare(){
+    fft.analyseMagnitudes(magsFFT);
+    fft.checkMessageState();
+}void RunGoertzelCompare(){
+    GoertzelCompare.analyseMagnitudes(magsGoertzel);
+    GoertzelCompare.checkMessageState();
+}
+
+void Goertzel::startCompare(){
+    // Begin capturing audio
+    err = Pa_StartStream(stream);
+    checkErr(err);
+
+    while (true) {
+        if(newMagCalculation){
+
+
+            std::thread t0(RunDFTCompare);
+            std::thread t1(RunFFTCompare);
+            std::thread t2(RunGoertzelCompare);
+            t0.join();
+            t1.join();
+            t2.join();
+
+            newMagCalculation = false;
+
+        }
+    }
+}
+
+void computeDFTCompare(float *in){
+    magsDFT = dft.computeDFTCompare(in, SAMPLE_RATE, FRAMES_PER_BUFFER);
+}
+void computeFFTCompare(float *in){
+    magsFFT = fft.processSound(in, SAMPLE_RATE, FRAMES_PER_BUFFER);
+}
+void computeGoertzelCompare(float *in){
+    for (int i = 0; i < 8; ++i) {
+        GoertzelCompare.goertzelCompare(in, tones[i], SAMPLE_RATE, magsGoertzel[i]);
+    }
+}
+
+int Goertzel::streamCallbackCompare(
+    const void* inputBuffer, void* outputBuffer, unsigned long framesPerBuffer,
+    const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags,
+    void* userData
+    ){
+    // Cast our input buffer to a float pointer (since our sample format is `paFloat32`)
+    float* in = (float*)inputBuffer;
+    std::thread t0(computeDFTCompare, in);
+    std::thread t1(computeFFTCompare, in);
+    std::thread t2(computeGoertzelCompare, in);
+    t0.join();
+    t1.join();
+    t2.join();
+
+
+    newMagCalculation = true;
+    return paContinue;
+
+}

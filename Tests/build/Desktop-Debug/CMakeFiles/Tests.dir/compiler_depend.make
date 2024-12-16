@@ -3,7 +3,9 @@
 
 CMakeFiles/Tests.dir/audio.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.cpp \
   /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.h \
+  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/dft.h \
   /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/fft.h \
+  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.h \
   /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1681,8 +1683,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/AlgorithmCompareTest.h:
 
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
-
 /usr/include/c++/13/system_error:
 
 /usr/include/c++/13/bits/range_access.h:
@@ -1691,11 +1691,11 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/ratio:
 
-/usr/include/c++/13/cwctype:
-
 /usr/include/SFML/Graphics/ConvexShape.hpp:
 
 /usr/include/c++/13/bits/sstream.tcc:
+
+/usr/include/c++/13/cwctype:
 
 /usr/include/c++/13/thread:
 
@@ -1825,14 +1825,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/bits/locale_facets.h:
 
-/usr/include/SFML/Graphics.hpp:
-
-/usr/include/c++/13/bits/localefwd.h:
-
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
 /usr/include/c++/13/bits/basic_string.h:
 
 /usr/include/c++/13/bits/invoke.h:
@@ -1840,6 +1832,36 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
+
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
+
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/c++/13/backward/binders.h:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/SFML/Window.hpp:
+
+/usr/include/SFML/System/FileInputStream.hpp:
+
+/usr/include/c++/13/ext/alloc_traits.h:
+
+/usr/include/c++/13/new:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/include/c++/13/ios:
 
 /usr/include/SFML/Graphics/RenderWindow.hpp:
 
@@ -1849,9 +1871,17 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/13/bits/chrono.h:
+
+/usr/include/c++/13/bits/move.h:
+
+/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.h:
+
+/usr/include/pthread.h:
 
 /usr/include/SFML/Graphics/Shape.hpp:
 
@@ -1877,16 +1907,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
-/usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/SFML/Window/GlResource.hpp:
-
-/usr/include/c++/13/type_traits:
-
-/usr/include/SFML/Window/Context.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
 /usr/include/c++/13/bit:
 
 /usr/include/c++/13/bits/basic_string.tcc:
@@ -1896,12 +1916,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/c++/13/bits/enable_special_members.h:
 
 /usr/include/c++/13/bits/stream_iterator.h:
-
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h:
-
-/usr/include/c++/13/bits/concept_check.h:
-
-/usr/include/c++/13/bits/alloc_traits.h:
 
 /usr/include/c++/13/complex:
 
@@ -1919,29 +1933,13 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/c++/13/algorithm:
 
-/usr/include/c++/13/bits/stl_tempbuf.h:
+/usr/include/SFML/Graphics.hpp:
 
-/usr/include/SFML/Window.hpp:
+/usr/include/c++/13/bits/localefwd.h:
 
-/usr/include/SFML/System/FileInputStream.hpp:
+/usr/include/c++/13/bits/streambuf_iterator.h:
 
-/usr/include/c++/13/ext/alloc_traits.h:
-
-/usr/include/c++/13/new:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/c++/13/ios:
-
-/usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/bits/exception.h:
-
-/usr/include/c++/13/streambuf:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
@@ -1969,11 +1967,15 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/include/c++/13/bits/stl_vector.h:
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
 
-/usr/include/c++/13/bits/stl_tree.h:
+/usr/include/c++/13/bits/exception.h:
 
-/usr/include/c++/13/bits/codecvt.h:
+/usr/include/c++/13/streambuf:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
 
@@ -2041,6 +2043,14 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
+/usr/include/SFML/Window/GlResource.hpp:
+
+/usr/include/c++/13/type_traits:
+
+/usr/include/SFML/Window/Context.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
 /usr/include/c++/13/bits/allocator.h:
 
 /usr/include/c++/13/unordered_map:
@@ -2062,12 +2072,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/linux/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/usr/include/pthread.h:
-
-/usr/include/c++/13/bits/move.h:
-
-/home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.h:
 
 /usr/include/wctype.h:
 
@@ -2112,8 +2116,6 @@ CMakeFiles/Tests.dir/main.cpp.o: /home/pascal/Dokumenter/GitHub/Mobile_robotter/
 /usr/include/c++/13/bits/stl_iterator.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 

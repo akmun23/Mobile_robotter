@@ -9,6 +9,8 @@ class MagnitudeAnalysis
 {
 private:
 
+
+
     // PRIVATE VARIABLES
     std::chrono::high_resolution_clock::time_point _clockStartMessage;
     std::chrono::high_resolution_clock::time_point _clockStartTone1;
@@ -18,8 +20,9 @@ private:
     std::chrono::high_resolution_clock::time_point _clockStartTone5;
     std::chrono::high_resolution_clock::time_point _clockStartTone6;
 
-    int _minMagnitude = 0;       // SKAL I CONSTRUCTOR
+    double _minMagnitude = 0;       // SKAL I CONSTRUCTOR
     int _letterCounter = 0;
+    std::string _outFileName;
 
     int _drivingSpeed = 0;
     int _direction = 0;
@@ -43,6 +46,8 @@ public:
 
     // Constructor
     MagnitudeAnalysis(double magnitude, double timeToReadTone);
+
+    MagnitudeAnalysis(double magnitude, double timeToReadTone, std::string outFileName);
 
     // PUBLIC FUNCTIONS
     void analyseMagnitudes(const std::vector<double>& mags);
@@ -68,9 +73,6 @@ public:
     int getValueFromLetter(char letter);
 
     void reactOnSignal();
-
-    void createHammingWindow(int InputSize);
-
 
 
     // GETTER FUNCTIONS

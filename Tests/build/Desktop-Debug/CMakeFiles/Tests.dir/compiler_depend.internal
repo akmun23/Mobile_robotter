@@ -4,7 +4,9 @@
 CMakeFiles/Tests.dir/audio.cpp.o
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.cpp
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/audio.h
+ /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/dft.h
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/fft.h
+ /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/goertzel.h
  /home/pascal/Dokumenter/GitHub/Mobile_robotter/Tests/magnitudeanalysis.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h

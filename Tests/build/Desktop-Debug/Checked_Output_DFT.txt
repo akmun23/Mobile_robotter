@@ -3,78 +3,78 @@ New sequence of messages
 ----------------------------------------------
 
 Message 1
-Message Incorrect Format
-* 1 5   2 # 
-----------------------------------------------
-
-Message 2
-Message Incorrect Format
-* 1 7     # 
-----------------------------------------------
-
-Message 3
-Message Incorrect Format
-* 9 1     # 
-----------------------------------------------
-
-Message 4
-Message Incorrect Format
-* 7 4 6 5 # 
-----------------------------------------------
-
-Message 5
-Message Correct Format and correct message
-* 1 3 7 9 # 
-----------------------------------------------
-
-Message 6
-Message Incorrect Format
-* 1 5   2 # 
-----------------------------------------------
-
-Message 7
-Message Incorrect Format
-* 1 7     # 
-----------------------------------------------
-
-Message 8
-Message Correct Format and correct message
-* 9 1 A D # 
-----------------------------------------------
-
-Message 9
-Message Correct Format and correct message
-* 7 4 6 2 # 
-----------------------------------------------
-
-Message 10
-Message Correct Format and correct message
-* 1 3 7 9 # 
-----------------------------------------------
-
-Message 11
 Message Correct Format and correct message
 * 1 5 C 2 # 
 ----------------------------------------------
 
-Message 12
+Message 2
 Message Correct Format and correct message
 * 1 7 B C # 
 ----------------------------------------------
 
-Message 13
+Message 3
+Message Incorrect Format
+* 7 1 A D # 
+----------------------------------------------
+
+Message 4
+Message Incorrect Format
+* 7 4 4 2 0 
+----------------------------------------------
+
+Message 5
+Message Incorrect Format
+* 1 3 7 7 # 
+----------------------------------------------
+
+Message 6
 Message Correct Format and correct message
-* 9 1 A D # 
+* 1 5 C 2 # 
+----------------------------------------------
+
+Message 7
+Message Correct Format and correct message
+* 1 7 B C # 
+----------------------------------------------
+
+Message 8
+Message Incorrect Format
+* 7 1 A D D 
+----------------------------------------------
+
+Message 9
+Message Incorrect Format
+* 7 4 4 2 2 
+----------------------------------------------
+
+Message 10
+Message Incorrect Format
+* 1 1 7 7 # 
+----------------------------------------------
+
+Message 11
+Message Incorrect Format
+* 1 5 C 2 2 
+----------------------------------------------
+
+Message 12
+Message Incorrect Format
+* 1 7 4 C C 
+----------------------------------------------
+
+Message 13
+Message Incorrect Format
+* 7 1 A D D 
 ----------------------------------------------
 
 Message 14
-Message Correct Format and correct message
-* 7 4 6 2 # 
+Message Incorrect Format
+* 7 4 4 2 0 
 ----------------------------------------------
 
 Message 15
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 1 7 7 7 
 ----------------------------------------------
 
 Message 16
@@ -83,28 +83,28 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 17
-Message Correct Format and correct message
-* 1 7 B C # 
+Message Incorrect Format
+* 1 7 B C D 
 ----------------------------------------------
 
 Message 18
-Message Correct Format and correct message
-* 9 1 A D # 
+Message Incorrect Format
+* 7 1 A D # 
 ----------------------------------------------
 
 Message 19
 Message Incorrect Format
-* 7 4 6 5 # 
+* 7 4 4 2 0 
 ----------------------------------------------
 
 Message 20
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 1 7 7 # 
 ----------------------------------------------
 
 Message 21
-Message Correct Format and correct message
-* 1 5 C 2 # 
+Message Incorrect Format
+* 1 5 C 2 0 
 ----------------------------------------------
 
 Message 22
@@ -113,48 +113,48 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 23
-Message Correct Format and correct message
-* 9 1 A D # 
+Message Incorrect Format
+* 9 1 A D D 
 ----------------------------------------------
 
 Message 24
 Message Incorrect Format
-* 7 4 6 5 # 
+* 7 4 6 2 2 
 ----------------------------------------------
 
 Message 25
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 3 7 7 # 
 ----------------------------------------------
 
 Message 26
-Message Correct Format and correct message
-* 1 5 C 2 # 
+Message Incorrect Format
+* 1 5 C 2 0 
 ----------------------------------------------
 
 Message 27
-Message Correct Format and correct message
-* 1 7 B C # 
+Message Incorrect Format
+* 1 7 B C D 
 ----------------------------------------------
 
 Message 28
-Message Correct Format and correct message
-* 9 1 A D # 
+Message Incorrect Format
+* 7 1 A D D 
 ----------------------------------------------
 
 Message 29
-Message Correct Format and correct message
-* 7 4 6 2 # 
+Message Incorrect Format
+* 7 4 6 2 0 
 ----------------------------------------------
 
 Message 30
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 1 7 7 # 
 ----------------------------------------------
 
 Message 31
 Message Incorrect Format
-* 1 5 B 2 # 
+* 1 5 C 2 0 
 ----------------------------------------------
 
 Message 32
@@ -163,23 +163,23 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 33
-Message Correct Format and correct message
-* 9 1 A D # 
+Message Incorrect Format
+* 7 1 A D # 
 ----------------------------------------------
 
 Message 34
 Message Incorrect Format
-* 7 4 6 5 # 
+* 7 4 6 2 0 
 ----------------------------------------------
 
 Message 35
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 1 7 9 # 
 ----------------------------------------------
 
 Message 36
-Message Correct Format and correct message
-* 1 5 C 2 # 
+Message Incorrect Format
+* 1 5 C 2 0 
 ----------------------------------------------
 
 Message 37
@@ -193,75 +193,73 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 39
-Message Correct Format and correct message
-* 7 4 6 2 # 
+Message Incorrect Format
+* 7 4 4 2 0 
 ----------------------------------------------
 
 Message 40
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 3 7 7   
 ----------------------------------------------
 
 Message 41
 Message Incorrect Format
-* 1 5 B 2 # 
+* 1 5 C 2 0 
 ----------------------------------------------
 
 Message 42
-Message Incorrect Format
-* 1 7 B B # 
+Message Correct Format and correct message
+* 1 7 B C # 
 ----------------------------------------------
 
 Message 43
-Message Correct Format and correct message
-* 9 1 A D # 
+Message Incorrect Format
+* 7 1 A D D 
 ----------------------------------------------
 
 Message 44
 Message Incorrect Format
-* * 4 6 5 # 
+* 7 4 4 2 0 
 ----------------------------------------------
 
 Message 45
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 3 7 7   
 ----------------------------------------------
 
 Message 46
 Message Incorrect Format
-* 1 5   2 # 
+* 1 5 C 2 0 
 ----------------------------------------------
 
 Message 47
 Message Incorrect Format
-* 1 7     # 
+* 1 7 B C 9 
 ----------------------------------------------
 
 Message 48
 Message Incorrect Format
-* 9 1     # 
+* 7 1 A D # 
 ----------------------------------------------
 
 Message 49
-Message Correct Format and correct message
-* 7 4 6 2 # 
+Message Incorrect Format
+* 7 4 6 2 0 
 ----------------------------------------------
 
 Message 50
-Message Correct Format and correct message
-* 1 3 7 9 # 
+Message Incorrect Format
+* 1 3 7 7 # 
 ----------------------------------------------
 
 
 ----------------------------------------------
-Correct Messages: 34
+Correct Messages: 10
 Incorrect Messages: 0
-Incorrect Format Messages: 16
+Incorrect Format Messages: 40
 Total Messages: 50
-Correct format percentage: 68%
-Correct Messages percentage: 68%
-Time taken to calculate Entire sequence: 641277 ms.
-Average time taken to calculate Buffer: 1.21794 ms.
-Max time taken to calculate Buffer: 1.86178 ms.
-Min time taken to calculate Buffer: 0.18407 ms.
+Time taken to calculate Entire sequence: 46289.4 ms.
+Average time taken to calculate Buffer: 0.572741 ms.
+Max time taken to calculate Buffer: 0.923564 ms.
+Min time taken to calculate Buffer: 0.096998 ms.
 ----------------------------------------------

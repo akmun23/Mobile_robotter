@@ -153,8 +153,8 @@ Message Correct Format and correct message
 ----------------------------------------------
 
 Message 31
-Message Correct Format and correct message
-* 1 5 C 2 # 
+Message Incorrect Format
+* 1 5 C A # 
 ----------------------------------------------
 
 Message 32
@@ -254,14 +254,12 @@ Message Correct Format and correct message
 
 
 ----------------------------------------------
-Correct Messages: 50
+Correct Messages: 49
 Incorrect Messages: 0
-Incorrect Format Messages: 0
+Incorrect Format Messages: 1
 Total Messages: 50
-Correct format percentage: 100%
-Correct Messages percentage: 100%
-Time taken to calculate Entire sequence: 640989 ms.
-Average time taken to calculate Buffer: 0.73088 ms.
-Max time taken to calculate Buffer: 1.02912 ms.
-Min time taken to calculate Buffer: 0.204265 ms.
+Time taken to calculate Entire sequence: 46002.3 ms.
+Average time taken to calculate Buffer: 0.279482 ms.
+Max time taken to calculate Buffer: 0.479483 ms.
+Min time taken to calculate Buffer: 0.048346 ms.
 ----------------------------------------------
