@@ -22,6 +22,32 @@ Message Incorrect: * 1 5 C 2 #
 
 Message Incorrect: * 1 7 B C # 
 
+Message Incorrect: * 9 1 1 A D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 19
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
 Message Incorrect: * 9 1 A D # 
 
 Message Incorrect: * 7 4 6 2 # 
@@ -38,17 +64,93 @@ Message Incorrect: * 7 4 6 2 #
 
 Message Incorrect: * 1 3 7 9 # 
 
-Running with a tone duration of: 100 and a pause of: 45
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 19
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
 Messages 20
 Correct Messages: 20
 Incorrect Messages: 0
 ----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
 
 Message Incorrect: * 1 5 C 2 # 
 
 Message Incorrect: * 1 7 B C # 
 
 Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
 
 Message Incorrect: * 7 4 6 2 # 
 
@@ -74,113 +176,771 @@ Message Incorrect: * 7 4 6 2 #
 
 Message Incorrect: * 1 3 7 9 # 
 
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Running with a tone duration of: 100 and a pause of: 40
-Messages 19
+Messages 20
 Correct Messages: 19
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
 Incorrect Messages: 0
 ----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
 
 Message Incorrect: * 1 5 C 2 # 
 
-Message Incorrect: * 1 B B C # 
+Message Incorrect: * 1 7 B C # 
 
-Message Incorrect: * 1 A D # # 
+Message Incorrect: * 9 1 A D # 
 
-Message Incorrect: * 4 6 2 # * 
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
 
 Message Incorrect: * 1 5 C 2 # 
 
-Message Incorrect: * 7 B B C # 
+Message Incorrect: * 1 7 B C # 
 
-Message Incorrect: * 1 A D # * 
+Message Incorrect: * 9 1 A D # 
 
-Message Incorrect: * 4 6 2 # * 
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
 
 Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 50
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Message Incorrect: * 1 3 7 9 9 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 2 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Messages 19
+Correct Messages: 14
+Incorrect Messages: 5
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Messages 19
+Correct Messages: 15
+Incorrect Messages: 4
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Messages 19
+Correct Messages: 17
+Incorrect Messages: 2
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 9 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Messages 19
+Correct Messages: 14
+Incorrect Messages: 5
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A A D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 2 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * * 9 1 A D 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Messages 19
+Correct Messages: 13
+Incorrect Messages: 6
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A A # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 2 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Messages 19
+Correct Messages: 16
+Incorrect Messages: 3
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 2 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 2 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 9 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Messages 19
+Correct Messages: 15
+Incorrect Messages: 4
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 4 2 # 
+
+Messages 19
+Correct Messages: 15
+Incorrect Messages: 4
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A A D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 9 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 2 
+
+Messages 19
+Correct Messages: 16
+Incorrect Messages: 3
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 45
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 2 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 6 2 
+
+Messages 19
+Correct Messages: 15
+Incorrect Messages: 4
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 # # 
+
+Message Incorrect: * 1 5 2 # # 
 
 Message Incorrect: * 7 B C # # 
 
 Message Incorrect: * 1 A D # * 
 
-Message Incorrect: * 4 6   # * 
+Message Incorrect: * 4 6 2 # * 
 
-Message Incorrect: * 1 5 C # # 
+Message Incorrect: * 3 7 9 # * 
 
-Message Incorrect: * 1 7 B C # 
+Message Incorrect: * 5 C 2 # * 
 
-Message Incorrect: * 1 A D # # 
+Message Incorrect: * 7 B C # * 
 
-Message Incorrect: * 4 6 6 # * 
+Message Incorrect: * 1 A D # * 
 
-Running with a tone duration of: 100 and a pause of: 35
-Messages 16
-Correct Messages: 4
-Incorrect Messages: 12
-----------------------------------------------
-
-Message Incorrect: * 1 C C   # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1   C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 4 4 6   # 
-
-Message Incorrect: * 1 3 7 9 # 
+Message Incorrect: * 4 6 2 # * 
 
 Message Incorrect: * 1 5 C 2 # 
 
 Message Incorrect: * 1 7 B C # 
 
-Message Incorrect: * 9 1 A D # 
+Message Incorrect: * 9 1 A # # 
 
-Message Incorrect: * 7 4 6 2 # 
+Message Incorrect: * 4 4 2 # # 
 
-Message Incorrect: * 1 3 7 9 # 
+Message Incorrect: * 3 7 7 9 # 
 
-Message Incorrect: * 1 5 C   # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Running with a tone duration of: 100 and a pause of: 30
-Messages 20
-Correct Messages: 16
-Incorrect Messages: 4
+Messages 19
+Correct Messages: 6
+Incorrect Messages: 13
 ----------------------------------------------
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
+Running with a tone duration of: 100 and a pause of: 40
 
 Message Incorrect: * 1 5 C 2 # 
 
@@ -192,6 +952,40 @@ Message Incorrect: * 4 4 6 2 #
 
 Message Incorrect: * 1 3 7 9 # 
 
+Message Incorrect: * 5 5 2 # # 
+
+Message Incorrect: * 7 B C C # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 19
+Correct Messages: 8
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
+
 Message Incorrect: * 1 5 C 2 # 
 
 Message Incorrect: * 1 7 B C # 
@@ -202,9 +996,27 @@ Message Incorrect: * 7 4 6 2 #
 
 Message Incorrect: * 1 3 7 9 # 
 
-Message Incorrect: * 1 5 C   # 
+Message Incorrect: * 1 C 2 # # 
 
-Message Incorrect: * 1 7 B C # 
+Message Incorrect: * 1 7 C C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
 
 Message Incorrect: * 9 1 A D # 
 
@@ -212,203 +1024,61 @@ Message Incorrect: * 7 4 6 2 #
 
 Message Incorrect: * 1 3 7 9 # 
 
-Running with a tone duration of: 100 and a pause of: 25
-Messages 20
-Correct Messages: 18
-Incorrect Messages: 2
+Messages 19
+Correct Messages: 8
+Incorrect Messages: 11
 ----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
 
-Message Incorrect: * 1 5 C # # 
+Message Incorrect: * 1 5 C 2 # 
 
-Message Incorrect: * 7 B C # * 
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
 
 Message Incorrect: * 7 4 6 # # 
 
-Message Incorrect: * 3 7 9 # * 
+Message Incorrect: * 1 3 7 9 # 
 
-Message Incorrect: * 7 B C # # 
+Message Incorrect: * 1 C 2 # # 
+
+Message Incorrect: * 7 B C C * 
 
 Message Incorrect: * 1 A D # * 
 
-Message Incorrect: * 1 3 7 9 # 
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
 
 Message Incorrect: * 5 C 2 # * 
 
-Message Incorrect: * 1 A D # # 
-
-Message Incorrect: * 4 6 6 # * 
-
-Message Incorrect: * 1 5 C # # 
-
 Message Incorrect: * 7 B C # * 
 
-Message Incorrect: * 7 4 6 2 # 
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 2 # 
 
 Message Incorrect: * 1 3 9 # # 
 
-Running with a tone duration of: 100 and a pause of: 20
-Messages 14
-Correct Messages: 2
+Messages 19
+Correct Messages: 7
 Incorrect Messages: 12
 ----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
 
 Message Incorrect: * 1 5 C 2 # 
 
 Message Incorrect: * 1 7 B C # 
 
 Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 # # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 7 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 1 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 C C   # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6   # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Running with a tone duration of: 100 and a pause of: 15
-Messages 20
-Correct Messages: 15
-Incorrect Messages: 5
-----------------------------------------------
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Running with a tone duration of: 100 and a pause of: 10
-Messages 20
-Correct Messages: 20
-Incorrect Messages: 0
-----------------------------------------------
-
-Message Incorrect: * 1 5 C # # 
-
-Message Incorrect: * 7 7 B C # 
-
-Message Incorrect: * 1 A D # # 
-
-Message Incorrect: * 4 6 2 # * 
-
-Message Incorrect: * 1 5 C # # 
-
-Message Incorrect: * 7 B B # # 
-
-Message Incorrect: * 1 A D # * 
-
-Message Incorrect: * 4 6 2 # * 
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 1 A A # # 
-
-Message Incorrect: * 4 4 2 # # 
-
-Message Incorrect: * 3 7 9 # * 
-
-Message Incorrect: * 5 C 2 # * 
-
-Message Incorrect: * 1 1 A D # 
-
-Message Incorrect: * 4 4 6 # # 
-
-Message Incorrect: * 3 7 9 # # 
-
-Running with a tone duration of: 100 and a pause of: 5
-Messages 17
-Correct Messages: 2
-Incorrect Messages: 15
-----------------------------------------------
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 5 C   # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 9 1 A D # 
-
-Message Incorrect: * 7 4 6 2 # 
-
-Message Incorrect: * 1 3 7 9 # 
-
-Message Incorrect: * 1 5 C 2 # 
-
-Message Incorrect: * 1 7 B C # 
-
-Message Incorrect: * 1 1 A D # 
 
 Message Incorrect: * 7 4 6 2 # 
 
@@ -416,29 +1086,3387 @@ Message Incorrect: * 1 3 7 9 #
 
 Message Incorrect: * 5 C 2 # # 
 
+Message Incorrect: * 7 B C C * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
 Message Incorrect: * 1 7 B C # 
 
 Message Incorrect: * 9 1 A D # 
 
-Running with a tone duration of: 100 and a pause of: 0
-Messages 18
-Correct Messages: 15
-Incorrect Messages: 3
-----------------------------------------------
+Message Incorrect: * 7 4 6 2 # 
 
-Message Incorrect: * 1 C C # # 
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 19
+Correct Messages: 9
+Incorrect Messages: 10
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 2 # # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 D D # 
+
+Message Incorrect: * 4 4 2 # # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 19
+Correct Messages: 10
+Incorrect Messages: 9
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 2 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 # # 
+
+Messages 19
+Correct Messages: 9
+Incorrect Messages: 10
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 C C 2 # 
+
+Message Incorrect: * 7 7 B C # 
+
+Message Incorrect: * 1 A A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 19
+Correct Messages: 8
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 2 2 # 
+
+Message Incorrect: * 7 B B # # 
+
+Message Incorrect: * 1 A D # # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 19
+Correct Messages: 8
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 40
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 3 3 9 # # 
+
+Message Incorrect: * 1 5 2 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 19
+Correct Messages: 8
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 35
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * * 1 5 C 2 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 19
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 9 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 18
+Incorrect Messages: 2
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 30
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 17
+Correct Messages: 6
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 7 B C # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
 
 Message Incorrect: * 7 B C # * 
 
 Message Incorrect: * 7 4 6 2 # 
 
+Message Incorrect: * 1 3 7 # # 
+
+Messages 17
+Correct Messages: 5
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
 Message Incorrect: * 3 7 9 # * 
 
-Message Incorrect: * 1 B C # # 
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 # # 
+
+Message Incorrect: * 5 C 2 # # 
+
+Message Incorrect: * 7 B C # * 
 
 Message Incorrect: * 1 A D # * 
 
 Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 C 2 2 # 
+
+Message Incorrect: * 7 B C # # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # 3 
+
+Messages 18
+Correct Messages: 5
+Incorrect Messages: 13
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 3 3 7 9 # 
+
+Message Incorrect: * 5 C 2 # # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 2 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 18
+Correct Messages: 5
+Incorrect Messages: 13
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C C * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * * 1 3 7 9 
+
+Messages 17
+Correct Messages: 5
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 B B # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 7 7 9 * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 7 7 9 # 
+
+Messages 17
+Correct Messages: 6
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 7 C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 6 2 2 * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 17
+Correct Messages: 4
+Incorrect Messages: 13
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B B # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C # # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 7 7 # # 
+
+Messages 17
+Correct Messages: 4
+Incorrect Messages: 13
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 7 C # # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 # # 
+
+Messages 17
+Correct Messages: 5
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 25
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 B B # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 7 7 # # 
+
+Messages 17
+Correct Messages: 6
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 20
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 19
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C D 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 19
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 15
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 4 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 18
+Incorrect Messages: 2
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 1 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 2 # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 3 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 # # 
+
+Messages 17
+Correct Messages: 7
+Incorrect Messages: 10
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 # # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 17
+Correct Messages: 5
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 2 2 # 
+
+Message Incorrect: * 3 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 4 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B # * 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 18
+Correct Messages: 7
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 D D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Messages 16
+Correct Messages: 6
+Incorrect Messages: 10
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 2 # 
+
+Message Incorrect: * 3 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 7 7 # # 
+
+Messages 17
+Correct Messages: 8
+Incorrect Messages: 9
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 D # # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C D 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 16
+Correct Messages: 5
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 2 # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # # 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 17
+Correct Messages: 6
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: *   C   9   
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D # # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 17
+Correct Messages: 5
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 2 # 
+
+Message Incorrect: * 3 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 2 # 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 17
+Correct Messages: 8
+Incorrect Messages: 9
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 10
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C C 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Messages 16
+Correct Messages: 5
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Messages 18
+Correct Messages: 18
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C D 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C D 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Messages 18
+Correct Messages: 16
+Incorrect Messages: 2
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C D 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Messages 18
+Correct Messages: 17
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D D 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Messages 18
+Correct Messages: 17
+Incorrect Messages: 1
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Messages 20
+Correct Messages: 20
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 5
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 9 1 A D # 
+
+Messages 18
+Correct Messages: 18
+Incorrect Messages: 0
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C C * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 1 1 7 9 # 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 C C # 
+
+Message Incorrect: * 1 A D D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * * 1 7 B C 
+
+Message Incorrect: * 9 1 D D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 17
+Correct Messages: 3
+Incorrect Messages: 14
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C * 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
 
 Message Incorrect: * 5 C 2 # * 
 
@@ -446,11 +4474,321 @@ Message Incorrect: * 9 1 A D #
 
 Message Incorrect: * 4 6 2 # * 
 
-Message Incorrect: * 1 5 2 # # 
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C C * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 16
+Correct Messages: 4
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * # 2       
+
+Messages 17
+Correct Messages: 5
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B B C # 
+
+Message Incorrect: * 1 A A D * 
+
+Message Incorrect: * 4 4 2 0 * 
+
+Message Incorrect: * 3 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C D 
+
+Message Incorrect: * 1 A D D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 7 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 16
+Correct Messages: 3
+Incorrect Messages: 13
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 7 C C * 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 5 C 2 # * 
 
 Message Incorrect: * 7 B C # * 
 
 Message Incorrect: * 7 4 6 2 # 
 
-Message Incorrect: * 3 7 9 #   
+Message Incorrect: * 1 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C D * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 1 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 16
+Correct Messages: 4
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D # # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Messages 15
+Correct Messages: 5
+Incorrect Messages: 10
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 1 3 7 9 # 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 6 2 # 
+
+Message Incorrect: * 1 7 7 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 0 # 
+
+Message Incorrect: * 3 7 9 # # 
+
+Messages 16
+Correct Messages: 5
+Incorrect Messages: 11
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D # 
+
+Message Incorrect: * 4 4 2 0 * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C * 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # # 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 16
+Correct Messages: 4
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C C * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 1 3 7 # # 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 7 4 2 2 # 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 5 C 2 # * 
+
+Message Incorrect: * 9 1 A D # 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Messages 15
+Correct Messages: 3
+Incorrect Messages: 12
+----------------------------------------------
+Running with a tone duration of: 100 and a pause of: 0
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B B # # 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 4 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C # 
+
+Message Incorrect: * 1 A D D # 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 3 7 9 # * 
+
+Message Incorrect: * 1 7 B C D 
+
+Message Incorrect: * 1 A D D * 
+
+Message Incorrect: * 4 6 2 # * 
+
+Message Incorrect: * 1 5 C 2 # 
+
+Message Incorrect: * 7 B C # * 
+
+Message Incorrect: * 1 A D # * 
+
+Message Incorrect: * 4 6 2 # * 
 
