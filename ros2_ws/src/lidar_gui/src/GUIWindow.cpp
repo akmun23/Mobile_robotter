@@ -77,12 +77,9 @@ void GUI::lidarReading(float angle, float len){
     }
 
     // Check if wallFrags has more than 1000 entries and remove until it is below:
-/*
-    while(wallFrags.size() > 1000){
+    while(wallFrags.size() > 500){
         wallFrags.erase(wallFrags.begin());
     }
-    */
-
 
 }
 
@@ -95,28 +92,28 @@ void GUI::movementRobot(float robot_x, float robot_y){
 void GUI::rescale() {
     //if the robot comes near the edge, move it, and the walls.
     if(robot.x < 200){
-        for(int i = 0; i < wallFrags.size(); i++){
+        for(size_t i = 0; i < wallFrags.size(); i++){
             wallFrags[i].x = wallFrags[i].x + 200;
         }
 
         robot.start_x = robot.start_x + 200;
     }
     else if(robot.x > (XDisplayWidth(display, screen) - 200)){
-        for(int i = 0; i < wallFrags.size(); i++){
+        for(size_t i = 0; i < wallFrags.size(); i++){
             wallFrags[i].x = wallFrags[i].x - 200;
         }
 
         robot.start_x = robot.start_x - 200;
     }
     else if(robot.y < 200){
-        for(int i = 0; i < wallFrags.size(); i++){
+        for(size_t i = 0; i < wallFrags.size(); i++){
             wallFrags[i].y = wallFrags[i].y + 200;
         }
 
         robot.start_y = robot.start_y + 200;
     }
     else if(robot.y > (XDisplayHeight(display, screen) - 200)){
-        for(int i = 0; i < wallFrags.size(); i++){
+        for(size_t i = 0; i < wallFrags.size(); i++){
             wallFrags[i].y = wallFrags[i].y - 200;
         }
 
@@ -126,7 +123,7 @@ void GUI::rescale() {
 
 void GUI::paintMap(){
     //Draws the wallFrags
-    for(int i = 0; i < wallFrags.size(); i++){
+    for(size_t i = 0; i < wallFrags.size(); i++){
         XFillRectangle(display, window, gcWall, wallFrags[i].x - wallFrags[i].size.width/2, wallFrags[i].y - wallFrags[i].size.height/2, wallFrags[i].size.width, wallFrags[i].size.height);
     }
 }
@@ -164,14 +161,14 @@ void GUI::drawRect(Point vertices[4], GC gc){ //Assumes the square is rectangula
     findPoints(pointsStart, vertices[0], vertices[3], 4);
     findPoints(pointsEnd, vertices[1], vertices[2], 4);
 
-    for(int i = 0; i < pointsStart.size(); i++){
+    for(size_t i = 0; i < pointsStart.size(); i++){
         XDrawLine(display, window, gc, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
     }
 
     findPoints(pointsStart, vertices[0], vertices[1], 4);
     findPoints(pointsEnd, vertices[3], vertices[2], 4);
 
-    for(int i = 0; i < pointsStart.size(); i++){
+    for(size_t i = 0; i < pointsStart.size(); i++){
         XDrawLine(display, window, gc, pointsStart[i].x, pointsStart[i].y, pointsEnd[i].x, pointsEnd[i].y);
     }
 }

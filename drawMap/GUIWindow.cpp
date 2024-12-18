@@ -209,7 +209,7 @@ void GUI::update(bool& update){
         QSqlQuery query;
         int id_first = 0;
         int id_last = 0;
-        query.prepare("SELECT * FROM lidar_data WHERE is_read = FALSE");
+        query.prepare("SELECT * FROM lidar_data");
         if (!query.exec()) {
             std::cerr << "Database error: " << query.lastError().text().toStdString() << std::endl;
         } else {
@@ -218,7 +218,7 @@ void GUI::update(bool& update){
                 double angle = query.value(1).toDouble();
                 double distance = query.value(2).toDouble();
                 double robot_x = query.value(3).toDouble();
-                double robot_y = query.value(4).toDouble();
+                double robot_y = query.value(4).toDouble() - 0.7;
                 double robot_yaw = query.value(5).toDouble();
                 movementRobot(robot_x, robot_y);
                 lidarReading(angle, distance);
@@ -229,7 +229,7 @@ void GUI::update(bool& update){
                 double angle = query.value(1).toDouble();
                 double distance = query.value(2).toDouble();
                 double robot_x = query.value(3).toDouble();
-                double robot_y = query.value(4).toDouble();
+                double robot_y = query.value(4).toDouble() - 0.7;
                 double robot_yaw = query.value(5).toDouble();
                 movementRobot(robot_x, robot_y);
                 lidarReading(angle, distance);

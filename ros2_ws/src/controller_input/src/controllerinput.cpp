@@ -84,7 +84,12 @@ void controllerInput::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
     _latestAngularValue = angular_value;
 
     if(msg->buttons[0] == 1){
+        _currentPress = true;
+    }
+
+    if(msg->buttons[0] == 0 && _currentPress){
         play_dtmf_if_active();
+        _currentPress = false;
     }
 
     // Log odom and scan into the database if button 2 is pressed
@@ -143,22 +148,18 @@ void controllerInput::play_dtmf_if_active() {
     sf::SoundBuffer buffer;
     std::vector<sf::Int16> samples;
     for (int i = 0; i < 2; i++) {
-        samples.push_back(SineWave(i, 200, 0.01));
+        samples.push_back(SineWave(i, 200, 0));
     }
     buffer.loadFromSamples(&samples[0], samples.size(), 1, AudioPlayRate);
     sf::Sound sound;
     sound.setBuffer(buffer);
     sound.play();
-    usleep(5);
+    usleep(1);
     samples.clear();
     // Ends here
 
     // Play the dtmf sequence from the joystick input
     playDTMFSequence(_latestLinearValue, _latestAngularValue);
-
-    // Update the previous values after playing the sequence
-    _previousLinearValue = _latestLinearValue;
-    _previousAngularValue = _latestAngularValue;
 }
 
 void controllerInput::makeAmplitudeFading(){
@@ -184,7 +185,7 @@ void controllerInput::makeAmplitudeFading(){
     std::cout << "AmplitudeFading size: " << AmplitudeFading.size() << std::endl;
 }
 
-void controllerInput::playTone(double freq1, double freq2){
+void controllerInput::playTone(double freq1, double freq2, bool lastTone = false){
     sf::SoundBuffer buffer;
     std::vector<sf::Int16> samples;
 
@@ -203,7 +204,11 @@ void controllerInput::playTone(double freq1, double freq2){
     sf::Sound sound;
     sound.setBuffer(buffer);
     sound.play();
-    usleep(sleep);
+    if(!lastTone){
+        usleep(sleep);
+    } else {
+        usleep(sleep+25000);
+    }
     samples.clear();
 }
 
@@ -233,7 +238,7 @@ void controllerInput::playDTMFSequence(uint8_t linear_value, uint8_t angular_val
     std::cout << angular_tone2 << std::endl;
 
     // Play the stop tone (e.g., DTMF for '#')
-    playTone(941, 1477);
+    playTone(941, 1477, true);
 }
 
 double controllerInput::SineWave(int time, double freq, double amp) {

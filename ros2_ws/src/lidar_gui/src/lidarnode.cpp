@@ -41,7 +41,6 @@ void MappingNode::scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 }
 
 
-
 // Callback for Odometry data
 void MappingNode::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg) {
     std::lock_guard<std::mutex> lock(_mutex);

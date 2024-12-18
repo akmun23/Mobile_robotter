@@ -1,0 +1,10 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/uninstall.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/controller_input_uninstall.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/controller_input.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/test.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/edit_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/rebuild_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/list_install_components.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/install.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/install/local.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/controller_input/CMakeFiles/install/strip.dir

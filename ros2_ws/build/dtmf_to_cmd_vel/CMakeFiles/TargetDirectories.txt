@@ -1,0 +1,10 @@
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/uninstall.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/dtmf_to_cmd_vel_uninstall.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/dtmf_to_cmd_vel.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/test.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/edit_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/rebuild_cache.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/list_install_components.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/install.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/install/local.dir
+/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/dtmf_to_cmd_vel/CMakeFiles/install/strip.dir

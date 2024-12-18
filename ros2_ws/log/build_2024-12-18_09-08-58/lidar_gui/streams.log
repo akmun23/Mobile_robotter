@@ -1,0 +1,106 @@
+[0.016s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui -DCMAKE_INSTALL_PREFIX=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui
+[0.105s] -- The CXX compiler identification is GNU 11.4.0
+[0.113s] -- Detecting CXX compiler ABI info
+[0.193s] -- Detecting CXX compiler ABI info - done
+[0.198s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.198s] -- Detecting CXX compile features
+[0.199s] -- Detecting CXX compile features - done
+[0.204s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.344s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.458s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.520s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.527s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.539s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.555s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.575s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.632s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.636s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.736s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.766s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.811s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.825s] -- Looking for C++ include pthread.h
+[0.908s] -- Looking for C++ include pthread.h - found
+[0.908s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.993s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.994s] -- Found Threads: TRUE  
+[1.052s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.066s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.084s] -- Found rclcpp_components: 16.0.11 (/opt/ros/humble/share/rclcpp_components/cmake)
+[1.118s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.241s] -- Found X11: /usr/include   
+[1.241s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[1.333s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[1.333s] -- Looking for gethostbyname
+[1.414s] -- Looking for gethostbyname - found
+[1.414s] -- Looking for connect
+[1.496s] -- Looking for connect - found
+[1.496s] -- Looking for remove
+[1.581s] -- Looking for remove - found
+[1.581s] -- Looking for shmat
+[1.661s] -- Looking for shmat - found
+[1.662s] -- Looking for IceConnectionNumber in ICE
+[1.748s] -- Looking for IceConnectionNumber in ICE - found
+[1.763s] -- Performing Test HAVE_STDATOMIC
+[1.890s] -- Performing Test HAVE_STDATOMIC - Success
+[1.891s] -- Found WrapAtomic: TRUE  
+[1.928s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+[1.929s] -- Found WrapOpenGL: TRUE  
+[2.000s] -- Found XKB: /usr/lib/x86_64-linux-gnu/libxkbcommon.so (found suitable version "1.4.0", minimum required is "0.5.0") 
+[2.007s] -- Found WrapVulkanHeaders: /usr/include  
+[2.125s] -- Configuring done
+[2.138s] -- Generating done
+[2.142s] -- Build files have been written to: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui
+[2.158s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui -DCMAKE_INSTALL_PREFIX=/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui
+[2.161s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[2.214s] [ 20%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/main.cpp.o[0m
+[2.216s] [ 80%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/lidarnode.cpp.o[0m
+[2.216s] [ 80%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/dataTypes.cpp.o[0m
+[2.216s] [ 80%] [32mBuilding CXX object CMakeFiles/lidar_gui.dir/src/GUIWindow.cpp.o[0m
+[2.812s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::rescale()[m[K’:
+[2.812s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:98:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.812s]    98 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[2.812s]       |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[2.812s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:105:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.812s]   105 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[2.812s]       |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[2.813s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:112:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.813s]   112 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[2.813s]       |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[2.813s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:119:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.813s]   119 |         for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[2.813s]       |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[2.813s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::paintMap()[m[K’:
+[2.813s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:129:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Wall>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.813s]   129 |     for(int i = 0; [01;35m[Ki < wallFrags.size()[m[K; i++){
+[2.813s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[2.816s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:[m[K In member function ‘[01m[Kvoid GUI::drawRect(Point*, GC)[m[K’:
+[2.817s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:167:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Point>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.817s]   167 |     for(int i = 0; [01;35m[Ki < pointsStart.size()[m[K; i++){
+[2.817s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[2.817s] [01m[K/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/src/lidar_gui/src/GUIWindow.cpp:174:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Point>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.817s]   174 |     for(int i = 0; [01;35m[Ki < pointsStart.size()[m[K; i++){
+[2.817s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[11.449s] [100%] [32m[1mLinking CXX executable lidar_gui[0m
+[11.942s] [100%] Built target lidar_gui
+[11.955s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui -- -j16 -l16
+[11.957s] Invoking command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui
+[11.964s] -- Install configuration: ""
+[11.964s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/lidar_gui/lidar_gui
+[11.969s] -- Set runtime path of "/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/lib/lidar_gui/lidar_gui" to ""
+[11.969s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui//launch
+[11.969s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/package_run_dependencies/lidar_gui
+[11.969s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/parent_prefix_path/lidar_gui
+[11.969s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/ament_prefix_path.sh
+[11.970s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/ament_prefix_path.dsv
+[11.970s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/path.sh
+[11.970s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/environment/path.dsv
+[11.970s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.bash
+[11.970s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.sh
+[11.970s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.zsh
+[11.970s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/local_setup.dsv
+[11.971s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.dsv
+[11.971s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/ament_index/resource_index/packages/lidar_gui
+[11.971s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/cmake/lidar_guiConfig.cmake
+[11.971s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/cmake/lidar_guiConfig-version.cmake
+[11.971s] -- Installing: /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/install/lidar_gui/share/lidar_gui/package.xml
+[11.974s] Invoked command in '/home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aksel/turtlebot3_ws/install/turtlebot3_teleop:/home/aksel/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/aksel/Documents/GitHub/Mobile_robotter/ros2_ws/build/lidar_gui

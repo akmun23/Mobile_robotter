@@ -47,7 +47,7 @@ private:
 
     int soundFrequency = 16000;
     std::vector<double> AmplitudeFading;
-    int ToneDuration = 100;  // Tone duration in milliseconds
+    int ToneDuration = 65;  // Tone duration in milliseconds
     int PauseDuration = 50; // Pause duration in milliseconds
         // Time to detect tone 200us
     int SamplesPerFrame = soundFrequency * (ToneDuration + PauseDuration) / 1000;  // Total duration in samples (tone + pause)
@@ -61,6 +61,8 @@ private:
     // DTMF tone frequencies for digits 0-9
     const int LOW_FREQ[16] =  { 941,  697,  697,  697,  770,  770,  770,  852,  852,  852,  697,  770,  852,  941,  941,  941};
     const int HIGH_FREQ[16] = {1336, 1209, 1336, 1477, 1209, 1336, 1477, 1209, 1336, 1477, 1633, 1633, 1633, 1633, 1209, 1477};
+
+    bool _currentPress = false;
 
     QSqlDatabase db;
 
@@ -79,7 +81,7 @@ public:
 
     void makeAmplitudeFading();
 
-    void playTone(double freq1, double freq2);
+    void playTone(double freq1, double freq2, bool lastTone);
 
     // Function to map joystick axis values [-1.0, 1.0] to [0, 100]
     uint8_t mapAxisToByte(float axis_value);
